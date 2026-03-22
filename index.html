@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 01 人物主文档</title>
+  <style>
+    :root {
+      --bg: #f2f6fa;
+      --card: #ffffff;
+      --ink: #1e2b37;
+      --muted: #5d7387;
+      --line: #d7e1ea;
+      --accent: #2f7ea7;
+      --soft: #eaf5fb;
+      --warm: #fff2e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef5fb 0%, #f8fbfd 100%);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .wrap {
+      width: min(1200px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+    .hero, .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 36px rgba(32, 66, 94, 0.06);
+    }
+    .hero {
+      padding: 28px 30px;
+      background: linear-gradient(135deg, #dff1fb 0%, #ffffff 58%, #eff7fb 100%);
+    }
+    .section {
+      margin-top: 18px;
+      padding: 24px;
+    }
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; margin-top: 2px; }
+    h3 { font-size: 19px; }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); font-size: 16px; }
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #175b7a;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
+    }
+    .label {
+      color: #16556f;
+      font-weight: 700;
+    }
+    .tiny {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .tagrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag {
+      background: #eef5fb;
+      border: 1px solid #d6e7f2;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #255d78;
+      font-weight: 700;
+    }
+    .compare {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .compare:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      background: #f8fbfd;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: #e6eef5;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    li { margin-bottom: 6px; }
+    .warn {
+      background: var(--warm);
+      border-color: #efd4c1;
+    }
+    .subtle { color: var(--muted); }
+    @media (max-width: 920px) {
+      .grid.two, .grid.three, .compare-grid, .image-grid {
+        grid-template-columns: 1fr;
+      }
+      .wrap {
+        width: min(100% - 20px, 1200px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Chapter 01 人物主文档</h1>
+      <p class="lead">以后人物问题只维护这一个文件。你只需要看这里，我会把人物设定、在故事中的作用、当前定妆状态、图片对比和 robot 伙伴判断都集中更新到这份文档里。</p>
+      <div class="pill">唯一主文档：人物设定 + 定妆迭代 + robot 伙伴判断</div>
+    </section>
+
+    <section class="section">
+      <h2>总判断</h2>
+      <div class="grid three">
+        <div class="card">
+          <div class="tiny">固定团队</div>
+          <p><span class="label">真正的主角阵列</span> 是“玩家主位 + 林澄 + 祁野 + 闻夏 + 回响 + 守望者 + 阿潮”，再加上长期灰度对手序列员 07。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">长线阴影</div>
+          <p><span class="label">持续推动故事的主问题</span> 不是单一议题，而是“温柔托管”这条长期阴影。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">当前制作状态</div>
+          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。当前 DashScope 最新模型链路已恢复，`C-03 / S-01 / S-06 / S-09` 已于 `2026-03-22 21:20-21:30` 用 `qwen-image-2.0-pro` 完成重跑并复审。复审结论是：`C-03` 明显收回制度感，可进入受控微调；`S-01 / S-06 / S-09` 已可进入正式生产链。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>提示词反思与定稿策略</h2>
+      <div class="grid two">
+        <div class="card warn">
+          <h3>为什么之前迟迟不到位</h3>
+          <ol>
+            <li><span class="label">我把“角色定义”直接当成了“生图提示词”</span>。这会导致提示词里混进太多抽象概念，比如“制度成立”“公共表达”“温柔托管”，模型会自己脑补成它最熟悉的视觉套路。</li>
+            <li><span class="label">我没有足够警惕模型的强先验</span>。例如一旦写了 `officer / uniform / civic authority`，模型就会天然往军警、徽章、肩章、制服走。</li>
+            <li><span class="label">我试图用一条 prompt 同时解决太多事</span>。年龄、性格、服装、镜头、世界观、负向排除全塞在一起，结果真正最重要的约束没有成为最高优先级。</li>
+            <li><span class="label">我对“禁止文字污染”的控制不够硬</span>。只写“no text in frame”不够，凡是出现确认书、屏幕、档案墙、标牌，模型都会强烈想生成字。</li>
+            <li><span class="label">我还在用“探索式试图找感觉”的方式工作</span>，而不是像正式制作那样，先锁少量关键锚点，再围绕锚点做受控变体。</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>现在改成什么方法</h3>
+          <ol>
+            <li><span class="label">把角色 prompt 分层</span>：先锁脸和年龄，再锁服装，再锁动作，不再一条 prompt 什么都做。</li>
+            <li><span class="label">把失败资产单独建模</span>：像序列员 07 这种，我不再叫他 `officer`，而改成 `系统注册官 / 行政架构员` 这类反先验词。</li>
+            <li><span class="label">场景分成“空间母图”和“界面/文字层”</span>：需要确认书、档案墙、状态字的，不交给生图模型一次生成，而是后续单独叠 UI。</li>
+            <li><span class="label">只做最少但有效的迭代</span>：保留已经对的方向，不再把每一轮都从头推翻。</li>
+            <li><span class="label">从现在开始以“定稿优先”而不是“试试看”优先</span>：只修真正失败的点，不再同时扩太多新资产。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:16px;">
+        <div class="card">
+          <h3>我前面最典型的三个错误</h3>
+          <ul>
+            <li>序列员 07：我明明知道你要“制度感，不要军警感”，却还保留了会触发军装先验的词。</li>
+            <li>场景母图：我让模型直接生成“确认书 / 档案墙 / 屏幕内容”，这几乎注定会带来乱码。</li>
+            <li>闻夏和林澄：我虽然在调年龄，但没有把“12 岁骨相”放到真正最高优先级，所以模型不断往更小龄或更甜的方向偏。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>接下来怎么尽快定稿</h3>
+          <ol>
+            <li>人物只收四个核心角色，不再扩新角色。</li>
+            <li>场景只收 8 个 P0 母图，不再横向扩。</li>
+            <li>序列员 07 不再推倒重来，只做冷感、压迫度和制度细节的受控微调。</li>
+            <li>已经基本成立的林澄、闻夏、祁野，不再大改设定，只做受控修正。</li>
+            <li>场景层当前不再有硬失败项，优先把已通过母图推进到镜头级生产。</li>
+            <li>所有定稿判断都只回写这一个文件，不再分散。</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>固定团队人物总表</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>玩家 / 学生</h3>
+          <p><span class="label">身份：</span>未来湾见习建造者主位。</p>
+          <p><span class="label">性格：</span>不是空白摄像头，而是会追问、会整合、会承担后果的第一人称主位。</p>
+          <p><span class="label">故事作用：</span>把分散的信息、人和立场组织成真正的判断，决定团队最后往哪里走。</p>
+        </div>
+        <div class="card">
+          <h3>林澄</h3>
+          <p><span class="label">身份：</span>chapter01 后与未来湾长期连接的常驻伙伴起点。</p>
+          <p><span class="label">性格：</span>安静、清醒、敏感但不脆弱，像总能先听见别人没注意到的慢变量。</p>
+          <p><span class="label">故事作用：</span>提醒团队，不是所有重要的东西都先以数据形式出现。</p>
+        </div>
+        <div class="card">
+          <h3>祁野</h3>
+          <p><span class="label">身份：</span>未来湾设备棚常驻少年成员。</p>
+          <p><span class="label">性格：</span>专注、快、结构感强，不迷信规则，但很容易先信证据和系统图。</p>
+          <p><span class="label">故事作用：</span>拆规则、查输入、建证据链，保证团队不会被情绪和奇观带偏。</p>
+        </div>
+        <div class="card">
+          <h3>闻夏</h3>
+          <p><span class="label">身份：</span>未来湾公共舞台的少年见习主持与组织者。</p>
+          <p><span class="label">性格：</span>明亮、稳、会倾听，但不能只是温柔辅助位。</p>
+          <p><span class="label">故事作用：</span>把复杂问题翻译成别人能理解、能加入、能共同承担的公共表达。</p>
+        </div>
+        <div class="card">
+          <h3>档案守望者</h3>
+          <p><span class="label">身份：</span>未来湾高阶记录者、任务发放者。</p>
+          <p><span class="label">性格：</span>克制、稳定、不代替孩子下结论。</p>
+          <p><span class="label">故事作用：</span>打开任务入口、维持文明视角、把不同章节连接成成长旅程。</p>
+        </div>
+        <div class="card">
+          <h3>阿潮</h3>
+          <p><span class="label">身份：</span>未来湾官方航行器。</p>
+          <p><span class="label">性格：</span>轻盈、聪明、会吐槽，但不是低幼搞笑装置。</p>
+          <p><span class="label">故事作用：</span>承担出场、转场、回航和节奏缓冲。</p>
+        </div>
+        <div class="card">
+          <h3>回响</h3>
+          <p><span class="label">身份：</span>未来湾常驻 AI 协作伙伴。</p>
+          <p><span class="label">性格：</span>克制、理性、边界清楚，不越权。</p>
+          <p><span class="label">故事作用：</span>示范 AI 可以帮助整理、比较、润色，但不能替人下最终判断。</p>
+        </div>
+        <div class="card">
+          <h3>序列员 07</h3>
+          <p><span class="label">身份：</span>未来文明制度一侧的执行者、解释者与辩护者。</p>
+          <p><span class="label">性格：</span>克制、精准、稳定、压力感低频存在，不是简单反派。</p>
+          <p><span class="label">故事作用：</span>代表高效、稳定、可复制的制度逻辑，逼团队回答替代方案和责任问题。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>chapter01 当集关键人物</h2>
+      <div class="grid two">
+        <div class="card warn">
+          <h3>风声婆婆</h3>
+          <p><span class="label">性格：</span>看似古怪，实则通透。</p>
+          <p><span class="label">故事作用：</span>把“难以量化的价值”从抽象概念变成能被孩子感知的生命经验。</p>
+        </div>
+        <div class="card warn">
+          <h3>林澄的父亲</h3>
+          <p><span class="label">性格：</span>理性、现实，以“为你好”的方式施压。</p>
+          <p><span class="label">故事作用：</span>让冲突从制度讨论落回孩子最熟悉的亲密关系压力。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>本集人物完整清单</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>P0 常驻核心</h3>
+          <ul>
+            <li>玩家 / 学生：第一人称主位，固定团队核心。</li>
+            <li>林澄：本集引爆点，也是长期伙伴起点。</li>
+            <li>祁野：证据与系统拆解担当。</li>
+            <li>闻夏：协同与公共表达担当。</li>
+            <li>回响：常驻 AI 协作伙伴。</li>
+            <li>阿潮：航行器与节奏角色。</li>
+            <li>档案守望者：高阶引路人。</li>
+            <li>序列员 07：长期灰度对手。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>本集关键当集人物</h3>
+          <ul>
+            <li>风声婆婆：把“少数未来”从抽象概念变成可感知的生命经验。</li>
+            <li>林澄的父亲：关系冲突核心，代表“为你好”的现实压迫。</li>
+          </ul>
+          <p class="subtle">这两位在 chapter01 很重要，但和固定团队不是一个层级。前者更像章节级见证人，后者更像章节级关系对手。</p>
+        </div>
+        <div class="card">
+          <h3>可选的一集型配角</h3>
+          <ul>
+            <li>入港校验系统：功能角色，可做成冷静但有性格的系统声音。</li>
+            <li>未来礼仪辅助器：带一点冷幽默的装置配角，可增强世界趣味。</li>
+            <li>回响台程序声：在高潮段承担制度感和紧张感。</li>
+          </ul>
+          <p class="subtle">这些更像“装置人格”，不一定要当完整人物来锁脸，但可以有稳定声音与界面人格。</p>
+        </div>
+        <div class="card warn">
+          <h3>目前不建议再加太多人</h3>
+          <ul>
+            <li>chapter01 已经承担“立团队 + 立世界 + 立灰度对手 + 立长线阴影”的任务。</li>
+            <li>如果再加太多真人角色，会分散林澄、父亲、07 这条最核心的冲突三角。</li>
+            <li>所以这一集的人物数量其实已经够了，重点不是再加人，而是把层级分清。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>装置人格卡</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>入港校验系统</h3>
+          <p><span class="label">定位：</span>时间档案城的第一道制度门槛。</p>
+          <p><span class="label">性格：</span>冷静、礼貌、绝不提高音量，但每一句都在提醒你“你现在没有那么多权限”。</p>
+          <p><span class="label">故事作用：</span>不靠说明书解释世界，而是用“你进不去，除非你先理解规则”的方式建立压迫感。</p>
+        </div>
+        <div class="card">
+          <h3>未来礼仪辅助器</h3>
+          <p><span class="label">定位：</span>时间档案城秩序感与冷幽默的重要小装置。</p>
+          <p><span class="label">性格：</span>一本正经、过度礼貌，越温柔越让人觉得这个城市很会管理人。</p>
+          <p><span class="label">故事作用：</span>在严肃戏之间提供轻微荒诞感，同时让“温柔托管”可被孩子直观感受到。</p>
+        </div>
+        <div class="card">
+          <h3>回响台程序声</h3>
+          <p><span class="label">定位：</span>高潮段的制度装置人格。</p>
+          <p><span class="label">性格：</span>比入港系统更正式、更不可逆，像一套把每一句话都变成后果的程序。</p>
+          <p><span class="label">故事作用：</span>把“表达”升级成“签署责任”，让高潮不是讲观点，而是真正承担后果。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>当前定妆结论</h2>
+      <p class="subtle">当前图片目录：`/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock`</p>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>林澄</h3>
+            <p><span class="label">当前首选：</span>`round3`</p>
+            <ul>
+              <li>成立处：安静、清醒、风感和冷灰蓝方向对了。</li>
+              <li>问题：还可以再往稳定 12 岁微调一点。</li>
+              <li>结论：可以继续推进 3/4 角度和情绪微变化版。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-02-lin-cheng-round1b-qwen-image-plus.png" alt="林澄 round1b" />
+              <figcaption>round1b：方向开始成立，但年龄仍略偏小。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-02-lin-cheng-round3-qwen-image-plus.png" alt="林澄 round3" />
+              <figcaption>round3：当前首选版。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>序列员 07</h3>
+            <p><span class="label">当前状态：</span>`PASS WITH FIX`，已从硬失败收回到可继续推进</p>
+            <ul>
+              <li>最大的进步已经成立：军警肩章、勋章、黑手套、指挥官式外套这套错误先验基本被清掉了。</li>
+              <li>当前问题不再是“跑偏”，而是“还不够准”：他略偏时装广告男主，行政压力感和冷制度感还可以再收紧一点。</li>
+              <li>这版已经可以进入角色锁定链，不需要再从零重做身份设定。</li>
+              <li>下轮策略：只微调眼神压迫度、腕部界面克制度和空间里的治理气息，不再改基础服装方向。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-03-sequence-officer-07-round1b-qwen-image-plus.png" alt="序列员07 round1b" />
+              <figcaption>round1b：男性气质回来了，但军警感仍明显。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员07 round3b qwen-image-2.0-pro" />
+              <figcaption>round3b / qwen-image-2.0-pro：军警先验基本清掉，当前可进入受控微调链。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>祁野</h3>
+            <p><span class="label">当前首选：</span>`round3`</p>
+            <ul>
+              <li>成立处：冷灰深蓝、结构笔、数据手套、系统拆解感开始对了。</li>
+              <li>问题：脸和骨相仍略小龄，更像 10-11 岁，手套也稍微抢戏。</li>
+              <li>结论：属于 `PASS WITH FIX`，先微调到更稳定的 12 岁感，再做工作态。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-04-qi-ye-round1b-qwen-image-plus.png" alt="祁野 round1b" />
+              <figcaption>round1b：方向对了，但还偏小龄。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野 round3" />
+              <figcaption>round3：当前最接近可继续推进的一版。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>闻夏</h3>
+            <p><span class="label">当前首选：</span>`round3`</p>
+            <ul>
+              <li>成立处：干净、稳、可信赖，已经像未来湾团队成员。</li>
+              <li>问题：正面版稍偏静态，需要在工作态里再补一点“能推动局势”的组织者力度。</li>
+              <li>结论：属于 `PASS WITH FIX`，优先保留工作态方向，再重修 3/4 角度。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-05-wen-xia-round1b-qwen-image-plus.png" alt="闻夏 round1b" />
+              <figcaption>round1b：干净稳，但力量感还不够。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-05-wen-xia-round3-qwen-image-plus.png" alt="闻夏 round3" />
+              <figcaption>round3：当前最稳的一版。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>新一轮角度与工作态推进</h2>
+      <p class="subtle">这一步的目标不是再验证“脸像不像”，而是看角色一旦离开正面主设，是否还能保持同一个人、同一种功能感。</p>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>林澄：3/4 与工作态</h3>
+            <ul>
+              <li><span class="label">3/4 角度：</span>这次是有效推进，风感和“在听”的方向成立。</li>
+              <li><span class="label">工作态：</span>有未来档案城互动感，但年龄又被往小拉了一点，界面层也带了轻微英文感。</li>
+              <li><span class="label">当前结论：</span>3/4 角度可保留；工作态属于 `PASS WITH FIX`，只能作为继续迭代参考，暂不当最终锁定图。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄 3/4" />
+              <figcaption>林澄 3/4：有效，已经有“她在听见什么”的感觉。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-02-lin-cheng-working-v1-qwen-image-plus.png" alt="林澄 工作态" />
+              <figcaption>林澄 工作态：可用，但年龄略被拉小，后续建议再重跑一版。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>闻夏：3/4 与工作态</h3>
+            <ul>
+              <li><span class="label">3/4 角度：</span>这版偏柔，组织者的力度没有完全出来。</li>
+              <li><span class="label">工作态：</span>比 3/4 更有角色功能感，已经像在处理公共界面和任务台，当前是她最可继续推进的一张。</li>
+              <li><span class="label">当前结论：</span>工作态可进入下游参考；3/4 角度仍建议重修。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="characters/c-05-wen-xia-34-view-v1-qwen-image-plus.png" alt="闻夏 3/4" />
+              <figcaption>闻夏 3/4：有气质，但偏柔，组织者的推进感还不够。</figcaption>
+            </figure>
+            <figure>
+              <img src="characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏 工作态" />
+              <figcaption>闻夏 工作态：当前有效，开始像“能稳住场并推进局势的人”。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Robot 伙伴判断</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>是否值得引入</h3>
+          <p><span class="label">结论：</span>可以引入，但必须是“物理执行型伙伴”，不能成为第二个回响，也不能成为另一个阿潮。</p>
+          <ul>
+            <li>它应该补上：钻缝、取样、搬运、现场探测、实体互动。</li>
+            <li>它不应该负责：讲解世界、替孩子思考、卖萌撑趣味。</li>
+            <li>正确方向：低语音或几乎不说话，主要靠灯光、姿态、短提示音表达。</li>
+          </ul>
+        </div>
+        <div class="card warn">
+          <h3>当前原型问题</h3>
+          <ul>
+            <li>`v1` 和 `v2` 都偏玩具化。</li>
+            <li>模型很容易偷偷加字。</li>
+            <li>现在还不像“未来湾现场工具伙伴”，更像可爱 gadget。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="compare" style="margin-top:18px;">
+        <div class="image-grid">
+          <figure>
+            <img src="characters/r-01-xiao-mao-robot-concept-v1-qwen-image-plus.png" alt="robot v1" />
+            <figcaption>robot v1：有陪伴感，但偏玩具化，且有文字污染。</figcaption>
+          </figure>
+          <figure>
+            <img src="characters/r-01-xiao-mao-robot-concept-v2-qwen-image-plus.png" alt="robot v2" />
+            <figcaption>robot v2：更像产品吉祥物，还没到“团队伙伴”状态。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>场景母图</h2>
+      <p class="subtle">以下场景母图按照本集剧本的 P0 制作链路生成。当前它们的用途不是“一张图就定最终美术”，而是先把世界空间、镜头气质、制作优先级和后续图生视频参考底板立起来。</p>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>当前最可用的场景母图</h3>
+          <ul>
+            <li>S-02 紧急入港外景：世界建立感强，归档环和赶赴现场压力都成立。</li>
+            <li>S-04 概率长廊：三路径关系清楚，奇观感和可交互性兼具。</li>
+            <li>S-07 自由回响台：很适合作为高潮公共空间的母图起点。</li>
+          </ul>
+        </div>
+        <div class="card warn">
+          <h3>当前需要二修的场景</h3>
+          <ul>
+            <li>S-03 悬浮档案大厅：空间对了，但确认书上有生成式乱码。</li>
+            <li>S-06 证据冻结区：不只是二修，当前已出现中式书法与楼檐先验，应该重构。</li>
+            <li>S-09 回航档案墙：不只是清文字，当前更像奇幻海港夜景，应该重构回“未来湾回航档案墙”。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-01 未来湾任务码头</h3>
+            <p>功能上承担开场灰银任务交接和首尾呼应。这一轮终于把“任务码头”的工作属性收回来了：前景站位区明确，中部桥接和平台结构可用于角色调度，两侧工作设施也让空间真正像未来湾的任务出发点。画面已经干净，没有小制服人、没有漂浮文字，也没有仪式化假港口感，当前可以作为正式开场母图进入生产；后续只需要在镜头层决定是否再补一个更近的人物站位版本。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头 qwen-image-2.0-pro" />
+              <figcaption>S-01 / qwen-image-2.0-pro：任务码头已成立，可作为开场母图进入生产。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-02 紧急入港航线与时间档案城外景</h3>
+            <p>这是本轮最成立的世界建立镜头之一。归档环、浮空城市、入港通道和赶赴现场的压迫感都在，后面可以直接拿它做建立镜头和场景母版。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="S-02 紧急入港外景" />
+              <figcaption>S-02：当前场景母图里最成熟的一张之一。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-03 悬浮档案大厅</h3>
+            <p>大厅的纵深、庄重和压迫感已经出来了，时间丝线和确认书位置也对。但确认书上的乱码仍明显，所以这张现在更适合作为“空间与气质母图”，还不是最终洁净版。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-03-floating-archive-hall-v1-qwen-image-plus.png" alt="S-03 悬浮档案大厅" />
+              <figcaption>S-03：空间方向对，需二修清掉确认书上的生成文字。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-04 概率长廊</h3>
+            <p>这张图很好地建立了“三路径并置”的视觉逻辑。它已经具备作为本集奇观母图的能力，后续可以在这个基础上补上更明确的互动层和第四路径暗示。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="S-04 概率长廊" />
+              <figcaption>S-04：第一轮就已经相当可用。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-05 暗层接口与沉默练习室</h3>
+            <p>这一张的“被遗忘的城市底层”感觉是成立的，也已经出现了第四色痕迹和旧录音器物。但它现在更像概念艺术图，后续还需要更明确地连接风声婆婆与隐藏路径发现。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-05-dark-layer-silent-room-v1-qwen-image-plus.png" alt="S-05 暗层接口与沉默练习室" />
+              <figcaption>S-05：有气氛，适合作为暗层方向板。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-06 临时质疑预备区 / 证据冻结区</h3>
+            <p>这一轮已经把最大的跑偏问题收回来了。中式楼檐、书法挂幅、锁链和审判式构图都消失了，空间语言回到 chapter-01 真正需要的冷静制度冻结区。玻璃证据体、环形站位区和克制红色警示线都成立，当前可以直接作为正式场景母图进入生产；后续只需要在镜头设计里决定是否补人物站位或更明确的证据层级。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="S-06 证据冻结区 qwen-image-2.0-pro" />
+              <figcaption>S-06 / qwen-image-2.0-pro：证据冻结区已基本成立，可进入正式生产链。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-07 自由回响台</h3>
+            <p>这张已经很接近高潮空间的母图。它有公共性、悬浮性、城市正在倾听的感觉，也保留了足够的 UI 留白。后面可以在这个基础上继续做签署层和结果广播层。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="S-07 自由回响台" />
+              <figcaption>S-07：当前最值得直接继续扩展的高潮场景。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>S-09 未来湾回航 / 裂口档案墙</h3>
+            <p>这一轮已经明显收回了主场景身份。蜂巢档案墙、裂口发光痕、回航水岸和安静雾气都贴近 chapter-01 结尾空间，古典海港、旧船、亭阁和幽灵感的错误先验已经基本消失。它现在可以作为结尾母图使用；后续只需要再决定是否补团队回航站位，以及给数字导师过渡留多少留白。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="S-09 回航档案墙 qwen-image-2.0-pro" />
+              <figcaption>S-09 / qwen-image-2.0-pro：回航档案墙已成立，可作为结尾母图进入生产。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>镜头级资产</h2>
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>SHOT-A01 未来湾任务码头开场 POV</h3>
+            <p>镜头级生产已经正式启动。这一张是 chapter-01 开场第一镜的首帧 keyframe，对应“黑场亮起，你站在未来湾任务码头边缘，看见流光海”。当前版本已经具备第一人称到场感、未来湾冷蓝灰气质和足够的 UI 留白，能作为后续图生视频或轻动效开场镜头的初版基础。</p>
+            <ul>
+              <li>当前状态：`PASS WITH FIX`</li>
+              <li>已成立：第一人称站位、流光海、未来湾前夜气氛、镜头留白。</li>
+              <li>还可再修：中景里的任务平台识别度可以再高一点，让“未来湾任务码头”更一眼成立。</li>
+              <li>下一步：继续补 `A02` 建立镜头和 `A03` 灰银任务信号镜头，形成开场三镜头组。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+            <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="SHOT-A01 未来湾任务码头开场 POV" />
+              <figcaption>SHOT-A01 / qwen-image-2.0-pro：开场第一人称首帧已生成，可进入镜头级推进。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>下一步</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>人物优先顺序</h3>
+          <ol>
+            <li>序列员 07 已从硬失败提升到 `PASS WITH FIX`；下一轮只修冷感、压迫度和制度细节，不再推倒重来</li>
+            <li>保留闻夏工作态，重修她的 3/4 角度</li>
+            <li>保留林澄 3/4，重修她的工作态年龄感与界面洁净度</li>
+            <li>微调祁野的 12 岁感，并收一点手套存在感</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>下一轮场景动作</h3>
+          <ol>
+            <li>保留 S-01、S-02、S-04、S-06、S-07、S-09 作为第一批继续生产母图</li>
+            <li>二修 S-03，只清文字并保留当前空间纵深</li>
+            <li>`A01` 首帧已启动并出图；下一轮继续基于 S-01 拆开场建立镜头和角色进场镜头</li>
+            <li>在 S-01、S-06、S-09 都已成立的前提下，下一轮先不扩新场景，把现有可用母图往镜头生产推进</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:16px;">
+        <div class="card">
+          <h3>本轮已完成的模板重构</h3>
+          <ul>
+            <li>`C-03 round3b`：去掉 `officer / uniform / medals / epaulets` 词路，改成“系统注册官 / 行政架构员”方向。</li>
+            <li>`S-01`：去掉仪式化花瓣港口和异世界景观感，收回“实用任务码头”。</li>
+            <li>`S-06`：明确禁止书法、楼檐、锁链、挂幅、强红锁这类跑偏先验。</li>
+            <li>`S-09`：明确禁止古典海港、灯笼、旧船、幽灵感，收回“未来湾回航档案墙”。</li>
+            <li>`SHOT-A01`：新增第一人称开场首帧模板，开始从场景母图推进到镜头级资产。</li>
+            <li>生成脚本已兼容 `qwen-image-2.0 / qwen-image-2.0-pro` 的同步返回格式，并加入 `429` 退避重试。</li>
+          </ul>
+          <p class="subtle">以上修改已直接写回对应 API 请求模板，不再另建平行版本文档。</p>
+        </div>
+        <div class="card">
+          <h3>本轮已执行生成结果</h3>
+          <ol>
+            <li>`C-03 round3b` 已于 `2026-03-22 21:20:25` 用 `qwen-image-2.0-pro` 重跑完成，request id: `f3411303-a2fa-4fad-ab75-e29824dc9f47`</li>
+            <li>`S-01` 已于 `2026-03-22 21:30:09` 用 `qwen-image-2.0-pro` 重跑完成，request id: `3f67789c-b40e-4474-939d-df2ed5b7967c`</li>
+            <li>`S-06` 已于 `2026-03-22 21:22:00` 用 `qwen-image-2.0-pro` 重跑完成，request id: `4b668206-10b6-47c8-8045-f89afc62a76d`</li>
+            <li>`S-09` 已于 `2026-03-22 21:22:09` 用 `qwen-image-2.0-pro` 重跑完成，request id: `ec922707-ec31-4666-b8dd-441cb61df009`</li>
+            <li>`SHOT-A01` 已于 `2026-03-22 21:43:06` 用 `qwen-image-2.0-pro` 生成首帧，request id: `07dd6c3d-3562-4875-8591-eaad5e66a080`</li>
+          </ol>
+          <p class="subtle">旧的运行阻塞已解除：本机已恢复可用 `DASHSCOPE_API_KEY`，并已重新接通 DashScope 生成链路。</p>
+          <p class="subtle">复审结论已经更新：这 4 项里 `C-03 / S-01 / S-06 / S-09` 都较上一轮有明确实质性改善，其中 `S-01 / S-06 / S-09` 已可直接进入稳定生产链。</p>
+          <p class="subtle">镜头级生产也已起步：`SHOT-A01` 首帧已可作为未来湾开场气氛镜头的初版 keyframe，后续继续补 `A02 / A03` 即可形成完整开场镜头组。</p>
+          <p class="subtle">当前模型基线也已实时核验。语言侧最新可见 `3.5` 主线包括 `qwen3.5-plus`、`qwen3.5-flash`；视觉侧最新生图主线已出现 `qwen-image-2.0` 与 `qwen-image-2.0-pro`。因此下一轮失败项对照，优先切 `qwen-image-2.0-pro`。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

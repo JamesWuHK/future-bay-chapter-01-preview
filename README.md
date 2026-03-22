@@ -1,2 +1,3 @@
-# future-bay-chapter-01-preview
-Static preview for chapter 01 dossier and visual assets
+# Future Bay Chapter 01 Preview
+
+GitHub Pages static preview for the latest chapter 01 dossier.
