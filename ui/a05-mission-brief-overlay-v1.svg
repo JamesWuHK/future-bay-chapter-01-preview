@@ -1,4 +1,49 @@
 <svg width="1152" height="768" viewBox="0 0 1152 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stage-top,
+    .stage-core,
+    .stage-title,
+    .stage-left,
+    .stage-right,
+    .stage-bottom {
+      opacity: 0;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+    }
+    .stage-top { animation-name: fadeTop; }
+    .stage-core { animation-name: fadeCore; }
+    .stage-title { animation-name: fadeTitle; }
+    .stage-left { animation-name: fadeLeft; }
+    .stage-right { animation-name: fadeRight; }
+    .stage-bottom { animation-name: fadeBottom; }
+
+    @keyframes fadeTop {
+      0%, 8% { opacity: 0; }
+      12%, 100% { opacity: 0.94; }
+    }
+    @keyframes fadeCore {
+      0%, 10% { opacity: 0; }
+      18%, 100% { opacity: 1; }
+    }
+    @keyframes fadeTitle {
+      0%, 18% { opacity: 0; }
+      28%, 100% { opacity: 1; }
+    }
+    @keyframes fadeLeft {
+      0%, 28% { opacity: 0; }
+      40%, 100% { opacity: 1; }
+    }
+    @keyframes fadeRight {
+      0%, 36% { opacity: 0; }
+      48%, 100% { opacity: 1; }
+    }
+    @keyframes fadeBottom {
+      0%, 48% { opacity: 0; }
+      60%, 100% { opacity: 1; }
+    }
+  </style>
   <defs>
     <linearGradient id="ringStroke" x1="576" y1="126" x2="576" y2="662" gradientUnits="userSpaceOnUse">
       <stop stop-color="#EAF6FF" stop-opacity="0.95"/>
@@ -27,7 +72,7 @@
     </filter>
   </defs>
 
-  <g opacity="0.94">
+  <g class="stage-top" opacity="0.94">
     <rect x="76" y="52" width="202" height="42" rx="21" fill="#0E1C2C" fill-opacity="0.38" stroke="#D7F3FF" stroke-opacity="0.34"/>
     <text x="177" y="79" text-anchor="middle" fill="#E8F8FF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" letter-spacing="1">未来湾任务码头</text>
 
@@ -35,11 +80,11 @@
     <text x="966" y="79" text-anchor="middle" fill="#BDEFFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" letter-spacing="1">灰银级请求信号已接入</text>
   </g>
 
-  <g filter="url(#softGlow)" opacity="0.14">
+  <g class="stage-core" filter="url(#softGlow)" opacity="0.14">
     <ellipse cx="577" cy="390" rx="260" ry="140" fill="#91EEFF"/>
   </g>
 
-  <g>
+  <g class="stage-core">
     <circle cx="576" cy="390" r="122" stroke="url(#ringStroke)" stroke-opacity="0.28" stroke-width="2"/>
     <circle cx="576" cy="390" r="154" stroke="url(#ringStroke)" stroke-opacity="0.18" stroke-width="2"/>
     <path d="M260 392C325 392 378 360 426 360C483 360 505 416 575 416C639 416 673 350 745 350C807 350 835 392 891 392" stroke="url(#accentLine)" stroke-width="5" stroke-linecap="round"/>
@@ -50,17 +95,17 @@
     <circle cx="891" cy="392" r="10" fill="#8CE9FF"/>
   </g>
 
-  <g>
+  <g class="stage-title">
     <rect x="158" y="166" width="836" height="432" rx="28" fill="url(#panelFill)" stroke="url(#panelStroke)" stroke-width="2"/>
     <rect x="188" y="196" width="776" height="372" rx="22" fill="#07111C" fill-opacity="0.14" stroke="#D9F6FF" stroke-opacity="0.16"/>
   </g>
 
-  <g>
+  <g class="stage-left">
     <text x="576" y="224" text-anchor="middle" fill="#F4FBFF" font-size="32" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600" letter-spacing="2">时间档案城紧急请求</text>
     <text x="576" y="258" text-anchor="middle" fill="#BEEBFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">一名 12 岁居民拒绝签署《最优人生路径确认书》</text>
   </g>
 
-  <g>
+  <g class="stage-right">
     <rect x="220" y="274" width="272" height="168" rx="22" fill="#0B1624" fill-opacity="0.24" stroke="#D5F4FF" stroke-opacity="0.22"/>
     <text x="248" y="312" fill="#F2FAFF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">任务目标</text>
     <text x="248" y="346" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">以未来湾固定小队身份</text>
@@ -68,7 +113,7 @@
     <text x="248" y="406" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">这条人生是否被完整看见。</text>
   </g>
 
-  <g>
+  <g class="stage-bottom">
     <rect x="661" y="274" width="272" height="210" rx="22" fill="#0B1624" fill-opacity="0.24" stroke="#D5F4FF" stroke-opacity="0.22"/>
     <text x="689" y="312" fill="#F2FAFF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">队伍状态</text>
 

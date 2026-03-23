@@ -162,6 +162,14 @@
     .composite-stage img {
       pointer-events: none;
     }
+    .composite-stage object {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      pointer-events: none;
+    }
     figcaption {
       margin-top: 8px;
       font-size: 13px;
@@ -961,10 +969,11 @@
               <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
               <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
               <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的接近成片效果。</li>
-              <li>下一步：在这条合成预览基础上，再补阿潮掠过时机和简报层淡入节奏。</li>
+              <li>已完成：`A05 UI overlay v1` 已升级为 5 秒循环的分拍淡入版，节奏顺序为“顶部状态 -> 标题 -> 左卡 -> 右卡 -> 底部按钮”。</li>
+              <li>下一步：在这条合成预览基础上，再补阿潮掠过时机，并决定按钮是否需要更明显的最终落点。</li>
             </ul>
             <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
-            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。</p>
+            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。现在连 UI 的出场节奏也已经进入可视化状态。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -992,9 +1001,9 @@
             <figure>
               <div class="composite-stage">
                 <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
-                <img src="ui/a05-mission-brief-overlay-v1.svg" alt="A05 composite browser preview" />
+                <object type="image/svg+xml" data="ui/a05-mission-brief-overlay-v1.svg" aria-label="A05 composite browser preview"></object>
               </div>
-              <figcaption>A05 composite preview：当前直接在页面内做浏览器叠层预览，用 clean plate 底板承载任务简报 UI，避免把假文字和白底错误固化进视频资产。</figcaption>
+              <figcaption>A05 composite preview：当前在页面内直接做浏览器叠层预览。overlay 资产已经改成 5 秒循环的分拍淡入：先出顶部状态，再出标题，再依次点亮任务目标、队伍状态和底部按钮。</figcaption>
             </figure>
           </div>
         </div>
