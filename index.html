@@ -200,7 +200,7 @@
         </div>
         <div class="card">
           <div class="tiny">当前制作状态</div>
-          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图，开场分镜已补出 5 张首帧，`A04` 已经从 production 包推进到真实出图、图生视频和可入纵切的裁剪试片，`A05` 也已经完成首帧与首条视频验证</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。本轮最重要的人物修正是：`玩家主位锚点` 已补上，`守望者 / 父亲` 的视觉职责已开始拉开，不再停留在“两个差不多的成年男性”。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字；开场镜头组 `A01 / A02 / A03 / A04 / A05` 已经开始成链，其中 `A04` 已经拿到了 `PASS WITH TRIM` 的 `3.4s / 480P` 正式试片，而 `A05` 已明确验证出下一步应改走 `clean plate + UI 后叠`。</p>
+          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图，开场分镜已补出 6 张关键首帧，`A04` 已经从 production 包推进到真实出图、图生视频和可入纵切的裁剪试片，`A05` 也已经跑通 clean plate 底板</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。本轮最重要的人物修正是：`玩家主位锚点` 已补上，`守望者 / 父亲` 的视觉职责已开始拉开，不再停留在“两个差不多的成年男性”。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字；开场镜头组 `A01 / A02 / A03 / A04 / A05` 已经开始成链，其中 `A04` 已经拿到了 `PASS WITH TRIM` 的 `3.4s / 480P` 正式试片，而 `A05` 已经从失败的整 UI 视频改走 `clean plate + UI 后叠`，并拿到可用底板视频。</p>
         </div>
       </div>
     </section>
@@ -930,16 +930,19 @@
             <h3>SHOT-A05 任务简报展开</h3>
             <p>这一步负责把“责任已经交到你手里”推进成“任务信息正在世界内展开”。它不是一个普通 UI 截图，而是要验证我们能不能让任务简报继续留在未来湾世界里，而不是把孩子拉回课堂或游戏大厅。</p>
             <ul>
-              <li>当前状态：`KEYFRAME GENERATED / VIDEO V1 FAILED_GATE`</li>
+              <li>当前状态：`UI VIDEO FAILED_GATE / CLEAN PLATE VIDEO PASS`</li>
               <li>已完成：`SHOT-A05` 首帧已于 `2026-03-23 12:35` 用 `qwen-image-2.0-pro` 生成，request id: `47969b84-628e-4a05-a53c-6d354f59d4b9`。</li>
               <li>已完成：`v1` 视频已于 `2026-03-23 12:40` 用 `wan2.2-i2v-flash` 生成，submit request id: `5886558b-b336-410e-af28-3c66ee3b0e90`，task id: `94d90821-bb40-4051-8df5-bb9cc76c6290`。</li>
               <li>通过点：夜景、港口空间和简报层的大结构已经成立，说明 `A05` 的世界内任务简报方向是可做的。</li>
               <li>失败点：视频从开头就稳定长出乱码标题和底部乱码行，末段还把“远处轻光迹”放大成了实体飞行器入画。</li>
               <li>复审结论：这条 `v1` 不是“可裁可救”，而是按 skill 应记为 `FAILED_GATE`。</li>
-              <li>下一步：`A05` 的视频路线要改成 `clean plate motion + UI 后叠`，不再要求模型直接生成完整任务简报 UI。</li>
+              <li>已完成：`clean plate` 首帧已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`。</li>
+              <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
+              <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
+              <li>下一步：`A05` 不再盲跑“完整任务简报视频”，而是以这条底板为基底做 `UI 后叠`。</li>
             </ul>
             <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
-            <p class="subtle">换句话说，`A05` 这一步虽然视频没通过，但并没有白跑。它帮我们把 chapter-01 开场镜头的生产分工切得更清楚了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。</p>
+            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -949,6 +952,14 @@
             <figure>
             <video controls preload="metadata" src="videos/shot-a05-mission-brief-expand-wan2.2-i2v-flash-v1-480p.mp4"></video>
               <figcaption>SHOT-A05 / wan2.2-i2v-flash：首条视频已生成，但因乱码文字和实体飞行器入画，被正式判定为 `FAILED_GATE`。</figcaption>
+            </figure>
+            <figure>
+            <img src="shots/shot-a05-mission-brief-clean-plate-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 clean plate 首帧" />
+              <figcaption>SHOT-A05 clean plate / qwen-image-2.0-pro：干净底板首帧已通过，可直接承载后叠任务简报 UI。</figcaption>
+            </figure>
+            <figure>
+            <video controls preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
+              <figcaption>SHOT-A05 clean plate / wan2.2-i2v-flash：底板视频已通过当前质量门，当前可作为 `A05` 的正式 motion plate。</figcaption>
             </figure>
           </div>
         </div>
@@ -974,7 +985,7 @@
             <li>保留 S-01、S-02、S-04、S-06、S-07、S-09 作为第一批继续生产母图</li>
             <li>二修 S-03，只清文字并保留当前空间纵深</li>
             <li>`A04` 已完成首帧、`Wan v2` 和 `3.4s` trim 正式试片；这一条已经可以作为开场责任交付镜头进入纵切</li>
-            <li>`A05` 已完成首帧和首条视频验证；下一步不再盲跑完整 UI 视频，而是改走 `clean plate motion + UI 后叠`</li>
+            <li>`A05` 已跑通 `clean plate motion + UI 后叠` 的第一步，当前已有正式可用底板视频</li>
             <li>在 S-01、S-06、S-09 都已成立的前提下，继续把可用母图往镜头生产推进，而不是横向扩新场景</li>
           </ol>
         </div>
@@ -1015,6 +1026,8 @@
             <li>`SHOT-A04 video v2` 已于 `2026-03-23 12:08` 用 `wan2.2-i2v-flash` 生成成功，submit request id: `ab19b2f3-e278-44e5-909f-d713f6c1c715`，task id: `cc4ad893-ef77-4d17-8372-c8db4bf2ad1b`；经 QC 判定为 `PASS WITH TRIM`，当前正式资产为 `3.4s` trim 版</li>
             <li>`SHOT-A05` 已于 `2026-03-23 12:35` 用 `qwen-image-2.0-pro` 生成任务简报展开首帧，request id: `47969b84-628e-4a05-a53c-6d354f59d4b9`</li>
             <li>`SHOT-A05 video v1` 已于 `2026-03-23 12:40` 用 `wan2.2-i2v-flash` 生成，submit request id: `5886558b-b336-410e-af28-3c66ee3b0e90`，task id: `94d90821-bb40-4051-8df5-bb9cc76c6290`；经 QC 判定为 `FAILED_GATE`，下一步改走 `clean plate motion + UI 后叠`</li>
+            <li>`SHOT-A05 clean plate` 已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成底板首帧，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`</li>
+            <li>`SHOT-A05 clean plate video v1` 已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`；经 QC 判定为 `PASS`，当前作为 `A05` 正式底板</li>
           </ol>
           <p class="subtle">当前最新状态已经纠正：默认 shell 里虽然没有自动注入 `DASHSCOPE_API_KEY`，但本轮已经从本机可恢复来源中找回可用 key，并成功跑通 `SHOT-A04` 的 DashScope 生图链路。</p>
           <p class="subtle">复审结论已经更新：`玩家主位锚点` 已经补上；`守望者 / 父亲` 的脸型、年龄感和气质分工已经明显拉开；`风声婆婆` 仍属于 `PASS WITH FIX`，但方向已经成立。</p>
