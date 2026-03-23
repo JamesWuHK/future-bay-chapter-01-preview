@@ -1008,6 +1008,30 @@
           </div>
         </div>
       </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>SHOT-A06 接受航行后的航线点亮</h3>
+            <p>这一步负责把 `接受航行` 从一个按钮动作，真正变成“我们已经出发了”的镜头过渡。现在已经正式把它和 `A05` 拆开：`A05` 只负责任务被唤起，`A06` 才负责启航、方向和阿潮的执行型提示。</p>
+            <ul>
+              <li>当前状态：`KEYFRAME V1 FAILED / KEYFRAME V2 PASS WITH GO`</li>
+              <li>已完成：`A06 v1` 首帧已生成，但失败得很明确，模型把前方航道误解成了巨型悬浮平台主角，不适合作为“启航过渡”。</li>
+              <li>已完成：`A06 v2` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 重跑成功，request id: `3cbc36ec-2edf-4c89-a821-a4c09ca6c7a1`。</li>
+              <li>通过点：镜头终于回到了正确职责，脚下航线被点亮，方向感清楚，时间档案城只作为远处目的地存在，没有再把画面中心交给一个陌生大型结构。</li>
+              <li>当前决定：后续视频验证应直接从 `A06 v2` 出发，不再回到 `A05` 内部继续塞启动动作。</li>
+              <li>下一步：用 `A06 v2` 进入 `Wan i2v`，验证“航线依次点亮 -> 视线被前方牵引 -> 远处城市成立”这一条最小 SOP。</li>
+            </ul>
+            <p class="subtle">这一步的修正很有代表性。第一版 prompt 虽然说了“目的地在远处”，但没有把“天空必须留空、前方不能有巨型主体”写死，所以模型顺手补出了一个中央悬浮平台。`A06 v2` 之所以更对，不是因为运气，而是因为把镜头功能限制得更明确了。</p>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 接受航行后的航线点亮 v2" />
+              <figcaption>SHOT-A06 v2 / qwen-image-2.0-pro：当前更接近正式 production 路线的起始帧。它把镜头重心放回“脚下航线点亮 + 远处目的地”，而不是让陌生大型结构占据画面中心。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -1030,6 +1054,7 @@
             <li>二修 S-03，只清文字并保留当前空间纵深</li>
             <li>`A04` 已完成首帧、`Wan v2` 和 `3.4s` trim 正式试片；这一条已经可以作为开场责任交付镜头进入纵切</li>
             <li>`A05` 已跑通 `clean plate motion + UI 后叠` 的前三步，当前已有正式可用底板视频、首版 UI overlay，以及浏览器叠层合成预览</li>
+            <li>`A06` 已完成职责拆分与 `v2` 首帧，当前下一条最值得继续推进的视频目标已经从“继续磨 A05”切换为“让 A06 启航过渡跑通”</li>
             <li>在 S-01、S-06、S-09 都已成立的前提下，继续把可用母图往镜头生产推进，而不是横向扩新场景</li>
           </ol>
         </div>
@@ -1074,6 +1099,8 @@
             <li>`SHOT-A05 clean plate video v1` 已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`；经 QC 判定为 `PASS`，当前作为 `A05` 正式底板</li>
             <li>`A05 UI overlay v1` 已生成 SVG 叠层资产，可直接叠加到 `A05 clean plate` 上进入下一轮合成验证</li>
             <li>`A05 composite preview` 已在主文档中通过浏览器原生叠层方式挂出，用于快速验证底板视频与 UI overlay 的整体成立度</li>
+            <li>`SHOT-A06 v1` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 生成，但因误长出中央巨型悬浮平台，不作为后续 production 起始帧</li>
+            <li>`SHOT-A06 v2` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 重跑成功，request id: `3cbc36ec-2edf-4c89-a821-a4c09ca6c7a1`；当前作为 `A06` 后续图生视频的正式起始帧</li>
           </ol>
           <p class="subtle">当前最新状态已经纠正：默认 shell 里虽然没有自动注入 `DASHSCOPE_API_KEY`，但本轮已经从本机可恢复来源中找回可用 key，并成功跑通 `SHOT-A04` 的 DashScope 生图链路。</p>
           <p class="subtle">复审结论已经更新：`玩家主位锚点` 已经补上；`守望者 / 父亲` 的脸型、年龄感和气质分工已经明显拉开；`风声婆婆` 仍属于 `PASS WITH FIX`，但方向已经成立。</p>
