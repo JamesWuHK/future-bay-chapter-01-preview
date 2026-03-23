@@ -5,43 +5,138 @@
     .stage-title,
     .stage-left,
     .stage-right,
-    .stage-bottom {
+    .stage-team,
+    .stage-countdown,
+    .stage-actions {
       opacity: 0;
-      animation-duration: 5s;
+      animation-duration: 7.2s;
       animation-iteration-count: infinite;
-      animation-timing-function: ease;
+      animation-timing-function: cubic-bezier(0.22, 0.78, 0.22, 1);
       animation-fill-mode: both;
+      transform-box: fill-box;
+      transform-origin: center;
     }
     .stage-top { animation-name: fadeTop; }
     .stage-core { animation-name: fadeCore; }
     .stage-title { animation-name: fadeTitle; }
     .stage-left { animation-name: fadeLeft; }
     .stage-right { animation-name: fadeRight; }
-    .stage-bottom { animation-name: fadeBottom; }
+    .stage-team { animation-name: fadeTeam; }
+    .stage-countdown { animation-name: fadeCountdown; }
+    .stage-actions { animation-name: fadeActions; }
+    .soft-drift {
+      animation: softDrift 7.2s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .core-breathe {
+      animation: coreBreathe 7.2s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .button-settle {
+      animation: buttonSettle 7.2s cubic-bezier(0.18, 0.82, 0.22, 1) infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .countdown-pulse {
+      animation: countdownPulse 7.2s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: left center;
+    }
+    .button-glow {
+      animation: buttonGlow 7.2s ease-in-out infinite;
+    }
+    .status-shimmer {
+      animation: statusShimmer 7.2s ease-in-out infinite;
+    }
 
     @keyframes fadeTop {
-      0%, 8% { opacity: 0; }
-      12%, 100% { opacity: 0.94; }
+      0%, 5% { opacity: 0; transform: translateY(-12px) scale(0.985); }
+      11% { opacity: 0.94; transform: translateY(0px) scale(1); }
+      94% { opacity: 0.94; transform: translateY(0px) scale(1); }
+      100% { opacity: 0; transform: translateY(-8px) scale(0.99); }
     }
     @keyframes fadeCore {
-      0%, 10% { opacity: 0; }
-      18%, 100% { opacity: 1; }
+      0%, 8% { opacity: 0; transform: scale(0.96); }
+      16% { opacity: 1; transform: scale(1); }
+      95% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.985); }
     }
     @keyframes fadeTitle {
-      0%, 18% { opacity: 0; }
-      28%, 100% { opacity: 1; }
+      0%, 15% { opacity: 0; transform: translateY(18px); }
+      24% { opacity: 1; transform: translateY(0px); }
+      95% { opacity: 1; transform: translateY(0px); }
+      100% { opacity: 0; transform: translateY(8px); }
     }
     @keyframes fadeLeft {
-      0%, 28% { opacity: 0; }
-      40%, 100% { opacity: 1; }
+      0%, 24% { opacity: 0; transform: translateX(-22px) translateY(9px); }
+      35% { opacity: 1; transform: translateX(0px) translateY(0px); }
+      95% { opacity: 1; transform: translateX(0px) translateY(0px); }
+      100% { opacity: 0; transform: translateX(-10px) translateY(5px); }
     }
     @keyframes fadeRight {
-      0%, 36% { opacity: 0; }
-      48%, 100% { opacity: 1; }
+      0%, 32% { opacity: 0; transform: translateX(24px) translateY(10px); }
+      44% { opacity: 1; transform: translateX(0px) translateY(0px); }
+      95% { opacity: 1; transform: translateX(0px) translateY(0px); }
+      100% { opacity: 0; transform: translateX(10px) translateY(4px); }
     }
-    @keyframes fadeBottom {
-      0%, 48% { opacity: 0; }
-      60%, 100% { opacity: 1; }
+    @keyframes fadeTeam {
+      0%, 41% { opacity: 0; transform: translateY(18px) scale(0.972); }
+      54% { opacity: 1; transform: translateY(0px) scale(1); }
+      95% { opacity: 1; transform: translateY(0px) scale(1); }
+      100% { opacity: 0; transform: translateY(8px) scale(0.988); }
+    }
+    @keyframes fadeCountdown {
+      0%, 53% { opacity: 0; transform: translateX(-12px) translateY(14px) scale(0.975); }
+      65% { opacity: 1; transform: translateX(0px) translateY(0px) scale(1); }
+      95% { opacity: 1; transform: translateX(0px) translateY(0px) scale(1); }
+      100% { opacity: 0; transform: translateX(-8px) translateY(6px) scale(0.99); }
+    }
+    @keyframes fadeActions {
+      0%, 61% { opacity: 0; transform: translateY(20px) scale(0.965); }
+      72% { opacity: 1; transform: translateY(0px) scale(1); }
+      95% { opacity: 1; transform: translateY(0px) scale(1); }
+      100% { opacity: 0; transform: translateY(8px) scale(0.99); }
+    }
+    @keyframes softDrift {
+      0%, 100% { transform: translateY(0px); }
+      24% { transform: translateY(-2px); }
+      58% { transform: translateY(1.5px); }
+      82% { transform: translateY(-1px); }
+    }
+    @keyframes coreBreathe {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      34% { transform: scale(1.01); opacity: 0.96; }
+      66% { transform: scale(0.994); opacity: 1; }
+      84% { transform: scale(1.006); opacity: 0.97; }
+    }
+    @keyframes buttonSettle {
+      0%, 64% { transform: translateY(16px) scale(0.97); }
+      72% { transform: translateY(0px) scale(1); }
+      77% { transform: translateY(-2px) scale(1.012); }
+      84% { transform: translateY(0px) scale(1); }
+      89% { transform: translateY(-0.5px) scale(1.004); }
+      100% { transform: translateY(0px) scale(1); }
+    }
+    @keyframes countdownPulse {
+      0%, 63% { opacity: 0; transform: translateX(-3px); }
+      65% { opacity: 1; transform: translateX(0px); }
+      75% { opacity: 0.94; transform: translateX(0px); }
+      84% { opacity: 1; transform: translateX(0.5px); }
+      100% { opacity: 0.97; transform: translateX(0px); }
+    }
+    @keyframes buttonGlow {
+      0%, 72% { opacity: 0.92; }
+      80% { opacity: 1; }
+      88% { opacity: 0.95; }
+      100% { opacity: 0.98; }
+    }
+    @keyframes statusShimmer {
+      0%, 45% { opacity: 0.86; }
+      56% { opacity: 1; }
+      74% { opacity: 0.92; }
+      100% { opacity: 0.98; }
     }
   </style>
   <defs>
@@ -83,11 +178,11 @@
     <text x="966" y="79" text-anchor="middle" fill="#BDEFFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" letter-spacing="1">灰银级请求信号已接入</text>
   </g>
 
-  <g class="stage-core" filter="url(#softGlow)" opacity="0.14">
+  <g class="stage-core core-breathe" filter="url(#softGlow)" opacity="0.14">
     <ellipse cx="577" cy="390" rx="260" ry="140" fill="#91EEFF"/>
   </g>
 
-  <g class="stage-core">
+  <g class="stage-core core-breathe">
     <circle cx="576" cy="390" r="122" stroke="url(#ringStroke)" stroke-opacity="0.28" stroke-width="2"/>
     <circle cx="576" cy="390" r="154" stroke="url(#ringStroke)" stroke-opacity="0.18" stroke-width="2"/>
     <path d="M260 392C325 392 378 360 426 360C483 360 505 416 575 416C639 416 673 350 745 350C807 350 835 392 891 392" stroke="url(#accentLine)" stroke-width="5" stroke-linecap="round"/>
@@ -98,17 +193,17 @@
     <circle cx="891" cy="392" r="10" fill="#8CE9FF"/>
   </g>
 
-  <g class="stage-title">
+  <g class="stage-title soft-drift">
     <rect x="158" y="166" width="836" height="432" rx="28" fill="url(#panelFill)" stroke="url(#panelStroke)" stroke-width="2"/>
     <rect x="188" y="196" width="776" height="372" rx="22" fill="#07111C" fill-opacity="0.14" stroke="#D9F6FF" stroke-opacity="0.16"/>
   </g>
 
-  <g class="stage-left">
+  <g class="stage-left soft-drift">
     <text x="576" y="224" text-anchor="middle" fill="#F4FBFF" font-size="32" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600" letter-spacing="2">时间档案城紧急请求</text>
     <text x="576" y="258" text-anchor="middle" fill="#BEEBFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">一名 12 岁居民拒绝签署《最优人生路径确认书》</text>
   </g>
 
-  <g class="stage-right">
+  <g class="stage-right soft-drift">
     <rect x="220" y="274" width="272" height="168" rx="22" fill="#0B1624" fill-opacity="0.24" stroke="#D5F4FF" stroke-opacity="0.22"/>
     <text x="248" y="312" fill="#F2FAFF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">任务目标</text>
     <text x="248" y="346" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">以未来湾固定小队身份</text>
@@ -117,17 +212,18 @@
   </g>
 
   <g opacity="0">
-    <animate attributeName="opacity" values="0;0;0;0.88;0.72;0" keyTimes="0;0.58;0.66;0.74;0.84;1" dur="5s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="180 -72;140 -52;72 -24;12 -2;-28 10;180 -72" keyTimes="0;0.58;0.68;0.76;0.84;1" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0.08;0.44;0.82;0.62;0.18;0" keyTimes="0;0.52;0.6;0.67;0.75;0.82;0.9;1" dur="7.2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="216 -90;182 -70;146 -48;104 -28;48 -10;-4 3;-34 10;216 -90" keyTimes="0;0.52;0.6;0.68;0.76;0.84;0.92;1" dur="7.2s" repeatCount="indefinite"/>
     <g filter="url(#achaoGlow)">
-      <path d="M836 176C875 167 914 156 972 136" stroke="#8FEAFF" stroke-opacity="0.56" stroke-width="9" stroke-linecap="round"/>
-      <path d="M962 136C981 129 999 125 1025 121" stroke="#D9F8FF" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round"/>
-      <path d="M1003 118L1038 110L1012 132Z" fill="#E7FBFF" fill-opacity="0.68"/>
-      <circle cx="1004" cy="121" r="6" fill="#FFE3AE" fill-opacity="0.82"/>
+      <path d="M826 180C865 170 910 160 972 137" stroke="#8FEAFF" stroke-opacity="0.36" stroke-width="8" stroke-linecap="round"/>
+      <path d="M854 164C902 151 949 136 1016 114" stroke="#8FEAFF" stroke-opacity="0.2" stroke-width="4" stroke-linecap="round"/>
+      <path d="M966 135C986 128 1005 123 1030 118" stroke="#D9F8FF" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round"/>
+      <path d="M1006 116L1041 108L1015 131Z" fill="#E7FBFF" fill-opacity="0.62"/>
+      <circle cx="1008" cy="120" r="5.5" fill="#FFE3AE" fill-opacity="0.78"/>
     </g>
   </g>
 
-  <g class="stage-bottom">
+  <g class="stage-team button-settle status-shimmer">
     <rect x="661" y="274" width="272" height="210" rx="22" fill="#0B1624" fill-opacity="0.24" stroke="#D5F4FF" stroke-opacity="0.22"/>
     <text x="689" y="312" fill="#F2FAFF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">队伍状态</text>
 
@@ -144,17 +240,17 @@
     <text x="707" y="468" fill="#DDF6FF" font-size="15" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">阿潮：航线已预热</text>
   </g>
 
-  <g>
+  <g class="stage-countdown soft-drift">
     <rect x="220" y="468" width="272" height="86" rx="20" fill="#0B1624" fill-opacity="0.20" stroke="#D5F4FF" stroke-opacity="0.18"/>
     <text x="248" y="502" fill="#F2FAFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">倒计时</text>
-    <text x="248" y="536" fill="#BCEFFF" font-size="28" font-family="'SFMono-Regular','Menlo','PingFang SC',monospace" letter-spacing="2">距午夜归档 05:59:48</text>
+    <text class="countdown-pulse" x="248" y="536" fill="#BCEFFF" font-size="28" font-family="'SFMono-Regular','Menlo','PingFang SC',monospace" letter-spacing="2">距午夜归档 05:59:48</text>
   </g>
 
-  <g>
-    <rect x="412" y="620" width="150" height="52" rx="26" fill="url(#buttonFill)" stroke="#D5F4FF" stroke-opacity="0.28"/>
+  <g class="stage-actions button-settle">
+    <rect class="button-glow" x="412" y="620" width="150" height="52" rx="26" fill="url(#buttonFill)" stroke="#D5F4FF" stroke-opacity="0.28"/>
     <text x="487" y="653" text-anchor="middle" fill="#E8F9FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">查看任务简报</text>
 
-    <rect x="590" y="620" width="150" height="52" rx="26" fill="#DFFBFF" fill-opacity="0.18" stroke="#BDF0FF" stroke-opacity="0.48"/>
+    <rect class="button-glow" x="590" y="620" width="150" height="52" rx="26" fill="#DFFBFF" fill-opacity="0.18" stroke="#BDF0FF" stroke-opacity="0.48"/>
     <text x="665" y="653" text-anchor="middle" fill="#F3FCFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" font-weight="600">接受航行</text>
   </g>
 </svg>

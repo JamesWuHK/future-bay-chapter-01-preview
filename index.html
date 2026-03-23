@@ -969,8 +969,8 @@
               <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
               <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
               <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的接近成片效果。</li>
-              <li>已完成：`A05 UI overlay v1` 已升级为 5 秒循环的分拍淡入版，节奏顺序为“顶部状态 -> 标题 -> 左卡 -> 右卡 -> 阿潮轻掠过 -> 底部按钮”。</li>
-              <li>下一步：在这条合成预览基础上，再决定按钮是否需要更明显的最终落点，以及阿潮是否留一声极轻播报给 `A06` 承接。</li>
+              <li>已完成：`A05 UI overlay v1` 已进一步改成 `7.2s` 的“召唤式展开 + 长停留呼吸”，并把倒计时、队伍状态、底部按钮统一纳入同一出场逻辑。</li>
+              <li>当前关注点：继续观察阿潮这一下是否应该完全后移到 `A06`，避免 `A05` 的责任展开被趣味节奏分散。</li>
             </ul>
             <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
             <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。现在连 UI 的出场节奏也已经进入可视化状态。</p>
@@ -996,14 +996,14 @@
               <div style="background:#09111c;border-radius:18px;padding:12px;">
                 <img src="ui/a05-mission-brief-overlay-v1.svg" alt="A05 mission brief UI overlay v1" />
               </div>
-              <figcaption>A05 UI overlay v1：已把任务标题、任务目标、队伍状态和主按钮整理成可控叠层，并补入阿潮远处轻掠过的节奏位。</figcaption>
+              <figcaption>A05 UI overlay v1：现在不再是“全屏 UI 循环齐进齐出”，而是让任务简报像被系统正式唤起一样逐层展开，再进入较长停留与轻呼吸。</figcaption>
             </figure>
             <figure>
               <div class="composite-stage">
                 <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
                 <object type="image/svg+xml" data="ui/a05-mission-brief-overlay-v1.svg" aria-label="A05 composite browser preview"></object>
               </div>
-              <figcaption>A05 composite preview：当前在页面内直接做浏览器叠层预览。overlay 资产已经改成 5 秒循环的分拍淡入：先出顶部状态，再出标题，再依次点亮任务目标、队伍状态，随后让阿潮从右上远处轻掠过，最后才落底部按钮。</figcaption>
+              <figcaption>A05 composite preview：当前在页面内直接做浏览器叠层预览。overlay 已改成 `7.2s` 的长节奏版：先召唤顶部状态和核心光脉冲，再落标题、任务目标、队伍状态，随后补进倒计时与动作按钮，阿潮只保留一次远处轻掠过，整体更接近“任务被唤起”而不是“模板 UI 循环播放”。</figcaption>
             </figure>
           </div>
         </div>
