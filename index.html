@@ -291,13 +291,14 @@
           <ul>
             <li>当前状态：`PART-1 DELIVERY V1 PASS WITH NEXT-PHASE NOTES`</li>
             <li>输出文件：`part-01-future-bay-task-dock-delivery-v1.mp4`</li>
-            <li>成片规格：`1152x768 / 30fps / 24.4s / AAC stereo`</li>
+            <li>成片规格：`1152x768 / 30fps / 23.9s / AAC stereo`</li>
             <li>音频路线：底层循环使用 `A06` 已验证环境音，叠加 4 条中文占位 TTS 守望者台词，验证“镜头 + 配音 + 环境声 + UI 合成”全链路。</li>
             <li>制作路线：`A01-A03 stabilized still-motion` -> `A04 verified trim clip` -> `A05 clean plate + static delivery overlay composite` -> `A06 verified i2v` -> `placeholder zh-CN TTS` -> `full assembly`。</li>
-            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标；最新一轮已按导演室结论把前半段收成稳镜头版，修掉了开场持续晃动的问题。如果要进入正式交付，下一轮优先级应是把占位 TTS 换成正式试音包，并判断 `A01-A03` 是否值得逐步升级成真实视频。</li>
+            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标；最新两轮已经先按导演室结论把前半段收成稳镜头版，再按剪辑审片把 `A05` 收短并更早切入 `A06`。如果要进入正式交付，下一轮优先级应是把占位 TTS 换成正式试音包，并判断 `A04-A05` 是否还需要更柔和的桥接声音。</li>
           </ul>
           <p class="subtle">这一版最重要的价值不是“已经完美”，而是证明 chapter-01 终于拥有了一条可重复执行的 `part-level assembly` 路线。以后遇到“有些镜头是真视频、有些只有稳定首帧、有些要走 UI 后叠”的情况，不必再靠手工拼接和临场记忆处理。</p>
           <p class="subtle">这次修正也把一个重要经验钉死了：开场 still-motion 不是不能用，但必须服从导演调度。对 `Part 1` 来说，前半段真正需要的是稳定到场、责任被唤起，而不是每一镜都在飘。</p>
+          <p class="subtle">最近这一轮 `editor` 结论也已经落实：上一版的 `A05` 面板停留略久，所以现在把它从 `5.0s` 收到 `4.5s`，并让守望者最后一句更明确地把画面带进 `A06` 的启航镜头。</p>
           <p class="subtle">`A05` 现在也正式分成两层：页面里保留 `SVG` 浏览器预览，负责 look-dev；真正进入成片交付时，改用脚本生成的静态任务简报 overlay，避免把浏览器动画误当成视频可交付资产。</p>
         </div>
         <div class="image-grid">
