@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 01 人物主文档</title>
+  <title>Chapter 01 资产总览</title>
   <style>
     :root {
       --bg: #f2f6fa;
@@ -84,21 +84,6 @@
       letter-spacing: 0.08em;
       margin-bottom: 8px;
     }
-    .tagrow {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .tag {
-      background: #eef5fb;
-      border: 1px solid #d6e7f2;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 12px;
-      color: #255d78;
-      font-weight: 700;
-    }
     .compare {
       border-top: 1px solid var(--line);
       padding-top: 18px;
@@ -150,24 +135,19 @@
       aspect-ratio: 3 / 2;
     }
     .composite-stage video,
-    .composite-stage img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0;
-      background: transparent;
-    }
-    .composite-stage img {
-      pointer-events: none;
-    }
+    .composite-stage img,
     .composite-stage object {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
       border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+    .composite-stage img,
+    .composite-stage object {
       pointer-events: none;
     }
     figcaption {
@@ -175,28 +155,11 @@
       font-size: 13px;
       color: var(--muted);
     }
-    pre {
-      margin: 10px 0 0;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: #10202c;
-      color: #edf6fb;
-      font-size: 13px;
-      line-height: 1.6;
-      white-space: pre-wrap;
-      word-break: break-word;
-      overflow: auto;
-      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
-    }
     ul {
       margin: 8px 0 0 18px;
       padding: 0;
     }
     li { margin-bottom: 6px; }
-    .warn {
-      background: var(--warm);
-      border-color: #efd4c1;
-    }
     .subtle { color: var(--muted); }
     @media (max-width: 920px) {
       .grid.two, .grid.three, .compare-grid, .image-grid {
@@ -211,263 +174,184 @@
 <body>
   <div class="wrap">
     <section class="hero">
-      <h1>Chapter 01 人物主文档</h1>
-      <p class="lead">以后人物问题只维护这一个文件。你只需要看这里，我会把人物设定、在故事中的作用、当前定妆状态、图片对比和 robot 伙伴判断都集中更新到这份文档里。</p>
-      <div class="pill">唯一主文档：人物设定 + 定妆迭代 + robot 伙伴判断</div>
+      <h1>Chapter 01 资产总览</h1>
+      <p class="lead">这份页面只保留 chapter-01 当前仍有长期价值的资产入口：稳定角色、场景母图、关键镜头、交付视频与可复用 UI 层。不再保存过程复盘、失败分支、请求日志或临时计划。</p>
+      <div class="pill">唯一主入口：角色 + 场景 + 镜头 + 视频交付</div>
     </section>
 
     <section class="section">
-      <h2>总判断</h2>
+      <h2>当前总览</h2>
       <div class="grid three">
         <div class="card">
           <div class="tiny">固定团队</div>
-          <p><span class="label">真正的主角阵列</span> 是“玩家主位 + 林澄 + 祁野 + 闻夏 + 回响 + 守望者 + 阿潮”，再加上长期灰度对手序列员 07。</p>
+          <p><span class="label">主角阵列</span> 已收束为玩家主位、林澄、祁野、闻夏、回响、档案守望者、阿潮，以及制度对手序列员 07。</p>
         </div>
         <div class="card">
-          <div class="tiny">长线阴影</div>
-          <p><span class="label">持续推动故事的主问题</span> 不是单一议题，而是“温柔托管”这条长期阴影。</p>
+          <div class="tiny">主场景</div>
+          <p><span class="label">当前稳定母图</span> 为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，足以支撑 chapter-01 的开场、制度压力、公共表达与回航收束。</p>
         </div>
         <div class="card">
-          <div class="tiny">当前制作状态</div>
-          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图，开场分镜已补出 6 张关键首帧，`A04` 已经从 production 包推进到真实出图、图生视频和可入纵切的裁剪试片，`A05` 也已经跑通 clean plate 底板并补出首版 UI 叠层资产</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。本轮最重要的人物修正是：`玩家主位锚点` 已补上，`守望者 / 父亲` 的视觉职责已开始拉开，不再停留在“两个差不多的成年男性”。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字；开场镜头组 `A01 / A02 / A03 / A04 / A05 / A06` 已经开始成链，其中 `A04` 已经拿到了 `PASS WITH TRIM` 的 `3.4s / 480P` 正式试片，`A05` 已经从失败的整 UI 视频改走 `clean plate + UI 后叠`，而 `A06` 已补出 `route-only v2` 主起始帧、`阿潮可见入镜 v2` 试用首帧，并且已经首次跑通 `wan2.6 / 720P / auto audio` 的主线启航视频。</p>
+          <div class="tiny">交付状态</div>
+          <p><span class="label">Part 1</span> 已升级到 `v2`，完成 `A01-A06` 的画面装配、任务简报叠层、多角色试音和基础世界内音效。</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>提示词反思与定稿策略</h2>
-      <div class="grid two">
-        <div class="card warn">
-          <h3>为什么之前迟迟不到位</h3>
-          <ol>
-            <li><span class="label">我把“角色定义”直接当成了“生图提示词”</span>。这会导致提示词里混进太多抽象概念，比如“制度成立”“公共表达”“温柔托管”，模型会自己脑补成它最熟悉的视觉套路。</li>
-            <li><span class="label">我没有足够警惕模型的强先验</span>。例如一旦写了 `officer / uniform / civic authority`，模型就会天然往军警、徽章、肩章、制服走。</li>
-            <li><span class="label">我试图用一条 prompt 同时解决太多事</span>。年龄、性格、服装、镜头、世界观、负向排除全塞在一起，结果真正最重要的约束没有成为最高优先级。</li>
-            <li><span class="label">我对“禁止文字污染”的控制不够硬</span>。只写“no text in frame”不够，凡是出现确认书、屏幕、档案墙、标牌，模型都会强烈想生成字。</li>
-            <li><span class="label">我还在用“探索式试图找感觉”的方式工作</span>，而不是像正式制作那样，先锁少量关键锚点，再围绕锚点做受控变体。</li>
-          </ol>
-        </div>
-        <div class="card">
-          <h3>现在改成什么方法</h3>
-          <ol>
-            <li><span class="label">把角色 prompt 分层</span>：先锁脸和年龄，再锁服装，再锁动作，不再一条 prompt 什么都做。</li>
-            <li><span class="label">把失败资产单独建模</span>：像序列员 07 这种，我不再叫他 `officer`，而改成 `系统注册官 / 行政架构员` 这类反先验词。</li>
-            <li><span class="label">场景分成“空间母图”和“界面/文字层”</span>：需要确认书、档案墙、状态字的，不交给生图模型一次生成，而是后续单独叠 UI。</li>
-            <li><span class="label">只做最少但有效的迭代</span>：保留已经对的方向，不再把每一轮都从头推翻。</li>
-            <li><span class="label">从现在开始以“定稿优先”而不是“试试看”优先</span>：只修真正失败的点，不再同时扩太多新资产。</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="grid two" style="margin-top:16px;">
-        <div class="card">
-          <h3>我前面最典型的三个错误</h3>
-          <ul>
-            <li>序列员 07：我明明知道你要“制度感，不要军警感”，却还保留了会触发军装先验的词。</li>
-            <li>场景母图：我让模型直接生成“确认书 / 档案墙 / 屏幕内容”，这几乎注定会带来乱码。</li>
-            <li>闻夏和林澄：我虽然在调年龄，但没有把“12 岁骨相”放到真正最高优先级，所以模型不断往更小龄或更甜的方向偏。</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>接下来怎么尽快定稿</h3>
-          <ol>
-            <li>人物只收四个核心角色，不再扩新角色。</li>
-            <li>场景只收 8 个 P0 母图，不再横向扩。</li>
-            <li>序列员 07 不再推倒重来，只做冷感、压迫度和制度细节的受控微调。</li>
-            <li>已经基本成立的林澄、闻夏、祁野，不再大改设定，只做受控修正。</li>
-            <li>场景层当前不再有硬失败项，优先把已通过母图推进到镜头级生产。</li>
-            <li>所有定稿判断都只回写这一个文件，不再分散。</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Part 1 可交付视频</h2>
+      <h2>Part 1 交付视频</h2>
       <div class="compare-grid">
         <div>
           <h3>未来湾任务码头完整开场</h3>
-          <p>当前已经正式产出一版 `Part 1` 可交付视频，不再只是单镜头试片。它把 `A01-A03` 的稳定首帧做成受控 still-motion clip，把 `A04` 的守望者交付试片、`A05` 的 clean plate + UI 合成、`A06` 的主线启航视频接成同一条完整开场链路。</p>
+          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v2.mp4`。这一版把未来湾到场、守望者交付、任务简报展开与启航段接成同一条完整开场链路，并把声音从占位提示推进到可试听的交付级装配。</p>
           <ul>
-            <li>当前状态：`PART-1 DELIVERY V1 PASS WITH NEXT-PHASE NOTES`</li>
-            <li>输出文件：`part-01-future-bay-task-dock-delivery-v1.mp4`</li>
+            <li>输出文件：`part-01-future-bay-task-dock-delivery-v2.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 23.9s / AAC stereo`</li>
-            <li>音频路线：底层循环使用 `A06` 已验证环境音，叠加 4 条中文占位 TTS 守望者台词，验证“镜头 + 配音 + 环境声 + UI 合成”全链路。</li>
-            <li>制作路线：`A01-A03 stabilized still-motion` -> `A04 verified trim clip` -> `A05 clean plate + static delivery overlay composite` -> `A06 verified i2v` -> `placeholder zh-CN TTS` -> `full assembly`。</li>
-            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标；最新两轮已经先按导演室结论把前半段收成稳镜头版，再按剪辑审片把 `A05` 收短并更早切入 `A06`。如果要进入正式交付，下一轮优先级应是把占位 TTS 换成正式试音包，并判断 `A04-A05` 是否还需要更柔和的桥接声音。</li>
+            <li>画面路线：`A01-A03` 稳镜开场、`A04` 守望者交付、`A05` clean plate + delivery overlay、`A06` 启航视频</li>
+            <li>音频路线：多角色中文试音 + signal pulse + ui rise + route swell + rumble bed</li>
+            <li>配套文件：交付 metadata、任务简报静态交付层、六条可复用 voice stems</li>
           </ul>
-          <p class="subtle">这一版最重要的价值不是“已经完美”，而是证明 chapter-01 终于拥有了一条可重复执行的 `part-level assembly` 路线。以后遇到“有些镜头是真视频、有些只有稳定首帧、有些要走 UI 后叠”的情况，不必再靠手工拼接和临场记忆处理。</p>
-          <p class="subtle">这次修正也把一个重要经验钉死了：开场 still-motion 不是不能用，但必须服从导演调度。对 `Part 1` 来说，前半段真正需要的是稳定到场、责任被唤起，而不是每一镜都在飘。</p>
-          <p class="subtle">最近这一轮 `editor` 结论也已经落实：上一版的 `A05` 面板停留略久，所以现在把它从 `5.0s` 收到 `4.5s`，并让守望者最后一句更明确地把画面带进 `A06` 的启航镜头。</p>
-          <p class="subtle">`A05` 现在也正式分成两层：页面里保留 `SVG` 浏览器预览，负责 look-dev；真正进入成片交付时，改用脚本生成的静态任务简报 overlay，避免把浏览器动画误当成视频可交付资产。</p>
         </div>
         <div class="image-grid">
           <figure>
-            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v1.mp4"></video>
-            <figcaption>Part 1 delivery v1：未来湾任务码头完整开场试交付版。当前用于验证 `分镜 -> 资产 -> 合成 -> 配音 -> QC` 的完整闭环。</figcaption>
+            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v2.mp4"></video>
+            <figcaption>Part 1 delivery v2：chapter-01 开场当前主交付视频。</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>固定团队人物总表</h2>
+      <h2>固定团队与角色锚点</h2>
       <div class="grid two">
         <div class="card">
-          <h3>玩家 / 学生</h3>
-          <p><span class="label">身份：</span>未来湾见习建造者主位。</p>
-          <p><span class="label">性格：</span>不是空白摄像头，而是会追问、会整合、会承担后果的第一人称主位。</p>
-          <p><span class="label">故事作用：</span>把分散的信息、人和立场组织成真正的判断，决定团队最后往哪里走。</p>
-          <p><span class="label">视觉要求：</span>必须先有一个华人少年主位锚点，后续可以换脸，但当前不能继续停留在“只有功能没有脸”。</p>
+          <h3>玩家 / 学生主位</h3>
+          <p><span class="label">身份：</span>未来湾见习建造者第一人称主位。</p>
+          <p><span class="label">作用：</span>把分散信息、人和立场组织成判断，并承担团队最后的走向。</p>
         </div>
         <div class="card">
           <h3>林澄</h3>
-          <p><span class="label">身份：</span>chapter01 后与未来湾长期连接的常驻伙伴起点。</p>
-          <p><span class="label">性格：</span>安静、清醒、敏感但不脆弱，像总能先听见别人没注意到的慢变量。</p>
-          <p><span class="label">故事作用：</span>提醒团队，不是所有重要的东西都先以数据形式出现。</p>
+          <p><span class="label">身份：</span>chapter-01 之后与未来湾长期连接的常驻伙伴起点。</p>
+          <p><span class="label">作用：</span>让“制度问题”落进具体人生冲突。</p>
         </div>
         <div class="card">
           <h3>祁野</h3>
           <p><span class="label">身份：</span>未来湾设备棚常驻少年成员。</p>
-          <p><span class="label">性格：</span>专注、快、结构感强，不迷信规则，但很容易先信证据和系统图。</p>
-          <p><span class="label">故事作用：</span>拆规则、查输入、建证据链，保证团队不会被情绪和奇观带偏。</p>
+          <p><span class="label">作用：</span>拆规则、查输入、建证据链，保证团队不过度依赖情绪判断。</p>
         </div>
         <div class="card">
           <h3>闻夏</h3>
-          <p><span class="label">身份：</span>未来湾公共舞台的少年见习主持与组织者。</p>
-          <p><span class="label">性格：</span>明亮、稳、会倾听，但不能只是温柔辅助位。</p>
-          <p><span class="label">故事作用：</span>把复杂问题翻译成别人能理解、能加入、能共同承担的公共表达。</p>
+          <p><span class="label">身份：</span>未来湾公共舞台的少年组织者。</p>
+          <p><span class="label">作用：</span>把复杂问题翻译成别人能理解、能加入、能共同承担的公共表达。</p>
         </div>
         <div class="card">
           <h3>档案守望者</h3>
-          <p><span class="label">身份：</span>未来湾高阶记录者、任务发放者。</p>
-          <p><span class="label">性格：</span>克制、稳定、不代替孩子下结论。</p>
-          <p><span class="label">故事作用：</span>打开任务入口、维持文明视角、把不同章节连接成成长旅程。</p>
+          <p><span class="label">身份：</span>未来湾高阶记录者与任务发放者。</p>
+          <p><span class="label">作用：</span>打开任务入口，维持文明视角，不代替孩子下判断。</p>
         </div>
         <div class="card">
-          <h3>阿潮</h3>
-          <p><span class="label">身份：</span>未来湾官方航行器。</p>
-          <p><span class="label">性格：</span>轻盈、聪明、会吐槽，但不是低幼搞笑装置。</p>
-          <p><span class="label">故事作用：</span>承担出场、转场、回航和节奏缓冲。</p>
+          <h3>阿潮 / 回响 / 序列员 07</h3>
+          <p><span class="label">阿潮：</span>未来湾公共航行器与转场角色。</p>
+          <p><span class="label">回响：</span>常驻 AI 协作伙伴，负责整理与协作，不越权。</p>
+          <p><span class="label">序列员 07：</span>制度逻辑代表，承担稳定、精准且持续施压的对手功能。</p>
         </div>
-        <div class="card">
-          <h3>回响</h3>
-          <p><span class="label">身份：</span>未来湾常驻 AI 协作伙伴。</p>
-          <p><span class="label">性格：</span>克制、理性、边界清楚，不越权。</p>
-          <p><span class="label">故事作用：</span>示范 AI 可以帮助整理、比较、润色，但不能替人下最终判断。</p>
-        </div>
-        <div class="card">
-          <h3>序列员 07</h3>
-          <p><span class="label">身份：</span>未来文明制度一侧的执行者、解释者与辩护者。</p>
-          <p><span class="label">性格：</span>克制、精准、稳定、压力感低频存在，不是简单反派。</p>
-          <p><span class="label">故事作用：</span>代表高效、稳定、可复制的制度逻辑，逼团队回答替代方案和责任问题。</p>
-        </div>
+      </div>
+
+      <div class="image-grid" style="margin-top:16px;">
+        <figure>
+          <img src="characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位锚点" />
+          <figcaption>玩家主位锚点：第一人称补位与反射参考。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
+          <figcaption>档案守望者：开场任务交付主参考图。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄 3/4" />
+          <figcaption>林澄：角色锁定参考。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
+          <figcaption>祁野：固定团队技术侧主参考图。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏 工作态" />
+          <figcaption>闻夏：公共表达与组织动作参考。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
+          <figcaption>序列员 07：制度对手当前主参考图。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/r-02-achao-time-tide-craft-v5-qwen-image-2.0-pro.png" alt="阿潮 v5" />
+          <figcaption>阿潮 v5：chapter-01 航行器主参考图。</figcaption>
+        </figure>
+        <figure>
+          <img src="characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
+          <figcaption>林澄父亲：家庭线主参考图。</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section">
-      <h2>chapter01 当集关键人物</h2>
-      <div class="grid two">
-        <div class="card warn">
-          <h3>风声婆婆</h3>
-          <p><span class="label">性格：</span>看似古怪，实则通透。</p>
-          <p><span class="label">故事作用：</span>把“难以量化的价值”从抽象概念变成能被孩子感知的生命经验。</p>
-        </div>
-        <div class="card warn">
-          <h3>林澄的父亲</h3>
-          <p><span class="label">性格：</span>理性、现实，以“为你好”的方式施压。</p>
-          <p><span class="label">故事作用：</span>让冲突从制度讨论落回孩子最熟悉的亲密关系压力。</p>
-        </div>
+      <h2>主场景母图</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头" />
+          <figcaption>S-01：未来湾任务码头，开场与任务交付主场景。</figcaption>
+        </figure>
+        <figure>
+          <img src="scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="S-02 紧急入港外景" />
+          <figcaption>S-02：时间档案城逼近外景。</figcaption>
+        </figure>
+        <figure>
+          <img src="scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="S-04 概率长廊" />
+          <figcaption>S-04：制度奇观与路径揭示主场景。</figcaption>
+        </figure>
+        <figure>
+          <img src="scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="S-06 证据冻结区" />
+          <figcaption>S-06：证据冻结区与制度压力空间。</figcaption>
+        </figure>
+        <figure>
+          <img src="scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="S-07 自由回响台" />
+          <figcaption>S-07：公共表达与回响台主场景。</figcaption>
+        </figure>
+        <figure>
+          <img src="scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="S-09 回航档案墙" />
+          <figcaption>S-09：回航收束与档案墙结尾场景。</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section">
-      <h2>本集人物完整清单</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>P0 常驻核心</h3>
-          <ul>
-            <li>玩家 / 学生：第一人称主位，固定团队核心。</li>
-            <li>林澄：本集引爆点，也是长期伙伴起点。</li>
-            <li>祁野：证据与系统拆解担当。</li>
-            <li>闻夏：协同与公共表达担当。</li>
-            <li>回响：常驻 AI 协作伙伴。</li>
-            <li>阿潮：航行器与节奏角色。</li>
-            <li>档案守望者：高阶引路人。</li>
-            <li>序列员 07：长期灰度对手。</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>本集关键当集人物</h3>
-          <ul>
-            <li>风声婆婆：把“少数未来”从抽象概念变成可感知的生命经验。</li>
-            <li>林澄的父亲：关系冲突核心，代表“为你好”的现实压迫。</li>
-          </ul>
-          <p class="subtle">这两位在 chapter01 很重要，但和固定团队不是一个层级。前者更像章节级见证人，后者更像章节级关系对手。</p>
-        </div>
-        <div class="card">
-          <h3>可选的一集型配角</h3>
-          <ul>
-            <li>入港校验系统：功能角色，可做成冷静但有性格的系统声音。</li>
-            <li>未来礼仪辅助器：带一点冷幽默的装置配角，可增强世界趣味。</li>
-            <li>回响台程序声：在高潮段承担制度感和紧张感。</li>
-          </ul>
-          <p class="subtle">这些更像“装置人格”，不一定要当完整人物来锁脸，但可以有稳定声音与界面人格。</p>
-        </div>
-        <div class="card warn">
-          <h3>目前不建议再加太多人</h3>
-          <ul>
-            <li>chapter01 已经承担“立团队 + 立世界 + 立灰度对手 + 立长线阴影”的任务。</li>
-            <li>如果再加太多真人角色，会分散林澄、父亲、07 这条最核心的冲突三角。</li>
-            <li>所以这一集的人物数量其实已经够了，重点不是再加人，而是把层级分清。</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>装置人格卡</h2>
-      <div class="grid three">
-        <div class="card">
-          <h3>入港校验系统</h3>
-          <p><span class="label">定位：</span>时间档案城的第一道制度门槛。</p>
-          <p><span class="label">性格：</span>冷静、礼貌、绝不提高音量，但每一句都在提醒你“你现在没有那么多权限”。</p>
-          <p><span class="label">故事作用：</span>不靠说明书解释世界，而是用“你进不去，除非你先理解规则”的方式建立压迫感。</p>
-        </div>
-        <div class="card">
-          <h3>未来礼仪辅助器</h3>
-          <p><span class="label">定位：</span>时间档案城秩序感与冷幽默的重要小装置。</p>
-          <p><span class="label">性格：</span>一本正经、过度礼貌，越温柔越让人觉得这个城市很会管理人。</p>
-          <p><span class="label">故事作用：</span>在严肃戏之间提供轻微荒诞感，同时让“温柔托管”可被孩子直观感受到。</p>
-        </div>
-        <div class="card">
-          <h3>回响台程序声</h3>
-          <p><span class="label">定位：</span>高潮段的制度装置人格。</p>
-          <p><span class="label">性格：</span>比入港系统更正式、更不可逆，像一套把每一句话都变成后果的程序。</p>
-          <p><span class="label">故事作用：</span>把“表达”升级成“签署责任”，让高潮不是讲观点，而是真正承担后果。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>当前定妆结论</h2>
-      <p class="subtle">当前图片目录：`/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock`</p>
+      <h2>开场镜头资产</h2>
 
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>玩家主位视觉锚点</h3>
-            <p><span class="label">当前状态：</span>`PASS WITH FIX`</p>
+            <h3>A01-A03 开场三镜</h3>
+            <p>这三张首帧与对应视频共同承担“到场、建立、灰银任务信号点亮”的开场职责。它们现在已经是 Part 1 的稳定前半段资产。</p>
             <ul>
-              <li>这个缺口现在补上了。玩家主位终于不再只是功能说明，而有了一个可用于排队形、切半第三人称和做团队合影的华人少年锚点。</li>
-              <li>当前成立处：清醒、可信、未来湾队员感明确，而且没有滑回校服少年或偶像模板。</li>
-              <li>后续还可再修：主位锚点现在偏“男孩版默认形象”，如果要做更中性或更多主位分支，可以再补变体，但作为当前占位已经够用。</li>
+              <li>A01：第一人称站上未来湾任务码头</li>
+              <li>A02：未来湾外部空间建立镜头</li>
+              <li>A03：灰银级请求信号点亮</li>
             </ul>
           </div>
           <div class="image-grid">
             <figure>
-              <img src="characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位视觉锚点 v1 qwen-image-2.0-pro" />
-              <figcaption>C-00 / qwen-image-2.0-pro：玩家主位锚点已建立，可用于团队排布与镜头占位。</figcaption>
+              <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="SHOT-A01" />
+              <figcaption>SHOT-A01：未来湾任务码头第一人称开场。</figcaption>
+            </figure>
+            <figure>
+              <img src="shots/shot-a02-future-bay-establishing-v1-qwen-image-2.0-pro.png" alt="SHOT-A02" />
+              <figcaption>SHOT-A02：未来湾空间建立镜头。</figcaption>
+            </figure>
+            <figure>
+              <img src="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png" alt="SHOT-A03" />
+              <figcaption>SHOT-A03：灰银级请求信号点亮。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>A03 视频：当前用于 Part 1 的任务信号片段。</figcaption>
             </figure>
           </div>
         </div>
@@ -476,22 +360,21 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>林澄</h3>
-            <p><span class="label">当前首选：</span>`round3`</p>
-            <ul>
-              <li>成立处：安静、清醒、风感和冷灰蓝方向对了。</li>
-              <li>问题：还可以再往稳定 12 岁微调一点。</li>
-              <li>结论：可以继续推进 3/4 角度和情绪微变化版。</li>
-            </ul>
+            <h3>A04 档案守望者任务交付</h3>
+            <p>A04 是开场最重要的责任交付镜头。当前保留主角色参考、首帧以及 `3.4s` 的正式 trim 视频，作为 Part 1 的稳定中段资产。</p>
           </div>
           <div class="image-grid">
             <figure>
-              <img src="characters/c-02-lin-cheng-round1b-qwen-image-plus.png" alt="林澄 round1b" />
-              <figcaption>round1b：方向开始成立，但年龄仍略偏小。</figcaption>
+              <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="C-01 档案守望者定妆" />
+              <figcaption>C-01：A04 角色参考。</figcaption>
             </figure>
             <figure>
-              <img src="characters/c-02-lin-cheng-round3-qwen-image-plus.png" alt="林澄 round3" />
-              <figcaption>round3：当前首选版。</figcaption>
+              <img src="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png" alt="SHOT-A04 首帧" />
+              <figcaption>SHOT-A04：守望者任务交付首帧。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" src="videos/shot-a04-archive-watchkeeper-handoff-wan2.2-i2v-flash-v2-trim34-480p.mp4"></video>
+              <figcaption>A04 正式 trim 版：Part 1 当前使用视频片段。</figcaption>
             </figure>
           </div>
         </div>
@@ -500,572 +383,30 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>序列员 07</h3>
-            <p><span class="label">当前状态：</span>`PASS WITH FIX`，已从硬失败收回到可继续推进</p>
-            <ul>
-              <li>最大的进步已经成立：军警肩章、勋章、黑手套、指挥官式外套这套错误先验基本被清掉了。</li>
-              <li>当前问题不再是“跑偏”，而是“还不够准”：他略偏时装广告男主，行政压力感和冷制度感还可以再收紧一点。</li>
-              <li>这版已经可以进入角色锁定链，不需要再从零重做身份设定。</li>
-              <li>下轮策略：只微调眼神压迫度、腕部界面克制度和空间里的治理气息，不再改基础服装方向。</li>
-            </ul>
+            <h3>A05 任务简报展开</h3>
+            <p>A05 当前正式路线是 `clean plate motion + delivery overlay`。页面保留底板、交付层与浏览器预览，分别服务正式装配与快速查看。</p>
           </div>
           <div class="image-grid">
             <figure>
-              <img src="characters/c-03-sequence-officer-07-round1b-qwen-image-plus.png" alt="序列员07 round1b" />
-              <figcaption>round1b：男性气质回来了，但军警感仍明显。</figcaption>
+              <img src="shots/shot-a05-mission-brief-clean-plate-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 clean plate 首帧" />
+              <figcaption>SHOT-A05 clean plate：底板首帧。</figcaption>
             </figure>
             <figure>
-              <img src="characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员07 round3b qwen-image-2.0-pro" />
-              <figcaption>round3b / qwen-image-2.0-pro：军警先验基本清掉，当前可进入受控微调链。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>祁野</h3>
-            <p><span class="label">当前首选：</span>`round3`</p>
-            <ul>
-              <li>成立处：冷灰深蓝、结构笔、数据手套、系统拆解感开始对了。</li>
-              <li>问题：脸和骨相仍略小龄，更像 10-11 岁，手套也稍微抢戏。</li>
-              <li>结论：属于 `PASS WITH FIX`，先微调到更稳定的 12 岁感，再做工作态。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-04-qi-ye-round1b-qwen-image-plus.png" alt="祁野 round1b" />
-              <figcaption>round1b：方向对了，但还偏小龄。</figcaption>
-            </figure>
-            <figure>
-              <img src="characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野 round3" />
-              <figcaption>round3：当前最接近可继续推进的一版。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>闻夏</h3>
-            <p><span class="label">当前首选：</span>`round3`</p>
-            <ul>
-              <li>成立处：干净、稳、可信赖，已经像未来湾团队成员。</li>
-              <li>问题：正面版稍偏静态，需要在工作态里再补一点“能推动局势”的组织者力度。</li>
-              <li>结论：属于 `PASS WITH FIX`，优先保留工作态方向，再重修 3/4 角度。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-05-wen-xia-round1b-qwen-image-plus.png" alt="闻夏 round1b" />
-              <figcaption>round1b：干净稳，但力量感还不够。</figcaption>
-            </figure>
-            <figure>
-              <img src="characters/c-05-wen-xia-round3-qwen-image-plus.png" alt="闻夏 round3" />
-              <figcaption>round3：当前最稳的一版。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>新一轮角度与工作态推进</h2>
-      <p class="subtle">这一步的目标不是再验证“脸像不像”，而是看角色一旦离开正面主设，是否还能保持同一个人、同一种功能感。</p>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>林澄：3/4 与工作态</h3>
-            <ul>
-              <li><span class="label">3/4 角度：</span>这次是有效推进，风感和“在听”的方向成立。</li>
-              <li><span class="label">工作态：</span>有未来档案城互动感，但年龄又被往小拉了一点，界面层也带了轻微英文感。</li>
-              <li><span class="label">当前结论：</span>3/4 角度可保留；工作态属于 `PASS WITH FIX`，只能作为继续迭代参考，暂不当最终锁定图。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄 3/4" />
-              <figcaption>林澄 3/4：有效，已经有“她在听见什么”的感觉。</figcaption>
-            </figure>
-            <figure>
-              <img src="characters/c-02-lin-cheng-working-v1-qwen-image-plus.png" alt="林澄 工作态" />
-              <figcaption>林澄 工作态：可用，但年龄略被拉小，后续建议再重跑一版。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>闻夏：3/4 与工作态</h3>
-            <ul>
-              <li><span class="label">3/4 角度：</span>这版偏柔，组织者的力度没有完全出来。</li>
-              <li><span class="label">工作态：</span>比 3/4 更有角色功能感，已经像在处理公共界面和任务台，当前是她最可继续推进的一张。</li>
-              <li><span class="label">当前结论：</span>工作态可进入下游参考；3/4 角度仍建议重修。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-05-wen-xia-34-view-v1-qwen-image-plus.png" alt="闻夏 3/4" />
-              <figcaption>闻夏 3/4：有气质，但偏柔，组织者的推进感还不够。</figcaption>
-            </figure>
-            <figure>
-              <img src="characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏 工作态" />
-              <figcaption>闻夏 工作态：当前有效，开始像“能稳住场并推进局势的人”。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Robot 伙伴判断</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>是否值得引入</h3>
-          <p><span class="label">结论：</span>可以引入，但必须是“物理执行型伙伴”，不能成为第二个回响，也不能成为另一个阿潮。</p>
-          <ul>
-            <li>它应该补上：钻缝、取样、搬运、现场探测、实体互动。</li>
-            <li>它不应该负责：讲解世界、替孩子思考、卖萌撑趣味。</li>
-            <li>正确方向：低语音或几乎不说话，主要靠灯光、姿态、短提示音表达。</li>
-          </ul>
-        </div>
-        <div class="card warn">
-          <h3>当前原型问题</h3>
-          <ul>
-            <li>`v1` 和 `v2` 都偏玩具化。</li>
-            <li>模型很容易偷偷加字。</li>
-            <li>现在还不像“未来湾现场工具伙伴”，更像可爱 gadget。</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="compare" style="margin-top:18px;">
-        <div class="image-grid">
-          <figure>
-            <img src="characters/r-01-xiao-mao-robot-concept-v1-qwen-image-plus.png" alt="robot v1" />
-            <figcaption>robot v1：有陪伴感，但偏玩具化，且有文字污染。</figcaption>
-          </figure>
-          <figure>
-            <img src="characters/r-01-xiao-mao-robot-concept-v2-qwen-image-plus.png" alt="robot v2" />
-            <figcaption>robot v2：更像产品吉祥物，还没到“团队伙伴”状态。</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>关键配角补位</h2>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>档案守望者</h3>
-            <p><span class="label">当前状态：</span>`PASS WITH FIX`</p>
-            <ul>
-              <li>新版已经明显比父亲更年轻、更清亮，年龄层和功能层终于开始分家。</li>
-              <li>当前还没完全收住的是服装：虽然肩章感没了，但仍略偏整洁职业装，需要再往“港口引路层次”推一点。</li>
-              <li>这版已经可以和父亲同页共存而不混淆，但距离最终锁定还差一轮轻微调型。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者 v1 qwen-image-2.0-pro" />
-              <figcaption>C-01 / qwen-image-2.0-pro：方向已成立，可进入镜头试用。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>林澄父亲</h3>
-            <p><span class="label">当前状态：</span>`PASS WITH FIX`</p>
-            <ul>
-              <li>复杂性已经出来了：能看出他不是坏人，也能感到那种“为你好”的现实压迫。</li>
-              <li>这一轮已经和守望者明显拉开了：年龄更大、脸更宽、眼下更疲惫，姿态也更像长期焦虑中的父亲。</li>
-              <li>剩下最该修的是服装细节，可再补一点“普通成年居民”的日常痕迹，减少过于干净的拍摄感。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲 v1 qwen-image-2.0-pro" />
-              <figcaption>C-06 / qwen-image-2.0-pro：关系压迫感已成立，可进入剧情使用。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>风声婆婆</h3>
-            <p><span class="label">当前状态：</span>`PASS WITH FIX`</p>
-            <ul>
-              <li>人味、修补痕迹和“留住被忽略之物”的气质已经出来了，不再是玄学 NPC。</li>
-              <li>这版比前一轮更像未来文明里的边缘守护者，但仍略偏现实手工老人，需要再往“未来档案层”收一点。</li>
-              <li>适合先用于 `E04` 的声像承载体方向，后续再决定是否做更完整的人像近景版。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="风声婆婆 v1 qwen-image-2.0-pro" />
-              <figcaption>C-07 / qwen-image-2.0-pro：人味与未来档案层开始兼容，可继续微调。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>阿潮</h3>
-            <p><span class="label">当前状态：</span>`PASS / CHAPTER-01 暂定锁定`</p>
-            <ul>
-              <li>阿潮终于不再只是文字设定，已经进入“有可用角色参考图”的阶段。</li>
-              <li>`v1` 的优点是：轻盈、会飞、带潮汐尾迹，已经像未来湾里一个会说话的航行器角色，而不只是普通工具。</li>
-              <li>`v5` 又往前推了一步：前部更像感知带而不是车头，整体更接近“未来湾官方航行器角色”，已经是当前最优方向。</li>
-              <li>当前按 chapter-01 生产口径，`v5` 已经足够像未来湾公共航行器，不再继续为“更完美”而反复重生。</li>
-              <li>当前 production 判断：阿潮以 `v5` 作为 chapter-01 暂定参考图，可以进入后续镜头试用；如果后面在分镜里发现稳定性问题，再做定向微调，而不是继续空转。</li>
-              <li>补充结论：后续本地又试过 `v6 / v7`，但都把阿潮往更强座舱感、私人载具感和“炫技交通工具”方向带偏了，因此不进入主线，不替换 `v5`。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-              <img src="characters/r-02-achao-time-tide-craft-v1-qwen-image-2.0-pro.png" alt="阿潮 v1 qwen-image-2.0-pro" />
-              <figcaption>R-02 / qwen-image-2.0-pro / v1：第一张真正可用的阿潮参考图，轻盈感和潮汐尾迹已经成立，但仍偏私人载具。</figcaption>
-            </figure>
-            <figure>
-              <img src="characters/r-02-achao-time-tide-craft-v5-qwen-image-2.0-pro.png" alt="阿潮 v5 qwen-image-2.0-pro" />
-              <figcaption>R-02 / qwen-image-2.0-pro / v5：当前最接近“未来湾官方航行器角色”的版本，官方感更强，但舱体仍需再去一点私人载具感。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>场景母图</h2>
-      <p class="subtle">以下场景母图按照本集剧本的 P0 制作链路生成。当前它们的用途不是“一张图就定最终美术”，而是先把世界空间、镜头气质、制作优先级和后续图生视频参考底板立起来。</p>
-
-      <div class="grid two">
-        <div class="card">
-          <h3>当前最可用的场景母图</h3>
-          <ul>
-            <li>S-02 紧急入港外景：世界建立感强，归档环和赶赴现场压力都成立。</li>
-            <li>S-04 概率长廊：三路径关系清楚，奇观感和可交互性兼具。</li>
-            <li>S-07 自由回响台：很适合作为高潮公共空间的母图起点。</li>
-          </ul>
-        </div>
-        <div class="card warn">
-          <h3>当前需要二修的场景</h3>
-          <ul>
-            <li>S-03 悬浮档案大厅：空间对了，但确认书上有生成式乱码。</li>
-            <li>S-06 证据冻结区：不只是二修，当前已出现中式书法与楼檐先验，应该重构。</li>
-            <li>S-09 回航档案墙：不只是清文字，当前更像奇幻海港夜景，应该重构回“未来湾回航档案墙”。</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-01 未来湾任务码头</h3>
-            <p>功能上承担开场灰银任务交接和首尾呼应。这一轮终于把“任务码头”的工作属性收回来了：前景站位区明确，中部桥接和平台结构可用于角色调度，两侧工作设施也让空间真正像未来湾的任务出发点。画面已经干净，没有小制服人、没有漂浮文字，也没有仪式化假港口感，当前可以作为正式开场母图进入生产；后续只需要在镜头层决定是否再补一个更近的人物站位版本。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头 qwen-image-2.0-pro" />
-              <figcaption>S-01 / qwen-image-2.0-pro：任务码头已成立，可作为开场母图进入生产。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-02 紧急入港航线与时间档案城外景</h3>
-            <p>这是本轮最成立的世界建立镜头之一。归档环、浮空城市、入港通道和赶赴现场的压迫感都在，后面可以直接拿它做建立镜头和场景母版。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="S-02 紧急入港外景" />
-              <figcaption>S-02：当前场景母图里最成熟的一张之一。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-03 悬浮档案大厅</h3>
-            <p>大厅的纵深、庄重和压迫感已经出来了，时间丝线和确认书位置也对。但确认书上的乱码仍明显，所以这张现在更适合作为“空间与气质母图”，还不是最终洁净版。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-03-floating-archive-hall-v1-qwen-image-plus.png" alt="S-03 悬浮档案大厅" />
-              <figcaption>S-03：空间方向对，需二修清掉确认书上的生成文字。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-04 概率长廊</h3>
-            <p>这张图很好地建立了“三路径并置”的视觉逻辑。它已经具备作为本集奇观母图的能力，后续可以在这个基础上补上更明确的互动层和第四路径暗示。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="S-04 概率长廊" />
-              <figcaption>S-04：第一轮就已经相当可用。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-05 暗层接口与沉默练习室</h3>
-            <p>这一张的“被遗忘的城市底层”感觉是成立的，也已经出现了第四色痕迹和旧录音器物。但它现在更像概念艺术图，后续还需要更明确地连接风声婆婆与隐藏路径发现。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-05-dark-layer-silent-room-v1-qwen-image-plus.png" alt="S-05 暗层接口与沉默练习室" />
-              <figcaption>S-05：有气氛，适合作为暗层方向板。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-06 临时质疑预备区 / 证据冻结区</h3>
-            <p>这一轮已经把最大的跑偏问题收回来了。中式楼檐、书法挂幅、锁链和审判式构图都消失了，空间语言回到 chapter-01 真正需要的冷静制度冻结区。玻璃证据体、环形站位区和克制红色警示线都成立，当前可以直接作为正式场景母图进入生产；后续只需要在镜头设计里决定是否补人物站位或更明确的证据层级。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="S-06 证据冻结区 qwen-image-2.0-pro" />
-              <figcaption>S-06 / qwen-image-2.0-pro：证据冻结区已基本成立，可进入正式生产链。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-07 自由回响台</h3>
-            <p>这张已经很接近高潮空间的母图。它有公共性、悬浮性、城市正在倾听的感觉，也保留了足够的 UI 留白。后面可以在这个基础上继续做签署层和结果广播层。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="S-07 自由回响台" />
-              <figcaption>S-07：当前最值得直接继续扩展的高潮场景。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>S-09 未来湾回航 / 裂口档案墙</h3>
-            <p>这一轮已经明显收回了主场景身份。蜂巢档案墙、裂口发光痕、回航水岸和安静雾气都贴近 chapter-01 结尾空间，古典海港、旧船、亭阁和幽灵感的错误先验已经基本消失。它现在可以作为结尾母图使用；后续只需要再决定是否补团队回航站位，以及给数字导师过渡留多少留白。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="S-09 回航档案墙 qwen-image-2.0-pro" />
-              <figcaption>S-09 / qwen-image-2.0-pro：回航档案墙已成立，可作为结尾母图进入生产。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>镜头级资产</h2>
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>SHOT-A01 未来湾任务码头开场 POV</h3>
-            <p>镜头级生产已经正式启动。这一张是 chapter-01 开场第一镜的首帧 keyframe，对应“黑场亮起，你站在未来湾任务码头边缘，看见流光海”。当前版本已经具备第一人称到场感、未来湾冷蓝灰气质和足够的 UI 留白，能作为后续图生视频或轻动效开场镜头的初版基础。</p>
-            <ul>
-              <li>当前状态：`PASS WITH FIX`</li>
-              <li>已成立：第一人称站位、流光海、未来湾前夜气氛、镜头留白。</li>
-              <li>还可再修：中景里的任务平台识别度可以再高一点，让“未来湾任务码头”更一眼成立。</li>
-              <li>下一步：继续补 `A02` 建立镜头和 `A03` 灰银任务信号镜头，形成开场三镜头组。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="SHOT-A01 未来湾任务码头开场 POV" />
-              <figcaption>SHOT-A01 / qwen-image-2.0-pro：开场第一人称首帧已生成，可进入镜头级推进。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>SHOT-A02 未来湾空间建立镜头</h3>
-            <p>这张已经把“未来湾任务码头外部建立镜头”的秩序感收回来了。它不靠热闹奇观，而是靠平台结构、桥接层次和海面光感，让 chapter-01 的开场有一个稳定的世界外景锚点。</p>
-            <ul>
-              <li>当前状态：`PASS WITH FIX`</li>
-              <li>已成立：未来港口结构、秩序感、可做 2 到 3 秒建立镜头。</li>
-              <li>还可再修：悬浮与城市层次可以再多一点，避免过于“安静漂亮”。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="shots/shot-a02-future-bay-establishing-v1-qwen-image-2.0-pro.png" alt="SHOT-A02 未来湾空间建立镜头" />
-              <figcaption>SHOT-A02 / qwen-image-2.0-pro：开场建立镜头已生成，可进入视频试片。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>SHOT-A03 灰银级请求信号点亮</h3>
-            <p>这版终于把 `A03` 从“白天游艇码头 / 发光立柱”拉回到真正的灰银任务信号了。它现在可以承担 `FV-02` 的起始帧：任务平台、灰银信号和夜间水面都已经成立，后续主要通过视频动作和 UI 叠层把任务感再推进半步。</p>
-            <ul>
-              <li>当前状态：`PASS WITH FIX`</li>
-              <li>已成立：灰银任务信号、夜间未来湾、正式任务开始的仪式感。</li>
-              <li>还可再修：团队运转感还没进入这一张，需要交给后续 clip 或 `A04 / A05` 承接。</li>
-            </ul>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png" alt="SHOT-A03 灰银级请求信号点亮" />
-              <figcaption>SHOT-A03 / qwen-image-2.0-pro：灰银任务信号已成立，可作为 `FV-02` 起始帧。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>SHOT-A04 档案守望者任务交付</h3>
-            <p>这一步现在已经不是“接下来可以想一想”的状态，而是已经补成了一条真正可执行的单镜头 production 包。它对应 chapter-01 开场里最关键的责任交付时刻：守望者第一次把任务重量交给玩家。这个镜头如果成立，第一集的“连续剧开篇感”会明显往前走一步。</p>
-            <ul>
-              <li>当前状态：`IMAGE GENERATED / VIDEO V2 PASS WITH TRIM`</li>
-              <li>已完成：`shot-list.md` 已补齐 A04 的静帧、视频动作、参考资产与路由。</li>
-              <li>已完成：DashScope 首帧请求模板已写入 `shot-a04-archive-watchkeeper-handoff-v1.json`。</li>
-              <li>已完成：`Flow` 单镜头 clip `FV-02A-v1` 已写入 production 包，可直接复制提示词。</li>
-              <li>已完成：`SHOT-A04` 首帧已于 `2026-03-23 11:18` 用 `qwen-image-2.0-pro` 生成，request id: `f43f5b45-97e9-46b2-8c13-ecb8a73d481b`。</li>
-              <li>已完成：`v1` 已于 `2026-03-23 11:46` 生成，但因漂出陌生制服成年人，被按 skill 判定为 `FAILED_GATE`。</li>
-              <li>已完成：`v2` 已于 `2026-03-23 12:08` 用同一首帧重跑成功，`5s / 480P / h264 / 30fps`，submit request id: `ab19b2f3-e278-44e5-909f-d713f6c1c715`，task id: `cc4ad893-ef77-4d17-8372-c8db4bf2ad1b`。</li>
-              <li>复审结论：`v2` 已经稳定修掉“第二个陌生成年人”问题，按 `video-qc-codex-zh` 应记为 `PASS WITH TRIM`。</li>
-              <li>当前正式试片：保留前 `3.4s`，作为 `shot-a04-archive-watchkeeper-handoff-wan2.2-i2v-flash-v2-trim34-480p.mp4`。</li>
-              <li>下一步：以这条 trim 版为 `A04` 当前正式资产，继续推进 `A05` 的任务简报展开，不再回到无约束重跑。</li>
-            </ul>
-            <p class="subtle">这个镜头当前绑定的参考栈是：`C-01` 守望者定妆 + `S-01` 未来湾任务码头 + `C-00` 玩家主位锚点。它比直接冲 `A05` 更稳，因为先把“可信大人如何对玩家说话”这件事锁住，后面固定团队进入画面才不会散。</p>
-            <p class="subtle">按 skill 复盘，`v1` 失败的关键不只是模型随机性，而是让一个已经在首帧里站稳的人物，又承担了“从侧方进入”的动作，等于把“同一人物稳定”和“额外入画动作”硬塞进同一条 5 秒 clip，诱发了第二个陌生人。`v2` 把镜头收束成单状态后，人物与空间就稳定下来了。</p>
-            <h3 style="margin-top:18px;">可直接复制的首帧 Prompt</h3>
-            <pre>First-person cinematic keyframe for chapter 01 of a Chinese children's future civilization series. Future Bay task dock at night, eye-level view from the player position. Archive watchkeeper stands slightly left of center in a medium close shot, chest-up to half-body framing, direct eye contact toward the viewer, calm trustworthy but serious, refined East Asian adult around 33, mist-blue and sea-grey harbor guide outerwear with subtle route-thread details and open clean neckline, no insignia. Behind him the Future Bay mission dock still reads clearly with dark archive-black water, restrained suspended harbor structures, calm civic lights, elegant negative space on the right for subtitle or UI. This is the moment a formal responsibility is handed over. Not a teacher lecture shot, not police, not military, not security guard, not ordinary family father, not villain monologue, no badge, no stripes, no epaulet, no armband, no patch, no logo, no text in frame</pre>
-            <h3 style="margin-top:18px;">可直接复制的 Flow / Wan 视频 Prompt</h3>
-            <pre>first-person cinematic close encounter at Future Bay task dock at night, only one adult man in frame, the same archive watchkeeper throughout the whole clip, already standing slightly left of center at the start, maintaining direct eye contact with the viewer, calm trustworthy serious expression, refined mist-blue harbor guide clothing, dark water and elegant suspended dock structures behind him, the feeling of a real responsibility being handed over, restrained civic futurism, intimate but not sentimental</pre>
-            <pre>static start from the existing frame, only a subtle settling motion and gentle breathing, no entrance movement, no orbit, no push-in, no handheld shake, no sudden turn, no body repositioning</pre>
-            <pre>second person, extra figure, background person, uniformed man, police, officer, military, badge, insignia, teacher lecture, villain monologue, family father conversation, mouth talking, exaggerated lip sync, entering from side, office background, cheap sci-fi corridor, visible text</pre>
-            <h3 style="margin-top:18px;">一条命令就能发车</h3>
-            <pre>python3 scripts/generation/generate_dashscope_images.py --only shot-a04-archive-watchkeeper-handoff-v1</pre>
-            <h3 style="margin-top:18px;">Skill 结论</h3>
-            <pre>FV-02A-v2: PASS WITH TRIM. Keep 0.0s to 3.4s as the current production-safe clip. The watchkeeper remains stable and alone in frame; only the final 1 second starts to drift toward mouth acting.</pre>
-            <p class="subtle">按改造后的 `video-qc-codex-zh` 正式结论，`FV-02A-v2` 已经通过当前质量门，但应裁掉末段轻微开口部分；因此这条镜头的正式资产不是原始 5 秒版，而是当前 `3.4s` 的 trim 版。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="C-01 档案守望者定妆" />
-              <figcaption>C-01 / qwen-image-2.0-pro：A04 的主角色参考已经稳定，可直接喂给镜头级生产。</figcaption>
-            </figure>
-            <figure>
-            <img src="scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头" />
-              <figcaption>S-01 / qwen-image-2.0-pro：A04 的背景空间继续沿用未来湾任务码头，不另起新场景。</figcaption>
-            </figure>
-            <figure>
-            <img src="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png" alt="SHOT-A04 档案守望者任务交付首帧" />
-              <figcaption>SHOT-A04 / qwen-image-2.0-pro：守望者交付镜头首帧已生成，下一步直接进入 `Flow / I2V`。</figcaption>
-            </figure>
-            <figure>
-            <video controls preload="metadata" src="videos/shot-a04-archive-watchkeeper-handoff-wan2.2-i2v-flash-v2-trim34-480p.mp4"></video>
-              <figcaption>SHOT-A04 / wan2.2-i2v-flash：`v2` 已通过当前质量门，并裁出 `3.4s` 正式试片；这一版可以直接用于 `A04` 的纵切验证。</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare-grid">
-          <div>
-            <h3>SHOT-A05 任务简报展开</h3>
-            <p>这一步负责把“责任已经交到你手里”推进成“任务信息正在世界内展开”。它不是一个普通 UI 截图，而是要验证我们能不能让任务简报继续留在未来湾世界里，而不是把孩子拉回课堂或游戏大厅。</p>
-            <ul>
-              <li>当前状态：`UI VIDEO FAILED_GATE / CLEAN PLATE VIDEO PASS`</li>
-              <li>已完成：`SHOT-A05` 首帧已于 `2026-03-23 12:35` 用 `qwen-image-2.0-pro` 生成，request id: `47969b84-628e-4a05-a53c-6d354f59d4b9`。</li>
-              <li>已完成：`v1` 视频已于 `2026-03-23 12:40` 用 `wan2.2-i2v-flash` 生成，submit request id: `5886558b-b336-410e-af28-3c66ee3b0e90`，task id: `94d90821-bb40-4051-8df5-bb9cc76c6290`。</li>
-              <li>通过点：夜景、港口空间和简报层的大结构已经成立，说明 `A05` 的世界内任务简报方向是可做的。</li>
-              <li>失败点：视频从开头就稳定长出乱码标题和底部乱码行，末段还把“远处轻光迹”放大成了实体飞行器入画。</li>
-              <li>复审结论：这条 `v1` 不是“可裁可救”，而是按 skill 应记为 `FAILED_GATE`。</li>
-              <li>已完成：`clean plate` 首帧已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`。</li>
-              <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
-              <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
-              <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的 look-dev 效果。</li>
-              <li>已完成：`A05 UI overlay v1` 已压缩为 `5s` 的浏览器预览节奏，并去掉顶部 chips，主要用于验证“任务被唤起”的出场层次，不再把它误当成交付层。</li>
-              <li>已完成：`Part 1 delivery v1` 已改走脚本生成的静态交付 overlay，不再依赖把浏览器动画 `SVG` 栅格化后直接塞进成片。</li>
-              <li>当前关注点：继续观察阿潮这一下是否应该完全后移到 `A06`，避免 `A05` 的责任展开被趣味节奏分散。</li>
-            </ul>
-            <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
-            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。现在这条路又进一步分清了两层：浏览器里的动画 `SVG` 只负责快速预览，真正进交付的视频则固定走受控静态 overlay。</p>
-          </div>
-          <div class="image-grid">
-            <figure>
-            <img src="shots/shot-a05-mission-brief-expand-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 任务简报展开首帧" />
-              <figcaption>SHOT-A05 / qwen-image-2.0-pro：任务简报层、夜景港口和阿潮留白已经进入可用区，可作为后续 clean plate + UI 叠层的视觉母版。</figcaption>
-            </figure>
-            <figure>
-            <video controls preload="metadata" src="videos/shot-a05-mission-brief-expand-wan2.2-i2v-flash-v1-480p.mp4"></video>
-              <figcaption>SHOT-A05 / wan2.2-i2v-flash：首条视频已生成，但因乱码文字和实体飞行器入画，被正式判定为 `FAILED_GATE`。</figcaption>
-            </figure>
-            <figure>
-            <img src="shots/shot-a05-mission-brief-clean-plate-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 clean plate 首帧" />
-              <figcaption>SHOT-A05 clean plate / qwen-image-2.0-pro：干净底板首帧已通过，可直接承载后叠任务简报 UI。</figcaption>
-            </figure>
-            <figure>
-            <video controls preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
-              <figcaption>SHOT-A05 clean plate / wan2.2-i2v-flash：底板视频已通过当前质量门，当前可作为 `A05` 的正式 motion plate。</figcaption>
+              <video controls preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
+              <figcaption>A05 clean plate：正式 motion plate。</figcaption>
             </figure>
             <figure>
               <div style="background:#09111c;border-radius:18px;padding:12px;">
-                <img src="ui/a05-mission-brief-overlay-v1.svg" alt="A05 mission brief UI overlay v1" />
+                <img src="ui/a05-mission-brief-delivery-overlay-v1.png" alt="A05 delivery overlay" />
               </div>
-              <figcaption>A05 UI overlay v1：这是当前保留在页面里的浏览器预览层，用来快速检查任务简报的展开层次、停留节奏和整体气质。</figcaption>
-            </figure>
-            <figure>
-              <div style="background:#09111c;border-radius:18px;padding:12px;">
-                <img src="ui/a05-mission-brief-delivery-overlay-v1.png" alt="A05 mission brief delivery overlay v1" />
-              </div>
-              <figcaption>A05 delivery overlay v1：这是 `Part 1 delivery` 真正使用的交付层。它不再依赖浏览器动画，而是用脚本稳定生成一张可直接合成到成片里的任务简报面板。</figcaption>
+              <figcaption>A05 delivery overlay：Part 1 正式使用的任务简报层。</figcaption>
             </figure>
             <figure>
               <div class="composite-stage">
                 <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
                 <object type="image/svg+xml" data="ui/a05-mission-brief-overlay-v1.svg" aria-label="A05 composite browser preview"></object>
               </div>
-              <figcaption>A05 composite browser preview：当前在页面内直接做浏览器叠层预览。overlay 已改成 `5s` 的短节奏版，并去掉顶部 chips：先唤起核心光脉冲，再落标题、任务目标、队伍状态，随后补进倒计时与动作按钮，整体更接近“任务被唤起”而不是“模板 UI 循环播放”。</figcaption>
+              <figcaption>A05 浏览器预览：用于快速查看底板与 UI 叠层关系。</figcaption>
             </figure>
           </div>
         </div>
@@ -1074,123 +415,23 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>SHOT-A06 接受航行后的航线点亮</h3>
-            <p>这一步负责把 `接受航行` 从一个按钮动作，真正变成“我们已经出发了”的镜头过渡。现在已经正式把它和 `A05` 拆开：`A05` 只负责任务被唤起，`A06` 才负责启航、方向和阿潮的执行型提示。</p>
-            <ul>
-              <li>当前状态：`KEYFRAME V1 FAILED / KEYFRAME V2 PASS WITH GO / VIDEO PASS WITH AUDIO`</li>
-              <li>已完成：`A06 v1` 首帧已生成，但失败得很明确，模型把前方航道误解成了巨型悬浮平台主角，不适合作为“启航过渡”。</li>
-              <li>已完成：`A06 v2` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 重跑成功，request id: `3cbc36ec-2edf-4c89-a821-a4c09ca6c7a1`。</li>
-              <li>通过点：镜头终于回到了正确职责，脚下航线被点亮，方向感清楚，时间档案城只作为远处目的地存在，没有再把画面中心交给一个陌生大型结构。</li>
-              <li>当前决定：后续视频验证应直接从 `A06 v2` 出发，不再回到 `A05` 内部继续塞启动动作。</li>
-              <li>已完成：`A06` 的 `wan2.6-i2v-flash` 有声视频模板已经补齐，包含“自动音效版”和“自定义 audio_url 版”两条路由。</li>
-              <li>规则修正已落地：阿潮在 `v5` 定图完成前，不允许直接进可见视频；现在定图已完成后，才新增“可见入镜试用”分支。</li>
-              <li>已完成：`A06 阿潮可见入镜 v1` 已尝试，但失败原因明确，画面右侧长出了可见玩家身体占位，破坏了第一人称纯净度。</li>
-              <li>已完成：`A06 阿潮可见入镜 v2` 已补出，目前是最好的可见试用首帧。它保住了第一人称视角，没有再让玩家身体入镜，阿潮也更像顺势带路的公共航行器。</li>
-              <li>已完成：`A06 route-only wan2.6 auto audio` 已于 `2026-03-23 19:44` 生成成功，task id: `5b06f935-ff3f-4042-b746-cf43d28e141c`。第一次尝试虽然有音轨，但顶部漂出伪英文标识；定向加强“上半区纯净天空 / 禁止 logo 与 signboard”后，第二次已把这个硬伤清掉。</li>
-              <li>QC 已确认：当前主线视频有真实音轨，不是挂空轨。`ffprobe` 识别到 `AAC stereo` 音频流，`volumedetect` 结果 `mean_volume -9.5 dB / max_volume -0.4 dB`，说明不是静音占位文件。</li>
-              <li>最新验证：`A06 阿潮可见入镜` 的 `wan2.6 / 720P / auto audio` 视频已做过两次谨慎尝试，但两次都失败。第一次长出中文横幅且阿潮前半段过大；第二次在更硬的“纯画面 / 零 banner / 小体量”约束下仍然长出 UI 样式的伪英文信息条，因此当前判定为 `FAILED_GATE`。</li>
-              <li>当前决定：`A06 route-only v2` 仍是主线 production 起始帧；`A06 阿潮可见入镜 v2` 目前停留在“静帧可用、视频分支待修”的状态，不继续消耗第三次试跑。</li>
-              <li>下一步：先把 `A06` 视为已完成主线交付，再考虑是否改走“clean plate 主线视频 + 后期叠入受控阿潮运动层”的复合路线，而不是继续把“可见阿潮”直接交给单次 i2v。</li>
-            </ul>
-            <p class="subtle">这一步的修正很有代表性。第一版 prompt 虽然说了“目的地在远处”，但没有把“天空必须留空、前方不能有巨型主体”写死，所以模型顺手补出了一个中央悬浮平台。`A06 v2` 之所以更对，不是因为运气，而是因为把镜头功能限制得更明确了。后续 `wan2.6` 主线视频第一次就验证了“有声”这件事是真的成立，但也暴露出另一个稳定风险：哪怕已经写了“不要文字”，模型仍会在上半区偷长 logo 感字块，所以第二次修正必须把“纯净天空 / 禁止招牌与角标”写成硬限制。阿潮可见分支则说明了另一件事：在当前路由下，模型还不够稳定地同时服从“可见带路者、但不抢戏、且绝不长 UI”这三个条件，所以这条路先停在 `静帧通过 / 视频未通过`，不硬跑第三次。</p>
+            <h3>A06 接受航行后的启航</h3>
+            <p>A06 当前保留主线启航首帧、阿潮可见试用首帧与带真实音轨的 route-only 主线视频，作为 Part 1 的出发段资产。</p>
           </div>
           <div class="image-grid">
             <figure>
-              <img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 接受航行后的航线点亮 v2" />
-              <figcaption>SHOT-A06 v2 / qwen-image-2.0-pro：当前更接近正式 production 路线的起始帧。它把镜头重心放回“脚下航线点亮 + 远处目的地”，而不是让陌生大型结构占据画面中心。</figcaption>
+              <img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 route-only" />
+              <figcaption>SHOT-A06：主线启航首帧。</figcaption>
             </figure>
             <figure>
-              <img src="shots/shot-a06-route-ignite-achao-visible-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 阿潮可见入镜试用 v2" />
-              <figcaption>SHOT-A06 阿潮可见入镜 v2 / qwen-image-2.0-pro：当前最好的“阿潮短暂可见”试用首帧。它保住了第一人称纯净度，也让阿潮更像中景带路的未来湾公共航行器，而不是贴脸主角或私人座驾。</figcaption>
+              <img src="shots/shot-a06-route-ignite-achao-visible-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 阿潮可见试用" />
+              <figcaption>SHOT-A06 阿潮可见试用：当前保留的可见分支参考。</figcaption>
             </figure>
             <figure>
               <video controls playsinline src="videos/shot-a06-route-ignite-wan2.6-i2v-flash-v2-auto-audio-720p.mp4"></video>
-              <figcaption>SHOT-A06 route-only / wan2.6-i2v-flash / 720P / auto audio：当前主线已跑通的启航视频。第二次修正后，画面上半区的伪文字已清掉，并且已确认带真实音轨。</figcaption>
+              <figcaption>A06 route-only：当前 Part 1 使用的启航视频片段。</figcaption>
             </figure>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>下一步</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>人物优先顺序</h3>
-          <ol>
-            <li>序列员 07 继续做制度冷感微调，不推倒重来</li>
-            <li>档案守望者继续把职业装感往港口引路层次收，避免重新滑回岗位制服</li>
-            <li>林澄父亲继续补一点普通家长的生活痕迹，但不再需要和守望者“硬拉开”</li>
-            <li>玩家主位在当前锚点基础上，决定是否要补更中性的主位变体</li>
-            <li>风声婆婆再往“未来档案层”微调一版，避免过于现实旧物人像</li>
-          </ol>
-        </div>
-        <div class="card">
-          <h3>下一轮场景动作</h3>
-          <ol>
-            <li>保留 S-01、S-02、S-04、S-06、S-07、S-09 作为第一批继续生产母图</li>
-            <li>二修 S-03，只清文字并保留当前空间纵深</li>
-            <li>`A04` 已完成首帧、`Wan v2` 和 `3.4s` trim 正式试片；这一条已经可以作为开场责任交付镜头进入纵切</li>
-            <li>`A05` 已跑通 `clean plate motion + UI 后叠` 的前三步，当前已有正式可用底板视频、首版 UI overlay，以及浏览器叠层合成预览</li>
-            <li>`A06` 已完成职责拆分，主线 `route-only v2` 已拿到可用有声视频；分支 `阿潮可见入镜 v2` 则确认了“静帧能成立，不代表视频就能稳定成立”</li>
-            <li>`A06` 的 `Wan2.6` 有声视频链路已实际验证通过，下一步真正的问题不再是“能不能带音效”，而是“如何在不被模型乱加 UI 的前提下把受控角色带进镜头”</li>
-            <li>在 S-01、S-06、S-09 都已成立的前提下，继续把可用母图往镜头生产推进，而不是横向扩新场景</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="grid two" style="margin-top:16px;">
-        <div class="card">
-          <h3>本轮已完成的模板重构</h3>
-          <ul>
-            <li>`C-03 round3b`：去掉 `officer / uniform / medals / epaulets` 词路，改成“系统注册官 / 行政架构员”方向。</li>
-            <li>`S-01`：去掉仪式化花瓣港口和异世界景观感，收回“实用任务码头”。</li>
-            <li>`S-06`：明确禁止书法、楼檐、锁链、挂幅、强红锁这类跑偏先验。</li>
-            <li>`S-09`：明确禁止古典海港、灯笼、旧船、幽灵感，收回“未来湾回航档案墙”。</li>
-            <li>`SHOT-A01`：新增第一人称开场首帧模板，开始从场景母图推进到镜头级资产。</li>
-            <li>`SHOT-A02 / SHOT-A03`：开场建立镜头与灰银任务信号镜头已补独立模板，`Flow` 试片包可直接引用。</li>
-            <li>`SHOT-A04`：守望者任务交付镜头已补 DashScope 首帧模板，已实际生成首帧，并已用阿里云 `Wan2.2 i2v flash` 跑通 `v2`；当前正式采用 `3.4s` trim 版进入后续纵切。</li>
-            <li>`C-01 / C-06 / C-07`：关键配角模板已补入 DashScope 链路，人物补位不再只停留在文字层。</li>
-            <li>生成脚本已兼容 `qwen-image-2.0 / qwen-image-2.0-pro` 的同步返回格式，并加入 `429` 退避重试。</li>
-          </ul>
-          <p class="subtle">以上修改已直接写回对应 API 请求模板，不再另建平行版本文档。</p>
-        </div>
-        <div class="card">
-          <h3>本轮已执行生成结果</h3>
-          <ol>
-            <li>`C-03 round3b` 已于 `2026-03-22 21:20:25` 用 `qwen-image-2.0-pro` 重跑完成，request id: `f3411303-a2fa-4fad-ab75-e29824dc9f47`</li>
-            <li>`S-01` 已于 `2026-03-22 21:30:09` 用 `qwen-image-2.0-pro` 重跑完成，request id: `3f67789c-b40e-4474-939d-df2ed5b7967c`</li>
-            <li>`S-06` 已于 `2026-03-22 21:22:00` 用 `qwen-image-2.0-pro` 重跑完成，request id: `4b668206-10b6-47c8-8045-f89afc62a76d`</li>
-            <li>`S-09` 已于 `2026-03-22 21:22:09` 用 `qwen-image-2.0-pro` 重跑完成，request id: `ec922707-ec31-4666-b8dd-441cb61df009`</li>
-            <li>`SHOT-A01` 已于 `2026-03-22 21:43:06` 用 `qwen-image-2.0-pro` 生成首帧，request id: `07dd6c3d-3562-4875-8591-eaad5e66a080`</li>
-            <li>`C-00` 已于 `2026-03-22 23:57:38` 用 `qwen-image-2.0-pro` 生成玩家主位锚点，request id: `2b9e90c6-d06c-401e-8bda-8b220d9b1a51`</li>
-            <li>`C-01` 已于 `2026-03-23 00:08:03` 用 `qwen-image-2.0-pro` 生成新版守望者定妆，request id: `cf9559c4-0fd0-427f-abd7-7f0fa82919c2`</li>
-            <li>`C-06` 已于 `2026-03-22 23:58:11` 用 `qwen-image-2.0-pro` 生成新版父亲定妆，request id: `96afa2cb-9171-4d15-bdd4-97dc21748396`</li>
-            <li>`C-07` 已于 `2026-03-22 22:57:31` 用 `qwen-image-2.0-pro` 生成首版风声婆婆定妆</li>
-            <li>`SHOT-A02` 已于 `2026-03-22 22:54:16` 用 `qwen-image-2.0-pro` 生成开场建立镜头首帧</li>
-            <li>`SHOT-A03` 已于 `2026-03-22 23:01:02` 用 `qwen-image-2.0-pro` 生成灰银任务信号首帧</li>
-            <li>`SHOT-A04` 已于 `2026-03-23 11:18` 用 `qwen-image-2.0-pro` 生成守望者交付镜头首帧，request id: `f43f5b45-97e9-46b2-8c13-ecb8a73d481b`</li>
-            <li>`SHOT-A04 video v1` 已于 `2026-03-23 11:46` 用 `wan2.2-i2v-flash` 生成，但因出现陌生制服成年人被判定为 `FAILED_GATE`，submit request id: `ef210ec3-1923-4486-b81e-4bebf61d062a`，task id: `3a1eb799-925a-4d57-9695-5d34dc82f5dc`</li>
-            <li>`SHOT-A04 video v2` 已于 `2026-03-23 12:08` 用 `wan2.2-i2v-flash` 生成成功，submit request id: `ab19b2f3-e278-44e5-909f-d713f6c1c715`，task id: `cc4ad893-ef77-4d17-8372-c8db4bf2ad1b`；经 QC 判定为 `PASS WITH TRIM`，当前正式资产为 `3.4s` trim 版</li>
-            <li>`SHOT-A05` 已于 `2026-03-23 12:35` 用 `qwen-image-2.0-pro` 生成任务简报展开首帧，request id: `47969b84-628e-4a05-a53c-6d354f59d4b9`</li>
-            <li>`SHOT-A05 video v1` 已于 `2026-03-23 12:40` 用 `wan2.2-i2v-flash` 生成，submit request id: `5886558b-b336-410e-af28-3c66ee3b0e90`，task id: `94d90821-bb40-4051-8df5-bb9cc76c6290`；经 QC 判定为 `FAILED_GATE`，下一步改走 `clean plate motion + UI 后叠`</li>
-            <li>`SHOT-A05 clean plate` 已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成底板首帧，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`</li>
-            <li>`SHOT-A05 clean plate video v1` 已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`；经 QC 判定为 `PASS`，当前作为 `A05` 正式底板</li>
-            <li>`A05 UI overlay v1` 已生成 SVG 叠层资产，当前只保留为浏览器预览层，用于快速验证底板视频与 UI overlay 的整体成立度</li>
-            <li>`A05 delivery overlay v1` 已补成稳定 PNG 交付层，并正式接入 `Part 1 delivery v1`，不再依赖浏览器动画直接转成交付视频</li>
-            <li>`SHOT-A06 v1` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 生成，但因误长出中央巨型悬浮平台，不作为后续 production 起始帧</li>
-            <li>`SHOT-A06 v2` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 重跑成功，request id: `3cbc36ec-2edf-4c89-a821-a4c09ca6c7a1`；当前作为 `A06` 后续图生视频的正式起始帧</li>
-            <li>`SHOT-A06 阿潮可见入镜 v1` 已生成，但因右侧漂出可见玩家身体占位，被判定为 `FAILED_GATE`，不进入后续视频</li>
-            <li>`SHOT-A06 阿潮可见入镜 v2` 已生成；当前作为“阿潮是否能短暂可见而不破坏第一人称”的首选验证帧</li>
-            <li>`SHOT-A06 route-only wan2.6 auto audio` 已于 `2026-03-23 19:44` 生成成功，submit request id: `24019b32-2126-42a0-94d0-64cbd39667cc`，task id: `5b06f935-ff3f-4042-b746-cf43d28e141c`；当前作为 `A06` 主线启航视频</li>
-            <li>`SHOT-A06 阿潮可见入镜 wan2.6 auto audio` 已做两次尝试：task id `720cd32e-6c63-4591-9167-c19c23fe7656` 失败原因为中文横幅与阿潮体量偏大；task id `bbc8a10e-908a-4bee-af73-10e532f7ebf7` 失败原因为伪英文 UI 条仍然存在；当前分支停为 `FAILED_GATE`</li>
-            <li>`A06` 视频 QC 已通过本地复核：当前文件同时包含 `h264` 视频轨与 `AAC stereo` 音频轨，且音频不是静音空轨</li>
-            <li>`A04 / A05` 现有 `wan2.2` 试片已通过本地 `ffprobe` 复核，均只有视频轨、没有音轨；`A06` 已改走 `wan2.6-i2v-flash` 有声路由模板</li>
-          </ol>
-          <p class="subtle">当前最新状态已经纠正：默认 shell 里虽然没有自动注入 `DASHSCOPE_API_KEY`，但本轮已经从本机可恢复来源中找回可用 key，并成功跑通 `SHOT-A04` 的 DashScope 生图链路。</p>
-          <p class="subtle">复审结论已经更新：`玩家主位锚点` 已经补上；`守望者 / 父亲` 的脸型、年龄感和气质分工已经明显拉开；`风声婆婆` 仍属于 `PASS WITH FIX`，但方向已经成立。</p>
-          <p class="subtle">镜头级生产也已起步：`SHOT-A01 / A02 / A03 / A04` 已形成开场四镜头组，`FV-01 / FV-02 / FV-02A` 都已有明确执行口径；其中 `A04` 已经从“文字链路”推进到“首帧 + Wan 视频试片 + trim 正式资产”这一层，说明这条从分镜首帧到可用视频的最小 SOP 已经跑通。</p>
-          <p class="subtle">当前模型基线也已实时核验。语言侧最新可见 `3.5` 主线包括 `qwen3.5-plus`、`qwen3.5-flash`；视觉侧最新生图主线已出现 `qwen-image-2.0` 与 `qwen-image-2.0-pro`。因此下一轮失败项对照，优先切 `qwen-image-2.0-pro`。</p>
         </div>
       </div>
     </section>
