@@ -70,6 +70,9 @@
     <filter id="softGlow" x="-40" y="-40" width="1232" height="848" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feGaussianBlur stdDeviation="18"/>
     </filter>
+    <filter id="achaoGlow" x="820" y="84" width="260" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
   </defs>
 
   <g class="stage-top" opacity="0.94">
@@ -111,6 +114,17 @@
     <text x="248" y="346" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">以未来湾固定小队身份</text>
     <text x="248" y="376" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">进入时间档案城，确认</text>
     <text x="248" y="406" fill="#D9F4FF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif">这条人生是否被完整看见。</text>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0.88;0.72;0" keyTimes="0;0.58;0.66;0.74;0.84;1" dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="180 -72;140 -52;72 -24;12 -2;-28 10;180 -72" keyTimes="0;0.58;0.68;0.76;0.84;1" dur="5s" repeatCount="indefinite"/>
+    <g filter="url(#achaoGlow)">
+      <path d="M836 176C875 167 914 156 972 136" stroke="#8FEAFF" stroke-opacity="0.56" stroke-width="9" stroke-linecap="round"/>
+      <path d="M962 136C981 129 999 125 1025 121" stroke="#D9F8FF" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round"/>
+      <path d="M1003 118L1038 110L1012 132Z" fill="#E7FBFF" fill-opacity="0.68"/>
+      <circle cx="1004" cy="121" r="6" fill="#FFE3AE" fill-opacity="0.82"/>
+    </g>
   </g>
 
   <g class="stage-bottom">
