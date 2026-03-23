@@ -9,7 +9,7 @@
     .stage-countdown,
     .stage-actions {
       opacity: 0;
-      animation-duration: 7.2s;
+      animation-duration: 5s;
       animation-iteration-count: infinite;
       animation-timing-function: cubic-bezier(0.22, 0.78, 0.22, 1);
       animation-fill-mode: both;
@@ -25,30 +25,30 @@
     .stage-countdown { animation-name: fadeCountdown; }
     .stage-actions { animation-name: fadeActions; }
     .soft-drift {
-      animation: softDrift 7.2s ease-in-out infinite;
+      animation: softDrift 5s ease-in-out infinite;
       transform-box: fill-box;
       transform-origin: center;
     }
     .core-breathe {
-      animation: coreBreathe 7.2s ease-in-out infinite;
+      animation: coreBreathe 5s ease-in-out infinite;
       transform-box: fill-box;
       transform-origin: center;
     }
     .button-settle {
-      animation: buttonSettle 7.2s cubic-bezier(0.18, 0.82, 0.22, 1) infinite;
+      animation: buttonSettle 5s cubic-bezier(0.18, 0.82, 0.22, 1) infinite;
       transform-box: fill-box;
       transform-origin: center;
     }
     .countdown-pulse {
-      animation: countdownPulse 7.2s ease-in-out infinite;
+      animation: countdownPulse 5s ease-in-out infinite;
       transform-box: fill-box;
       transform-origin: left center;
     }
     .button-glow {
-      animation: buttonGlow 7.2s ease-in-out infinite;
+      animation: buttonGlow 5s ease-in-out infinite;
     }
     .status-shimmer {
-      animation: statusShimmer 7.2s ease-in-out infinite;
+      animation: statusShimmer 5s ease-in-out infinite;
     }
 
     @keyframes fadeTop {
@@ -169,14 +169,6 @@
       <feGaussianBlur stdDeviation="6"/>
     </filter>
   </defs>
-
-  <g class="stage-top" opacity="0.94">
-    <rect x="76" y="52" width="202" height="42" rx="21" fill="#0E1C2C" fill-opacity="0.38" stroke="#D7F3FF" stroke-opacity="0.34"/>
-    <text x="177" y="79" text-anchor="middle" fill="#E8F8FF" font-size="20" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" letter-spacing="1">未来湾任务码头</text>
-
-    <rect x="856" y="52" width="220" height="42" rx="21" fill="#0E1C2C" fill-opacity="0.32" stroke="#D7F3FF" stroke-opacity="0.28"/>
-    <text x="966" y="79" text-anchor="middle" fill="#BDEFFF" font-size="18" font-family="'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif" letter-spacing="1">灰银级请求信号已接入</text>
-  </g>
 
   <g class="stage-core core-breathe" filter="url(#softGlow)" opacity="0.14">
     <ellipse cx="577" cy="390" rx="260" ry="140" fill="#91EEFF"/>

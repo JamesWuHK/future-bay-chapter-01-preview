@@ -293,10 +293,11 @@
             <li>输出文件：`part-01-future-bay-task-dock-delivery-v1.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 24.4s / AAC stereo`</li>
             <li>音频路线：底层循环使用 `A06` 已验证环境音，叠加 4 条中文占位 TTS 守望者台词，验证“镜头 + 配音 + 环境声 + UI 合成”全链路。</li>
-            <li>制作路线：`A01-A03 still-motion` -> `A04 verified trim clip` -> `A05 clean plate + overlay` -> `A06 verified i2v` -> `placeholder zh-CN TTS` -> `full assembly`。</li>
-            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标，但如果要进入正式交付，下一轮仍应把占位 TTS 换成正式试音包，并进一步减少 `A05` 顶部的小字负担。</li>
+            <li>制作路线：`A01-A03 still-motion` -> `A04 verified trim clip` -> `A05 clean plate + static delivery overlay composite` -> `A06 verified i2v` -> `placeholder zh-CN TTS` -> `full assembly`。</li>
+            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标；如果要进入正式交付，下一轮优先级应是把占位 TTS 换成正式试音包，并判断 `A01-A03` 是否值得逐步升级成真实视频。</li>
           </ul>
           <p class="subtle">这一版最重要的价值不是“已经完美”，而是证明 chapter-01 终于拥有了一条可重复执行的 `part-level assembly` 路线。以后遇到“有些镜头是真视频、有些只有稳定首帧、有些要走 UI 后叠”的情况，不必再靠手工拼接和临场记忆处理。</p>
+          <p class="subtle">`A05` 现在也正式分成两层：页面里保留 `SVG` 浏览器预览，负责 look-dev；真正进入成片交付时，改用脚本生成的静态任务简报 overlay，避免把浏览器动画误当成视频可交付资产。</p>
         </div>
         <div class="image-grid">
           <figure>
@@ -1020,12 +1021,13 @@
               <li>已完成：`clean plate` 首帧已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`。</li>
               <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
               <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
-              <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的接近成片效果。</li>
-              <li>已完成：`A05 UI overlay v1` 已进一步改成 `7.2s` 的“召唤式展开 + 长停留呼吸”，并把倒计时、队伍状态、底部按钮统一纳入同一出场逻辑。</li>
+              <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的 look-dev 效果。</li>
+              <li>已完成：`A05 UI overlay v1` 已压缩为 `5s` 的浏览器预览节奏，并去掉顶部 chips，主要用于验证“任务被唤起”的出场层次，不再把它误当成交付层。</li>
+              <li>已完成：`Part 1 delivery v1` 已改走脚本生成的静态交付 overlay，不再依赖把浏览器动画 `SVG` 栅格化后直接塞进成片。</li>
               <li>当前关注点：继续观察阿潮这一下是否应该完全后移到 `A06`，避免 `A05` 的责任展开被趣味节奏分散。</li>
             </ul>
             <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
-            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。现在连 UI 的出场节奏也已经进入可视化状态。</p>
+            <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。现在这条路又进一步分清了两层：浏览器里的动画 `SVG` 只负责快速预览，真正进交付的视频则固定走受控静态 overlay。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -1048,14 +1050,20 @@
               <div style="background:#09111c;border-radius:18px;padding:12px;">
                 <img src="ui/a05-mission-brief-overlay-v1.svg" alt="A05 mission brief UI overlay v1" />
               </div>
-              <figcaption>A05 UI overlay v1：现在不再是“全屏 UI 循环齐进齐出”，而是让任务简报像被系统正式唤起一样逐层展开，再进入较长停留与轻呼吸。</figcaption>
+              <figcaption>A05 UI overlay v1：这是当前保留在页面里的浏览器预览层，用来快速检查任务简报的展开层次、停留节奏和整体气质。</figcaption>
+            </figure>
+            <figure>
+              <div style="background:#09111c;border-radius:18px;padding:12px;">
+                <img src="ui/a05-mission-brief-delivery-overlay-v1.png" alt="A05 mission brief delivery overlay v1" />
+              </div>
+              <figcaption>A05 delivery overlay v1：这是 `Part 1 delivery` 真正使用的交付层。它不再依赖浏览器动画，而是用脚本稳定生成一张可直接合成到成片里的任务简报面板。</figcaption>
             </figure>
             <figure>
               <div class="composite-stage">
                 <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
                 <object type="image/svg+xml" data="ui/a05-mission-brief-overlay-v1.svg" aria-label="A05 composite browser preview"></object>
               </div>
-              <figcaption>A05 composite preview：当前在页面内直接做浏览器叠层预览。overlay 已改成 `7.2s` 的长节奏版：先召唤顶部状态和核心光脉冲，再落标题、任务目标、队伍状态，随后补进倒计时与动作按钮，阿潮只保留一次远处轻掠过，整体更接近“任务被唤起”而不是“模板 UI 循环播放”。</figcaption>
+              <figcaption>A05 composite browser preview：当前在页面内直接做浏览器叠层预览。overlay 已改成 `5s` 的短节奏版，并去掉顶部 chips：先唤起核心光脉冲，再落标题、任务目标、队伍状态，随后补进倒计时与动作按钮，整体更接近“任务被唤起”而不是“模板 UI 循环播放”。</figcaption>
             </figure>
           </div>
         </div>
@@ -1166,8 +1174,8 @@
             <li>`SHOT-A05 video v1` 已于 `2026-03-23 12:40` 用 `wan2.2-i2v-flash` 生成，submit request id: `5886558b-b336-410e-af28-3c66ee3b0e90`，task id: `94d90821-bb40-4051-8df5-bb9cc76c6290`；经 QC 判定为 `FAILED_GATE`，下一步改走 `clean plate motion + UI 后叠`</li>
             <li>`SHOT-A05 clean plate` 已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成底板首帧，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`</li>
             <li>`SHOT-A05 clean plate video v1` 已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`；经 QC 判定为 `PASS`，当前作为 `A05` 正式底板</li>
-            <li>`A05 UI overlay v1` 已生成 SVG 叠层资产，可直接叠加到 `A05 clean plate` 上进入下一轮合成验证</li>
-            <li>`A05 composite preview` 已在主文档中通过浏览器原生叠层方式挂出，用于快速验证底板视频与 UI overlay 的整体成立度</li>
+            <li>`A05 UI overlay v1` 已生成 SVG 叠层资产，当前只保留为浏览器预览层，用于快速验证底板视频与 UI overlay 的整体成立度</li>
+            <li>`A05 delivery overlay v1` 已补成稳定 PNG 交付层，并正式接入 `Part 1 delivery v1`，不再依赖浏览器动画直接转成交付视频</li>
             <li>`SHOT-A06 v1` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 生成，但因误长出中央巨型悬浮平台，不作为后续 production 起始帧</li>
             <li>`SHOT-A06 v2` 已于 `2026-03-23` 用 `qwen-image-2.0-pro` 重跑成功，request id: `3cbc36ec-2edf-4c89-a821-a4c09ca6c7a1`；当前作为 `A06` 后续图生视频的正式起始帧</li>
             <li>`SHOT-A06 阿潮可见入镜 v1` 已生成，但因右侧漂出可见玩家身体占位，被判定为 `FAILED_GATE`，不进入后续视频</li>
