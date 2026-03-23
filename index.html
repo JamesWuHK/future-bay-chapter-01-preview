@@ -141,6 +141,27 @@
       border-radius: 10px;
       background: #e6eef5;
     }
+    .composite-stage {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #08111c;
+      aspect-ratio: 3 / 2;
+    }
+    .composite-stage video,
+    .composite-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      background: transparent;
+    }
+    .composite-stage img {
+      pointer-events: none;
+    }
     figcaption {
       margin-top: 8px;
       font-size: 13px;
@@ -200,7 +221,7 @@
         </div>
         <div class="card">
           <div class="tiny">当前制作状态</div>
-          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图，开场分镜已补出 6 张关键首帧，`A04` 已经从 production 包推进到真实出图、图生视频和可入纵切的裁剪试片，`A05` 也已经跑通 clean plate 底板并补出首版 UI 叠层资产</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。本轮最重要的人物修正是：`玩家主位锚点` 已补上，`守望者 / 父亲` 的视觉职责已开始拉开，不再停留在“两个差不多的成年男性”。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字；开场镜头组 `A01 / A02 / A03 / A04 / A05` 已经开始成链，其中 `A04` 已经拿到了 `PASS WITH TRIM` 的 `3.4s / 480P` 正式试片，而 `A05` 已经从失败的整 UI 视频改走 `clean plate + UI 后叠`，并拿到可用底板视频和可控 UI overlay。</p>
+          <p><span class="label">人物已进入半锁定阶段，场景已出现 6 张可继续生产的母图，开场分镜已补出 6 张关键首帧，`A04` 已经从 production 包推进到真实出图、图生视频和可入纵切的裁剪试片，`A05` 也已经跑通 clean plate 底板并补出首版 UI 叠层资产</span>。林澄、祁野、闻夏已有可继续推进版本；序列员 07 已从硬失败提升到 `PASS WITH FIX`。本轮最重要的人物修正是：`玩家主位锚点` 已补上，`守望者 / 父亲` 的视觉职责已开始拉开，不再停留在“两个差不多的成年男性”。现阶段稳定可继续扩展的主场景为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09`，`S-03` 保留为空间母图继续清文字；开场镜头组 `A01 / A02 / A03 / A04 / A05` 已经开始成链，其中 `A04` 已经拿到了 `PASS WITH TRIM` 的 `3.4s / 480P` 正式试片，而 `A05` 已经从失败的整 UI 视频改走 `clean plate + UI 后叠`，拿到可用底板视频、可控 UI overlay，以及浏览器内的合成预览。</p>
         </div>
       </div>
     </section>
@@ -939,7 +960,8 @@
               <li>已完成：`clean plate` 首帧已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`。</li>
               <li>已完成：`clean plate` 视频已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`。</li>
               <li>复审结论：`clean plate` 版本已通过当前质量门，可以作为 `A05` 的正式底板。</li>
-              <li>下一步：`A05` 不再盲跑“完整任务简报视频”，而是以这条底板为基底做 `UI 后叠`。</li>
+              <li>已完成：主文档内已补浏览器叠层合成预览，可直接查看 `A05 clean plate + UI overlay` 的接近成片效果。</li>
+              <li>下一步：在这条合成预览基础上，再补阿潮掠过时机和简报层淡入节奏。</li>
             </ul>
             <p class="subtle">这次失败不是抽象审美问题，而是制作路线问题。模型在“视频里直接生成可控 UI”这件事上先验太强，很容易自己补出乱码文字；所以 `A05` 的正确拆法已经明确了：让模型只负责空间、呼吸和光脉冲，真正的任务简报层交给后叠。</p>
             <p class="subtle">换句话说，`A05` 这一步没有停在“失败结论”上，而是已经把正确的底板路线跑通了：`A04` 适合直接图生视频，`A05` 适合“底板视频 + 可控 UI 叠层”。</p>
@@ -967,6 +989,13 @@
               </div>
               <figcaption>A05 UI overlay v1：已把任务标题、任务目标、队伍状态和主按钮整理成可控叠层，下一步可以直接压到 clean plate 上。</figcaption>
             </figure>
+            <figure>
+              <div class="composite-stage">
+                <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
+                <img src="ui/a05-mission-brief-overlay-v1.svg" alt="A05 composite browser preview" />
+              </div>
+              <figcaption>A05 composite preview：当前直接在页面内做浏览器叠层预览，用 clean plate 底板承载任务简报 UI，避免把假文字和白底错误固化进视频资产。</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -991,7 +1020,7 @@
             <li>保留 S-01、S-02、S-04、S-06、S-07、S-09 作为第一批继续生产母图</li>
             <li>二修 S-03，只清文字并保留当前空间纵深</li>
             <li>`A04` 已完成首帧、`Wan v2` 和 `3.4s` trim 正式试片；这一条已经可以作为开场责任交付镜头进入纵切</li>
-            <li>`A05` 已跑通 `clean plate motion + UI 后叠` 的前两步，当前已有正式可用底板视频和首版 UI overlay</li>
+            <li>`A05` 已跑通 `clean plate motion + UI 后叠` 的前三步，当前已有正式可用底板视频、首版 UI overlay，以及浏览器叠层合成预览</li>
             <li>在 S-01、S-06、S-09 都已成立的前提下，继续把可用母图往镜头生产推进，而不是横向扩新场景</li>
           </ol>
         </div>
@@ -1035,6 +1064,7 @@
             <li>`SHOT-A05 clean plate` 已于 `2026-03-23 12:48` 用 `qwen-image-2.0-pro` 生成底板首帧，request id: `e100111d-6b5d-41cd-95e1-fbf87a1cab99`</li>
             <li>`SHOT-A05 clean plate video v1` 已于 `2026-03-23 12:49` 用 `wan2.2-i2v-flash` 生成，submit request id: `cd52a412-fdfc-42a0-be99-33c04ed6f9bd`，task id: `96d03050-a5ed-4c3f-af4c-30bf8576e6c3`；经 QC 判定为 `PASS`，当前作为 `A05` 正式底板</li>
             <li>`A05 UI overlay v1` 已生成 SVG 叠层资产，可直接叠加到 `A05 clean plate` 上进入下一轮合成验证</li>
+            <li>`A05 composite preview` 已在主文档中通过浏览器原生叠层方式挂出，用于快速验证底板视频与 UI overlay 的整体成立度</li>
           </ol>
           <p class="subtle">当前最新状态已经纠正：默认 shell 里虽然没有自动注入 `DASHSCOPE_API_KEY`，但本轮已经从本机可恢复来源中找回可用 key，并成功跑通 `SHOT-A04` 的 DashScope 生图链路。</p>
           <p class="subtle">复审结论已经更新：`玩家主位锚点` 已经补上；`守望者 / 父亲` 的脸型、年龄感和气质分工已经明显拉开；`风声婆婆` 仍属于 `PASS WITH FIX`，但方向已经成立。</p>
