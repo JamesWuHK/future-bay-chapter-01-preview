@@ -283,6 +283,31 @@
     </section>
 
     <section class="section">
+      <h2>Part 1 可交付视频</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>未来湾任务码头完整开场</h3>
+          <p>当前已经正式产出一版 `Part 1` 可交付视频，不再只是单镜头试片。它把 `A01-A03` 的稳定首帧做成受控 still-motion clip，把 `A04` 的守望者交付试片、`A05` 的 clean plate + UI 合成、`A06` 的主线启航视频接成同一条完整开场链路。</p>
+          <ul>
+            <li>当前状态：`PART-1 DELIVERY V1 PASS WITH NEXT-PHASE NOTES`</li>
+            <li>输出文件：`part-01-future-bay-task-dock-delivery-v1.mp4`</li>
+            <li>成片规格：`1152x768 / 30fps / 24.4s / AAC stereo`</li>
+            <li>音频路线：底层循环使用 `A06` 已验证环境音，叠加 4 条中文占位 TTS 守望者台词，验证“镜头 + 配音 + 环境声 + UI 合成”全链路。</li>
+            <li>制作路线：`A01-A03 still-motion` -> `A04 verified trim clip` -> `A05 clean plate + overlay` -> `A06 verified i2v` -> `placeholder zh-CN TTS` -> `full assembly`。</li>
+            <li>当前判断：这版已经足够承担“跑通 Part 1 完整视频生成流程”的目标，但如果要进入正式交付，下一轮仍应把占位 TTS 换成正式试音包，并进一步减少 `A05` 顶部的小字负担。</li>
+          </ul>
+          <p class="subtle">这一版最重要的价值不是“已经完美”，而是证明 chapter-01 终于拥有了一条可重复执行的 `part-level assembly` 路线。以后遇到“有些镜头是真视频、有些只有稳定首帧、有些要走 UI 后叠”的情况，不必再靠手工拼接和临场记忆处理。</p>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v1.mp4"></video>
+            <figcaption>Part 1 delivery v1：未来湾任务码头完整开场试交付版。当前用于验证 `分镜 -> 资产 -> 合成 -> 配音 -> QC` 的完整闭环。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>固定团队人物总表</h2>
       <div class="grid two">
         <div class="card">
