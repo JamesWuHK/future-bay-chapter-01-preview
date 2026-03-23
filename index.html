@@ -878,15 +878,17 @@
             <h3>SHOT-A04 档案守望者任务交付</h3>
             <p>这一步现在已经不是“接下来可以想一想”的状态，而是已经补成了一条真正可执行的单镜头 production 包。它对应 chapter-01 开场里最关键的责任交付时刻：守望者第一次把任务重量交给玩家。这个镜头如果成立，第一集的“连续剧开篇感”会明显往前走一步。</p>
             <ul>
-              <li>当前状态：`IMAGE + VIDEO GENERATED / NEED REVIEW`</li>
+              <li>当前状态：`IMAGE GENERATED / VIDEO V1 FAILED SKILL REVIEW`</li>
               <li>已完成：`shot-list.md` 已补齐 A04 的静帧、视频动作、参考资产与路由。</li>
               <li>已完成：DashScope 首帧请求模板已写入 `shot-a04-archive-watchkeeper-handoff-v1.json`。</li>
               <li>已完成：`Flow` 单镜头 clip `FV-02A-v1` 已写入 production 包，可直接复制提示词。</li>
               <li>已完成：`SHOT-A04` 首帧已于 `2026-03-23 11:18` 用 `qwen-image-2.0-pro` 生成，request id: `f43f5b45-97e9-46b2-8c13-ecb8a73d481b`。</li>
               <li>已完成：首条 `Wan2.2 i2v flash` 视频已于 `2026-03-23 11:46` 生成成功，`5s / 480P / h264 / 30fps`，task id: `3a1eb799-925a-4d57-9695-5d34dc82f5dc`。</li>
-              <li>下一步：复审这条视频是否真的保住了“可信大人交付责任”的感觉；如果动作对但质感还不够，再升到 `720P` 或更高阶模型。</li>
+              <li>复审结论：这条 `v1` 视频里漂出了一个陌生制服成年人，不属于任何设定角色，因此按 skill 判断应记为 `失败样例`，不能继续沿用原 prompt 盲目重跑。</li>
+              <li>下一步：先按 `video-director-codex-zh` 把 `FV-02A-v2` 改成“守望者已经在画面中，只做轻微停稳和呼吸”的单状态 clip，再决定是否重跑。</li>
             </ul>
             <p class="subtle">这个镜头当前绑定的参考栈是：`C-01` 守望者定妆 + `S-01` 未来湾任务码头 + `C-00` 玩家主位锚点。它比直接冲 `A05` 更稳，因为先把“可信大人如何对玩家说话”这件事锁住，后面固定团队进入画面才不会散。</p>
+            <p class="subtle">按 skill 复盘，这次失败的关键不只是模型随机性，而是 `v1` prompt 让一个已经在首帧里站稳的人物，又承担了“从侧方进入”的动作，等于把“同一人物稳定”和“额外入画动作”硬塞进同一条 5 秒 clip，诱发了第二个陌生人被模型生出来。</p>
             <h3 style="margin-top:18px;">可直接复制的首帧 Prompt</h3>
             <pre>First-person cinematic keyframe for chapter 01 of a Chinese children's future civilization series. Future Bay task dock at night, eye-level view from the player position. Archive watchkeeper stands slightly left of center in a medium close shot, chest-up to half-body framing, direct eye contact toward the viewer, calm trustworthy but serious, refined East Asian adult around 33, mist-blue and sea-grey harbor guide outerwear with subtle route-thread details and open clean neckline, no insignia. Behind him the Future Bay mission dock still reads clearly with dark archive-black water, restrained suspended harbor structures, calm civic lights, elegant negative space on the right for subtitle or UI. This is the moment a formal responsibility is handed over. Not a teacher lecture shot, not police, not military, not security guard, not ordinary family father, not villain monologue, no badge, no stripes, no epaulet, no armband, no patch, no logo, no text in frame</pre>
             <h3 style="margin-top:18px;">可直接复制的 Flow 视频 Prompt</h3>
@@ -895,6 +897,9 @@
             <pre>teacher lecture framing, police briefing, military commander, villain monologue, family father conversation, generic talking head portrait, office background, cheap sci-fi corridor, visible text</pre>
             <h3 style="margin-top:18px;">一条命令就能发车</h3>
             <pre>python3 scripts/generation/generate_dashscope_images.py --only shot-a04-archive-watchkeeper-handoff-v1</pre>
+            <h3 style="margin-top:18px;">Skill 化修正方向</h3>
+            <pre>FV-02A-v2 should keep only one adult man in frame, the same watchkeeper throughout the whole clip, already in position at the start, maintaining direct eye contact with only subtle breathing and a gentle settling motion, no second person, no extra figure, no uniformed man entering, no dialogue mouth acting.</pre>
+            <p class="subtle">按改造后的 `video-qc-codex-zh` 正式结论，这条 `FV-02A-v1` 应标记为 `FAILED_GATE`：原因不是单纯画质，而是它在 5 秒内同时承担了“已在场的人物稳定”和“侧方入画动作”，导致模型凭空长出第二个陌生制服成年人。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -936,7 +941,7 @@
           <ol>
             <li>保留 S-01、S-02、S-04、S-06、S-07、S-09 作为第一批继续生产母图</li>
             <li>二修 S-03，只清文字并保留当前空间纵深</li>
-            <li>`A04` 首帧和首条 Wan 试片都已生成；下一轮优先复审视频并决定是否升到 `720P` 或更高阶模型，再补 `A05`，让固定团队正式进入画面</li>
+            <li>`A04` 首帧和首条 Wan 试片都已生成；但 `v1` 视频已判定为 skill 不通过，下一轮应先改 `FV-02A-v2` 的 clip 设计，再决定是否重跑，而不是直接升画质</li>
             <li>在 S-01、S-06、S-09 都已成立的前提下，继续把可用母图往镜头生产推进，而不是横向扩新场景</li>
           </ol>
         </div>
@@ -952,7 +957,7 @@
             <li>`S-09`：明确禁止古典海港、灯笼、旧船、幽灵感，收回“未来湾回航档案墙”。</li>
             <li>`SHOT-A01`：新增第一人称开场首帧模板，开始从场景母图推进到镜头级资产。</li>
             <li>`SHOT-A02 / SHOT-A03`：开场建立镜头与灰银任务信号镜头已补独立模板，`Flow` 试片包可直接引用。</li>
-            <li>`SHOT-A04`：守望者任务交付镜头已补 DashScope 首帧模板，已实际生成首帧，并已用阿里云 `Wan2.2 i2v flash` 跑出首条 5 秒试片。</li>
+            <li>`SHOT-A04`：守望者任务交付镜头已补 DashScope 首帧模板，已实际生成首帧，并已用阿里云 `Wan2.2 i2v flash` 跑出首条 5 秒试片；同时已按 skill 复盘出 `v1` 失败原因。</li>
             <li>`C-01 / C-06 / C-07`：关键配角模板已补入 DashScope 链路，人物补位不再只停留在文字层。</li>
             <li>生成脚本已兼容 `qwen-image-2.0 / qwen-image-2.0-pro` 的同步返回格式，并加入 `429` 退避重试。</li>
           </ul>
@@ -977,7 +982,7 @@
           </ol>
           <p class="subtle">当前最新状态已经纠正：默认 shell 里虽然没有自动注入 `DASHSCOPE_API_KEY`，但本轮已经从本机可恢复来源中找回可用 key，并成功跑通 `SHOT-A04` 的 DashScope 生图链路。</p>
           <p class="subtle">复审结论已经更新：`玩家主位锚点` 已经补上；`守望者 / 父亲` 的脸型、年龄感和气质分工已经明显拉开；`风声婆婆` 仍属于 `PASS WITH FIX`，但方向已经成立。</p>
-          <p class="subtle">镜头级生产也已起步：`SHOT-A01 / A02 / A03 / A04` 已形成开场四镜头组，`FV-01 / FV-02 / FV-02A` 都已有明确执行口径；其中 `A04` 已经从“文字链路”推进到“首帧 + Wan 视频试片”这一层。</p>
+          <p class="subtle">镜头级生产也已起步：`SHOT-A01 / A02 / A03 / A04` 已形成开场四镜头组，`FV-01 / FV-02 / FV-02A` 都已有明确执行口径；其中 `A04` 已经从“文字链路”推进到“首帧 + Wan 视频试片”这一层，但 `FV-02A-v1` 已被判定为 skill 不通过，必须先修 clip 设计再重跑。</p>
           <p class="subtle">当前模型基线也已实时核验。语言侧最新可见 `3.5` 主线包括 `qwen3.5-plus`、`qwen3.5-flash`；视觉侧最新生图主线已出现 `qwen-image-2.0` 与 `qwen-image-2.0-pro`。因此下一轮失败项对照，优先切 `qwen-image-2.0-pro`。</p>
         </div>
       </div>
