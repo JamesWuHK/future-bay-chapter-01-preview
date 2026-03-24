@@ -192,21 +192,21 @@
         </div>
         <div class="card">
           <div class="tiny">交付状态</div>
-          <p><span class="label">Part 1</span> 已更新到 `v5` 主交付；<span class="label">Part 2</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
+          <p><span class="label">P01</span> 已更新到 `v5` 主交付；<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Part 1 交付视频</h2>
+      <h2>P01 交付视频</h2>
       <div class="compare-grid">
         <div>
-          <h3>未来湾任务码头完整开场</h3>
-          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v5.mp4`。这一版在保留 `v4` 节奏结构的前提下，进一步修正了守望者出镜位的人声口型错位，并移除了 `A06` 模型自动配乐，只保留更克制的世界内启航声场。</p>
+          <h3>P01 未来湾任务码头</h3>
+          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v5.mp4`。这一版对应规范段 `P01`；装配脚本与媒体文件仍沿用历史别名 `A01-A06`，但展示口径统一回到 `CH01-P01-Sxx`。本轮在保留 `v4` 节奏结构的前提下，进一步修正了守望者出镜位的人声口型错位，并移除了尾段自动配乐，只保留更克制的世界内启航声场。</p>
           <ul>
             <li>输出文件：`part-01-future-bay-task-dock-delivery-v5.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 23.8s / AAC stereo`</li>
-            <li>画面路线：`A01-A03` 稳镜开场、`A04` 静默交付视觉、`A05` clean plate + offscreen 守望者交付、`A06` 启航视频</li>
+            <li>当前已落地职责：`CH01-P01-S01/S02` 开场基线、`CH01-P01-S05` 任务交付、`CH01-P01-S06` 简报展开、`CH01-P01-S07` 启航出发</li>
             <li>音频路线：短句交付配音 + speech ducking 混音 + 去除模型自动配乐后的 restrained launch / route / city 声场层</li>
             <li>配套文件：交付 metadata、任务简报静态交付层、四条 `v5` 可复用 voice stems</li>
           </ul>
@@ -214,22 +214,22 @@
         <div class="image-grid">
           <figure>
             <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v5.mp4"></video>
-            <figcaption>Part 1 delivery v5：修正口型错位并移除尾段欢快自动配乐后的当前主交付视频。</figcaption>
+            <figcaption>P01 delivery v5：修正口型错位并移除尾段自动配乐后的当前主交付视频。</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Part 2 当前交付</h2>
+      <h2>P02 当前交付</h2>
       <div class="compare-grid">
         <div>
-          <h3>紧急入港校验 delivery v1</h3>
-          <p>当前主装配文件为 `part-02-emergency-entry-check-delivery-v1.mp4`。这条交付保持 `B02/B03` 的 UI-first 路线，同时为 `B01/B04` 预留正式 Wan clip 插槽；如果正式视频已生成，重跑主装配脚本即可原位升级同一交付文件。</p>
+          <h3>P02 紧急入港校验</h3>
+          <p>当前主装配文件为 `part-02-emergency-entry-check-delivery-v1.mp4`。这条交付对应规范段 `P02`；脚本与视频模板仍沿用兼容别名 `B01-B04`。当前路线保持 `CH01-P02-S02/S03` 的 UI-first 方案，同时为 `CH01-P02-S01/S04` 预留正式 Wan clip 插槽；如果正式视频已生成，重跑主装配脚本即可原位升级同一交付文件。</p>
           <ul>
             <li>主文件：`part-02-emergency-entry-check-delivery-v1.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 22.4s / AAC stereo`</li>
-            <li>结构路线：`B01` 准入航行，`B02/B03` 后叠校验 UI，`B04` 入厅桥接</li>
+            <li>结构路线：`CH01-P02-S01` 准入航行，`CH01-P02-S02/S03` 后叠校验 UI，`CH01-P02-S04` 入厅桥接</li>
             <li>正式视频模板：`shot-b01-entry-approach-wan2.6-i2v-flash-v1`、`shot-b04-entry-bridge-wan2.6-i2v-flash-v1`</li>
             <li>稳定资产：`render_chapter01_part2_delivery.sh`、`b02-entry-permit-overlay-v1.png`、`b03-entry-restrictions-overlay-v1.png`</li>
             <li>验证文件：`part-02-emergency-entry-check-papercut-v1.mp4` 继续保留作低成本节奏基线</li>
@@ -238,7 +238,7 @@
         <div class="image-grid">
           <figure>
             <video controls playsinline src="videos/part-02-emergency-entry-check-delivery-v1.mp4"></video>
-            <figcaption>Part 2 delivery v1：当前主装配视频，B01/B04 可用正式 clip 原位替换升级。</figcaption>
+            <figcaption>P02 delivery v1：当前主装配视频，`CH01-P02-S01/S04` 可用正式 clip 原位替换升级。</figcaption>
           </figure>
         </div>
       </div>
@@ -352,30 +352,30 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>A01-A03 开场三镜</h3>
-            <p>这三张首帧与对应视频共同承担“到场、建立、灰银任务信号点亮”的开场职责。它们现在已经是 Part 1 的稳定前半段资产。</p>
+            <h3>P01 前段首帧组（历史文件别名 A01-A03）</h3>
+            <p>这组首帧与对应视频是当前仍在复用的 `P01` 前段资产。展示口径统一按规范编号解释；旧文件名 `A01-A03` 仅保留为兼容历史装配链的资产别名。</p>
             <ul>
-              <li>A01：第一人称站上未来湾任务码头</li>
-              <li>A02：未来湾外部空间建立镜头</li>
-              <li>A03：灰银级请求信号点亮</li>
+              <li>`CH01-P01-S01`：第一人称站上未来湾任务码头</li>
+              <li>历史建立资产：旧 `SHOT-A02`，当前仅保留为空间 mood reference</li>
+              <li>`CH01-P01-S02`：灰银级请求信号点亮</li>
             </ul>
           </div>
           <div class="image-grid">
             <figure>
               <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="SHOT-A01" />
-              <figcaption>SHOT-A01：未来湾任务码头第一人称开场。</figcaption>
+              <figcaption>历史资产 SHOT-A01：对应 `CH01-P01-S01` 的任务码头到场基线。</figcaption>
             </figure>
             <figure>
               <img src="shots/shot-a02-future-bay-establishing-v1-qwen-image-2.0-pro.png" alt="SHOT-A02" />
-              <figcaption>SHOT-A02：未来湾空间建立镜头。</figcaption>
+              <figcaption>历史资产 SHOT-A02：旧建立镜头参考，当前仅保留为空间基线 mood reference。</figcaption>
             </figure>
             <figure>
               <img src="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png" alt="SHOT-A03" />
-              <figcaption>SHOT-A03：灰银级请求信号点亮。</figcaption>
+              <figcaption>历史资产 SHOT-A03：当前对应 `CH01-P01-S02` 的灰银级请求信号点亮。</figcaption>
             </figure>
             <figure>
               <video controls preload="metadata" src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
-              <figcaption>A03 视频：当前用于 Part 1 的任务信号片段。</figcaption>
+              <figcaption>历史资产视频 A03：当前用于 `P01` 前段的任务信号片段。</figcaption>
             </figure>
           </div>
         </div>
@@ -384,21 +384,21 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>A04 档案守望者任务交付</h3>
-            <p>A04 是开场最重要的责任交付镜头。当前保留主角色参考、首帧以及 `3.4s` 的正式 trim 视频，作为 Part 1 的稳定中段资产。</p>
+            <h3>CH01-P01-S05 任务正式交付（历史文件别名 A04）</h3>
+            <p>这一组资产对应 `P01` 的守望者正式交付职责。当前保留主角色参考、首帧以及 `3.4s` 的正式 trim 视频，继续作为 `P01` 中段稳定资产。</p>
           </div>
           <div class="image-grid">
             <figure>
               <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="C-01 档案守望者定妆" />
-              <figcaption>C-01：A04 角色参考。</figcaption>
+              <figcaption>C-01：对应 `CH01-P01-S05` 的守望者角色参考。</figcaption>
             </figure>
             <figure>
               <img src="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png" alt="SHOT-A04 首帧" />
-              <figcaption>SHOT-A04：守望者任务交付首帧。</figcaption>
+              <figcaption>历史资产 SHOT-A04：当前用于 `CH01-P01-S05` 的任务交付首帧。</figcaption>
             </figure>
             <figure>
               <video controls preload="metadata" src="videos/shot-a04-archive-watchkeeper-handoff-wan2.2-i2v-flash-v2-trim34-480p.mp4"></video>
-              <figcaption>A04 正式 trim 版：Part 1 当前使用视频片段。</figcaption>
+              <figcaption>历史 trim 片段 A04：当前 `P01` 使用的任务交付视频。</figcaption>
             </figure>
           </div>
         </div>
@@ -407,30 +407,30 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>A05 任务简报展开</h3>
-            <p>A05 当前正式路线是 `clean plate motion + delivery overlay`。页面保留底板、交付层与浏览器预览，分别服务正式装配与快速查看。</p>
+            <h3>CH01-P01-S06 任务简报展开（历史文件别名 A05）</h3>
+            <p>这一组资产对应 `P01` 的任务封签展开段。当前正式路线是 `clean plate motion + delivery overlay`；页面保留底板、交付层与浏览器预览，分别服务正式装配与快速查看。</p>
           </div>
           <div class="image-grid">
             <figure>
               <img src="shots/shot-a05-mission-brief-clean-plate-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 clean plate 首帧" />
-              <figcaption>SHOT-A05 clean plate：底板首帧。</figcaption>
+              <figcaption>历史资产 SHOT-A05 clean plate：当前用于 `CH01-P01-S06` 的底板首帧。</figcaption>
             </figure>
             <figure>
               <video controls preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
-              <figcaption>A05 clean plate：正式 motion plate。</figcaption>
+              <figcaption>历史 motion plate A05：当前 `CH01-P01-S06` 的正式底板视频。</figcaption>
             </figure>
             <figure>
               <div style="background:#09111c;border-radius:18px;padding:12px;">
                 <img src="ui/a05-mission-brief-delivery-overlay-v1.png" alt="A05 delivery overlay" />
               </div>
-              <figcaption>A05 delivery overlay：Part 1 正式使用的任务简报层。</figcaption>
+              <figcaption>历史 overlay A05：当前 `P01` 正式使用的任务简报层。</figcaption>
             </figure>
             <figure>
               <div class="composite-stage">
                 <video autoplay muted loop playsinline preload="metadata" src="videos/shot-a05-mission-brief-clean-plate-wan2.2-i2v-flash-v1-480p.mp4"></video>
                 <object type="image/svg+xml" data="ui/a05-mission-brief-overlay-v1.svg" aria-label="A05 composite browser preview"></object>
               </div>
-              <figcaption>A05 浏览器预览：用于快速查看底板与 UI 叠层关系。</figcaption>
+              <figcaption>历史浏览器预览 A05：用于快速查看 `CH01-P01-S06` 底板与 UI 叠层关系。</figcaption>
             </figure>
           </div>
         </div>
@@ -439,21 +439,21 @@
       <div class="compare">
         <div class="compare-grid">
           <div>
-            <h3>A06 接受航行后的启航</h3>
-            <p>A06 当前保留主线启航首帧、阿潮可见试用首帧与带真实音轨的 route-only 主线视频，作为 Part 1 的出发段资产。</p>
+            <h3>CH01-P01-S07 接受任务后的启航（历史文件别名 A06）</h3>
+            <p>这一组资产对应 `P01` 的接受任务后启航段。当前保留主线启航首帧、阿潮可见试用首帧与带真实音轨的 route-only 主线视频，作为 `P01` 的出发段资产。</p>
           </div>
           <div class="image-grid">
             <figure>
               <img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 route-only" />
-              <figcaption>SHOT-A06：主线启航首帧。</figcaption>
+              <figcaption>历史资产 SHOT-A06：当前用于 `CH01-P01-S07` 的主线启航首帧。</figcaption>
             </figure>
             <figure>
               <img src="shots/shot-a06-route-ignite-achao-visible-v2-qwen-image-2.0-pro.png" alt="SHOT-A06 阿潮可见试用" />
-              <figcaption>SHOT-A06 阿潮可见试用：当前保留的可见分支参考。</figcaption>
+              <figcaption>历史资产 SHOT-A06 阿潮可见试用：当前保留的可见分支参考。</figcaption>
             </figure>
             <figure>
               <video controls playsinline src="videos/shot-a06-route-ignite-wan2.6-i2v-flash-v2-auto-audio-720p.mp4"></video>
-              <figcaption>A06 route-only：当前 Part 1 使用的启航视频片段。</figcaption>
+              <figcaption>历史 route-only 片段 A06：当前 `P01` 使用的启航视频片段。</figcaption>
             </figure>
           </div>
         </div>
