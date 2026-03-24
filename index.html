@@ -221,23 +221,24 @@
     </section>
 
     <section class="section">
-      <h2>Part 2 验证视频</h2>
+      <h2>Part 2 当前交付</h2>
       <div class="compare-grid">
         <div>
-          <h3>紧急入港校验 paper cut</h3>
-          <p>当前验证文件为 `part-02-emergency-entry-check-papercut-v1.mp4`。这不是正式成片，而是用于确认 `B01-B04` 的信息顺序、规则压迫感与 `时间档案城外景 -> 悬浮档案大厅` 桥接节奏的低成本验证版。</p>
+          <h3>紧急入港校验 delivery v1</h3>
+          <p>当前主装配文件为 `part-02-emergency-entry-check-delivery-v1.mp4`。这条交付保持 `B02/B03` 的 UI-first 路线，同时为 `B01/B04` 预留正式 Wan clip 插槽；如果正式视频已生成，重跑主装配脚本即可原位升级同一交付文件。</p>
           <ul>
-            <li>输出文件：`part-02-emergency-entry-check-papercut-v1.mp4`</li>
+            <li>主文件：`part-02-emergency-entry-check-delivery-v1.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 22.4s / AAC stereo`</li>
-            <li>结构路线：`B01` 航行压入准入压力，`B02/B03` 后叠校验 UI，`B04` 过桥进入大厅</li>
-            <li>制作口径：`S-02 / S-03` 场景母图 + UI-first 叠层 + 最小必要配音</li>
-            <li>当前判断：`PASS WITH NOTES`，可继续推进 `B01` 与 `B04` 的正式视频化</li>
+            <li>结构路线：`B01` 准入航行，`B02/B03` 后叠校验 UI，`B04` 入厅桥接</li>
+            <li>正式视频模板：`shot-b01-entry-approach-wan2.6-i2v-flash-v1`、`shot-b04-entry-bridge-wan2.6-i2v-flash-v1`</li>
+            <li>稳定资产：`render_chapter01_part2_delivery.sh`、`b02-entry-permit-overlay-v1.png`、`b03-entry-restrictions-overlay-v1.png`</li>
+            <li>验证文件：`part-02-emergency-entry-check-papercut-v1.mp4` 继续保留作低成本节奏基线</li>
           </ul>
         </div>
         <div class="image-grid">
           <figure>
-            <video controls playsinline src="videos/part-02-emergency-entry-check-papercut-v1.mp4"></video>
-            <figcaption>Part 2 paper cut v1：紧急入港校验段当前验证视频。</figcaption>
+            <video controls playsinline src="videos/part-02-emergency-entry-check-delivery-v1.mp4"></video>
+            <figcaption>Part 2 delivery v1：当前主装配视频，B01/B04 可用正式 clip 原位替换升级。</figcaption>
           </figure>
         </div>
       </div>
