@@ -192,7 +192,7 @@
         </div>
         <div class="card">
           <div class="tiny">交付状态</div>
-          <p><span class="label">P01</span> 已更新到 `v9` canonical story-clear 重装配，首次按 `CH01-P01-S01-S07` 把开场信息顺序讲通，并明确把 visible speech 风险改写为离屏 / 系统层 / 纸片承接；旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
+          <p><span class="label">P01</span> 已更新到 `v10` synced-dialogue 重装配，`S03/S04/S05/S06/S07` 现已全部进入真实视频镜头链，不再依赖纸片承接；角色台词改为随镜头同步生成，避免手工后贴造成口型失败。旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
         </div>
       </div>
     </section>
@@ -202,19 +202,19 @@
       <div class="compare-grid">
         <div>
           <h3>P01 未来湾任务码头</h3>
-          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v9.mp4`。这一版不再把旧 `A01-A06` 动态串接当成正式开场，而是按 canonical `CH01-P01-S01-S07` 重新装配：`S01/S02` 继续复用稳定 clip，`S03/S04/S05/S06` 改为受控纸片与系统层承接，`S07` 则回到无随机文本的受控启航段。目标不是“假装全是正式视频”，而是先把故事讲清楚，并彻底避开可见嘴型不同步与尾段莫名音乐。</p>
+          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v10.mp4`。这一版继续按 canonical `CH01-P01-S01-S07` 装配，但把此前仍是纸片的 `S03/S04/S06/S07` 换成了真实同步音视频 clip：阿潮接入、祁野发声、林澄发声和启航世界音都在镜头内生成，不再靠后贴 TTS 勉强成立。当前主目标已经从“先讲清故事”推进到“在讲清故事的前提下，把真实镜头链接起来”。</p>
           <ul>
-            <li>输出文件：`part-01-future-bay-task-dock-delivery-v9.mp4`</li>
-            <li>成片规格：`1152x768 / 30fps / 26.8s / AAC stereo`</li>
-            <li>当前已落地职责：`CH01-P01-S01` 到场、`S02` 信号点亮、`S03/S04` 固定小队运转、`S05` 守望者交班、`S06` 林澄争议切片、`S07` 接受任务与启航</li>
-            <li>音频路线：最少必要台词全部退到离屏 / 无线 / 系统层；不再强行让可见人物开口；尾段去掉随机欢快音乐与模型自发文字</li>
-            <li>配套文件：`v9` metadata、`S04` 固定小队首帧、`S06` 林澄争议切片首帧、争议切片 overlay、`v9` 声音 stems</li>
+            <li>输出文件：`part-01-future-bay-task-dock-delivery-v10.mp4`</li>
+            <li>成片规格：`1152x768 / 30fps / 28.6s / AAC stereo`</li>
+            <li>当前已落地职责：`CH01-P01-S01` 到场、`S02` 信号点亮、`S03` 阿潮接入、`S04` 固定小队运转、`S05` 守望者交班、`S06` 林澄争议切片、`S07` 接受任务与启航</li>
+            <li>音频路线：`S03/S04/S05/S06` 的角色台词均改为镜头内同步生成；`S07` 改为世界内环境声；整段只保留轻环境底噪，不再手工拼角色对白</li>
+            <li>配套文件：`v10` metadata、`S03/S04/S06/S07` 新视频 clip、`S06` dispute overlay</li>
           </ul>
         </div>
         <div class="image-grid">
           <figure>
-            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v9.mp4"></video>
-            <figcaption>P01 delivery v9：第一次按 canonical `S01-S07` 把故事主位、固定小队、任务交班与林澄争议顺序讲清的 story-clear 重装配版。</figcaption>
+            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v10.mp4"></video>
+            <figcaption>P01 delivery v10：按 canonical `S01-S07` 装配，并把原纸片承接位替换成真实同步音视频镜头的当前主交付版。</figcaption>
           </figure>
         </div>
       </div>
@@ -385,16 +385,20 @@
         <div class="compare-grid">
           <div>
             <h3>CH01-P01-S03 / S04 固定小队运转</h3>
-            <p>这是 `P01 v9` 新补回的关键缺口资产。它们的职责不是介绍角色，而是让孩子先看懂“未来湾固定小队已经在运转，而我就在这支队伍的责任中心”。当前正式使用路线是 `受控静帧 + 离屏对白`，不再让模型在可见角色脸上胡乱开口。</p>
+            <p>这是 `P01 v10` 当前的关键中段资产。它们的职责不是介绍角色，而是让孩子先看懂“未来湾固定小队已经在运转，而我就在这支队伍的责任中心”。当前正式使用路线已升级为 `真实镜头 + 同步人声`：`S03` 由阿潮短播报接入，`S04` 由祁野在工作中发出唯一一句短线。</p>
           </div>
           <div class="image-grid">
             <figure>
               <img src="shots/shot-ch01-p01-s04-team-operating-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S04 固定小队运转首帧" />
-              <figcaption>CH01-P01-S04：固定小队已在任务台运转的关键首帧，当前已装入 `P01 v9`。</figcaption>
+              <figcaption>CH01-P01-S04：固定小队已在任务台运转的关键首帧，当前已升级到同步音视频 clip。</figcaption>
             </figure>
             <figure>
-              <video controls preload="metadata" src="videos/part-01-future-bay-task-dock-delivery-v9.mp4"></video>
-              <figcaption>`P01 v9`：`S03/S04` 当前在成片中以受控纸片承接阿潮接入与小队运转信息。</figcaption>
+              <video controls preload="metadata" src="videos/shot-ch01-p01-s04-team-operating-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>`S04` synced clip：祁野在任务台前工作并说出唯一短线，当前已装入 `P01 v10`。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" src="videos/shot-ch01-p01-s03-achao-arrival-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>`S03` synced clip：阿潮以无线短播报接入任务现场，当前已装入 `P01 v10`。</figcaption>
             </figure>
           </div>
         </div>
@@ -404,7 +408,7 @@
         <div class="compare-grid">
           <div>
             <h3>CH01-P01-S05 任务正式交付（历史文件别名 A04）</h3>
-            <p>这一组资产对应 `P01` 的守望者正式交付职责。由于之前的可见开口版本存在口型与声音链风险，`P01 v9` 当前把这一步收成 `守望者静帧 + 离屏正式交班`，只保留守望者角色与交付动作，不再让不可靠的嘴型进入主交付。</p>
+            <p>这一组资产对应 `P01` 的守望者正式交付职责。当前 `P01 v10` 继续复用已经可用的 `Wan 2.6` 同步声画版本，让守望者作为当前段落里唯一稳定的成人交班镜头。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -416,8 +420,8 @@
               <figcaption>历史资产 SHOT-A04：当前用于 `CH01-P01-S05` 的任务交付首帧。</figcaption>
             </figure>
             <figure>
-              <video controls preload="metadata" src="videos/part-01-future-bay-task-dock-delivery-v9.mp4"></video>
-              <figcaption>`P01 v9`：`S05` 当前采用静帧交班，声音退回离屏正式交付，避免口型失败。</figcaption>
+              <video controls preload="metadata" src="videos/shot-a04-archive-watchkeeper-handoff-wan2.6-i2v-flash-v3-custom-audio-720p.mp4"></video>
+              <figcaption>`S05` synced clip：守望者当前以稳定的同步交班镜头进入 `P01 v10`。</figcaption>
             </figure>
           </div>
         </div>
@@ -427,7 +431,7 @@
         <div class="compare-grid">
           <div>
             <h3>CH01-P01-S06 林澄争议切片与责任后果</h3>
-            <p>`P01 v9` 已不再把旧 `A05` 泛任务简报当作这一镜的全部内容，而是先补入林澄本人、争议状态与归档后果。当前正式路线是 `林澄争议切片首帧 + 新 dispute overlay`；旧 `A05` clean plate 仍保留作后续更完整 UI 层的参考。</p>
+            <p>`P01 v10` 继续保留“先让林澄本人出现，再叠争议责任信息”的路线，但这一镜已经升级成同步音视频 clip。当前做法是：林澄在镜头里直接说出关键一句，右侧再叠受控 dispute overlay，用来压住模型自发的文件文字并补齐责任后果。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -441,8 +445,8 @@
               <figcaption>`P01 v9` dispute overlay：当前用于交代匹配度、拒签状态与午夜前后果。</figcaption>
             </figure>
             <figure>
-              <video controls preload="metadata" src="videos/part-01-future-bay-task-dock-delivery-v9.mp4"></video>
-              <figcaption>`P01 v9`：`S06` 当前采用争议切片 + 受控 overlay，不再让旧 `A05` 独自承担这一镜全部叙事。</figcaption>
+              <video controls preload="metadata" src="videos/shot-ch01-p01-s06-lin-cheng-dispute-slice-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>`S06` synced clip：林澄关键一句当前已在镜头内同步生成，再由 overlay 控制责任信息。</figcaption>
             </figure>
             <figure>
               <img src="shots/shot-a05-mission-brief-clean-plate-v1-qwen-image-2.0-pro.png" alt="SHOT-A05 clean plate 首帧" />
@@ -456,7 +460,7 @@
         <div class="compare-grid">
           <div>
             <h3>CH01-P01-S07 接受任务后的启航（历史文件别名 A06）</h3>
-            <p>这一组资产对应 `P01` 的接受任务后启航段。`P01 v9` 当前主路线改用受控启航静帧动化，不再使用会自发长出英文样文字或情绪跑偏的历史模型视频。阿潮可见试用首帧仍保留为探索资产，不进入主交付。</p>
+            <p>这一组资产对应 `P01` 的接受任务后启航段。`P01 v10` 当前已改用新的 world-audio clip：镜头重新回到真实启航视频，但不再接受随机字幕、伪英文或尾段音乐。阿潮可见试用首帧仍保留为探索资产，不进入主交付。</p>
           </div>
           <div class="image-grid">
             <figure>
@@ -468,8 +472,8 @@
               <figcaption>历史资产 SHOT-A06 阿潮可见试用：当前保留的可见分支参考。</figcaption>
             </figure>
             <figure>
-              <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v9.mp4"></video>
-              <figcaption>`P01 v9`：`S07` 当前采用受控静帧启航，不再引入随机文字与不合气氛音乐。</figcaption>
+              <video controls playsinline src="videos/shot-ch01-p01-s07-route-ignite-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>`S07` world-audio clip：当前已装入 `P01 v10`，恢复真实启航镜头，同时压掉人声与配乐污染。</figcaption>
             </figure>
           </div>
         </div>
