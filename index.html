@@ -192,7 +192,7 @@
         </div>
         <div class="card">
           <div class="tiny">交付状态</div>
-          <p><span class="label">P01</span> 已更新到 `v12` synced-dialogue 主交付。这一版继续保留 `S03/S04/S05/S06/S07` 的真实同步音视频镜头链，同时把开头任务码头声场再做厚一层，并为 `S02` 增加高对比灰银任务牌；`S04` 也恢复到完整时长，避免男孩那句台词在装配里被硬切。旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
+          <p><span class="label">P01</span> 已更新到 `v13` synced-dialogue 主交付。这一版延续 `v12` 的开头声场与灰银任务牌修正，同时把 `S06` 换成新的林澄同步镜头版本：台词改为更短、更稳的句子，并在镜头结束前自然落稳，不再出现“话还没说完就被截断”的感觉。旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线。</p>
         </div>
       </div>
     </section>
@@ -202,20 +202,20 @@
       <div class="compare-grid">
         <div>
           <h3>P01 未来湾任务码头</h3>
-          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v12.mp4`。这一版仍然沿用 `v10` 建立起来的 canonical `CH01-P01-S01-S07` 同步对白路线，不回退到后贴 TTS；这次针对三处明确问题动刀：开头环境声进一步增强，`S04` 男孩台词不再被装配截断，`S02` 的灰银任务信息改为可读的正式任务牌。当前主目标仍然是：既把故事讲清，也让真实镜头和真实声音一起成立。</p>
+          <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v13.mp4`。这一版仍然沿用 `v10` 建立起来的 canonical `CH01-P01-S01-S07` 同步对白路线，不回退到后贴 TTS；在保留 `v12` 开头修正的基础上，重点替换了 `S06`：林澄改说更短、更像钉子句的同步台词，让这一镜在 5 秒内说完并留出收尾，不再把表演顶到片尾边界。当前主目标仍然是：既把故事讲清，也让真实镜头和真实声音一起成立。</p>
           <ul>
-            <li>输出文件：`part-01-future-bay-task-dock-delivery-v12.mp4`</li>
+            <li>输出文件：`part-01-future-bay-task-dock-delivery-v13.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 29.6s / AAC stereo`</li>
             <li>当前已落地职责：`CH01-P01-S01` 到场、`S02` 信号点亮、`S03` 阿潮接入、`S04` 固定小队运转、`S05` 守望者交班、`S06` 林澄争议切片、`S07` 接受任务与启航</li>
             <li>音频路线：`S03/S04/S05/S06` 的角色台词继续使用镜头内同步生成；`S07` 保持世界内环境声；`S01/S02` 则叠回更明确的港口、空气、电流与信号唤醒效果层</li>
-            <li>画面修正：`S02` 新增高对比灰银任务牌；`S04` 恢复完整时长，避免尾句被切</li>
-            <li>配套文件：`v12` metadata、`S03/S04/S06/S07` 同步视频 clip、`S06` dispute overlay</li>
+            <li>画面修正：`S02` 保留高对比灰银任务牌；`S04` 保持完整时长；`S06` 切换到更短台词的同步镜头 v2</li>
+            <li>配套文件：`v13` metadata、`S03/S04/S06/S07` 同步视频 clip、`S06` dispute overlay</li>
           </ul>
         </div>
         <div class="image-grid">
           <figure>
-            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v12.mp4"></video>
-            <figcaption>P01 delivery v12：保留 canonical `S01-S07` 的同步音视频镜头链，并进一步修正开头声场、灰银任务可读性与 `S04` 台词截断问题。</figcaption>
+            <video controls playsinline src="videos/part-01-future-bay-task-dock-delivery-v13.mp4"></video>
+            <figcaption>P01 delivery v13：保留 canonical `S01-S07` 的同步音视频镜头链，并进一步把 `S06` 的林澄台词收成能自然落地的同步版本。</figcaption>
           </figure>
         </div>
       </div>
@@ -432,7 +432,7 @@
         <div class="compare-grid">
           <div>
             <h3>CH01-P01-S06 林澄争议切片与责任后果</h3>
-            <p>`P01 v10` 继续保留“先让林澄本人出现，再叠争议责任信息”的路线，但这一镜已经升级成同步音视频 clip。当前做法是：林澄在镜头里直接说出关键一句，右侧再叠受控 dispute overlay，用来压住模型自发的文件文字并补齐责任后果。</p>
+            <p>`P01 v13` 继续保留“先让林澄本人出现，再叠争议责任信息”的路线，但这一镜已经切换到新的同步音视频 clip。当前做法是：林澄在镜头里说一句更短、更稳的关键句，确保口型、语气和镜头尾部都能自然落地；右侧继续叠受控 dispute overlay，用来压住模型自发的文件文字并补齐责任后果。</p>
           </div>
           <div class="image-grid">
             <figure>
