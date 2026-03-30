@@ -67,6 +67,38 @@
       font-weight: 700;
       margin-top: 6px;
     }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+    }
+    .status-chip.notes {
+      background: #eef6ff;
+      color: #16556f;
+      border-color: #c7dff0;
+    }
+    .status-chip.scope {
+      background: #fff6ea;
+      color: #8a5622;
+      border-color: #f0d7b8;
+    }
+    .status-chip.complete {
+      background: #edf8f1;
+      color: #1c6a42;
+      border-color: #c9e7d5;
+    }
     .grid {
       display: grid;
       gap: 16px;
@@ -110,6 +142,21 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+    }
+    .stack {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #09131d;
+    }
+    .stack > img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .stack > img.overlay {
+      position: absolute;
+      inset: 0;
     }
     figure {
       margin: 0;
@@ -167,6 +214,61 @@
     }
     li { margin-bottom: 6px; }
     .subtle { color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fbfdff;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th {
+      background: #eef6fb;
+      color: #20455d;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    tr:last-child td {
+      border-bottom: 0;
+    }
+    .stat-strong {
+      font-weight: 700;
+      color: #184761;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+    .meta-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f8fbfd;
+      padding: 12px 14px;
+    }
+    .meta-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .meta-value {
+      color: #184761;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
     @media (max-width: 920px) {
       .grid.two, .grid.three, .compare-grid, .image-grid {
         grid-template-columns: 1fr;
@@ -183,6 +285,11 @@
       <h1>Chapter 01 资产总览</h1>
       <p class="lead">这份页面只保留 chapter-01 当前仍有长期价值的资产入口：稳定角色、场景母图、关键镜头、交付视频与可复用 UI 层。不再保存过程复盘、失败分支、请求日志或临时计划。</p>
       <div class="pill">唯一主入口：角色 + 场景 + 镜头 + 视频交付</div>
+      <div class="pill-row">
+        <span class="status-chip complete">Loop Complete: YES</span>
+        <span class="status-chip notes">Accepted Spine: P01-P06, P10-P12</span>
+        <span class="status-chip scope">P07-P09 暂不在视频主线 scope</span>
+      </div>
     </section>
 
     <section class="section">
@@ -194,11 +301,57 @@
         </div>
         <div class="card">
           <div class="tiny">主场景</div>
-          <p><span class="label">当前稳定母图</span> 为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09 / S-11`，足以支撑 chapter-01 的开场、制度压力、家庭等待区冲突、公共表达与回航收束。</p>
+          <p><span class="label">当前稳定母图</span> 为 `S-01 / S-02 / S-04 / S-06 / S-07 / S-09 / S-11`，足以支撑 chapter-01 的开场、制度压力、家庭等待区冲突、概率长廊奇观、公共表达与回航收束。</p>
         </div>
         <div class="card">
           <div class="tiny">交付状态</div>
-          <p><span class="label">P01</span> 已更新到 `v13` synced-dialogue 主交付。这一版延续 `v12` 的开头声场与灰银任务牌修正，同时把 `S06` 换成新的林澄同步镜头版本：台词改为更短、更稳的句子，并在镜头结束前自然落稳，不再出现“话还没说完就被截断”的感觉。旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线；`B04` 的 `R2V` 试片目前已判定不回写主线。<span class="label">P03</span> 已收成 `part-03-archive-hall-pressure-delivery-v1.mp4`，当前定位为 `PASS WITH NOTES` 的正式交付入口：先讲清大厅冲突入口，再继续把 `C02/C04` 近景关系镜头替换成更强的正式版本。<span class="label">P04</span> 已收成 `part-04-waiting-zone-and-father-delivery-v1.mp4`：等待区先成立，再进入父亲与林澄的双目标与同步短线，不再把空间、物件压迫和双人对白压成同一团。</p>
+          <p><span class="label">P01</span> 已更新到 `v13` synced-dialogue 主交付。这一版延续 `v12` 的开头声场与灰银任务牌修正，同时把 `S06` 换成新的林澄同步镜头版本：台词改为更短、更稳的句子，并在镜头结束前自然落稳，不再出现“话还没说完就被截断”的感觉。旧 `v8` 继续保留为 teaser 对照版。<span class="label">P02</span> 已建立 `delivery v1` 主装配文件，并保留 `paper cut v1` 作为节奏验证基线；`B04` 的 `R2V` 试片目前已判定不回写主线。<span class="label">P03</span> 已提升到 `part-03-archive-hall-pressure-delivery-v2.mp4`，当前定位为 `PASS WITH NOTES` 的 current 交付入口：这次不是假装拿到更强正式 clip，而是把已验证过的 relation-led 低成本重装配正式接管主线，用更清楚的 `C02/C04` 关系推进替换旧版的借镜问题。<span class="label">P04</span> 已收成 `part-04-waiting-zone-and-father-delivery-v1.mp4`：等待区先成立，再进入父亲与林澄的双目标与同步短线，不再把空间、物件压迫和双人对白压成同一团。<span class="label">P05</span> 已收成 `part-05-probability-corridor-delivery-v1.mp4` 并进入 backlog。<span class="label">P06</span> 已以 `delivery v1` 进入 `accepted_with_notes`，当前不再抢主线。<span class="label">P10</span> 已收成 `part-10-free-echo-platform-delivery-v1.mp4` 并进入 `accepted_with_notes`：`F03` 现已升级为新 key 打通的 `viduq3-turbo` 正式短 clip，高潮段不再靠 rescue clip 承担对手入场；当前 notes 已收缩到 `F01/F02/F04` 仍保留静帧 / UI-first 痕迹。<span class="label">P11</span> 已收成 `part-11-midnight-choice-return-delivery-v1.mp4`：`G02` 正式人物 clip 已经接入主装配，整段现在能按“结果回到林澄面前 -> 结尾陈词 -> 制度接收 -> 回航桥接”顺序正式审片。<span class="label">P12</span> 已收成 `part-12-digital-mentor-delivery-v1.mp4`：当前正式采用 `voice-first` 收束，不再假装可见导师人形已经锁定。整章当前主 spine 也已统一收成 `chapter-01 master current`。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">Scope 边界</div>
+          <p><span class="label">当前视频主线</span> 只覆盖 `P01-P06` 与 `P10-P12`。`P07-P09` 目前仍不在本页所展示的 accepted spine 里，因此这页不把它们假装展示成已交付视频段；这也意味着当前 master 仍然主要是 `vertical slice` 审片入口，而不是已经完全讲顺的整集封版。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">Story-First 预览</div>
+          <p><span class="label">补桥结果</span> 当前已新增 `P07-P09 middle bridge paper cut` 与 `chapter-01 story spine preview` 两条低成本预览，用来验证中段补桥后，整章是否明显比现在的 accepted master 更像完整故事。它们只承担 `story clarity preview` 职责，不替代 current，也不假装等同于正式视频化中段。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">导演室复核</div>
+          <p><span class="label">当前结论</span> `P01-P04` 的故事可读性已经明显修正，人物来历、场景来源和任务交班不再像突然冒出来；但整章还没有到“完整讲顺”的程度。当前最大断点仍在中段：`P07/P08` 负责第四路径的人性理解与 `07` 的制度公平性，可它们暂不在 accepted spine，结果 `P09 -> P10` 仍会显得推进过快、承重不足。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">假视频替换债务</div>
+          <p><span class="label">当前硬判断</span> chapter-01 现在仍有多段在用 `still-motion / UI-first / rescue clip / voice-first clean plate` 撑过 accepted spine。它们不再被视为“可以长期保留的 production 风格”，而被正式定义为必须逐段替换的交付债务。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>当前假视频替换队列</h2>
+      <div class="grid three">
+        <div class="card">
+          <div class="tiny">最高优先</div>
+          <p><span class="label">P06</span> 当前 `E01/E02/E04` 仍以静帧 / overlay 为主，`E03` 也仍是 rescue。它已经足够讲清顺序，但还不是真正的视频化中段反转，因此在 `P10/F03` 已被正式 clip 替换后，`P06` 现在成为最该优先清掉的假视频债务。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">第二优先</div>
+          <p><span class="label">P11</span> 只有 `G02` 已经是正式人物 clip；`G01/G03/G04` 仍靠图片推进。结局如果继续这样，会削弱“已经真正落地”的体感。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">第三优先</div>
+          <p><span class="label">P10</span> 虽然 `F03` 已经升级为正式 `viduq3` clip，但 `F01/F02/F04` 仍带着明显的静帧与 UI-first 气质。它不再是“卡住高潮的救援位”，却仍是后续值得继续升格的 demo 感残留区。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">后续优先</div>
+          <p><span class="label">P05</span> 当前主要问题集中在 `D02`。这一步还像“在同一张图上看路径说明”，没有完全升级成真实路径比较现场。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">后续优先</div>
+          <p><span class="label">P02</span> 当前 `B01/B04` 的正式视频插槽尚未补齐，`B02/B03` 继续保持 `UI-first`。它已经能交代规则，但还没有彻底摆脱静帧驱动装配。</p>
+        </div>
+        <div class="card">
+          <div class="tiny">末位项目</div>
+          <p><span class="label">P12</span> 当前仍是 `voice-first clean plate`。这段可以最后处理，因为它至少是有意识的 world-in 收束，而不是用静帧硬冒充剧情推进。</p>
         </div>
       </div>
     </section>
@@ -208,16 +361,22 @@
       <div class="grid three">
         <div class="card">
           <div class="tiny">Preview</div>
-          <p><span class="label">统一预览页</span> 当前稳定预览入口与本页保持同址，后续审片和内部同步优先直接使用 <a href="chapter-01-main-character-dossier.html">chapter-01-main-character-dossier.html</a>，不再手动翻 dated 文件名。</p>
+          <p><span class="label">统一预览页</span> 当前稳定预览入口与本页保持同址，后续审片和内部同步优先直接使用 <a href="chapter-01-main-character-dossier.html">chapter-01-main-character-dossier.html</a>，不再手动翻 dated 文件名。页面里凡是 `current/...` 路径，默认都视为当前稳定锚点；少量保留的直链只用于历史对照、paper cut 基线或开场档案资产。整章连续审片现在也已有稳定入口：<a href="current/deliveries/chapter-01-master-current.mp4">chapter-01 master current</a>。</p>
         </div>
         <div class="card">
           <div class="tiny">Deliveries</div>
           <p><span class="label">当前 accepted part</span> 已统一挂到 current 目录：</p>
           <ul>
+            <li><a href="current/deliveries/chapter-01-master-current.mp4">chapter-01 master current</a></li>
             <li><a href="current/deliveries/part-01-current.mp4">P01 current delivery</a></li>
             <li><a href="current/deliveries/part-02-current.mp4">P02 current delivery</a></li>
             <li><a href="current/deliveries/part-03-current.mp4">P03 current delivery</a></li>
             <li><a href="current/deliveries/part-04-current.mp4">P04 current delivery</a></li>
+            <li><a href="current/deliveries/part-05-current.mp4">P05 current delivery</a></li>
+            <li><a href="current/deliveries/part-06-current.mp4">P06 current delivery</a></li>
+            <li><a href="current/deliveries/part-10-current.mp4">P10 current delivery</a></li>
+            <li><a href="current/deliveries/part-11-current.mp4">P11 current delivery</a></li>
+            <li><a href="current/deliveries/part-12-current.mp4">P12 current delivery</a></li>
           </ul>
         </div>
         <div class="card">
@@ -228,7 +387,240 @@
             <li><a href="current/clips/p03-s01-hall-establishing-current.mp4">P03 / S01 大厅建立</a></li>
             <li><a href="current/clips/p04-s04-father-close-current.mp4">P04 / S04 父亲近景</a></li>
             <li><a href="current/clips/p04-s05-lin-close-current.mp4">P04 / S05 林澄近景</a></li>
+            <li><a href="current/clips/p05-s04-wind-anomaly-current.mp4">P05 / S04 异常风声反应</a></li>
+            <li><a href="current/clips/p06-s03-hidden-path-current.mp4">P06 / S03 第四路径显形</a></li>
+            <li><a href="current/clips/p10-s03-opponent-projection-current.mp4">P10 / S03 对手投影入场</a></li>
+            <li><a href="current/clips/p11-s02-lin-final-speech-current.mp4">P11 / S02 林澄结尾陈词</a></li>
           </ul>
+        </div>
+        <div class="card">
+          <div class="tiny">Story-First Preview</div>
+          <p><span class="label">补桥预览直链</span> 当前新增两个专用入口，用来直接比较“现在这条 vertical slice”与“补回中段因果承重以后”的差异：</p>
+          <ul>
+            <li><a href="videos/part-07-09-middle-bridge-papercut-v2.mp4">P07-P09 middle bridge paper cut v2</a></li>
+            <li><a href="videos/chapter-01-story-spine-preview-v2.mp4">chapter-01 story spine preview v2</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P07-P09 故事补桥预览</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>Story-First Middle Bridge</h3>
+          <p>这一轮没有把 `P07-P09` 假装直接升格成 accepted 主线，而是先按 `paper cut` 思路把缺失的中段承重补回来：`P07` 先把第四路径从“神秘隐藏答案”改回“有人真实活过的未来”，`P08` 再把 `07` 的制度立场补成可理解的公共分配压力，`P09` 最后让“辅助推断层误被当作事实”的错误真正反噬团队，并把大家逼进 `P10` 的公开程序。它的职责不是做漂亮，而是检查故事是不是终于讲通了。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Type</div>
+              <div class="meta-value">story-first bridge preview</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Status</div>
+              <div class="meta-value">PREVIEW ONLY</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Scope</div>
+              <div class="meta-value">P07-P09 causal bridge</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Rule</div>
+              <div class="meta-value">不替代 accepted current</div>
+            </div>
+          </div>
+          <ul>
+            <li>桥接文件：`videos/part-07-09-middle-bridge-papercut-v2.mp4`</li>
+            <li>章节预览：`videos/chapter-01-story-spine-preview-v2.mp4`</li>
+            <li>本轮新增：明确补进 `P06 -> P07` 减速桥、`P07 -> P08` 孩子侧反应位、`P09 -> P10` 余波承接</li>
+            <li>重要边界：当前仍只补故事承重，不把 `P07-P09` 假装展示成正式 accepted 视频段</li>
+          </ul>
+          <p><span class="label">导演室复核</span> 当前最新版已经推进到 `v2`。这版不是继续抽象讨论，而是把上一轮导演室指出的三处结构停顿直接补进片子：`P06` 末尾先减速，再进入 `P07`；风声婆婆之后先给孩子侧反应，再进 `P08`；`P09` 分裂后先停一拍余波，再送进 `P10`。导演层现在可以更明确地下判断：这条 `story spine v2` 已经把 chapter-01 从“像预告片一样跳着讲”推进到“孩子能顺着因果跟下去”的状态，但它仍只是 `story-first preview`，还不是已经完成的正式中段视频链。</p>
+          <ul>
+            <li>`110.89s` 左右的中段入口现在不再直接从 `P06` 掉进静室，而是先用 `P06` 尾部减速桥把“发现成立”落到地面。</li>
+            <li>`P07` 与 `P08` 之间现在新增了林澄侧反应位，不再让风声婆婆与 `07` 的两段 thesis 背靠背硬顶。</li>
+            <li>`P09` 分裂后现在多了一拍余波承接，`P10` 更接近“被迫公开承担”的后果位，而不是突然切进辩论模块。</li>
+          </ul>
+          <ul>
+            <li>当前更准确的结论是：`故事已基本讲通顺，但仍 PASS WITH NOTES`。</li>
+            <li>剩余问题已经不再是“中段缺没缺”，而是 `P07-P09` 目前主要仍靠定图、UI 卡与试音承接，表达层还是 preview，不是正式戏剧段。</li>
+            <li>`P08` 和 `P10` 的公共压力已经成立，但两段仍偏解释型页面；当前真正该补的是正式可替换 clip。</li>
+            <li>本轮已把 `P07-P09` 正式回写进 `production/shot-list.md`，形成 `E05-E17` 与 `N05A-N05D` 执行链，后续产线不再允许从 `P06` 直接跳 `P10`。</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <video controls playsinline src="videos/part-07-09-middle-bridge-papercut-v2.mp4"></video>
+            <figcaption>P07-P09 middle bridge paper cut v2：在原有中段承重上，再补 `P06 -> P07`、`P07 -> P08`、`P09 -> P10` 三处结构桥。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/chapter-01-story-spine-preview-v2.mp4"></video>
+            <figcaption>chapter-01 story spine preview v2：把新的 bridge v2 插回 accepted spine，直接比较它和当前 master 的故事可读性差异。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P07-P09 首帧推进</h2>
+      <div class="card">
+        <p><span class="label">当前进展</span> 这一轮没有继续停在 bridge preview，而是把 `P07-P09` 的正式 shot contract 往下推进到首帧层。当前已经补出 4 个关键 scene-state / keyframe：`E05` 沉默练习室入口、`E09` 规则投影室建立、`E13` 证据加速整理权限位、`E17` 团队分裂压近位。它们都已经挂到 `current/shots/` 与 `api-requests/current/images/`。</p>
+        <ul>
+          <li>`E05 / P07-S01`：`PASS`。现在已经有了从 `P06` 减速落入 `P07` 的正式横版入口。</li>
+          <li>`E09 / P08-S01`：`PASS WITH NOTES`。规则投影室已成立，但空间仍稍偏“白色高拱大厅”，后续还可继续加强制度冷感。</li>
+          <li>`E13 / P09-S01`：`PASS`。`v3` 已把自动英文文字问题清掉，适合作为后续 UI 叠层底板。</li>
+          <li>`E17 / P09-S05`：`PASS WITH NOTES`。三人同框压力已经成立，但动作仍偏冲进镜头，后续若进入正式视频前，最好再收一版更克制的关系首帧。</li>
+        </ul>
+      </div>
+      <div class="image-grid">
+        <figure>
+          <img src="current/shots/p07-s01-silent-room-current.png" alt="P07 E05 沉默练习室入口首帧" />
+          <figcaption>P07 / E05 `current`：沉默练习室入口已从抽象 bridge 卡推进成正式横版首帧。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/shots/p08-s01-rule-room-current.png" alt="P08 E09 规则投影室建立首帧" />
+          <figcaption>P08 / E09 `current`：规则投影室建立位已可作为中段制度压力的空间锚点继续向下游推进。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/shots/p09-s01-evidence-auth-current.png" alt="P09 E13 证据加速整理权限位首帧" />
+          <figcaption>P09 / E13 `current v3`：已去掉模型自发文字，适合作为权限选择层与后续 I2V 的 clean 底板。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/shots/p09-s05-team-split-current.png" alt="P09 E17 团队分裂压近位首帧" />
+          <figcaption>P09 / E17 `current v3`：三人分裂同框已经成立，但仍保留 `PASS WITH NOTES`，后续可继续收动作与第一人称压迫感。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>交付矩阵</h2>
+      <div class="card">
+        <p><span class="label">当前 accepted spine</span> 已全部收口到统一规格，下面这张矩阵只列当前稳定交付入口，不混入 probe、failed gate 或历史对照文件。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>交付</th>
+              <th>当前文件</th>
+              <th>时长</th>
+              <th>规格</th>
+              <th>当前判断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>chapter-01 master</td>
+              <td><a href="current/deliveries/chapter-01-master-current.mp4">chapter-01-master-current.mp4</a></td>
+              <td>168.02s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P01</td>
+              <td><a href="current/deliveries/part-01-current.mp4">part-01-current.mp4</a></td>
+              <td>29.60s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P02</td>
+              <td><a href="current/deliveries/part-02-current.mp4">part-02-current.mp4</a></td>
+              <td>22.40s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P03</td>
+              <td><a href="current/deliveries/part-03-current.mp4">part-03-current.mp4</a></td>
+              <td>19.04s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P04</td>
+              <td><a href="current/deliveries/part-04-current.mp4">part-04-current.mp4</a></td>
+              <td>13.77s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P05</td>
+              <td><a href="current/deliveries/part-05-current.mp4">part-05-current.mp4</a></td>
+              <td>11.08s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P06</td>
+              <td><a href="current/deliveries/part-06-current.mp4">part-06-current.mp4</a></td>
+              <td>15.00s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P10</td>
+              <td><a href="current/deliveries/part-10-current.mp4">part-10-current.mp4</a></td>
+              <td>16.00s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P11</td>
+              <td><a href="current/deliveries/part-11-current.mp4">part-11-current.mp4</a></td>
+              <td>16.64s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+            <tr>
+              <td>P12</td>
+              <td><a href="current/deliveries/part-12-current.mp4">part-12-current.mp4</a></td>
+              <td>24.41s</td>
+              <td>1152x768 / 30fps / AAC stereo</td>
+              <td><span class="status-chip notes">PASS WITH NOTES</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Chapter Master 当前交付</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>chapter-01 vertical slice master</h3>
+          <p>当前整章正式审片入口为 `chapter-01-vertical-slice-master-v4-current.mp4`。这条 master 直接读取 current 目录下的 accepted parts，已经同时对齐最新的 `P03 delivery v2` 与替换完正式 `F03` clip 的 `P10 delivery v1`。它的职责是作为 chapter-01 的统一 spine 入口，方便连续审整条 vertical slice，而不是替代各 part 的独立制作判断，也不应被误读成“完整单集故事已经讲顺、而且已经完成真实视频替换”的最终封版。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">chapter-01-master-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">168.02s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Scope</div>
+              <div class="meta-value">P01-P06 + P10-P12 accepted spine</div>
+            </div>
+          </div>
+          <ul>
+            <li>主文件：`chapter-01-vertical-slice-master-v4-current.mp4`</li>
+            <li>稳定入口：`current/deliveries/chapter-01-master-current.mp4`</li>
+            <li>成片规格：`1152x768 / 30fps / 168.02s / AAC stereo`</li>
+            <li>结构范围：`P01-P06` 与 `P10-P12` 当前 accepted spine 顺接装配</li>
+            <li>当前判断：`PASS WITH NOTES`，可作为整章连续审片入口，但还不是完整 demo 或最终单集封版</li>
+            <li>故事判断：开场与前半程已经明显讲顺，但中段 `P07-P09` 尚未进入 accepted spine，因此当前 master 更像“成立的 vertical slice”，还不是“完整故事已闭环”的版本</li>
+            <li>画面判断：当前主 spine 仍包含多段 `still-motion / UI-first / rescue clip / voice-first clean plate`，这些都已被记为必须逐段替换的交付债务，而不是长期可接受形态</li>
+            <li>当前最有价值的意义：后续审片默认直接看这条 master，而不是手动拼各 part 或混看旧版 `P03` 对照文件</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <video controls playsinline src="current/deliveries/chapter-01-master-current.mp4"></video>
+            <figcaption>chapter-01 master current：当前整章统一审片入口，已自动对齐到最新 current spine。</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -239,6 +631,24 @@
         <div>
           <h3>P01 未来湾任务码头</h3>
           <p>当前主交付文件为 `part-01-future-bay-task-dock-delivery-v13.mp4`。这一版仍然沿用 `v10` 建立起来的 canonical `CH01-P01-S01-S07` 同步对白路线，不回退到后贴 TTS；在保留 `v12` 开头修正的基础上，重点替换了 `S06`：林澄改说更短、更像钉子句的同步台词，让这一镜在 5 秒内说完并留出收尾，不再把表演顶到片尾边界。当前主目标仍然是：既把故事讲清，也让真实镜头和真实声音一起成立。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-01-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">29.60s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">只保留 S04 / S05 / S06 / S07 定向升级</div>
+            </div>
+          </div>
           <ul>
             <li>输出文件：`part-01-future-bay-task-dock-delivery-v13.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 29.6s / AAC stereo`</li>
@@ -263,6 +673,24 @@
         <div>
           <h3>P02 紧急入港校验</h3>
           <p>当前主装配文件为 `part-02-emergency-entry-check-delivery-v1.mp4`。这条交付对应规范段 `P02`；脚本与视频模板仍沿用兼容别名 `B01-B04`。当前路线保持 `CH01-P02-S02/S03` 的 UI-first 方案，同时为 `CH01-P02-S01/S04` 预留正式 Wan clip 插槽；如果正式视频已生成，重跑主装配脚本即可原位升级同一交付文件。`B04` 做过两轮 `wan2.6-r2v-flash` 实测，但都没有通过质量门，因此当前默认不自动带回主装配。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-02-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">22.40s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">只定向升级 B01 航行 clip 与 B04 过桥 clip</div>
+            </div>
+          </div>
           <ul>
             <li>主文件：`part-02-emergency-entry-check-delivery-v1.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 22.4s / AAC stereo`</li>
@@ -287,16 +715,34 @@
       <div class="compare-grid">
         <div>
           <h3>P03 悬浮档案大厅</h3>
-          <p>当前主交付文件为 `part-03-archive-hall-pressure-delivery-v1.mp4`。这条成片对应规范段 `P03`，先把“大厅压迫感、林澄被卡住、制度时间正在收紧”这件事讲清楚，再继续往 `C02/C04` 的近景关系戏推进。当前装配遵守 `identity-first` workflow：先锁三角关系首帧，再用已通过质量门的 clip、UI 层与世界内声音把冲突入口收成可看片的 delivery。</p>
+          <p>当前主交付文件为 `part-03-archive-hall-pressure-delivery-v2.mp4`。这条成片对应规范段 `P03`，先把“大厅压迫感、林澄被卡住、制度时间正在收紧”讲清楚，同时把旧版最弱的 `C02/C04` 关系推进收紧成更像同一场大厅冲突。当前装配仍遵守 `identity-first` workflow：`C01` 继续沿用已 accepted 的三角关系锚点，`delivery v2` 只是把已验证过的 relation-led 低成本重装配正式提升为 current，而不是假装已经拿到更强的新正式 clip。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-03-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">19.04s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">只允许继续补 C02 / C04 正式 clip</div>
+            </div>
+          </div>
           <ul>
-            <li>主文件：`part-03-archive-hall-pressure-delivery-v1.mp4`</li>
-            <li>成片规格：`1152x768 / 30fps / 22.4s / AAC stereo`</li>
+            <li>主文件：`part-03-archive-hall-pressure-delivery-v2.mp4`</li>
+            <li>成片规格：`1152x768 / 30fps / 19.04s / AAC stereo`</li>
             <li>结构路线：`C01` 大厅建立、`C02` 林澄近景发问、`C03` 调查层展开、`C04` 序列员 07 施压、`C05` 驳回与窗口缩短</li>
             <li>首帧锚点：`shot-ch01-p03-s01-hall-triangle-v7-no-panel-qwen-image-2.0-pro.png`</li>
-            <li>当前判断：`P03 delivery v1 / PASS WITH NOTES`，可作为正式审片入口，但还不是最终冻结版</li>
-            <li>当前最有价值的成立点：父亲、林澄、序列员 07 的左右关系稳定，大厅压迫感成立，系统层与世界内声音已经能把制度压力讲清</li>
-            <li>受控复用说明：`C02` 目前临时复用了已通过质量门的林澄大厅近景 clip，后续仍应替换成 `P03` 专用近景镜头</li>
-            <li>下一步只做定向升级：继续把 `C02/C04` 换成更强的近景关系镜头，不重开已接受的 canonical 锚点</li>
+            <li>当前判断：`P03 delivery v2 / PASS WITH NOTES`，已经足够作为新的 current 审片入口，但还不是最终冻结版</li>
+            <li>当前最有价值的成立点：父亲、林澄、序列员 07 的左右关系仍然稳定，而且 `C02/C04` 不再像借来的别段切片，人物关系和制度压力现在更像同一场戏</li>
+            <li>边界说明：这次提升属于 `relation-led low-cost reassembly`，不是正式 visible-speech clip 全替换完成</li>
+            <li>下一步只做定向升级：后续若继续重开，只允许把 `C02/C04` 换成更强的正式 clip，不重开已接受的 canonical 锚点</li>
           </ul>
         </div>
         <div class="image-grid">
@@ -306,18 +752,18 @@
           </figure>
           <figure>
             <video controls playsinline src="current/deliveries/part-03-current.mp4"></video>
-            <figcaption>P03 current delivery：当前正式审片入口，先把大厅制度压力与时间收紧讲清，再继续升级近景关系镜头。</figcaption>
+            <figcaption>P03 current delivery：当前已切到 `delivery v2`，先把大厅制度压力讲清，同时把旧版最弱的关系推进收紧成更可读的同场冲突。</figcaption>
           </figure>
           <figure>
             <video controls playsinline src="current/clips/p03-s01-hall-establishing-current.mp4"></video>
             <figcaption>P03 / C01 current clip：当前 accepted 的大厅建立镜头，已作为后续 continuity 的稳定入口。</figcaption>
           </figure>
           <figure>
-            <img src="ui/c03-hall-investigation-overlay-v1.png" alt="P03 C03 调查层 UI" />
+            <img src="current/ui/c03-hall-investigation-overlay-v1.png" alt="P03 C03 调查层 UI" />
             <figcaption>P03 / C03 调查层 UI：把档案摘要、家属确认记录与底层申请状态收成可复用的正式叠层资产。</figcaption>
           </figure>
           <figure>
-            <img src="ui/c05-application-rejected-overlay-v1.png" alt="P03 C05 驳回状态 UI" />
+            <img src="current/ui/c05-application-rejected-overlay-v1.png" alt="P03 C05 驳回状态 UI" />
             <figcaption>P03 / C05 驳回状态 UI：保留正式交付里真正有信息价值的系统层资产，不展示过程性 probe。</figcaption>
           </figure>
         </div>
@@ -330,6 +776,24 @@
         <div>
           <h3>P04 等待区与父亲</h3>
           <p>当前主交付文件为 `part-04-waiting-zone-and-father-delivery-v1.mp4`。这条成片对应规范段 `P04`，严格按 `5` 镜合同推进：先让等待区阈值和签字笔/安抚屏的温柔压迫成立，再把父亲与林澄锁进同一空间，最后才进入 `父亲先 -> 林澄后` 的两条同步短线。当前口径不再回退到旧的 `4` 镜压缩版本。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-04-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">13.77s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">只在 S04 / S05 需要更强同步时局部替换</div>
+            </div>
+          </div>
           <ul>
             <li>主文件：`part-04-waiting-zone-and-father-delivery-v1.mp4`</li>
             <li>成片规格：`1152x768 / 30fps / 13.8s / AAC stereo`</li>
@@ -337,7 +801,7 @@
             <li>当前判断：`P04 delivery v1 / PASS WITH NOTES`，可作为正式审片入口</li>
             <li>通过点：等待区先于对白成立，人物身份稳定，父亲与林澄都改成单镜单句同步口型</li>
             <li>保留 notes：`S02` 仍是文字叠层 + 世界内轻音路线；speaking shot 仍需继续靠人工审片确认中文内容与口型完全贴合</li>
-            <li>下一步：默认不重开 P04，workflow 主线切到 `P05`</li>
+            <li>后续只做定向升级：默认不重开 `P04`，仅在父亲或林澄 speaking shot 需要更强同步时再局部替换</li>
           </ul>
         </div>
         <div class="image-grid">
@@ -381,6 +845,356 @@
     </section>
 
     <section class="section">
+      <h2>P05 当前交付：概率长廊</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>P05 概率长廊</h3>
+          <p>当前 `P05` 先按“讲清故事、跑通流程”推进，不再把高清精修当作第一优先。现阶段把 `D01` 的三路径建立和 `D04` 的异常风声桥接视为 rough keyframe：先保证观众能读懂“系统推荐未来成立了”，再让林澄把注意力带向下一段谜团。`D02` 继续走同空间 UI 分层，不额外追一张贵价大图。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-05-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">11.08s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">只局部修 D01 奇观感与 D04 余光</div>
+            </div>
+          </div>
+          <ul>
+            <li>`D01` 当前工作图：`qwen-image-max` 生成的概率长廊三路径 scene-state，按 rough pack 先承担“系统推荐未来成立”这件事</li>
+            <li>`D02` 当前工作层：已补出同空间 `路径切换 + 价值勾选` SVG overlay，先用于低成本节奏验证</li>
+            <li>`D04` 当前正式 clip：`viduq3-turbo` 生成的桥接反应镜头，已把 rough keyframe 提升成正式可审视频</li>
+            <li>`paper cut` 当前基线：`part-05-probability-corridor-papercut-v1.mp4`，继续保留为 story-first 节奏对照</li>
+            <li>当前判断：`P05 / accepted_with_notes / delivery v1`</li>
+            <li>当前结论：`D01 v1 + D02 UI-first + D04 v1` 已收成 `part-05-probability-corridor-delivery-v1.mp4`。`D01` 仍保留 `波浪隧道感 / exhibit wall` notes，`D04` 仍保留“路径余光偏弱” notes，但整段已经足够推进主线</li>
+            <li>后续只做定向升级：`P05` 继续保留当前交付，若后续重开，只允许针对 `D01` 的空间奇观感和 `D04` 的路径余光做局部修复</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <img src="current/shots/p05-s01-probability-corridor-current.png" alt="P05 D01 概率长廊三路径首帧候选" />
+            <figcaption>P05 / D01 rough keyframe：先用这张把“三条公开路径同时成立”的信息讲清，再决定后续是否需要精修更强版本。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p05-s04-wind-anomaly-current.png" alt="P05 D04 异常风声反应救援候选 v7" />
+            <figcaption>P05 / D04 rough keyframe `v7`：当前先作为 story-first 桥接镜头使用，负责把注意力从路径比较推向异常风声。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="P05 S-04 概率长廊场景母图" />
+            <figcaption>P05 / S-04 场景母图：继续作为 `D02` 同空间 UI 分层和粗节奏验证的空间锚点，不追额外高清替代图。</figcaption>
+          </figure>
+          <figure>
+            <div class="stack">
+              <img src="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="P05 D02 同空间 UI 粗验证底图" />
+              <img class="overlay" src="current/ui/p05-d02-path-comparison-overlay-v1.svg" alt="" />
+            </div>
+            <figcaption>P05 / D02 rough UI：把路径切换条、当前未来切片和价值勾选层叠回同一长廊空间，先验证“比较路径”这一步是否读得懂。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p05-s01-probability-corridor-current.mp4"></video>
+            <figcaption>P05 / D01 正式短 clip `v1`：已生成并进入轻量 QC。当前最小合同成立，但仍保留 `波浪隧道感` 与 `exhibit wall` notes。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p05-s04-wind-anomaly-current.mp4"></video>
+            <figcaption>P05 / D04 正式 bridge clip `v1`：林澄反应和短线已经成立，且没有把暗层提前说破。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/deliveries/part-05-current.mp4"></video>
+            <figcaption>P05 / delivery `v1`：当前正式 part-level 交付入口。`D01`、`D02`、`D04` 已被收成一段连续可审的 `story-first accepted with notes` 版本。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/part-05-probability-corridor-papercut-v1.mp4"></video>
+            <figcaption>P05 / rough preview `v1`：这是保留的 paper cut 基线资产，不是 current 主交付。它已完成内部自审，并帮助 `P05` 收掉 `W7`；现在继续作为 `D01 -> D02 -> D04` 的 story-first 节奏对照片段。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P06 当前交付：暗层接口</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>P06 当前交付口径</h3>
+          <p>`P06` 现在已经收成了当前可审的 `delivery v1`。这一版遵循 `story-first`：先把 `进入暗层 -> 拼接异常波形 -> 第四路径显形 -> 旧录音进入` 讲清，再把外部 provider 恢复后的正式替换窗口留在 backlog。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-06-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">15.00s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">等待 provider 恢复后替换 E03 rescue clip</div>
+            </div>
+          </div>
+          <ul>
+            <li>当前判断：`P06 / accepted_with_notes / delivery v1`</li>
+            <li>`E01` 只负责从公开长廊换挡进入暗层接口，承接 `D04` 的异常风声，不提前亮第四色，也不提前开旧录音</li>
+            <li>`E02` 固定为同一暗层核心里的异常波形解谜，首轮继续走 `scene-state + overlay / paper cut`，不急着烧长视频</li>
+            <li>`E03` 才是第四色第一次明确成立的镜头。当前先用受控 `rescue clip` 承担这一步，外部 provider 恢复后再替换成正式生成版</li>
+            <li>`E04` 才让风声婆婆旧录音正式进入，首版固定 `录音界面 + 声音先于形象 + 1 句短线`，短句优先锁为：`别只听最大声的那条。`</li>
+            <li>当前结论：`vidu` 这次命中 `429`，备用 `veo` 路由命中 `503`，所以当前先稳定保留这条交付，不回退语义，把外部正式替换留在 backlog</li>
+            <li>后续只做定向升级：优先等待正式 provider 可用后替换 `E03 rescue clip`，不重开整段结构</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <img src="current/shots/p06-s01-dark-layer-ingress-current.png" alt="P06 E01 暗层接口进入首帧 v1" />
+            <figcaption>P06 / E01 `v1`：已经把“由公开长廊换挡进入暗层”的基础气质拉出来，当前可作为首轮入口首帧继续推进，但仍保留“过于整洁直廊”的 notes。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p06-s04-wind-listener-interface-current.png" alt="P06 E04 风声婆婆旧录音界面首帧 v2" />
+            <figcaption>P06 / E04 `v2`：当前主线采用这张救援版。它已经压下了标签文字与陈列柜感，先以“旧录音承载界面”承担风声婆婆的初次进入。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p06-s02-waveform-puzzle-current.png" alt="P06 E02 风声波形解谜底图 v1" />
+            <figcaption>P06 / E02 `v1`：当前作为解谜 scene-state 使用，已经足够承担“有一条被打断的隐藏证据链要被拼回去”，但后续仍要增强 puzzle 可读性。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p06-s03-hidden-path-current.png" alt="P06 E03 第四路径显形首帧 v2" />
+            <figcaption>P06 / E03 `v2`：第四色第一次明确成立的当前主线首帧。它还不是最终电影化版本，但已经能把“被压住的证据第一次连通”讲清。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p06-s03-hidden-path-current.mp4"></video>
+            <figcaption>P06 / E03 rescue clip：在 `vidu` 限流和备用 `veo` 路由 `503` 的情况下，当前先用这条受控动态短 clip 承担“第四色第一次明确成立”的主线职责。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/scenes/s-05-dark-layer-silent-room-v1-qwen-image-plus.png" alt="P06 S-05 暗层接口场景母图" />
+            <figcaption>P06 / S-05 暗层接口母图：当前 `W3` 的空间锚点，负责锁住“更窄、更低、更秘密”的暗层气氛，但仍保持未来文明感，不滑向恐怖废墟。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="P06 C-07 风声婆婆承载体参考" />
+            <figcaption>P06 / C-07 当前参考：风声婆婆继续先按“旧录音承载体”使用，不让完整人物出镜抢在 `P07` 之前。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p05-s04-wind-anomaly-current.mp4"></video>
+            <figcaption>`P05 -> P06` bridge：当前 accepted 的 `D04 v1` 继续作为 `E01` 的声音与视线入口，保证暗层不是凭空出现，而是被异常风声一步步带出来。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/part-06-dark-layer-interface-papercut-v1.mp4"></video>
+            <figcaption>P06 / rough preview `v1`：这是保留的 paper cut 基线资产，不是 current 主交付。它用于低成本验证 `进入暗层 -> 拼接异常波形 -> 第四路径显形 -> 旧录音进入` 的顺序是否读得清。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/deliveries/part-06-current.mp4"></video>
+            <figcaption>P06 / delivery `v1`：当前正式 part-level 交付入口。它已经把 `E03 rescue clip` 接进主线，因此这一段现在可以带着 notes 继续让 chapter-01 往后跑。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P10 当前交付：自由回响台辩论</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>P10 当前交付口径</h3>
+          <p>`P10` 当前已经收成了新的 `delivery v1`。这条交付继续严格遵守 `story-first`：先让回响台公共空间亮起，再把证据与立场组织保持在世界内 UI 层中，随后直接接入新 key 下成功生成的 `F03 / qingyun / viduq3-turbo` 正式短 clip，让对手投影真正以可用动态镜头进入公共场域，并把同步短句人声一起接回 part-level 音轨，最后把公开陈词提交推进到可进入终局选择的状态。当前最关键的变化不是“又多试了几个模型”，而是 `P10/F03` 已经真实拿到第一条正式通过项，因此这一段不再依赖旧 `rescue clip` 来承担高潮的对手入场。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-10-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">16.00s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">`F03` 已升级为正式 clip；当前 notes 收缩到 `F01/F02/F04`</div>
+            </div>
+          </div>
+          <ul>
+            <li>当前判断：`P10 / accepted_with_notes / delivery v1`</li>
+            <li>`F01` 已锁为回响台空间建立位：先让“城市正在倾听”成立，不提前塞对手、输入区或主持式口播</li>
+            <li>`F02` 继续固定 `UI-first`：这段的价值是证据与立场组织，不值得先烧成长视频</li>
+            <li>`F03` 当前已升级为正式 `viduq3-turbo` clip，并通过轻量 `W9` 复核：身份稳定、无额外人物、无乱字幕，也不再是“图片晃几下”的假动作</li>
+            <li>`part-10 delivery v1` 的当前音轨已经把 `F03` 原始短句人声接回去，不再保留“画面里嘴在动、成片里只有提示音”的错位感</li>
+            <li>`F04` 继续保持 `UI-first`，当前以提交层 overlay 承担“我愿意公开怎么说”的职责</li>
+            <li>当前已接入 `P10/F03` 的 Qingyun tested pool 仍保留为 `30` 个模型的 rotation harness；其中现在已经明确拿到 `1` 个真实通过项：`viduq3-turbo`</li>
+            <li>这不等于“已经筛出稳定模型池”。更准确的说法是：当前已经有一条正式可用解，但其余 `29` 个模型大多仍停留在 `401 / 429 / 502 / 500` 的失败或观察态</li>
+            <li>最值得继续观察的非通过项仍是：`veo3.1-fast = 429` 与 `veo3.1-pro = 502`；它们保留给下一轮冷却后补测，不再阻塞当下主交付</li>
+            <li>批量恢复工具与轮换脚本都已就位：`generate_qingyun_vidu.py` 的 `--continue-on-error`、结构化 `failure-log`，以及 `scripts/production/run_p10_f03_qingyun_rotation.sh` 现在都保留为后续继续筛“今天能用哪些模型”的基础设施</li>
+            <li>已补备用正式路由：`DashScope / wan2.6-i2v-flash` 的 `F03` 请求模板已经写好并通过 dry-run，后续若要继续做 provider 备份，只差可注入的 `DASHSCOPE_API_KEY`</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <img src="current/shots/p10-s01-echo-platform-establishing-current.png" alt="P10 F01 自由回响台空间建立首帧 v1" />
+            <figcaption>P10 / F01 `v1`：当前已经把“城市正在倾听”的公共空间建立起来，足以作为 `P10` 的视频建立位继续向下游推进。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="P10 S-07 自由回响台母图" />
+            <figcaption>P10 / S-07：当前仍是 `F02/F04` 的空间锚点。所有 UI-first 组织与提交都继续留在这套公共表达空间里。</figcaption>
+          </figure>
+          <figure>
+            <div class="composite-stage">
+              <img src="current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="P10 F02 证据与立场 UI" />
+              <img src="current/ui/p10-f02-evidence-stance-overlay-v1.png" alt="" />
+            </div>
+            <figcaption>P10 / F02 `UI-first`：当前 paper cut 使用这组叠层来验证“证据与立场组织”是否读得懂，而不是把它误做成 detached PPT 页面。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p10-s03-opponent-projection-current.png" alt="P10 F03 对手投影进入首帧 v3" />
+            <figcaption>P10 / F03 `v3`：当前正式 clip 仍从这一版首帧起跳。它已经把构图从制度人物定妆照拉回到“对手投影进入公共场域”的职责位。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p10-s03-opponent-projection-current.mp4"></video>
+            <figcaption>P10 / F03 正式 clip：这是当前已接入主线的 `qingyun / viduq3-turbo` 成功版本。它让“对手投影进入公共场域”第一次真正脱离 rescue 态，成为可用的正式短镜头。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/deliveries/part-10-current.mp4"></video>
+            <figcaption>P10 / delivery `v1`：当前正式 part-level 交付入口。它已经把 `F01`、`F02 UI-first`、新的 `F03 viduq3` 正式 clip 与 `F04` 提交层接成一段连续可审的高潮段。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/part-10-free-echo-platform-papercut-v1.mp4"></video>
+            <figcaption>P10 / rough preview `v1`：这是保留的 paper cut 基线资产，不是 current 主交付。它继续承担 `F01 -> F02 -> F03` 的低成本节奏对照职责，不再阻塞正式交付。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P11 当前交付：午夜前选择与回航</h2>
+      <div class="compare-grid">
+        <div>
+          <h3>P11 当前交付口径</h3>
+          <p>`P11` 当前已经从 rough preview 升级到 `delivery v1`。这一版继续严格按 `G01 -> G02 -> G03 -> G04` 收束终局，但 `G02` 已不再是静帧 overlay，而是能真正落到人物脸上的正式同步短 clip。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-11-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">16.64s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Backlog</div>
+              <div class="meta-value">优先把 G02 提到更强分辨率</div>
+            </div>
+          </div>
+          <ul>
+            <li>当前判断：`P11 / accepted_with_notes / delivery v1`</li>
+            <li>`G01` 已锁为终局确认位：制度结果、确认书与林澄重新回到同一画面，不再停在抽象系统页</li>
+            <li>`G02` 已由 `qingyun / viduq3-turbo` 成功出片，并通过当前 `W9` 轻量 QC：人物身份稳定、年龄感仍对、没有多余人物、乱字幕或演讲腔</li>
+            <li>`G03` 继续固定 `UI-first`：制度动作被接收即可，不抢 `G02` 已经拿到的正式人物资源</li>
+            <li>`G04` 当前仍作为回航桥接位：先让未来湾出口与裂口档案墙成立，再把数字导师留到 `P12` 作为世界内接入</li>
+            <li>`P11` 现阶段的 notes 主要是：`G03/G04` 仍是低成本 UI / bridge 口径，`G02` 目前是 `540p` 成功片，还留有后续升格空间</li>
+            <li>这些 notes 已经不再阻塞当前交付；后续若要升格，优先考虑把 `G02` 提到更强分辨率，其余结构保持不动</li>
+          </ul>
+        </div>
+        <div class="image-grid">
+          <figure>
+            <img src="current/shots/p11-s01-final-confirmation-current.png" alt="P11 G01 终局确认位首帧 v1" />
+            <figcaption>P11 / G01 `v1`：当前已经把“公共表达的结果重新压回林澄的人生现场”成立，可作为终局确认位继续向下游推进。</figcaption>
+          </figure>
+          <figure>
+            <img src="current/shots/p11-s02-lin-final-speech-current.png" alt="P11 G02 林澄结尾陈词首帧 v1" />
+            <figcaption>P11 / G02 `v1`：这张首帧已经被正式人物视频吃进去，继续作为 `G02` 的角色与站位基线保留。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/clips/p11-s02-lin-final-speech-current.mp4"></video>
+            <figcaption>P11 / G02 正式 clip：林澄结尾陈词已经从 overlay 预览升级为正式同步短视频。当前最重要的价值是把这句真正落到人物脸上，而不是继续停在静帧说明。</figcaption>
+          </figure>
+          <figure>
+            <div class="composite-stage">
+              <img src="current/shots/p11-s01-final-confirmation-current.png" alt="P11 G03 制度接收层预览" />
+              <img src="current/ui/p11-g03-petition-status-overlay-v1.png" alt="" />
+            </div>
+            <figcaption>P11 / G03 `UI-first`：当前先用制度接收状态条把“公示窗已开启 / 观察期保留 / 争议附件记录”讲清，不做花哨系统动画。</figcaption>
+          </figure>
+          <figure>
+            <div class="composite-stage">
+              <img src="current/scenes/s-09-return-archive-wall-v1-qwen-image-plus.png" alt="P11 G04 未来湾回航桥接位预览" />
+              <img src="current/ui/p11-g04-return-archive-wall-overlay-v1.png" alt="" />
+            </div>
+            <figcaption>P11 / G04 bridge preview：未来湾回航出口与裂口档案墙已经开始成立，数字导师仍只保留为世界内接入的下一步，不提前抢镜。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="current/deliveries/part-11-current.mp4"></video>
+            <figcaption>P11 / delivery `v1`：当前 `16.6s` 的正式 part-level 审片入口。它已经把 `G02` 正式人物 clip 接进主装配，并保留 `G03/G04` 的 story-first UI / bridge 口径。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>P12 当前交付：数字导师总结</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>P12 交付边界</h3>
+          <p>`P12` 当前不再沿用旧版 `4` 镜总结段，而是压成单镜 `G05` world-in 收束。重点不是“再讲一段课”，而是让孩子在回航口被接住，然后带着一个问题离开。</p>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="meta-kicker">Current File</div>
+              <div class="meta-value">part-12-current.mp4</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Format</div>
+              <div class="meta-value">24.41s · 1152x768 · 30fps · AAC stereo</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Judgement</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">Route</div>
+              <div class="meta-value">voice-first clean plate 交付，不追可见导师正脸</div>
+            </div>
+          </div>
+          <ul>
+            <li>当前判断：`P12 / W11 / accepted_with_notes / PASS WITH NOTES`</li>
+            <li>`G04` 已经完成回航桥接，所以 `P12` 不再重拍回到未来湾的建立位</li>
+            <li>`G05` 首版只保留 3 个内部 beat：接住情绪、抽出命题、留下问题</li>
+            <li>目标时长压到 `18-24 秒`，不再做 `60-90 秒` 的长讲述</li>
+            <li>`S-09 mentor-space v2` 已成为当前 accepted clean plate；这张图先把安全回航与接待位预留成立</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>当前交付口径</h3>
+          <p>`P12` 已正式收口为 `clean plate + voice-first + 轻问题 overlay`。首版交付不再追可见导师人形，而是用稳定回航空间和温和声音完成 world-in 离场。</p>
+          <ul>
+            <li>正式 voice：`zh-CN-XiaoxiaoNeural`</li>
+            <li>当前 audio contract 已单独落为 `part12-v1-digital-mentor-contract.aiff`</li>
+            <li>`C-08` 未锁形前，首版不直接开启清晰正脸长视频；若后续升级，只补极弱导师界面或单独开锁形任务</li>
+          </ul>
+        </div>
+      </div>
+      <div class="image-grid" style="margin-top: 16px;">
+        <figure>
+          <img src="current/scenes/s-09-future-bay-return-archive-wall-mentor-space-v2-qwen-image-max.png" alt="P12 S-09 mentor-space clean plate v2" />
+          <figcaption>P12 / S-09 mentor-space `v2`：当前 accepted clean plate。它没有提前发明玩家或完整导师主体，适合作为 `G05` 的首版 scene-state 基线。</figcaption>
+        </figure>
+        <figure>
+          <video controls playsinline src="current/deliveries/part-12-current.mp4"></video>
+          <figcaption>P12 / delivery `v1`：当前 `24.4s` 的正式尾段交付入口。它基于 `voice-first preview v2` 收口，使用 `zh-CN-XiaoxiaoNeural` 的正式 audio contract，把“被接住 -> 抽出命题 -> 留下问题”的节奏稳定落地。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>固定团队与角色锚点</h2>
       <div class="grid two">
         <div class="card">
@@ -418,35 +1232,35 @@
 
       <div class="image-grid" style="margin-top:16px;">
         <figure>
-          <img src="characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位锚点" />
+          <img src="current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位锚点" />
           <figcaption>玩家主位锚点：第一人称补位与反射参考。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
+          <img src="current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
           <figcaption>档案守望者：开场任务交付主参考图。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄 3/4" />
+          <img src="current/characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄 3/4" />
           <figcaption>林澄：角色锁定参考。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
+          <img src="current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
           <figcaption>祁野：固定团队技术侧主参考图。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏 工作态" />
+          <img src="current/characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏 工作态" />
           <figcaption>闻夏：公共表达与组织动作参考。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
+          <img src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
           <figcaption>序列员 07：制度对手当前主参考图。</figcaption>
         </figure>
         <figure>
-          <img src="characters/r-02-achao-time-tide-craft-v5-qwen-image-2.0-pro.png" alt="阿潮 v5" />
+          <img src="current/characters/r-02-achao-time-tide-craft-v5-qwen-image-2.0-pro.png" alt="阿潮 v5" />
           <figcaption>阿潮 v5：chapter-01 航行器主参考图。</figcaption>
         </figure>
         <figure>
-          <img src="characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
+          <img src="current/characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
           <figcaption>林澄父亲：家庭线主参考图。</figcaption>
         </figure>
       </div>
@@ -456,27 +1270,27 @@
       <h2>主场景母图</h2>
       <div class="image-grid">
         <figure>
-          <img src="scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头" />
+          <img src="current/scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="S-01 未来湾任务码头" />
           <figcaption>S-01：未来湾任务码头，开场与任务交付主场景。</figcaption>
         </figure>
         <figure>
-          <img src="scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="S-02 紧急入港外景" />
+          <img src="current/scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="S-02 紧急入港外景" />
           <figcaption>S-02：时间档案城逼近外景。</figcaption>
         </figure>
         <figure>
-          <img src="scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="S-04 概率长廊" />
+          <img src="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="S-04 概率长廊" />
           <figcaption>S-04：制度奇观与路径揭示主场景。</figcaption>
         </figure>
         <figure>
-          <img src="scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="S-06 证据冻结区" />
+          <img src="current/scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="S-06 证据冻结区" />
           <figcaption>S-06：证据冻结区与制度压力空间。</figcaption>
         </figure>
         <figure>
-          <img src="scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="S-07 自由回响台" />
+          <img src="current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="S-07 自由回响台" />
           <figcaption>S-07：公共表达与回响台主场景。</figcaption>
         </figure>
         <figure>
-          <img src="scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="S-09 回航档案墙" />
+          <img src="current/scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="S-09 回航档案墙" />
           <figcaption>S-09：回航收束与档案墙结尾场景。</figcaption>
         </figure>
       </div>
@@ -489,7 +1303,7 @@
         <div class="compare-grid">
           <div>
             <h3>P01 前段首帧组（到场 / 信号点亮）</h3>
-            <p>这组首帧与对应视频是当前 `P01 v9` 仍在复用的稳定开场资产。展示口径统一按规范编号解释；旧文件名 `A01-A03` 仅保留为兼容历史装配链的资产别名。</p>
+            <p>这组首帧与对应视频是当前 `P01 v9` 仍在复用的稳定开场资产。展示口径统一按规范编号解释；旧文件名 `A01-A03` 仅保留为兼容历史装配链的资产别名。本节保留的 `shots/...` 与 `videos/...` 直链默认都按“开场档案资产 / 历史对照”阅读，不等同于页面其他位置的 `current/...` 主锚点。</p>
             <ul>
               <li>`CH01-P01-S01`：第一人称站上未来湾任务码头</li>
               <li>`CH01-P01-S02`：灰银级请求信号点亮</li>
@@ -548,7 +1362,7 @@
           </div>
           <div class="image-grid">
             <figure>
-              <img src="characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="C-01 档案守望者定妆" />
+              <img src="current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="C-01 档案守望者定妆" />
               <figcaption>C-01：对应 `CH01-P01-S05` 的守望者角色参考。</figcaption>
             </figure>
             <figure>
@@ -576,7 +1390,7 @@
             </figure>
             <figure>
               <div style="background:#09111c;border-radius:18px;padding:12px;">
-                <img src="ui/p01-s06-dispute-overlay-v1.png" alt="P01 S06 dispute overlay" />
+                <img src="current/ui/p01-s06-dispute-overlay-v1.png" alt="P01 S06 dispute overlay" />
               </div>
               <figcaption>`P01 v9` dispute overlay：当前用于交代匹配度、拒签状态与午夜前后果。</figcaption>
             </figure>
