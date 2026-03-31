@@ -855,7 +855,7 @@
       <div class="compare-grid">
         <div>
           <h3>P04 等待区与父亲</h3>
-          <p>当前主交付文件为 `part-04-waiting-zone-and-father-delivery-v1.mp4`。这条成片对应规范段 `P04`，严格按 `5` 镜合同推进：先让等待区阈值和签字笔/安抚屏的温柔压迫成立，再把父亲与林澄锁进同一空间，最后才进入 `父亲先 -> 林澄后` 的两条同步短线。当前口径不再回退到旧的 `4` 镜压缩版本。</p>
+          <p>当前主交付文件为 `part-04-waiting-zone-and-father-delivery-v1.mp4`。这条成片对应规范段 `P04`，严格按 `5` 镜合同推进：先让等待区阈值和签字笔/安抚屏的温柔压迫成立，再把父亲与林澄锁进同一空间，最后才进入 `父亲先 -> 林澄后` 的两条同步短线。当前口径不再回退到旧的 `4` 镜压缩版本。围绕人物一致性的新一轮修复里，`S05` 也已经补出一条 `identity-lock v2` 真实 probe，用来验证等待区里的林澄近景同样可以走 `start-end2video + canonical portrait` 的稳定路线。</p>
           <div class="meta-grid">
             <div class="meta-card">
               <div class="meta-kicker">Current File</div>
@@ -871,7 +871,7 @@
             </div>
             <div class="meta-card">
               <div class="meta-kicker">Backlog</div>
-              <div class="meta-value">只在 S04 / S05 需要更强同步时局部替换</div>
+              <div class="meta-value">S04 / S05 局部替换，优先复审 identity-lock v2</div>
             </div>
           </div>
           <ul>
@@ -880,8 +880,9 @@
             <li>结构路线：`CH01-P04-S01` 等待区进入、`S02` 签字笔与安抚屏、`S03` 双目标成立、`S04` 父亲同步短线、`S05` 林澄同步短线</li>
             <li>当前判断：`P04 delivery v1 / PASS WITH NOTES`，可作为正式审片入口</li>
             <li>通过点：等待区先于对白成立，人物身份稳定，父亲与林澄都改成单镜单句同步口型</li>
+            <li>`S05` 现已额外补出 `identity-lock v2` 真实 probe：`start-end2video + canonical portrait` 已成功出片，当前技术属性为 `3.04s / 964x536 / 24fps / AAC`，抽帧确认不是静图晃动假视频</li>
             <li>保留 notes：`S02` 仍是文字叠层 + 世界内轻音路线；speaking shot 仍需继续靠人工审片确认中文内容与口型完全贴合</li>
-            <li>后续只做定向升级：默认不重开 `P04`，仅在父亲或林澄 speaking shot 需要更强同步时再局部替换</li>
+            <li>后续只做定向升级：默认不重开 `P04`，仅在父亲或林澄 speaking shot 需要更强同步时再局部替换；若重开，默认先复审 `identity-lock v2`，不先跳到换脸补救</li>
           </ul>
         </div>
         <div class="image-grid">
@@ -919,6 +920,10 @@
           <figure>
             <video controls playsinline src="current/clips/p04-s05-lin-close-current.mp4"></video>
             <figcaption>P04 / S05 current clip：林澄同步短线的当前 accepted 镜头版本。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/shot-ch01-p04-s05-lin-close-viduq3-s2v-v2.mp4"></video>
+            <figcaption>P04 / S05 `identity-lock v2` probe：等待区里的林澄近景也已经走通 `start-end2video + canonical portrait`。这条当前不是 current 替换，而是给后续同类 speaking close-up 提供更稳的人物一致性升级基线。</figcaption>
           </figure>
         </div>
       </div>
@@ -1172,7 +1177,7 @@
       <div class="compare-grid">
         <div>
           <h3>P11 当前交付口径</h3>
-          <p>`P11` 当前已经升级到 `delivery v2`。这一版继续严格按 `G01 -> G02 -> G03 -> G04` 收束终局，但现在不只是 `G02` 落到了人物脸上，`G03` 的制度接收层和 `G04` 的回航桥接也都已经换成真实动态承载体。</p>
+          <p>`P11` 当前已经升级到 `delivery v2`。这一版继续严格按 `G01 -> G02 -> G03 -> G04` 收束终局，但现在不只是 `G02` 落到了人物脸上，`G03` 的制度接收层和 `G04` 的回航桥接也都已经换成真实动态承载体。围绕用户刚刚指出的人物一致性问题，这里还新增了一条不抢主线的 `identity-lock v2` 路线：`G02` 已经补出 `start-end2video + canonical portrait` 的真实 probe，用来验证“首尾帧锁人”比“单首帧硬顶 + 事后换脸”更适合作为默认生产口径。</p>
           <div class="meta-grid">
             <div class="meta-card">
               <div class="meta-kicker">Current File</div>
@@ -1188,16 +1193,17 @@
             </div>
             <div class="meta-card">
               <div class="meta-kicker">Backlog</div>
-              <div class="meta-value">只保留 G01 静态确认位与 540p 规格 notes</div>
+              <div class="meta-value">G01 静态位、540p 规格，以及 G02 的 identity-lock v2 复审</div>
             </div>
           </div>
           <ul>
             <li>当前判断：`P11 / accepted_with_notes / delivery v2`</li>
             <li>`G01` 已锁为终局确认位：制度结果、确认书与林澄重新回到同一画面，不再停在抽象系统页</li>
             <li>`G02` 已由 `qingyun / viduq3-turbo` 成功出片，并通过当前 `W9` 轻量 QC：人物身份稳定、年龄感仍对、没有多余人物、乱字幕或演讲腔</li>
+            <li>`G02` 现已额外补出 `identity-lock v2` 真实 probe：`start-end2video + canonical portrait` 已成功出片，当前技术属性为 `4.04s / 880x588 / 24fps / AAC`，抽帧确认不是静图晃动假视频</li>
             <li>`G03` 现在已升级为真实 `viduq3-turbo` 制度接收 clip：仍保持克制的 `UI-first` 调性，但不再只是静帧叠层</li>
             <li>`G04` 现在已升级为真实 `viduq3-turbo` 回航桥接 clip：未来湾出口与数字导师世界内接入已经开始在同一条动态过渡里成立</li>
-            <li>`P11` 现阶段的 notes 主要是：`G01` 仍偏静态，`G02-G04` 目前都是 `540p` 级成功片，`G04` 的导师存在感后续还可以再温和但更明确</li>
+            <li>`P11` 现阶段的 notes 主要是：`G01` 仍偏静态，`G02-G04` 目前都是 `540p` 级成功片，`G04` 的导师存在感后续还可以再温和但更明确；如果后续重开人物近景，默认先复审 `identity-lock v2`，不先跳到换脸补救</li>
             <li>这些 notes 已经不再阻塞当前交付；后续若要升格，优先考虑补 `G01` 或统一升规格，不再回退 `G03/G04` 的真实 clip 结果</li>
           </ul>
         </div>
@@ -1213,6 +1219,10 @@
           <figure>
             <video controls playsinline src="current/clips/p11-s02-lin-final-speech-current.mp4"></video>
             <figcaption>P11 / G02 正式 clip：林澄结尾陈词已经从 overlay 预览升级为正式同步短视频。当前最重要的价值是把这句真正落到人物脸上，而不是继续停在静帧说明。</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline src="videos/shot-ch01-p11-s02-lin-final-speech-viduq3-s2v-v2.mp4"></video>
+            <figcaption>P11 / G02 `identity-lock v2` probe：这条不是当前 current 替换，而是新的人物一致性升级基线。它使用 `start-end2video + canonical portrait`，证明身份敏感 close-up 可以先靠更强首尾帧锁定，而不是默认留到后面换脸补救。</figcaption>
           </figure>
           <figure>
             <img src="current/shots/p11-s03-petition-status-current.png" alt="P11 G03 制度接收层 keyframe" />
