@@ -73,6 +73,30 @@
       gap: 10px;
       margin-top: 14px;
     }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #c7dff0;
+      background: #ffffff;
+      color: #16556f;
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(32, 66, 94, 0.08);
+    }
+    .hero-action.primary {
+      background: linear-gradient(180deg, #2f7ea7 0%, #236889 100%);
+      border-color: #236889;
+      color: #ffffff;
+    }
     .status-chip {
       display: inline-flex;
       align-items: center;
@@ -289,6 +313,10 @@
         <span class="status-chip complete">Loop Complete: YES</span>
         <span class="status-chip complete">Accepted Spine: P01-P12 (All Parts)</span>
         <span class="status-chip complete">2026-04-01 第一集全部剧本已跑通</span>
+      </div>
+      <div class="hero-actions">
+        <a class="hero-action primary" href="https://jameswuhk.github.io/future-bay-chapter-01-preview/current/deliveries/chapter-01-master-current.mp4">直接看 Current Master</a>
+        <a class="hero-action" href="https://jameswuhk.github.io/future-bay-chapter-01-preview/current/deliveries/chapter-01-story-spine-preview-current.mp4">看 Story Spine Preview</a>
       </div>
     </section>
 
