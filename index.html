@@ -369,11 +369,11 @@
       <div class="compare-grid">
         <div>
           <h3>chapter-01 story spine current</h3>
-          <p>这一屏现在固定只放当前最新的整章 current。顶部入口已经从临时的 131 秒精简版切回 `201.9s` 的完整版低码率版，目标是同时满足两件事：第一眼看到的是最新最全的整章组装；浏览器里也不要再因为文件过大一直转圈。以后不管后面怎么继续补 clip、修音轨、改 shot list，最上面这个入口都只指向当前最新、最诚实的整章 current。</p>
+          <p>这一屏现在固定只放一个整章视频入口，不再同时摆 `current / reviewcut / 精简版 / 备用版` 让人自己判断。顶部这条就是当前最接近成片的整章版本：既保持 3 分多钟的完整时长，也压到了浏览器可稳定播放的体积。</p>
           <div class="meta-grid">
             <div class="meta-card">
               <div class="meta-kicker">Current File</div>
-              <div class="meta-value">chapter-01-story-spine-preview-current.mp4</div>
+              <div class="meta-value">chapter-01-story-spine-preview-v20-full.mp4</div>
             </div>
             <div class="meta-card">
               <div class="meta-kicker">更新时间</div>
@@ -381,7 +381,7 @@
             </div>
             <div class="meta-card">
               <div class="meta-kicker">状态</div>
-              <div class="meta-value">继续编辑 / clean current review cut</div>
+              <div class="meta-value">继续编辑 / closest-to-final full assembly</div>
             </div>
             <div class="meta-card">
               <div class="meta-kicker">当前边界</div>
@@ -389,18 +389,16 @@
             </div>
           </div>
           <ul>
-          <li>主入口：<a href="videos/chapter-01-story-spine-preview-v20-full.mp4">chapter-01 story spine preview v20-full</a></li>
+          <li>唯一整章入口：<a href="videos/chapter-01-story-spine-preview-v20-full.mp4">chapter-01 story spine preview v20-full</a></li>
           <li>规格：`201.90s / 1152x768 / 30fps / no audio / 15.68MB`</li>
-          <li>当前口径：顶部已改回“3 分多钟完整版”；这版是 `v14` 的低码率 current 发布版，解决了之前版本时长不对和超过 20MB 导致转圈的问题。</li>
-          <li>current alias：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full">chapter-01 story spine preview current</a> `GitHub Pages 若短暂回旧缓存，可先看上面的唯一版本文件。`</li>
-            <li>较短 accepted spine：<a href="current/deliveries/chapter-01-master-current.mp4">chapter-01 master current</a> `154.51s`</li>
-            <li>如果你要先看最新最全的整章成片状态，先点这一条；如果你只想快速确认结构，也可以看下面保留的较短 clean cut 说明。</li>
+          <li>当前口径：只保留这一条最接近成片的整章版本；其它整章级别的精简版、review cut、备用入口不再放在页面主视图里。</li>
+            <li>如果你要看这集现在到底做到什么程度，就看这一条，不需要再在多个整章版本之间切换。</li>
           </ul>
         </div>
         <div class="image-grid">
           <figure>
             <video controls playsinline src="videos/chapter-01-story-spine-preview-v20-full.mp4"></video>
-            <figcaption>最新最终组装版：顶部播放器直接走 `v20-full` 唯一路径，避免 `current` alias 的旧缓存干扰。当前展示的是 3 分多钟完整版低码率版，大小 `15.68MB`。</figcaption>
+            <figcaption>最新最终组装版：本页唯一保留的整章视频入口。当前展示的是 3 分多钟完整版低码率版，大小 `15.68MB`。</figcaption>
           </figure>
         </div>
       </div>
@@ -591,10 +589,8 @@
             </div>
           </div>
           <ul>
-            <li><span class="label">不要首看</span>：<a href="current/deliveries/chapter-01-master-current.mp4">chapter-01 master current</a></li>
-            <li><span class="label">也不要首看</span>：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4">chapter-01 story spine preview current</a></li>
             <li>如果你是第一次看这集，先读上面的“先认人”，再看 `P03` 和 `P04`。</li>
-            <li>这两条整章视频当前只保留为粗剪诊断入口，不再当作“已经能代表故事”的默认推荐。</li>
+            <li>整章视频在本页只保留顶部那一条；这里不再重复摆其它整章粗剪入口。</li>
           </ul>
         </div>
         <div class="image-grid">
@@ -622,7 +618,7 @@
         </div>
         <div class="card">
           <div class="tiny">Scope 边界</div>
-          <p><span class="label">当前视频主线</span> chapter 级 accepted spine 仍然只覆盖 `P01-P06` 与 `P10-P12`，这一点没有假装被改写；但 `P07-P09` 现在已经都形成了独立 `accepted_with_notes` part-level 交付。因此这页当前保留三条观看口径：`chapter-01 master current` 继续承担内部 accepted 审片入口，`story spine v14` 继续承担“把整章问题看全”的完整粗剪预览，而 `P07/P08/P09 current` 则代表中段三段已经真正完成的独立交付。第一次看这集的人，仍然应该先读“先认人”，再看 `P03/P04`。</p>
+          <p><span class="label">当前视频主线</span> 这一页不再保留多条整章观看口径。对外只保留顶部这一条最接近成片的整章视频；`P07/P08/P09 current` 这类 part-level 交付只在下面分镜列表中保留，用来逐段审资产，不再和整章入口并排竞争。</p>
         </div>
         <div class="card">
           <div class="tiny">Story-First 预览</div>
@@ -750,10 +746,7 @@
           </div>
           <ul>
             <li>桥接基线：`videos/part-07-09-middle-bridge-papercut-v3.mp4`</li>
-            <li>完整粗剪预览：<a href="videos/chapter-01-story-spine-preview-v20-full.mp4">chapter-01-story-spine-preview-v20-full.mp4</a></li>
-            <li>current alias：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full">chapter-01-story-spine-preview-current.mp4</a></li>
-            <li>备用精简 clean cut：<a href="videos/chapter-01-story-spine-preview-v19.mp4">chapter-01-story-spine-preview-v19.mp4</a></li>
-            <li>备用连续审看片：<a href="current/deliveries/chapter-01-story-spine-reviewcut-current.mp4">chapter-01-story-spine-reviewcut-current.mp4</a></li>
+            <li>本页唯一整章入口：<a href="videos/chapter-01-story-spine-preview-v20-full.mp4">chapter-01-story-spine-preview-v20-full.mp4</a></li>
             <li>本轮新增：整章预览继续保留 `chapter-01-p06-p07-consequence-bridge-v1.mp4`，并额外吃回 `P07 v2` 的 opening readability lift，让中段入口更稳一点。</li>
             <li>重要边界：当前是 `story-first chapter preview`，不把 accepted master 假装改写</li>
           </ul>
@@ -774,10 +767,6 @@
           <figure>
             <video controls playsinline src="videos/part-07-09-middle-bridge-papercut-v3.mp4"></video>
             <figcaption>P07-P09 middle bridge paper cut v3：保留为结构诊断基线，用来对照“只补桥”和“正式 part 插回整章”之间的差别。</figcaption>
-          </figure>
-          <figure>
-            <video controls playsinline src="videos/chapter-01-story-spine-preview-v20-full.mp4"></video>
-            <figcaption>chapter-01 story spine preview current：页面展示现在直接走 `v20-full` 唯一路径。如果你之前看到的是 2 分多钟，那是为了解决加载转圈临时顶上的精简版，现在已降为备用。</figcaption>
           </figure>
         </div>
       </div>
@@ -918,7 +907,6 @@
             <li><a href="current/deliveries/part-11-current.mp4">P11 current delivery</a></li>
             <li><a href="current/deliveries/part-12-current.mp4">P12 current delivery</a></li>
             <li><a href="current/deliveries/chapter-01-story-spine-preview-current.mp4">story spine preview current</a></li>
-            <li><a href="current/deliveries/chapter-01-story-spine-reviewcut-current.mp4">story spine review cut current</a></li>
           </ul>
         </div>
         <div class="card">
@@ -1651,9 +1639,7 @@
         <div class="card">
           <div class="tiny">辅助入口</div>
           <ul>
-            <li><a href="current/deliveries/chapter-01-story-spine-preview-current.mp4">最新完整组装版</a></li>
-            <li><a href="current/deliveries/chapter-01-master-current.mp4">较短 accepted master</a></li>
-            <li><a href="current/deliveries/chapter-01-story-spine-preview-current.mp4">完整故事粗剪预览</a></li>
+            <li><a href="videos/chapter-01-story-spine-preview-v20-full.mp4">最新完整组装版</a></li>
             <li>分场脚本：`script.md`</li>
             <li>镜头清单：`shot-list.md`</li>
           </ul>
