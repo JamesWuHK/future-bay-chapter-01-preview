@@ -382,6 +382,31 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .shot-asset-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .shot-asset-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      background: #fbfdff;
+    }
+    .shot-asset-card h4 {
+      margin: 0 0 4px;
+      font-size: 15px;
+    }
+    .shot-asset-card p {
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .shot-asset-card .stackline {
+      display: grid;
+      gap: 8px;
+    }
     .storyboard-beats,
     .storyboard-script {
       margin: 10px 0 0 18px;
@@ -399,7 +424,7 @@
       font-weight: 700;
     }
     @media (max-width: 920px) {
-      .grid.two, .grid.three, .compare-grid, .image-grid, .storyboard-grid, .storyboard-media {
+      .grid.two, .grid.three, .compare-grid, .image-grid, .storyboard-grid, .storyboard-media, .shot-asset-grid {
         grid-template-columns: 1fr;
       }
       .wrap {
@@ -513,10 +538,69 @@
               <a class="storyboard-shot" href="current/shots/p01-s06-lin-cheng-current.png"><img src="current/shots/p01-s06-lin-cheng-current.png" alt="P01 代表图"></a>
               <figure class="storyboard-video">
                 <video controls preload="metadata" playsinline src="current/deliveries/part-01-current.mp4"></video>
-                <figcaption>P01 当前视频</figcaption>
+                <figcaption>P01 完整视频</figcaption>
               </figure>
             </div>
             <p class="storyboard-meta">代表图：`p01-s06-lin-cheng-current.png` ｜ 当前交付：`part-01-current.mp4` ｜ 时长：`24.00s`</p>
+            <p><span class="label">P01 逐镜资产</span> 下面把 `S01-S07` 每一拍的 keyframe 和对应 clip 直接展开；如果某一拍当前还是历史 provisional alias，也按当前实际装配所用资产如实展示。</p>
+            <div class="shot-asset-grid">
+              <article class="shot-asset-card">
+                <h4>S01 到场与主位确认</h4>
+                <p><code>CH01-P01-S01</code> `POV / 5.00s`：未来湾任务台前的到场镜头。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png"><img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="P01 S01 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="videos/shot-a01-future-bay-dock-pov-wan2.6-i2v-flash-v1-720p.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S02 灰银信号点亮</h4>
+                <p><code>CH01-P01-S02</code> `POV / 5.00s`：灰银任务信号脉冲推向视线。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png"><img src="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png" alt="P01 S02 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S03 阿潮接入</h4>
+                <p><code>CH01-P01-S03</code> `POV+OVR / 5.01s`：阿潮俯冲接入，把空港变成责任现场。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-ch01-p01-s03-achao-arrival-frame-v1.png"><img src="shots/shot-ch01-p01-s03-achao-arrival-frame-v1.png" alt="P01 S03 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="videos/shot-ch01-p01-s03-achao-arrival-wan2.6-i2v-flash-v1-720p.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S04 固定小队运转</h4>
+                <p><code>CH01-P01-S04</code> `POV+OVR / 5.01s`：祁野、闻夏、回响已经在台面上工作。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-ch01-p01-s04-team-operating-v1-qwen-image-2.0-pro.png"><img src="shots/shot-ch01-p01-s04-team-operating-v1-qwen-image-2.0-pro.png" alt="P01 S04 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="videos/shot-ch01-p01-s04-team-operating-wan2.6-i2v-flash-v1-720p.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S05 守望者正式交班</h4>
+                <p><code>CH01-P01-S05</code> `OVR / 5.01s`：守望者把灰银任务封签推到你面前。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png"><img src="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png" alt="P01 S05 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S06 林澄争议切片</h4>
+                <p><code>CH01-P01-S06</code> `SYS+INT / 5.01s`：先把林澄是谁、为什么今晚必须争打到面前。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="current/shots/p01-s06-lin-cheng-current.png"><img src="current/shots/p01-s06-lin-cheng-current.png" alt="P01 S06 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="current/clips/p01-s06-lin-cheng-current.mp4"></video>
+                </div>
+              </article>
+              <article class="shot-asset-card">
+                <h4>S07 接受任务与启航</h4>
+                <p><code>CH01-P01-S07</code> `POV→WIDE / 5.01s`：权限环确认后，航线点亮，真正出发。</p>
+                <div class="stackline">
+                  <a class="storyboard-shot" href="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png"><img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="P01 S07 keyframe"></a>
+                  <video controls preload="metadata" playsinline src="videos/shot-ch01-p01-s07-route-ignite-wan2.6-i2v-flash-v1-720p.mp4"></video>
+                </div>
+              </article>
+            </div>
           </article>
 
           <article class="storyboard-card">
