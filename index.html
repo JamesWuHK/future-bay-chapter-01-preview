@@ -369,7 +369,7 @@
       <div class="compare-grid">
         <div>
           <h3>chapter-01 story spine current</h3>
-          <p>这一屏现在固定只放当前最新的整章 `clean current review cut`。它不再把“最长时长”当成唯一目标，而是优先保证：顶部入口没有照片晃动假视频，也没有整段噪音。以后不管后面怎么继续补 clip、修音轨、改 shot list，最上面这个入口都只指向当前最新、最诚实的整章 current。</p>
+          <p>这一屏现在固定只放当前最新的整章 current。顶部入口已经从临时的 131 秒精简版切回 `201.9s` 的完整版低码率版，目标是同时满足两件事：第一眼看到的是最新最全的整章组装；浏览器里也不要再因为文件过大一直转圈。以后不管后面怎么继续补 clip、修音轨、改 shot list，最上面这个入口都只指向当前最新、最诚实的整章 current。</p>
           <div class="meta-grid">
             <div class="meta-card">
               <div class="meta-kicker">Current File</div>
@@ -385,21 +385,21 @@
             </div>
             <div class="meta-card">
               <div class="meta-kicker">当前边界</div>
-              <div class="meta-value">顶层假视频位与噪音已移除；`v18` 已改成全程视频流，前 3 段只保留片上说明条</div>
+              <div class="meta-value">顶部 current 已切到 `v20-full`；保留 3 分多钟完整版时长，同时压到 20MB 以下，避免加载卡死</div>
             </div>
           </div>
           <ul>
-          <li>主入口：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v19">chapter-01 story spine preview current</a></li>
-          <li>规格：`131.00s / 1152x768 / 30fps / no audio / 14.96MB`</li>
-          <li>当前口径：这是当前最适合首看的整章 current；`v19` 保持 `v18` 的 all-video flow，但已压到 20MB 以下，避免播放器一直转圈。</li>
+          <li>主入口：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full">chapter-01 story spine preview current</a></li>
+          <li>规格：`201.90s / 1152x768 / 30fps / no audio / 15.68MB`</li>
+          <li>当前口径：顶部已改回“3 分多钟完整版”；这版是 `v14` 的低码率 current 发布版，解决了之前版本时长不对和超过 20MB 导致转圈的问题。</li>
             <li>较短 accepted spine：<a href="current/deliveries/chapter-01-master-current.mp4">chapter-01 master current</a> `154.51s`</li>
-            <li>如果你只想先看整章最新可看片，先点这一条；如果你要逐段审资产，直接看下面的分镜清单。</li>
+            <li>如果你要先看最新最全的整章成片状态，先点这一条；如果你只想快速确认结构，也可以看下面保留的较短 clean cut 说明。</li>
           </ul>
         </div>
         <div class="image-grid">
           <figure>
-            <video controls playsinline src="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v19"></video>
-            <figcaption>最新最终组装版：顶部已切到 `v19 clean current`。内容结构与 `v18` 相同，但已压到 20MB 以下，避免视频一直转圈加载。</figcaption>
+            <video controls playsinline src="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full"></video>
+            <figcaption>最新最终组装版：顶部 current 已切回 `v20-full`，对应 3 分多钟完整版低码率版。它保留整章时长，并压到 `15.68MB`，避免播放器一直转圈。</figcaption>
           </figure>
         </div>
       </div>
@@ -639,7 +639,7 @@
           <div class="tiny">本轮 To Do</div>
           <p><span class="label">2026-04-02 已核实待办</span> 当前最需要先修的不是再扩新资产，而是先把入口和真实状态收口，再继续清理 viewer-blocking 问题与镜头债务。下面这份列表按今天的真实进度同步更新，不再混写“已说过”和“已真的修完”。</p>
           <ul>
-            <li>`已完成`：`current hub` 已修回真实 current，`chapter-01-master-current.mp4` 现指向 `v16`，`story-spine-preview-current.mp4` 现指向 `v14`。</li>
+            <li>`已完成`：`current hub` 已修回真实 current，`chapter-01-master-current.mp4` 现指向 `v16`，`story-spine-preview-current.mp4` 现指向 `v20-full` 这条 3 分多钟完整版低码率版。</li>
             <li>`已完成`：`P04-P12 current` 已从 `part-*-denoised.mp4` 切回正式 part-level delivery，不再继续把静音 review 资产冒充 current。</li>
             <li>`已完成（初步）`：`P06` 已重装为 `delivery v5`，并同步重渲 chapter 级入口；`1:30` 左右的 viewer-blocking 坏音轨已先收口，`P06 -> P07` 已补入 assembly-level consequence bridge，`P07` 也已升级到 opening readability lift 的 `v2`；`review cut` 仅保留为备用兜底入口。</li>
             <li>`已完成`：`P12` 已从“真实 opening clip + voice-led hold”升级为 `delivery v4` 的“真实 clean retry opening clip + 明确 world-in mentor question card”，不再继续用同场景轻动 hold 冒充正式视频。</li>
@@ -749,7 +749,8 @@
           </div>
           <ul>
             <li>桥接基线：`videos/part-07-09-middle-bridge-papercut-v3.mp4`</li>
-            <li>完整粗剪预览：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v19">chapter-01-story-spine-preview-current.mp4</a></li>
+            <li>完整粗剪预览：<a href="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full">chapter-01-story-spine-preview-current.mp4</a></li>
+            <li>备用精简 clean cut：<a href="videos/chapter-01-story-spine-preview-v19.mp4">chapter-01-story-spine-preview-v19.mp4</a></li>
             <li>备用连续审看片：<a href="current/deliveries/chapter-01-story-spine-reviewcut-current.mp4">chapter-01-story-spine-reviewcut-current.mp4</a></li>
             <li>本轮新增：整章预览继续保留 `chapter-01-p06-p07-consequence-bridge-v1.mp4`，并额外吃回 `P07 v2` 的 opening readability lift，让中段入口更稳一点。</li>
             <li>重要边界：当前是 `story-first chapter preview`，不把 accepted master 假装改写</li>
@@ -773,8 +774,8 @@
             <figcaption>P07-P09 middle bridge paper cut v3：保留为结构诊断基线，用来对照“只补桥”和“正式 part 插回整章”之间的差别。</figcaption>
           </figure>
           <figure>
-            <video controls playsinline src="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v19"></video>
-            <figcaption>chapter-01 story spine preview current：顶层当前已切到 `v19 clean current`。这版保留 `v18` 的全视频流结构，但进一步压缩到 20MB 以下，解决加载转圈问题。</figcaption>
+            <video controls playsinline src="current/deliveries/chapter-01-story-spine-preview-current.mp4?v=v20-full"></video>
+            <figcaption>chapter-01 story spine preview current：这里展示的是当前 3 分多钟完整版入口 `v20-full`。如果你之前看到的是 2 分多钟，那是为了解决加载转圈临时顶上的精简版，现在已降为备用。</figcaption>
           </figure>
         </div>
       </div>
