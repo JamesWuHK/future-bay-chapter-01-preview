@@ -328,8 +328,62 @@
       font-weight: 700;
       line-height: 1.5;
     }
+    .storyboard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .storyboard-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+    }
+    .storyboard-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .storyboard-head h3 {
+      margin-bottom: 4px;
+    }
+    .storyboard-media {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 12px;
+      margin-top: 12px;
+      align-items: start;
+    }
+    .storyboard-shot {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #edf4f9;
+    }
+    .storyboard-shot img {
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .storyboard-video {
+      margin: 0;
+      height: 100%;
+    }
+    .storyboard-video video {
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .storyboard-meta {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
     @media (max-width: 920px) {
-      .grid.two, .grid.three, .compare-grid, .image-grid {
+      .grid.two, .grid.three, .compare-grid, .image-grid, .storyboard-grid, .storyboard-media {
         grid-template-columns: 1fr;
       }
       .wrap {
@@ -407,104 +461,248 @@
     <section class="section">
       <h2 id="storyboard-list">分镜脚本列表</h2>
       <div class="card">
-        <p><span class="label">使用说明</span> 这张表按 `P01-P12` workflow 顺序列出当前分镜资产。每一段都给出：文字入口、代表图片、当前视频、当前状态。当前没有任何一段被标成“已定稿”；凡是 `PASS WITH NOTES` 或仍在回修的，都统一写成 `审片中` 或 `继续编辑`。</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Part</th>
-              <th>文字</th>
-              <th>图片</th>
-              <th>视频</th>
-              <th>状态</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>P01</td>
-              <td><a href="#p01-delivery">未来湾任务码头 / 灰银任务交班</a></td>
-              <td><a href="current/shots/p01-s06-lin-cheng-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-01-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P02</td>
-              <td><a href="#p02-delivery">紧急入港校验 / 档案大厅入口</a></td>
-              <td><a href="#p02-delivery">见本段图像与 UI</a></td>
-              <td><a href="current/deliveries/part-02-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P03</td>
-              <td><a href="#p03-delivery">悬浮档案大厅 / 林澄发问</a></td>
-              <td><a href="current/shots/p03-s01-hall-triangle-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-03-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P04</td>
-              <td><a href="#p04-delivery">等待区与父亲 / 林澄承压</a></td>
-              <td><a href="current/shots/p04-s01-waiting-zone-ingress-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-04-current.mp4">当前视频</a></td>
-              <td><span class="status-chip warn">继续编辑</span></td>
-            </tr>
-            <tr>
-              <td>P05</td>
-              <td><a href="#p05-delivery">概率长廊 / 路径比较</a></td>
-              <td><a href="current/shots/p05-s01-probability-corridor-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-05-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P06</td>
-              <td><a href="#p06-delivery">暗层接口 / 第四路径显形</a></td>
-              <td><a href="current/shots/p06-s01-dark-layer-ingress-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-06-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P07</td>
-              <td><a href="#p07-09-delivery">静室与旧练习痕迹</a></td>
-              <td><a href="current/shots/p07-s01-silent-room-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-07-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P08</td>
-              <td><a href="#p07-09-delivery">规则投影室 / 序列员 07 立场</a></td>
-              <td><a href="current/shots/p08-s01-rule-room-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-08-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P09</td>
-              <td><a href="#p07-09-delivery">授权诱惑 / 证据冻结 / 团队分裂</a></td>
-              <td><a href="current/shots/p09-s01-evidence-auth-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-09-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P10</td>
-              <td><a href="#p10-delivery">自由回响台辩论 / 公开承担</a></td>
-              <td><a href="current/shots/p10-s01-echo-platform-establishing-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-10-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P11</td>
-              <td><a href="#p11-delivery">午夜前选择 / 回航后果</a></td>
-              <td><a href="current/shots/p11-s01-final-confirmation-current.png">代表图</a></td>
-              <td><a href="current/deliveries/part-11-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-            <tr>
-              <td>P12</td>
-              <td><a href="#p12-delivery">数字导师收束 / world-in 问题卡</a></td>
-              <td><a href="ui/p12-g05-guiding-question-card-v1.png">代表图</a></td>
-              <td><a href="current/deliveries/part-12-current.mp4">当前视频</a></td>
-              <td><span class="status-chip notes">审片中</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <p><span class="label">使用说明</span> 这里不再只是链接目录，而是把每个 part 的脚本摘要、代表图、当前视频和状态直接展开。当前没有任何一段被标成“已定稿”；凡是 `PASS WITH NOTES` 或仍在回修的，都统一写成 `审片中` 或 `继续编辑`。</p>
+        <div class="storyboard-grid">
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P01</div>
+                <h3>未来湾任务码头</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你已经站在未来湾任务台前，灰银任务信号亮起，阿潮和固定小队先后进入工作状态，守望者正式把林澄任务交到你手里。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 你不是误入者；林澄争议今晚就必须处理；接受任务之后，航线和制度压力才真正启动。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p01-s06-lin-cheng-current.png"><img src="current/shots/p01-s06-lin-cheng-current.png" alt="P01 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-01-current.mp4"></video>
+                <figcaption>P01 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p01-s06-lin-cheng-current.png` ｜ 当前交付：`part-01-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P02</div>
+                <h3>紧急入港校验</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你沿着点亮的航线逼近时间档案城，但在真正见到林澄之前，必须先通过制度门槛，拿到临时观察许可。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这不是漂亮航行镜头，而是“任务时间在流失，而你暂时还没有资格直接介入”的规则压迫。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p02-s01-entry-approach-current.png"><img src="current/shots/p02-s01-entry-approach-current.png" alt="P02 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-02-current.mp4"></video>
+                <figcaption>P02 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p02-s01-entry-approach-current.png` ｜ 当前交付：`part-02-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P03</div>
+                <h3>悬浮档案大厅</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 大厅空间先建立起来：林澄在中央确认台前，父亲在等待区，序列员 07 站在规则层一侧。之后才让林澄、07 和你之间的冲突逐步成立。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这些人不是突然出现的；07 不是反派突袭，而是带着合法制度立场先赢走一小步。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p03-s01-hall-triangle-current.png"><img src="current/shots/p03-s01-hall-triangle-current.png" alt="P03 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-03-current.mp4"></video>
+                <figcaption>P03 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p03-s01-hall-triangle-current.png` ｜ 当前交付：`part-03-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P04</div>
+                <h3>等待区与父亲</h3>
+              </div>
+              <span class="status-chip warn">继续编辑</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你离开大厅中央，先进入更近、更安静也更刺人的家庭空间，看见签字笔、安抚屏、父亲与林澄同场成立，再按“父亲先、林澄后”完成近景承压。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这不是支线过场，而是把抽象制度压力压回一个真实家庭，解释父亲为什么也站在系统那边。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p04-s01-waiting-zone-ingress-current.png"><img src="current/shots/p04-s01-waiting-zone-ingress-current.png" alt="P04 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-04-current.mp4"></video>
+                <figcaption>P04 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p04-s01-waiting-zone-ingress-current.png` ｜ 当前交付：`part-04-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P05</div>
+                <h3>概率长廊</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 三条未来路径同时在时间河道上展开，你开始在路径之间切换、拖拽、比较，第一次直观看到“最优人生”究竟意味着什么。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这是本章第一波奇观，但奇观的目标不是炫技，而是让“系统为什么觉得 93% 正确”变得可见。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p05-s01-probability-corridor-current.png"><img src="current/shots/p05-s01-probability-corridor-current.png" alt="P05 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-05-current.mp4"></video>
+                <figcaption>P05 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p05-s01-probability-corridor-current.png` ｜ 当前交付：`part-05-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P06</div>
+                <h3>暗层接口</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你追着风声进入暗层接口，画面明显转暗，银蓝色风丝般的生命证词第一次出现，第四路径开始从“猜想”变成“存在过的痕迹”。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> `P06` 负责发现，不负责立刻把 07 推进来接管；如果这里太早变追捕，后面的呼吸和人性重量会断掉。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p06-s01-dark-layer-ingress-current.png"><img src="current/shots/p06-s01-dark-layer-ingress-current.png" alt="P06 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-06-current.mp4"></video>
+                <figcaption>P06 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p06-s01-dark-layer-ingress-current.png` ｜ 当前交付：`part-06-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P07</div>
+                <h3>沉默练习室</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你进入光感变暖、速度变慢的沉默练习室，旧录音贝壳、手写日志和风名标签依次出现，把第四路径从“隐藏信息”推进成“有人真实活过的未来”。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这里的作用不是补气氛，而是让你和林澄第一次真正停下来理解：为什么这条更难的路值得被保留。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p07-s01-silent-room-current.png"><img src="current/shots/p07-s01-silent-room-current.png" alt="P07 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-07-current.mp4"></video>
+                <figcaption>P07 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p07-s01-silent-room-current.png` ｜ 当前交付：`part-07-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P08</div>
+                <h3>规则投影室</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 白色法庭般的规则投影室展开，序列员 07 正面陈列资源模型、失败率模型和开放路径成本评估，让制度立场也获得它自己的重量。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> `P07` 让第四路径有了人性重量，`P08` 则让 07 的坚持有了制度重量，回响台高潮才不会变成单向正确答案。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p08-s01-rule-room-current.png"><img src="current/shots/p08-s01-rule-room-current.png" alt="P08 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-08-current.mp4"></video>
+                <figcaption>P08 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p08-s01-rule-room-current.png` ｜ 当前交付：`part-08-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P09</div>
+                <h3>证据失效与团队分裂</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 第四路径证据整理面板展开，你必须在“授权回响加速整理”和“保留原始链路”之间作选择；随后证据冻结，团队开始真正分裂。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这里疼的不是“秘密答案没了”，而是我们刚理解了一条重要却难证明的路，却在最需要承担真实性的时候失手了。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p09-s01-evidence-auth-current.png"><img src="current/shots/p09-s01-evidence-auth-current.png" alt="P09 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-09-current.mp4"></video>
+                <figcaption>P09 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p09-s01-evidence-auth-current.png` ｜ 当前交付：`part-09-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P10</div>
+                <h3>自由回响台辩论</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 当私人理解、暗层发现和证据链都不足以直接改变结果时，队伍只能把问题推进到公开程序里，在全城可见的回响台上承担表达责任。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这不是“辩论功能页”，而是高潮第一拍：你被逼到只能公开承担，不能再把问题藏在队伍内部。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p10-s01-echo-platform-establishing-current.png"><img src="current/shots/p10-s01-echo-platform-establishing-current.png" alt="P10 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-10-current.mp4"></video>
+                <figcaption>P10 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p10-s01-echo-platform-establishing-current.png` ｜ 当前交付：`part-10-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P11</div>
+                <h3>午夜前选择与回航</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 最终确认书出现在你和林澄之间，制度动作被依次点亮；林澄正视镜头，逼你确认自己是不是真的听见了她。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这是高潮第二拍：公开表达的结果被压回林澄的具体人生，问题从“说出来”推进到“要不要签后果”。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p11-s01-final-confirmation-current.png"><img src="current/shots/p11-s01-final-confirmation-current.png" alt="P11 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-11-current.mp4"></video>
+                <figcaption>P11 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p11-s01-final-confirmation-current.png` ｜ 当前交付：`part-11-current.mp4`</p>
+          </article>
+
+          <article class="storyboard-card">
+            <div class="storyboard-head">
+              <div>
+                <div class="tiny">P12</div>
+                <h3>数字导师总结</h3>
+              </div>
+              <span class="status-chip notes">审片中</span>
+            </div>
+            <p><span class="label">脚本摘要</span> 你停在未来湾回航口，数字导师以世界内柔和投影接住你，用极简总结完成离场，留下一个继续生长的问题，而不是把你拉回课堂。</p>
+            <p class="subtle"><span class="label">这一段要讲清</span> 这一段承担的是情绪接住、命题抽出和 world-in 收束，不是课后老师总结。</p>
+            <div class="storyboard-media">
+              <a class="storyboard-shot" href="current/shots/p12-s01-digital-mentor-current.png"><img src="current/shots/p12-s01-digital-mentor-current.png" alt="P12 代表图"></a>
+              <figure class="storyboard-video">
+                <video controls preload="metadata" playsinline src="current/deliveries/part-12-current.mp4"></video>
+                <figcaption>P12 当前视频</figcaption>
+              </figure>
+            </div>
+            <p class="storyboard-meta">代表图：`p12-s01-digital-mentor-current.png` ｜ 当前交付：`part-12-current.mp4`</p>
+          </article>
+        </div>
       </div>
     </section>
 
