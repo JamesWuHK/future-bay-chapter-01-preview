@@ -74,10 +74,12 @@ jobs:
           (repo_root / "index.html").write_text(html, encoding="utf-8")
           (repo_root / "chapter-01-main-character-dossier.html").write_text(html, encoding="utf-8")
 
-          asset_pattern = re.compile(r'(?:src|data|href)="((?:characters|scenes|shots|ui|videos|current)/[^"]+)"')
+          asset_pattern = re.compile(
+              r'(?:src|data|href|data-doc-src|data-doc-fallback)="((?:characters|scenes|shots|ui|videos|current|docs)/[^"]+)"'
+          )
           referenced_files = sorted({match.group(1).split("?", 1)[0] for match in asset_pattern.finditer(html)})
 
-          for asset_dir in ["characters", "scenes", "shots", "ui", "videos", "current"]:
+          for asset_dir in ["characters", "scenes", "shots", "ui", "videos", "current", "docs"]:
               shutil.rmtree(repo_root / asset_dir, ignore_errors=True)
 
           for rel_path in referenced_files:
