@@ -1001,48 +1001,200 @@
       </div>
     </section>
     <section class="section">
-      <h2 id="p01-shot-videos">P01 分镜视频 S01-S07</h2>
+      <h2 id="p01-shot-videos">P01 分镜执行清单 S01-S07</h2>
       <div class="card">
-        <p><span class="label">恢复入口</span> 这里把 `P01` 当前可用的 `S01-S07` 分镜视频重新并排挂回主资产页。默认优先使用 `current/clips`；只有 `S02` 目前仍沿用稳定的灰银信号视频资产，所以继续直连现有正式片段，不再让这七拍散落在后面的历史块里。</p>
+        <p><span class="label">不是空列表</span> 这里把 `P01` 当前真正还能用的 `S01-S07` 执行内容重新挂回主资产页：每拍都给出 `剧情职责 / 当前剧本句子 / 代表图 / 视频入口`。默认优先使用 `current`；只有 `S02` 目前仍沿用稳定的灰银信号视频资产，所以继续直连现有正式片段。</p>
         <ul>
-          <li>`S01` 到场：任务码头 current intro clip</li>
-          <li>`S02` 信号点亮：灰银请求 signal clip</li>
-          <li>`S03` 阿潮接入：current synced clip</li>
-          <li>`S04` 固定小队运转：current synced clip</li>
-          <li>`S05` 守望者交班：current synced clip</li>
-          <li>`S06` 林澄争议切片：current dispute clip</li>
-          <li>`S07` 接受任务启航：current route-ignite clip</li>
+          <li>`source of truth`：`storyboard-script.md` 的 `P01 Beat 合同总表` 与 `shot-list.md` 的 `CH01-P01-S01-S07` 执行段</li>
+          <li>`当前口径`：这 7 拍是 `P01 current v30` 的真实拆分，不是历史 mood board</li>
+          <li>`当前缺口`：`S02` 还没有独立 current clip；其余 `S01 / S03-S07` 都已挂 current 视频</li>
         </ul>
       </div>
-      <div class="image-grid">
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s01-dock-intro-current.mp4"></video>
-          <figcaption>`CH01-P01-S01` 当前视频：未来湾任务码头到场，约 `4.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
-          <figcaption>`CH01-P01-S02` 当前视频：灰银级请求信号点亮，约 `5.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s03-achao-current.mp4"></video>
-          <figcaption>`CH01-P01-S03` 当前视频：阿潮短播报接入，约 `5.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s04-team-operating-current.mp4"></video>
-          <figcaption>`CH01-P01-S04` 当前视频：固定小队运转，约 `5.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
-          <figcaption>`CH01-P01-S05` 当前视频：守望者正式交班，约 `5.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s06-dispute-current.mp4"></video>
-          <figcaption>`CH01-P01-S06` 当前视频：林澄拒签与责任后果，约 `5.0s`。</figcaption>
-        </figure>
-        <figure>
-          <video controls preload="metadata" playsinline src="current/clips/p01-s07-route-ignite-current.mp4"></video>
-          <figcaption>`CH01-P01-S07` 当前视频：固定小队介绍后启航，约 `5.0s`。</figcaption>
-        </figure>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S01` 到场</h3>
+            <p><span class="label">剧情职责</span> 先确认“我已经在未来湾任务码头，而且本来就属于这里”。</p>
+            <ul>
+              <li>`演员 / 视角`：玩家主位 `POV`</li>
+              <li>`环境`：未来湾任务码头，流光海在远处压低频存在</li>
+              <li>`当前剧本句子`：黑场亮起，你已经站在未来湾任务台前缘，脚边权限环微光可见</li>
+              <li>`声音`：流光海低频、时间丝线轻颤，无对白</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S01 任务码头首帧" />
+              <figcaption>`S01` 代表图：任务码头到场基线。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s01-dock-intro-current.mp4"></video>
+              <figcaption>`S01` 当前视频：未来湾任务码头到场，约 `4.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S02` 灰银信号点亮</h3>
+            <p><span class="label">剧情职责</span> 把“任务已经压到眼前”钉住，不再只是氛围开场。</p>
+            <ul>
+              <li>`演员 / 视角`：玩家主位 `POV`</li>
+              <li>`环境`：未来湾任务台中央，灰银请求在视野里脉冲点亮</li>
+              <li>`当前剧本句子`：灰银级请求信号在任务台前亮起并脉冲，把视线从港口压回任务中心</li>
+              <li>`声音`：信号脉冲、台面通电、夜港底噪；系统层通报灰银请求</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-a03-grey-silver-mission-signal-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S02 灰银信号首帧" />
+              <figcaption>`S02` 代表图：灰银级请求信号点亮。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
+              <figcaption>`S02` 当前视频：灰银级请求信号点亮，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S03` 阿潮接入</h3>
+            <p><span class="label">剧情职责</span> 用阿潮把紧急感、任务对象和世界趣味一起接入现场。</p>
+            <ul>
+              <li>`演员 / 视角`：阿潮、玩家主位 `POV`</li>
+              <li>`环境`：未来湾任务台上空，阿潮俯冲接入</li>
+              <li>`当前剧本句子`：阿潮用一条直白集结令把出发地点和处理对象说清</li>
+              <li>`对白`：阿潮短播报，讲清“去哪里、处理谁”</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-ch01-p01-s03-achao-arrival-frame-v1.png" alt="CH01-P01-S03 阿潮接入首帧" />
+              <figcaption>`S03` 代表图：阿潮接入任务现场。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s03-achao-current.mp4"></video>
+              <figcaption>`S03` 当前视频：阿潮短播报接入，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S04` 固定小队运转</h3>
+            <p><span class="label">剧情职责</span> 让孩子看见“固定小队已经在工作，而我就在责任中心”。</p>
+            <ul>
+              <li>`演员 / 视角`：祁野、闻夏、回响、玩家主位 `POV`</li>
+              <li>`环境`：未来湾任务台工作区，多角色已在运转</li>
+              <li>`当前剧本句子`：孩子看见的是运转中的固定小队，而不是角色排队登场</li>
+              <li>`对白`：祁野一句，闻夏一句；回响只做克制辅助</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-ch01-p01-s04-team-operating-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S04 固定小队运转首帧" />
+              <figcaption>`S04` 代表图：固定小队已在任务台运转。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s04-team-operating-current.mp4"></video>
+              <figcaption>`S04` 当前视频：固定小队运转，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S05` 守望者交班</h3>
+            <p><span class="label">剧情职责</span> 把“任务交付”从说明文字推进成正式授权动作。</p>
+            <ul>
+              <li>`演员 / 视角`：守望者、玩家主位</li>
+              <li>`环境`：任务台中央，灰银任务封签被正式推到面前</li>
+              <li>`当前剧本句子`：守望者把灰银任务封签正式推到你面前，交接责任而不是只给说明</li>
+              <li>`对白`：你，未来湾固定小队的新主位。现在正式接下第一项灰银任务。</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-a04-archive-watchkeeper-handoff-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S05 守望者交班首帧" />
+              <figcaption>`S05` 代表图：守望者正式交班。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
+              <figcaption>`S05` 当前视频：守望者正式交班，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S06` 林澄争议切片</h3>
+            <p><span class="label">剧情职责</span> 把林澄是谁、为什么拒签、以及午夜前会失去什么一次讲清。</p>
+            <ul>
+              <li>`演员 / 视角`：玩家主位、回响系统层、林澄切片</li>
+              <li>`环境`：任务封签展开层，争议信息以切片和受控 overlay 展开</li>
+              <li>`当前剧本句子`：先闪出林澄争议切片，再按顺序补清她的真实处境与午夜锁定后果</li>
+              <li>`系统层`：当前以更短、更稳的同步镜头配合 dispute overlay 控制责任信息</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="current/shots/p01-s06-lin-cheng-current.png" alt="CH01-P01-S06 林澄争议切片首帧" />
+              <figcaption>`S06` 代表图：林澄争议切片与责任后果。</figcaption>
+            </figure>
+            <figure>
+              <div class="stack">
+                <img src="shots/shot-ch01-p01-s06-lin-cheng-dispute-slice-v1-qwen-image-2.0-pro.png" alt="CH01-P01-S06 林澄切片底图" />
+                <img class="overlay" src="current/ui/p01-s06-dispute-overlay-v1.png" alt="" />
+              </div>
+              <figcaption>`S06` overlay：当前用来补清午夜前后果并压住模型自发文件字。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s06-dispute-current.mp4"></video>
+              <figcaption>`S06` 当前视频：林澄拒签与责任后果，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare-grid">
+          <div>
+            <h3>`CH01-P01-S07` 小队介绍后启航</h3>
+            <p><span class="label">剧情职责</span> 把点击接受任务兑现成真正出发，并让孩子看懂固定小队已经一起动身。</p>
+            <ul>
+              <li>`演员 / 视角`：守望者、阿潮、固定小队、玩家主位</li>
+              <li>`环境`：任务码头离场位 / 启航航线</li>
+              <li>`当前剧本句子`：阿潮把整支未来湾固定小队牵上航线，这一拍必须兑现前面的成员确认</li>
+              <li>`对白 / 声音`：守望者压一句责任任务，阿潮做执行型短播报，航线点亮空间音接管离场</li>
+            </ul>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="shots/shot-a06-route-ignite-v2-qwen-image-2.0-pro.png" alt="CH01-P01-S07 启航首帧" />
+              <figcaption>`S07` 代表图：接受任务后启航。</figcaption>
+            </figure>
+            <figure>
+              <img src="shots/shot-a06-route-ignite-achao-visible-v2-qwen-image-2.0-pro.png" alt="CH01-P01-S07 小队可见启航参考图" />
+              <figcaption>`S07` 队伍参考图：保留为可见小队启航参考。</figcaption>
+            </figure>
+            <figure>
+              <video controls preload="metadata" playsinline src="current/clips/p01-s07-route-ignite-current.mp4"></video>
+              <figcaption>`S07` 当前视频：固定小队介绍后启航，约 `5.0s`。</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section">
