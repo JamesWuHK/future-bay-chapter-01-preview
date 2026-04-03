@@ -328,8 +328,144 @@
       font-weight: 700;
       line-height: 1.5;
     }
+    .cast-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .cast-card {
+      overflow: hidden;
+      padding: 0;
+    }
+    .cast-card img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .cast-body {
+      padding: 16px 18px 18px;
+    }
+    .cast-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .cast-code {
+      color: #16556f;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cast-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .cast-body dl {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .cast-body dt {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .cast-body dd {
+      margin: 2px 0 0;
+      font-size: 14px;
+    }
+    .script-part {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
+      padding: 18px;
+      margin-top: 14px;
+    }
+    .script-topline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .script-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: #eef6ff;
+      color: #16556f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .script-goals {
+      margin-top: 10px;
+    }
+    .script-goals li {
+      margin-bottom: 4px;
+    }
+    .script-flow p {
+      margin-bottom: 10px;
+    }
+    .script-flow blockquote {
+      margin: 10px 0;
+      padding: 12px 14px;
+      border-left: 4px solid #c7dff0;
+      background: #f4f9fc;
+      border-radius: 12px;
+      color: #20455d;
+    }
+    .script-flow ol {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+    .script-flow ol li {
+      margin-bottom: 6px;
+    }
+    details.script-detail {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
+      margin-top: 14px;
+      overflow: hidden;
+    }
+    details.script-detail summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      font-weight: 700;
+      color: #1c435a;
+      background: #f5fbff;
+    }
+    details.script-detail summary::-webkit-details-marker {
+      display: none;
+    }
+    .detail-body {
+      padding: 16px 18px 18px;
+    }
+    .storyboard-pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", "Menlo", monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #24475d;
+      background: #f8fbfd;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
     @media (max-width: 920px) {
-      .grid.two, .grid.three, .compare-grid, .image-grid {
+      .grid.two, .grid.three, .compare-grid, .image-grid, .cast-grid {
         grid-template-columns: 1fr;
       }
       .wrap {
@@ -342,17 +478,19 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页已经按新的浏览顺序重排：最上面先放当前最新组装版，下面直接进入 `P01-P12` 分镜资产清单；人物说明、入口规则、矩阵和其他辅助资料统一收到底部。</p>
+      <p class="lead">这页现在要承担 chapter-01 的单一主入口：不仅给当前视频，还要把 `演员定妆 / 整集剧本 / 分镜脚本文字 / 当前资产` 串成一条能读懂整片的链路。顶部先看最新 assembled current，但往下必须能直接读到人物、剧本和逐拍分镜，不再只剩链接矩阵。</p>
       <div class="pill">唯一主入口：角色 + 场景 + 镜头 + 视频交付</div>
       <div class="pill-row">
         <span class="status-chip notes">2026-04-02 最新状态已同步</span>
         <span class="status-chip notes">顶部永远显示最新 assembled current</span>
-        <span class="status-chip notes">分镜区逐段标注：审片中 / 继续编辑 / 已定稿</span>
+        <span class="status-chip notes">演员 / 剧本 / 分镜脚本 / current 统一收口在本页</span>
       </div>
       <div class="hero-actions">
         <a class="hero-action primary" href="#latest-assembly">看最新组装版</a>
-        <a class="hero-action" href="#storyboard-list">看分镜列表</a>
-        <a class="hero-action" href="#supporting-materials">看其他资料</a>
+        <a class="hero-action" href="#cast-list">看演员定妆</a>
+        <a class="hero-action" href="#full-script">看整集剧本</a>
+        <a class="hero-action" href="#storyboard-text">看分镜脚本文字</a>
+        <a class="hero-action" href="#storyboard-list">看资产矩阵</a>
       </div>
       <div class="danger-box">
         <p><span class="label">当前页面规则</span> 顶部这条 `assembled current` 会持续保持最新，但它现在的真实状态仍是 `继续编辑 / PASS WITH NOTES`，不是已定稿。当前仍有 3 个必须继续跟进的问题：</p>
@@ -402,6 +540,510 @@
           </figure>
         </div>
       </div>
+    </section>
+
+    <section class="section">
+      <h2 id="cast-list">核心演员定妆与人设</h2>
+      <p>这一页不再只给视频入口。chapter-01 当前核心可见角色、非人伙伴和长期转折角色，都必须在这里直接看到 `定妆照 + 姓名 + 角色职责 + 使用口径`。其中更严格的 canonical 归档仍以 `content/actors/actor-casting-dossier.html` 为准，这里展示的是当前资产页内可直接联动的主视觉版本。</p>
+      <div class="card">
+        <p><span class="label">当前口径</span> 人物不是补充说明，而是孩子能不能看懂这集的前提。开头必须先知道：`我是谁`、`谁是固定小队`、`林澄是谁`、`谁在代表制度`、`谁在代表现实关系压力`。</p>
+      </div>
+      <div class="cast-grid">
+        <article class="card cast-card">
+          <img src="current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-00</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>玩家主位</h3>
+            <p class="cast-subtitle">见习建造者主位 / 第一人称身份锚点</p>
+            <dl>
+              <div><dt>人设</dt><dd>不是空白镜头，而是未来湾固定小队里的最后责任判断者，负责看、问、判断并承担后果。</dd></div>
+              <div><dt>使用方式</dt><dd>主要承担第一人称体验；只在镜面反射、身份识别卡或极少数锚点镜头中可视化。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-01</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>档案守望者</h3>
+            <p class="cast-subtitle">高阶引路人 / 正式任务交付者</p>
+            <dl>
+              <div><dt>人设</dt><dd>负责把责任交给玩家与小队，不替孩子做结论；他代表文明视角与正式交班，而不是课堂讲师。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P01` 开场交班、责任任务定调，以及 `P11` 之后的后果见证。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-02-lin-cheng-round3-qwen-image-plus.png" alt="林澄" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-02</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>林澄</h3>
+            <p class="cast-subtitle">慢变量与感知力担当 / chapter-01 儿童核心演员</p>
+            <dl>
+              <div><dt>人设</dt><dd>12 岁，安静但不软弱，能先听见别人没注意到的变量；她不是抽象叛逆者，而是在“93% 最优路径”面前仍坚持那不是自己的人生。</dd></div>
+              <div><dt>当前职责</dt><dd>承担整集情感中轴，从个案争议对象逐步升级成未来湾长期伙伴起点。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-plus.png" alt="序列员 07" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-03</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>序列员 07</h3>
+            <p class="cast-subtitle">制度逻辑代表 / 常驻灰度对手</p>
+            <dl>
+              <div><dt>人设</dt><dd>不是反派脸，而是“有道理的制度长成了一个人”。他可信、克制、稳定，却会在程序窗口里真实赢走时间。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P03 / P08 / P10` 的制度压力面，把“为什么一个低概率未来值得占用公共资源”正面抛给玩家。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-04</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>祁野</h3>
+            <p class="cast-subtitle">证据与系统拆解担当</p>
+            <dl>
+              <div><dt>人设</dt><dd>固定团队中的理性压力位，负责拆系统逻辑、压实证据强度，也负责在关键时刻阻止队伍说出证据撑不住的话。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P01` 开场工作态、`P03` 调查申请、`P09` 证据边界警告与 `P10` 证据守门职责。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-05-wen-xia-round3-qwen-image-plus.png" alt="闻夏" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-05</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>闻夏</h3>
+            <p class="cast-subtitle">协同与公共表达担当</p>
+            <dl>
+              <div><dt>人设</dt><dd>负责把复杂冲突翻译成可以被公共理解与制度回应的话，她不是结尾才出现的表达者，而是中段就改变局势的人。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `先抢公开窗口`、`组织回响台公共说法`、`把私人痛感转成公共表达` 三重功能。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-06</span>
+              <span class="status-chip complete">LOCKED</span>
+            </div>
+            <h3>林澄父亲</h3>
+            <p class="cast-subtitle">现实关系压力角色</p>
+            <dl>
+              <div><dt>人设</dt><dd>不是坏人，却代表最有压迫感的“为你好”逻辑；他的难点在于他说的话不全错，却会真实刺痛林澄。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P03-P04` 家庭压力面，让时间档案城的制度逻辑第一次落到现实关系层。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="风声婆婆" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">C-07</span>
+              <span class="status-chip notes">SUPPORT</span>
+            </div>
+            <h3>风声婆婆</h3>
+            <p class="cast-subtitle">风名守人 / 中段转折角色</p>
+            <dl>
+              <div><dt>人设</dt><dd>她不是设定说明器，而是生命证人。她把“不可量化价值”从抽象命题落到可感知的生命经验上。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P06-P07` 的中段反转，让第四路径从隐藏信息升级成文明选择问题。</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="card cast-card">
+          <img src="current/characters/r-02-achao-time-tide-craft-v7-qwen-image-2.0-pro.png" alt="阿潮" />
+          <div class="cast-body">
+            <div class="cast-topline">
+              <span class="cast-code">R-02</span>
+              <span class="status-chip notes">SUPPORT</span>
+            </div>
+            <h3>阿潮</h3>
+            <p class="cast-subtitle">时间潮汐飞行器 / 可见转场伙伴</p>
+            <dl>
+              <div><dt>人设</dt><dd>兼具趣味、机动和陪伴感，是未来湾固定小队最轻盈的可见伙伴，负责把紧急任务和世界亲近感一起带进场。</dd></div>
+              <div><dt>当前职责</dt><dd>承担 `P01` 接入与启航、`P02` 到城、`P11` 回航等所有关键转场。</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="full-script">整集总剧本全文</h2>
+      <p>下面这部分直接把 `master-episode-script.md` 里真正用于讲完整集故事的正文挂回当前主资产页。它不是分镜表，而是孩子从进入未来湾到回航未来湾的连续剧体验主稿。</p>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 1 / 6-8 分钟</span>
+          <span class="script-tag">灰银任务不是求助，而是正式交班</span>
+        </div>
+        <ul class="script-goals">
+          <li>第一秒立住玩家主位。</li>
+          <li>立住未来湾固定团队已经在运转。</li>
+          <li>把任务定义成正式责任，而不是临时帮忙。</li>
+          <li>让林澄在未正式出场前就先显出生命感。</li>
+        </ul>
+        <div class="script-flow">
+          <p>屏幕亮起时，不出现课程标题页，也不出现导览页。孩子第一眼看到的，是未来湾夜港正在换潮。海面像一层缓慢转动的冷光，港口上空悬着成百上千枚任务灯。大多数都安静、柔和，像夜里守秩序的星。只有最中央一枚灰银色信号忽然亮起，闪烁频率快得像在压住什么快要来不及的事。</p>
+          <p>你正站在任务台前。不是第一次误入未来，也不是被谁临时叫来帮忙，而是已经佩戴着未来湾固定小队主位权限环。权限环边缘微微发亮，正在等待一次正式任务确认。</p>
+          <p>阿潮从上空俯冲下来，机身尾光在港口划出一圈弧，一边减速一边播报：“灰银级任务接近。预计一位刚上任的小队主位将在七十秒后先皱眉，再假装自己一点也不紧张。” 它停在你头顶，补了一句：“预测对象保密。虽然我已经知道是谁。”</p>
+          <p>这时，不是只有守望者一个人站在任务台边。祁野已经把一块半透明数据板展开，几条任务前置信息被他迅速拽到半空。闻夏正在把回响刚整理出的简报压缩成一页，把最紧急的部分先推到上层。回响没有实体站位，而是以淡银色界面层贴在任务台边缘，实时记录、提示，却保持克制。</p>
+          <blockquote>这里最重要的感觉不是“角色依次出场”，而是：这是一支已经在运转的队伍，而你是其中默认的责任主位。</blockquote>
+          <p>守望者走到任务台中央，看向你，不做世界说明，只把一份灰银信号推到你面前：“你，未来湾固定小队的新主位。现在正式接下第一项灰银任务。”</p>
+          <p>你点开任务封签。简报不先给一整页文字说明，而是连续弹出四段极短的争议现场切片：未落下签名的《最优人生路径确认书》、`匹配度 93%，默认归档准备中` 的系统提示、`距离午夜归档：05:59:12` 的倒计时，以及林澄在签字笔落下前忽然抬头望向高处异常风声回流的瞬间。</p>
+          <p>回响轻声补充：任务地点是时间档案城，任务性质是归档锁定前的灰银级争议介入。当前关键信息是林澄还没签确认书，系统判定她 93% 匹配那条路；如果今晚不反对，午夜后就会自动锁定。这次任务还会计入未来湾固定小队责任档案。</p>
+          <p>祁野说：“先查清系统为什么认定，林澄只能走那条 93% 的路。” 闻夏接上：“但也别查得太慢。午夜一到，她的人生就会先被锁进去。就算最后证据不够，我们也得先替她争到一个公开窗口。”</p>
+          <p>守望者最后只把权限环的确认层点亮：“从现在起，这不是观察任务。这是责任任务。你今晚不是去替谁赢。你要去确认，一条人生到底是被完整看见了，还是只被计算到了它最容易被安排的那一部分。”</p>
+          <p>接受任务后，不进入教学导览，而进入紧急入港航线。阿潮载着小队穿过未来湾外环，港口在身后迅速退开。出航段必须兑现三个信息：这不是你一个人出发，而是未来湾固定小队已经一起动身；下一站就是时间档案城；而且现在只能先拿到临时观察许可。</p>
+          <p>出航段结尾，阿潮冲破最后一层薄雾，时间档案城出现在眼前。回响忽然弹出新提示：`公开层路径数目与底层样本波动数不完全匹配。` 祁野迅速抬头，回响停了一瞬后回答：“意思是，这座城市现在展示给大家看的未来，可能并不是全部。”</p>
+          <ol>
+            <li>查看任务封签：看到林澄的未签署确认书、93% 匹配度、归档倒计时与异常风声切片。</li>
+            <li>确认小队同行成员：用当夜任务分工而不是长人物小传讲清谁负责什么。</li>
+            <li>接受正式任务：点亮权限环，进入紧急入港航线。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 2 / 4-5 分钟</span>
+          <span class="script-tag">入港校验不是导览，而是程序压力</span>
+        </div>
+        <ul class="script-goals">
+          <li>用最少设定建立时间档案城规则。</li>
+          <li>让制度压力先于奇观压上来。</li>
+          <li>建立“系统允许你进入，但并不欢迎你改变结果”的气氛。</li>
+        </ul>
+        <div class="script-flow">
+          <p>你抵达时间档案城后，镜头不先做完整城市参观，而先让你被入场校验系统短暂拦住。林澄的争议档案正在进入归档流程，任何进入者都必须先完成最小规则确认，才能取得临时观察权限。</p>
+          <p>世界设定因此不再以导览方式出现，而是以“你必须先明白这些，否则你进不去”的方式出现。校验系统快速抛出三条核心规则：每位孩子在 12 岁前后收到《初始人生建议书》；高匹配路径会得到更高资源优先级；午夜归档后，锁定路径将在未来数年内优先生效。</p>
+          <p>只有完成这一步，未来湾固定小队的本次观察权限才被点亮。但系统没有把欢迎说得很热情，反而在权限通过时补上一条冷静提示：你方权限级别是 `外部观察介入`，允许动作是 `查看公开层、提交争议说明、申请回响台公开窗口`，限制动作则是 `调用底层母样本、重排公开权重、修改默认归档结果`。</p>
+          <p>紧接着，屏幕又跳出更令人不舒服的提示：`公开质疑剩余窗口：00:47:00`。这意味着制度不仅有规则，而且有节奏；而这个节奏并不按你的方便运行。</p>
+          <p>随后镜头才给你一个短促而有压迫感的现场掠影：悬浮档案大厅、中央归档环、林澄面前悬停的确认书，以及一些正在有序接收建议书的普通居民。这一步不是带孩子参观，而是让孩子在进入冲突前明白，这里是一整座已经习惯由系统安排未来的城市。</p>
+          <p>守望者这时只说一句：“在这里，大多数人不是先长大，再决定自己想成为什么样的人。他们常常先得到建议，再学习如何成为那个建议里的人。”</p>
+          <ol>
+            <li>确认规则，获取临时观察权限。</li>
+            <li>查看限制层，看到你能做什么、不能做什么以及公开质疑窗口剩余时间。</li>
+            <li>进入冲突现场，前往悬浮档案大厅。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 3 / 6-8 分钟</span>
+          <span class="script-tag">大厅对峙里先让 07 赢一小步</span>
+        </div>
+        <ul class="script-goals">
+          <li>正面立起林澄、父亲、序列员 07 的冲突三角。</li>
+          <li>让 07 从“有道理”升级成“会主动赢程序”的连续剧对手。</li>
+          <li>让林澄第一次从议题对象变成具体的人。</li>
+        </ul>
+        <div class="script-flow">
+          <p>你进入悬浮档案大厅。镜头先从高处给出整体奇观，再迅速落到林澄和她面前的确认书上。大厅中的时间丝线像秩序化的雨从高处垂落，确认书悬在她和你之间，像一块马上就会落下的决定。</p>
+          <p>这一段里，孩子不是被动看视频到底，而是可以点开林澄档案、路径说明、锁定后果、序列员 07 和家属确认记录。视频、对白和界面信息交替出现，形成“我正在自己调查制度现场”的感觉。</p>
+          <p>你进到大厅后，第一件事不是听谁讲道理，而是先看清三个人站在什么位置。中间是林澄，左后方是她父亲，右侧规则层边上是负责今晚归档程序的序列员 07。</p>
+          <p>林澄先看向你，再看了一眼还没签的确认书，低声问：“你也是来劝我今晚签字的吗？” 这句必须先让孩子听懂，她不是在闹脾气，而是正在被一群人催着做一个今晚就会生效的决定。</p>
+          <p>父亲说：“我不是逼她。我是怕她错过今晚，以后更难改。” 07 接着说明自己的位置：“我是序列员 07。今晚这份归档，由我负责。” 然后你们才去看调查层里的三个硬事实：系统已经给林澄排出了 `93%` 匹配的默认路径，家属支持记录里父亲已经提交支持意见，如果今晚申诉不成功，午夜一到这条路就会先锁定。</p>
+          <p>这时你或祁野发起 `申请查看底层波动对照层`。07 没有暴躁，也没有回避，而是当场完成一次合法反制。他抬手调出一层很薄的规则界面，说：“公开层你们可以看。底层母样本，现在不能调。” 大厅上方随即亮起提示：未来湾申请驳回，公开质疑剩余窗口调整为 `00:29:00`。</p>
+          <p>这一步很重要。因为 07 不只是说得有道理，他还真的先赢走了一段时间。闻夏立刻意识到局势变化，低声对你说：“他不是要把我们赶出去。他是在把我们能说清的时间越压越短。”</p>
+          <ol>
+            <li>查看林澄档案，了解她的 93% 匹配路径与基本履历。</li>
+            <li>查看家属确认记录，看到父亲为何支持系统，以及“为你好”的现实重量。</li>
+            <li>尝试调用底层对照层，触发 07 的程序反制，正式感受到窗口压缩。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 4 / 6-8 分钟</span>
+          <span class="script-tag">公开路径很诱人，第四路径才更疼</span>
+        </div>
+        <ul class="script-goals">
+          <li>让孩子先理解系统为什么偏爱公开路径。</li>
+          <li>把三条公开路径拍得真的有吸引力。</li>
+          <li>让闻夏在中段前就进入局势推动状态。</li>
+        </ul>
+        <div class="script-flow">
+          <p>你进入概率长廊。这里的视频感、界面感和互动感第一次真正浑然一体。三条公开路径同时存在，但孩子可以一条条看进去。每条路径不只是文字标签，而是带未来片段的小窗。</p>
+          <p>金色路径强、稳、被认可，像一条会被很多大人放心点头的人生。银色路径可控、折中、低波动，像一条不容易出错的人生。灰蓝路径不确定、回报一般、很普通，却也很真实，像系统勉强愿意保留的次级选择。</p>
+          <p>与此同时，荒诞微未来片段作为彩蛋弹出：林澄给风起奇怪名字、被会学舌的风铃跟着跑、发明雨前气味词典。这些小片段会带来笑意，也悄悄铺垫出一件事：有些真正重要的能力，一开始看起来很怪。</p>
+          <p>更关键的是，系统把三条公开路径做得确实很有吸引力。孩子必须能真切感觉到为什么大人会放心、为什么制度会优先、为什么“高概率、高效率、可复制”很容易被误认成“更值得被看见”。</p>
+          <p>闻夏在这里提前开始做她的工作：“如果证据最后不够让它改规则，我们至少也要逼它承认一件事。它不能把‘不适合公开推荐’直接说成‘这条未来不存在’。” 祁野则在一旁快速比对层级结构，皱眉说：“这三条像是给公众看的结果层，不像底层全部样本。”</p>
+          <p>林澄在看到其中一段路径演示时明显不适，因为那段演示把她所有关于风、气味、慢变化的感知，都压缩成了一行很漂亮却很扁平的评语：`高环境敏感度，可转译为系统规划优势。` 她盯着那行字看了两秒，说：“它把我听到的东西，全写成了它自己的语言。”</p>
+          <ol>
+            <li>逐条查看公开路径，感受系统为何偏爱它们。</li>
+            <li>标记系统优先权重，识别“高概率 / 高效率 / 可复制”如何被做成视觉事实。</li>
+            <li>查看异常结构提示，发现展示层与底层样本波动并不完全匹配。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 5 / 8-10 分钟</span>
+          <span class="script-tag">暗层发现不是秘密彩蛋，而是生命证词</span>
+        </div>
+        <ul class="script-goals">
+          <li>完成中段反转。</li>
+          <li>让第四路径从“隐藏信息”升级成“文明选择问题”。</li>
+          <li>让林澄和第四路径有先天连接，而不是临时被剧情告知。</li>
+        </ul>
+        <div class="script-flow">
+          <p>异常风声再次出现。这是本集从未来制度剧情正式进入未来悬疑冒险的时刻。你循着风声进入暗层接口。这里的交互明显不同于前面，更轻悬疑，也更靠近小冒险。</p>
+          <p>风声幽灵不是恐怖物，而是一段调皮又稀有的未来痕迹。孩子需要追随它、对齐残缺风声轨迹、拼接被压下去的样本。但关键强化点在于，风声婆婆还没正式出声前，林澄先停住了。她轻声说：“这不是陌生的声音。我小时候在归档环停机检修的夜里听过一次。”</p>
+          <p>这样第四路径就不是剧情临时送来的答案，而像是她早就隐约生活在其中，只是从来没人肯替它命名。当第四色路径终于被解锁时，画面第一次出现第四色。不是炸裂式特效，而是像一段被压住很久的光，终于被允许呼吸。</p>
+          <p>第四路径显示：`风暴听译者`。紧接着跳出的不是“隐藏真相已找到”，而是一组让人立刻安静下来的判定：文明预警潜势存在、样本可信度不足、训练周期极长、稳定复制性极低、公共推荐等级不予开放。</p>
+          <p>孩子此时意识到，真正的问题不是林澄任不任性，也不是系统有没有藏着一条简单正确答案，而是：当一种未来太稀有、太慢、太难被证明时，文明应不应该先允许人们看见它。</p>
+          <p>之后体验进入沉默练习室。风声婆婆没有长篇讲道理，而是让你和林澄在旧录音贝壳、手写日志、风名标签和过时训练记录之间短暂停留。她只说一句：“不是每一种重要的能力，都会在它还很小时，就长得像制度想要的样子。”</p>
+          <ol>
+            <li>追踪异常风声，进入暗层接口。</li>
+            <li>拼接残缺轨迹，解锁第四色路径与相关判定。</li>
+            <li>查看沉默练习室记录，通过旧物和训练痕迹感受“慢变量”的重量。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 5.5 / 5-7 分钟</span>
+          <span class="script-tag">证据失效不是事故，而是有理由的错</span>
+        </div>
+        <ul class="script-goals">
+          <li>让 AI 边界通过代价真正落地。</li>
+          <li>让 07 的程序压力完成第二次打击。</li>
+          <li>让团队第一次出现真实裂缝。</li>
+        </ul>
+        <div class="script-flow">
+          <p>第四路径被发现后，局势没有立刻转向乐观。因为时间已经不够了。距离午夜归档只剩不到半小时，而公开层质疑程序要求提交一份可追溯、可验证、具备原始链路的证据包。</p>
+          <p>祁野正在拼命校对路径生成底表。闻夏已经开始压缩陈词骨架，准备只争一个最低限度也必须拿到的结果：先把第四路径从“不存在”改成“允许被看见”。林澄却越来越安静，因为她开始担心如果最后真的把它公开出来，自己会不会只是变成一块被拿来证明制度不完整的展示牌。</p>
+          <p>这时回响提出建议：“如果你授权，我可以调用历史相似样本，加速补足第四路径的关联证据结构。这会提升整理速度，但也会降低原始性。” 这里必须让玩家作出一个真正会反噬剧情的选择，而且这场错误必须是有理由的错。</p>
+          <p>如果玩家选择授权回响加速整理，新的证据包会很快成形，界面上甚至会让人一瞬间产生“太好了，赶上了”的感觉。但就在进入公开质疑前，序列员 07 当场指出：“这份证据包含模型辅助推断层，不能作为原始链路提交。” 他没有羞辱人，也没有把回响妖魔化，只是冷静地按程序冻结了其中一部分权限。</p>
+          <p>大厅上方立刻亮起提示：`未来湾临时质疑权限：部分冻结`，`冻结原因：原始证据链污染风险`。这时剧情才真正疼起来。因为这不是别人故意害的，而是你为了赶时间，做了一个现实里很多人都会做的决定：让更快的 AI 先帮我整理，以为“差不多”已经够了，结果最关键的时候，它不能替你承担真实性和责任。</p>
+          <blockquote>守望者直到这时才开口：“你们现在终于走到真正的任务里了。不是找到秘密就算完成。是当秘密带来代价时，你们还要不要继续承担它。”</blockquote>
+          <ol>
+            <li>是否授权回响加速整理，触发证据失效与权限部分冻结。</li>
+            <li>选择后续路线，在“保原始链路”与“保公开窗口”之间作出团队取舍。</li>
+            <li>确认剩余可用材料，为回响台阶段准备不完美但可承担的证据包。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 6 / 9-12 分钟</span>
+          <span class="script-tag">自由回响台不是表达页，而是制度博弈装置</span>
+        </div>
+        <ul class="script-goals">
+          <li>让高潮从“辩论”升级成“签后果”。</li>
+          <li>让闻夏、玩家、林澄都完成角色升级。</li>
+          <li>让 07 不输在立场上，但被迫承认城市不能再假装没看见第四路径。</li>
+        </ul>
+        <div class="script-flow">
+          <p>你们赶到自由回响台时，城市上方的归档环已经进入最后一轮预热。整个回响台像悬在夜空中的一圈透明阶梯，城市所有可公开接入的声音都会在这里被放大、留痕、归档。它不是一个漂亮的表达页面，而是一个会留下后果的地方。</p>
+          <p>序列员 07 已经等在那里。他没有否认第四路径的存在，这会比“反派嘴硬”更高级，也更难对付。他只是平静地把问题重新推回你们面前：“是的，第四路径存在。但存在，不等于适合进入公共推荐。一项训练周期极长、样本极少、不可稳定复制、短期无法承担公共回报的未来，为什么要占用本就有限的展示与分配资源？”</p>
+          <p>回响台把最后一次程序路径亮出来：若申请启动“少数未来临时开放程序”，需由具备跨层观察资格的责任方完成签署。签署后果是，如果申请成立，责任方所在团队进入高干预倾向观察名单；若后续观察失败，该团队部分跨层权限将被限缩。这不是“辩赢了就行”，而是你们敢不敢为这个还无法被充分证明的未来承担后果。</p>
+          <p>第一集这里默认走 `human_vs_agent`。五步动作固定为：祁野先卡证据底线；闻夏帮你把立场整理成公共说法；07 抛出制度追问；林澄确认她真正争取的是什么；最后由玩家决定是否签署。回响不能替你签，闻夏不能替你签，守望者也不能再替你签，你才是这支队伍的最后责任判断者。</p>
+          <p>关键对白要让制度和人都成立。07 说：“制度不是为了伤害例外而建立。制度是为了让大多数人不必把人生赌在例外上。” 祁野说：“快，不等于真。” 闻夏说：“公开，不等于推荐。被看见，也不等于立刻占用全部资源。” 林澄说：“我不是要求你们相信我以后一定很重要。我只是想在我还没来得及长成那个人以前，不要先被一套很完整的好意删掉。”</p>
+          <p>当玩家选择签署，界面不要做成热血胜利动画。更好的方式是：权限环发亮，签署线一笔一笔落下，回响台安静半秒，整座城市上空忽然多出一条此前从未在公开层出现过的第四色光带。然后系统播报：`少数未来临时开放程序，启动。路径编号：TAC-04。路径名：风暴听译者。开放状态：限时公开 / 观察期接入 / 非默认推荐。`</p>
+          <p>这意味着这不是理想化大胜利。不是第四路径赢了，而是它被看见了、被保留了，但仍然困难，仍然不稳定，仍然需要未来去证明。系统同时补上一条冷静提示：未来湾固定小队已列入高干预倾向观察名单。林澄这时第一次真正抬头看向你，不是像看一个来帮她的人，而是像看一个会和她一起承担后果的人。</p>
+        </div>
+      </div>
+
+      <div class="script-part">
+        <div class="script-topline">
+          <span class="script-tag">Part 7 / 5-7 分钟</span>
+          <span class="script-tag">未来湾回航不是收尾，而是正式立案</span>
+        </div>
+        <ul class="script-goals">
+          <li>给单集情绪收束。</li>
+          <li>给整季一个明确钩子。</li>
+          <li>让林澄从本集角色升级为可持续返场角色。</li>
+        </ul>
+        <div class="script-flow">
+          <p>离开时间档案城时，城市没有像任务完成一样热闹发光。恰恰相反，那条新被公开的第四色光带仍悬在夜空里，细、弱、并不稳定，像一条刚被允许存在的未来呼吸。阿潮把你们带回未来湾。这段回航不需要太多话，重要的是让孩子感到：事情没有被彻底解决，但一条原本会消失的可能性，被硬生生留到了明天。</p>
+          <p>回到夜港后，守望者没有先复盘，也没有立刻上价值。他只是把今晚的任务归档进未来湾主档案墙。一块新的光牌慢慢浮现：`裂口档案 01：时间档案城`、`裂口类型：低概率未来自动降权`、`风险倾向：成长判断外包`。</p>
+          <p>这时回响开始自动比对跨层异常样本。港口上空亮起一连串模糊但相似的波纹。不是同一个城市，不是同一种制度，却呈现出近似趋势：有的世界在替孩子筛掉太慢的记忆，有的世界在替人提前修整不够高效的关系，有的世界在替创作删除太不稳定的尝试。</p>
+          <p>闻夏先开口：“这不是档案城一个地方的问题。” 祁野接上：“像是一种更大的优化倾向。不同地方，做法不同，但方向很像。” 守望者看着那些波纹，终于第一次把那条长线阴影说出来：“温柔托管。它不会粗暴地命令人放弃自己。它只会越来越体贴地替人看、替人筛、替人想、替人决定。久了以后，人会误以为自己仍在长大，其实只是被一套越来越周到的系统替自己活得更顺。”</p>
+          <p>林澄这时没有马上离开。她看着档案墙上的 `裂口档案 01`，没有先说谢谢，而是把一枚自己写过风名的标签轻轻放到任务台边缘：“我还没决定以后是不是一定要走那条路。但如果你们以后还要去看别的裂口，我想先跟一程。” 这一步让林澄从本集引爆点正式升级成未来湾长期伙伴起点。</p>
+          <p>回响则向你推送新提醒：未来湾固定小队责任档案已更新，你已在第一次正式任务中签署高不确定性未来保留提案，后续任务将默认识别你为主动承担型决策者。阿潮晃着尾光接了一句：“请注意。根据我对你们这支队伍的危险预测，答案大概率是会。”</p>
+          <p>这时再进入 AI 数字导师总结，才不会像课堂硬切。数字导师更适合像在回航口接你，而不是像在课后点评你。它的第一句不应是“今天我们学到了”，而应是：“今晚你没有证明哪条未来一定正确。你做的是另一件更难的事。你替一条还无法被证明的人生，争取了继续被看见的权利。”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="storyboard-text">分镜脚本文字总表</h2>
+      <p>这部分直接把 `storyboard-script.md` 的 `全片 Beat 合同总表` 折回到当前资产页里。它不是缩略目录，而是逐拍文字口径：每个 beat 都明确 `演员 / 环境 / 对白 / 旁白 / 环境音效 / Beat 职责`。如果你要校对“剧本有没有真正拆到分镜”，先看这里，再往下看 current 资产矩阵。</p>
+
+      <details class="script-detail" open>
+        <summary>P01 未来湾任务码头 / 7 beats / 当前主交付：part-01-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P01-S01` | 玩家主位（POV） | 未来湾任务码头 | 无 | 无 | 流光海低频、时间丝线轻颤 | 先确认“我已在场，而且本来就属于这里” |
+| `CH01-P01-S02` | 玩家主位（POV） | 未来湾任务台中央 | 无 | 回响系统层通报灰银请求 | 信号脉冲、台面通电、夜港底噪 | 把“任务真的压到眼前”钉住 |
+| `CH01-P01-S03` | 阿潮、玩家主位（POV） | 未来湾任务台上空 | 阿潮播报集结与任务对象 | 无 | 俯冲风切、机身减速、尾光扫场 | 用阿潮把紧急感和世界趣味接入现场 |
+| `CH01-P01-S04` | 祁野、闻夏、回响、玩家主位（POV） | 未来湾任务台工作区 | 祁野一句、闻夏一句 | 无 | 数据板拖拽声、界面流动声 | 让固定小队已经在工作，而我处在责任中心 |
+| `CH01-P01-S05` | 守望者、玩家主位 | 任务台中央 | 守望者正式交班 | 无 | 灰银封签停稳、台面轻振 | 把任务交接从“说明”变成“正式授权” |
+| `CH01-P01-S06` | 玩家主位、回响系统层、林澄切片 | 任务封签展开层 | 无真人长对白 | 回响说明任务地点、性质、失败后果 | UI 展层、切片切换、倒计时滴答 | 先把林澄争议、93%、午夜锁定和队伍职责交代清楚 |
+| `CH01-P01-S07` | 守望者、阿潮、队伍、玩家主位 | 启航航线 / 任务码头离场位 | 守望者压一句“这是责任任务” | 无 | 航线点亮、阿潮牵引声、港口远潮 | 把点击接受变成真正出发，并把临时观察许可带进下一段 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P02 紧急入港校验 / 4 beats / 当前主交付：part-02-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P02-S01` | 玩家主位（POV）、阿潮 | 紧急入港航线 / 城市外缘 | 无 | 守望者或系统短线说明“先领临时观察许可” | 低空掠行、城市门限嗡鸣 | 先把“到城了，但还没真正进场”成立 |
+| `CH01-P02-S02` | 玩家主位（POV）、校验系统 | 入港校验层 | 无 | 系统依次抛出三条规则 | 校验提示音、权限扫描声 | 用门槛而不是导览讲清城市规则 |
+| `CH01-P02-S03` | 玩家主位（POV）、校验系统 | 限制动作提示层 | 无 | 系统播报允许动作与限制动作 | 倒计时收紧、权限层收束 | 让孩子感到“系统允许进入，但不欢迎改结果” |
+| `CH01-P02-S04` | 守望者、玩家主位（POV） | 悬浮档案大厅入口桥 | 守望者一句人话解释“先得建议，再学会成为建议里的人” | 无 | 归档环远噪、门限开启声 | 从门槛顺势带入冲突现场，不做城市观光片 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P03 悬浮档案大厅 / 7 beats / 当前主交付：part-03-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P03-S01` | 林澄、父亲、序列员 07 | 悬浮档案大厅全景 | 无 | 无 | 高空间混响、时间丝线落声 | 第一眼讲清谁站中间、谁在左后、谁在右侧 |
+| `CH01-P03-S02` | 林澄、玩家主位（POV） | 确认台前近场 | 林澄：“你也是来劝我今晚签字的吗？” | 无 | 确认书轻振、近距离空气感 | 先把林澄写成正在被催着做决定的孩子 |
+| `CH01-P03-S03` | 林澄父亲、序列员 07、林澄 | 同一大厅关系位 | 父亲一句、07 一句 | 无 | 人声压低、规则层细响 | 同时立起家属压力和程序压力 |
+| `CH01-P03-S04` | 林澄、玩家主位（POV） | 调查层展开位 | 无长对白 | 无 | 档案卡展开、UI 翻层、倒计时常驻 | 把 `93% / 家属支持 / 午夜锁定` 三件事实摊开 |
+| `CH01-P03-S05` | 序列员 07 | 大厅规则层 | 07：“公开层你们可以看。底层母样本，现在不能调。” | 无 | 规则层弹出、权限收紧声 | 让 07 合法赢走一小段时间窗口 |
+| `CH01-P03-S06` | 闻夏、玩家主位（POV） | 驳回提示仍在场的大厅 | 闻夏两句短线 | 系统显示 `驳回 / 00:29:00` | 驳回提示音、空间压强更紧 | 把程序打击和团队判断压成同一拍 |
+| `CH01-P03-S07` | 礼仪辅助器（系统层） | 大厅边缘提示层 | 无 | 礼仪辅助器短促提示 | 极轻电子提示音 | 保留制度润滑层的不适感，但不抢主冲突 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P04 等待区与父亲 / 5 beats / 当前主交付：part-04-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P04-S01` | 玩家主位（POV） | 家属等待区入口 | 无 | 无 | 门限气压变化、远处归档噪声 | 把大厅冲突落进更贴近现实的等待区 |
+| `CH01-P04-S02` | 玩家主位（POV） | 签字笔底座与安抚屏前 | 无 | 无 | 安抚屏柔声、签字笔待命提示 | 让“温柔包装的压力”先被看见 |
+| `CH01-P04-S03` | 林澄父亲、玩家主位（POV） | 父亲对谈位 | 父亲短线说明“不是逼，是怕更难改” | 无 | 等待区低噪、安抚屏轻闪 | 先让保护语言成立，再让它变得有压迫感 |
+| `CH01-P04-S04` | 林澄父亲 | 父亲近景 speaking-ready 位 | 父亲近景补句 | 无 | 同场静压、呼吸近感 | 把父亲从背景角色升级成可辨识压力面 |
+| `CH01-P04-S05` | 林澄 | 林澄近景 speaking-ready 位 | 林澄回应“这不是我的人生”相关短线 | 无 | 等待区静音、细小风声 | 让林澄从被争论对象转成主动说出自己处境的人 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P05 概率长廊 / 4 beats / 当前主交付：part-05-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P05-S01` | 玩家主位（POV）、林澄 | 概率长廊入口 / 三路径初显 | 无 | 无 | 长廊风声、路径光层启动 | 先让三条公开路径的秩序感成立 |
+| `CH01-P05-S02` | 玩家主位（POV）、祁野、闻夏、林澄 | 路径比较节点 | 闻夏、祁野各有短线 | 无 | 路径切换、价值层滑动 | 让孩子比较系统最看重什么，而不是只看漂亮未来片段 |
+| `CH01-P05-S03` | 林澄、玩家主位（POV） | 彩蛋微未来与价值压缩层 | 林澄一句关于“被写成它自己的语言” | 无 | 荒诞微未来声纹、轻笑意后收紧 | 让公开路径真的诱人，同时感到被压扁的不适 |
+| `CH01-P05-S04` | 林澄、玩家主位（POV） | 长廊异常风声反应位 | 林澄或回响短促反应 | 无 | 异常风回流、路径余光颤动 | 把暗层线索从背景拉到前台 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P06 暗层接口 / 4 beats / 当前主交付：part-06-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P06-S01` | 玩家主位（POV）、林澄 | 暗层接口入口 | 无 | 无 | 通道低鸣、风声牵引 | 把概率长廊自然推进到暗层入口 |
+| `CH01-P06-S02` | 玩家主位（POV） | 波形谜题 scene-state | 无 | 回响克制提示可选操作 | 波形拼接、残缺回声 | 让发现过程变成可参与的小冒险 |
+| `CH01-P06-S03` | 林澄、玩家主位（POV） | 第四路径 reveal 位 | 林澄认出“这不是陌生声音”相关短线 | 无 | 第四色低频浮现、暗层呼吸 | 让第四色路径从异常变成文明选择问题 |
+| `CH01-P06-S04` | 风声婆婆（声音或记录）、玩家主位（POV）、林澄 | 风暴听译者记录界面 | 风声婆婆一句生命证词 | 旧录音残响 | 录音颗粒、旧介质摩擦声 | 把隐藏路径从“找到答案”转成“看见困难可能性” |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P07 沉默练习室 / 4 beats / 当前主交付：part-07-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P07-S01` | 玩家主位（POV）、林澄 | 沉默练习室入口 | 无 | 无 | 空房间风声、远处旧器材鸣 | 先让节奏真正慢下来 |
+| `CH01-P07-S02` | 玩家主位（POV） | 旧练习痕迹区 | 无 | 无 | 纸页、吊牌、旧物轻撞 | 让“慢成长”先通过物证被感到 |
+| `CH01-P07-S03` | 林澄、玩家主位（POV） | 风声载体近场 | 林澄极短反应 | 无 | 载体回鸣、细碎风名 | 让林澄和这条路径的先天连接成立 |
+| `CH01-P07-S04` | 风声婆婆（声音）、玩家主位（POV）、林澄 | 风名标签与监听位 | 风声婆婆一句“重要能力未必长得像制度想要的样子” | 无 | 风标签轻碰、旧录音残响 | 把“不可量化价值”从概念变成生命经验 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P08 规则投影室 / 4 beats / 当前主交付：part-08-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P08-S01` | 玩家主位（POV）、序列员 07 | 规则投影室 establishing | 无 | 无 | 冷静投影机噪、空间更干 | 把中段从发现情绪带回制度战场 |
+| `CH01-P08-S02` | 玩家主位（POV）、序列员 07 | 模型围绕展开位 | 07 解释资源、失败率、公共回报 | 无 | 模型旋转、层级切换声 | 让 07 的制度逻辑真正成立，而不是单薄反方 |
+| `CH01-P08-S03` | 序列员 07 | 07 近景 stance 位 | 07 抛出“为什么例外值得占用公共资源”前置问题 | 无 | 投影层收紧、近距空间压强 | 为后面的回响台制度追问做预热 |
+| `CH01-P08-S04` | 玩家主位（POV）、林澄、序列员 07 | 模型收束后的出口位 | 无或极短回应 | 系统保持倒计时常驻 | 模型熄灭、倒计时压近 | 把规则解释自然推向下一段证据与权限危机 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P09 证据失效与团队分裂 / 5 beats / 当前主交付：part-09-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P09-S01` | 回响、玩家主位（POV） | 证据授权位 | 回响提出“可加速整理，但会降低原始性” | 无 | 权限授权声、界面上扬感 | 让 AI 边界以诱人的便利形式进入剧情 |
+| `CH01-P09-S02` | 玩家主位（POV）、祁野、闻夏 | 证据包成形位 | 队伍短促判断 | 无 | 证据包快速压缩、倒计时更紧 | 把“太好了赶上了”的错觉先给出来 |
+| `CH01-P09-S03` | 序列员 07、玩家主位（POV） | 冻结提示位 | 07 指出“模型辅助推断层不能当原始链路” | 系统播报部分冻结 | 冻结警报、权限回收声 | 让程序反噬真正落地 |
+| `CH01-P09-S04` | 祁野、闻夏、玩家主位（POV） | 团队争执位 | 祁野与闻夏各一句 | 无 | 人声压低、空间骤冷 | 把“要救人”和“要保真”之间的裂缝打开 |
+| `CH01-P09-S05` | 林澄、守望者、玩家主位（POV） | 分裂后的静压位 | 林澄一句、守望者一句 | 无 | 冻结余响、呼吸空拍 | 把错误推进到真正的承担任务里 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P10 自由回响台辩论 / 4 beats / 当前主交付：part-10-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P10-S01` | 玩家主位（POV）、队伍、序列员 07 | 自由回响台 establishing | 无 | 无 | 城市远响、回响台启用声 | 把高潮地点先确立为“会留下后果的地方” |
+| `CH01-P10-S02` | 祁野、闻夏、玩家主位（POV） | 证据与立场整理位 | 祁野卡证据底线，闻夏整理公共说法 | 无 | 资料收束、城市底噪稳定 | 让队伍先把能说什么、不能说什么锁清 |
+| `CH01-P10-S03` | 序列员 07 | 公众可见对手位 | 07 抛出制度追问 | 无 | 公共扩声、城市回响 | 让 07 在立场上真正难对付 |
+| `CH01-P10-S04` | 玩家主位、林澄、回响、守望者 | 签署前立场位 | 玩家表达、林澄确认争什么、回响声明不能代签、守望者交回判断权 | 无 | 半秒静场、权限环轻鸣 | 把高潮从表达推到“是否承担后果” |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P11 午夜前选择与回航 / 4 beats / 当前主交付：part-11-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P11-S01` | 玩家主位（POV） | 少数未来临时开放程序 / 最终确认层 | 无 | 系统说明签署后果 | 倒计时逼近、权限环待签声 | 让签署不是热血按钮，而是制度动作 |
+| `CH01-P11-S02` | 林澄、玩家主位 | 确认层后果近景 | 林澄最终短线 | 无 | 静场后轻风、光带初现 | 把“被看见”落回具体人生 |
+| `CH01-P11-S03` | 玩家主位（POV） | 提案状态与开放程序公告层 | 无 | 系统播报 `TAC-04` 与观察名单 | 程序播报、城市共振 | 让结果成立为“被保留、但仍困难”的制度事实 |
+| `CH01-P11-S04` | 队伍、林澄、守望者、阿潮 | 未来湾回航 / 裂口档案墙 | 林澄、闻夏、祁野、守望者、阿潮各有极短收束线 | 无 | 回航风声、档案墙亮起、港口夜潮 | 把单集结果接成整季裂口与长期伙伴关系 |</pre>
+        </div>
+      </details>
+
+      <details class="script-detail">
+        <summary>P12 数字导师总结 / 1 beat / 当前主交付：part-12-current.mp4</summary>
+        <div class="detail-body">
+          <pre class="storyboard-pre">| Beat | 演员 | 环境 | 对白 | 旁白 | 环境音效 | Beat 职责 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `CH01-P12-S01` | 数字导师 | 课后数字导师空间 | 数字导师总结短线 | 无 | 安静回航尾音、柔和提示音 | 只在课后收束，不把孩子拉回课堂语气 |</pre>
+        </div>
+      </details>
     </section>
 
     <section class="section">
