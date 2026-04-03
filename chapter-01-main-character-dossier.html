@@ -1,45 +1,823 @@
 <!DOCTYPE html>
+<!-- deploy-ping: 2026-04-03T15:46:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="0; url=./index.html" />
   <title>Chapter 01 资产总览</title>
-  <script>
-    window.location.replace('./index.html');
-  </script>
   <style>
+    :root {
+      --bg: #eef5fb;
+      --card: #ffffff;
+      --ink: #1f2d3a;
+      --muted: #5e7386;
+      --line: #d7e1ea;
+      --accent: #2d7aa2;
+      --accent-deep: #1e698d;
+      --soft: #ecf6fb;
+      --warn-line: #efd1ad;
+      --good-line: #c9e7d5;
+      --code-bg: #f3f7fa;
+      --error-bg: #fff7f3;
+      --error-ink: #8a3b2f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, #edf4fb 0%, #f8fbfd 100%);
-      color: #1f2d3a;
       font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-    }
-    .card {
-      width: min(560px, calc(100% - 32px));
-      padding: 24px 26px;
-      border-radius: 24px;
-      background: #ffffff;
-      border: 1px solid #d7e1ea;
-      box-shadow: 0 12px 36px rgba(32, 66, 94, 0.06);
+      background: linear-gradient(180deg, #edf4fb 0%, #f8fbfd 100%);
+      color: var(--ink);
       line-height: 1.75;
     }
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+    .hero, .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 36px rgba(32, 66, 94, 0.06);
+    }
+    .hero {
+      padding: 28px 30px;
+      background: linear-gradient(135deg, #dff1fb 0%, #ffffff 58%, #eff7fb 100%);
+    }
+    .section {
+      margin-top: 18px;
+      padding: 24px;
+      scroll-margin-top: 24px;
+    }
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; }
+    p { margin: 0 0 12px; }
     a {
-      color: #2d7aa2;
-      font-weight: 700;
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 700;
     }
     a:hover { text-decoration: underline; }
+    .lead { color: var(--muted); font-size: 16px; }
+    .pill-row, .actions, .meta-row, .doc-jump-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill-row { margin-top: 14px; }
+    .actions { margin-top: 18px; gap: 12px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #175a79;
+      border: 1px solid #c9deeb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #c7dff0;
+      background: #ffffff;
+      color: #16556f;
+      font-weight: 700;
+    }
+    .action.primary {
+      background: linear-gradient(180deg, #2f7ea7 0%, #236889 100%);
+      border-color: #236889;
+      color: #ffffff;
+    }
+    .box {
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-top: 16px;
+    }
+    .box.good {
+      background: linear-gradient(180deg, #f4fbf7 0%, #ffffff 100%);
+      border: 1px solid var(--good-line);
+    }
+    .box.warn {
+      background: linear-gradient(180deg, #fff8f1 0%, #fffdfb 100%);
+      border: 1px solid var(--warn-line);
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
+    }
+    .tiny {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .label { color: #16556f; font-weight: 700; }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    li { margin-bottom: 6px; }
+    figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      background: #f8fbfd;
+    }
+    img, video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: #e6eef5;
+    }
+    img.portrait {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .doc-jump-grid {
+      margin-top: 16px;
+      gap: 12px;
+    }
+    .doc-jump {
+      flex: 1 1 220px;
+      display: block;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid #cfe1ed;
+      background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+      color: #184761;
+      box-shadow: 0 8px 18px rgba(32, 66, 94, 0.05);
+    }
+    .doc-jump strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .doc-jump span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .doc-shell {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
+      margin-top: 18px;
+      scroll-margin-top: 24px;
+    }
+    .doc-head {
+      padding: 16px 18px;
+      background: #f4f9fc;
+      border-bottom: 1px solid var(--line);
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .doc-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #d7e1ea;
+      color: #4d697d;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .doc-toc {
+      padding: 14px 18px 16px;
+      background: #fbfdff;
+      border-bottom: 1px solid var(--line);
+    }
+    .doc-toc-title {
+      margin: 0 0 10px;
+      color: #184761;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .doc-toc-list {
+      display: grid;
+      gap: 8px;
+    }
+    .doc-toc-item {
+      display: block;
+      line-height: 1.5;
+      font-size: 13px;
+      color: #32566f;
+      font-weight: 600;
+    }
+    .doc-toc-item.level-h2 { padding-left: 14px; }
+    .doc-toc-item.level-h3 { padding-left: 28px; font-weight: 500; }
+    .doc-toc-empty {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .doc-body { padding: 0; }
+    .markdown-body {
+      padding: 18px;
+      color: #233e50;
+      font-size: 14px;
+      line-height: 1.8;
+      background: #fbfdff;
+      min-height: 180px;
+    }
+    .markdown-body.loading { color: var(--muted); }
+    .markdown-body.error {
+      color: var(--error-ink);
+      background: var(--error-bg);
+    }
+    .markdown-body.error p { margin: 0 0 10px; }
+    .markdown-body > :first-child { margin-top: 0; }
+    .markdown-body > :last-child { margin-bottom: 0; }
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4 {
+      margin: 22px 0 10px;
+      line-height: 1.35;
+      color: #163f57;
+      scroll-margin-top: 24px;
+    }
+    .markdown-body h1 { font-size: 28px; }
+    .markdown-body h2 { font-size: 22px; }
+    .markdown-body h3 { font-size: 18px; }
+    .markdown-body h4 { font-size: 16px; }
+    .markdown-body p { margin: 0 0 12px; }
+    .markdown-body ul,
+    .markdown-body ol {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+    .markdown-body li { margin-bottom: 6px; }
+    .markdown-body blockquote {
+      margin: 16px 0;
+      padding: 12px 14px;
+      border-left: 4px solid #c7dff0;
+      background: #f4f9fc;
+      border-radius: 12px;
+      color: #315064;
+    }
+    .markdown-body hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 24px 0;
+    }
+    .markdown-body code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: var(--code-bg);
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    .markdown-body pre {
+      margin: 14px 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--code-bg);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .markdown-body pre code {
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      white-space: pre-wrap;
+    }
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+    .markdown-body table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .markdown-body th,
+    .markdown-body td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    .markdown-body th:last-child,
+    .markdown-body td:last-child { border-right: 0; }
+    .markdown-body tr:last-child td { border-bottom: 0; }
+    .markdown-body th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #eef6fb;
+      color: #20455d;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .doc-toplink {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #cfe1ed;
+      background: #ffffff;
+      color: var(--accent-deep);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .meta-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f8fbfd;
+      padding: 12px 14px;
+      min-width: 180px;
+      flex: 1 1 220px;
+    }
+    .meta-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .meta-value {
+      color: #184761;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .asset-card video,
+    .asset-card img { margin-bottom: 12px; }
+    .asset-error {
+      border: 1px dashed #e4b59c;
+      border-radius: 12px;
+      padding: 14px;
+      background: var(--error-bg);
+      color: var(--error-ink);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .asset-error p {
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+    @media (max-width: 980px) {
+      .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 1180px); }
+      .doc-jump { flex-basis: 100%; }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>正在跳转到当前唯一资产总览页</h1>
-    <p>`chapter-01-main-character-dossier.html` 现在统一跳转到 `index.html`，避免两个入口再次漂移。</p>
-    <p><a href="./index.html">如果没有自动跳转，请点这里打开当前页</a></p>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Chapter 01 资产总览</h1>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。当前已把角色图、P01 资源和三份 Markdown 正文全部对齐到预览仓真实存在的 current 资产与本地 `docs/` 镜像，并补上失败兜底。</p>
+      <div class="pill-row">
+        <span class="pill">2026-04-03 正文加载修正</span>
+        <span class="pill">图片 / 视频对齐 current 资产</span>
+        <span class="pill">Markdown 改为同仓本地镜像加载</span>
+        <span class="pill">每份文稿自动生成本稿目录</span>
+      </div>
+      <div class="actions">
+        <a class="action primary" href="#latest">看最新组装版</a>
+        <a class="action" href="#cast">看演员与人设</a>
+        <a class="action" href="#p01">看 P01 分镜资产</a>
+        <a class="action" href="#documents">看完整剧本正文</a>
+      </div>
+      <div class="box good">
+        <p><span class="label">本轮已修正</span></p>
+        <ul>
+          <li>角色区旧文件名已全部对齐到预览仓当前真实存在的 `current/characters` 资产。</li>
+          <li>P01 区不再引用失效的 `shots/...` 与 `videos/...` 路径，统一改用 `current/clips`、`current/deliveries`、`current/shots`。</li>
+          <li>三份 Markdown 文稿已经同步到当前预览仓 `docs/`，页面直接读取本地镜像，不再跨仓抓取导致 404。</li>
+        </ul>
+      </div>
+      <div class="box.warn">
+        <p><span class="label">当前边界</span></p>
+        <ul>
+          <li>顶部视频入口依然属于 `PASS WITH NOTES`，不是最终定稿。</li>
+          <li>P01 的 `S02` 当前仍并入 `part-01-current` 现有装配，没有单独拆出独立 current clip。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="latest">
+      <h2>最新组装版</h2>
+      <div class="grid two">
+        <div class="card">
+          <div class="tiny">Current</div>
+          <p><span class="label">文件</span> chapter-01-master-current.mp4</p>
+          <p><span class="label">定位</span> chapter-01 当前唯一 assembled current 主入口</p>
+          <p><span class="label">当前判断</span> 已装配可审，但仍未定稿。开头 onboarding、后半段表达清晰度、部分音画修整还要继续跟进。</p>
+          <div class="meta-row" style="margin-top:14px;">
+            <div class="meta-card">
+              <div class="meta-kicker">更新时间</div>
+              <div class="meta-value">2026-04-03</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">状态</div>
+              <div class="meta-value">PASS WITH NOTES</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-kicker">主入口</div>
+              <div class="meta-value"><a href="current/deliveries/chapter-01-master-current.mp4">打开最新 assembled current</a></div>
+            </div>
+          </div>
+        </div>
+        <figure>
+          <video controls playsinline preload="metadata" src="current/deliveries/chapter-01-master-current.mp4"></video>
+          <figcaption>顶部固定只锚当前最新 assembled current。后续继续修，也只更新这一条主入口。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="cast">
+      <h2>核心演员定妆与人设</h2>
+      <p>孩子要先看清：`我是谁`、`队友是谁`、`林澄是谁`、`谁在代表档案城压力`、`谁在代表现实关系压力`。</p>
+      <div class="grid four">
+        <div class="card">
+          <img class="portrait" src="current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位" />
+          <p class="tiny" style="margin-top:12px;">C-00</p>
+          <h3>玩家主位</h3>
+          <p>未来湾固定小队的第一人称责任主位，不是旁观者，也不是空镜头占位。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
+          <p class="tiny" style="margin-top:12px;">C-01</p>
+          <h3>档案守望者</h3>
+          <p>任务交班者与文明视角引路人，只把责任交出来，不替孩子把答案说完。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄" />
+          <p class="tiny" style="margin-top:12px;">C-02</p>
+          <h3>林澄</h3>
+          <p>12 岁。她不是“叛逆案例”，而是知道系统给的那条路很强，却仍感觉那不是自己的人生。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
+          <p class="tiny" style="margin-top:12px;">C-03</p>
+          <h3>序列员 07</h3>
+          <p>档案城逻辑代表，不是纸片反派。他真的会合法赢走时间，也真的在替整座城计算代价。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
+          <p class="tiny" style="margin-top:12px;">C-04</p>
+          <h3>祁野</h3>
+          <p>证据和系统拆解担当，负责把“想救人”压回“证据要站得住”这条底线上。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏" />
+          <p class="tiny" style="margin-top:12px;">C-05</p>
+          <h3>闻夏</h3>
+          <p>公共表达与组织担当，负责把复杂冲突整理成全城能听懂的话。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
+          <p class="tiny" style="margin-top:12px;">C-06</p>
+          <h3>林澄父亲</h3>
+          <p>现实关系压力面。他不是坏人，却代表最刺人的“为你好”。</p>
+        </div>
+        <div class="card">
+          <img class="portrait" src="current/characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="风声婆婆" />
+          <p class="tiny" style="margin-top:12px;">C-07</p>
+          <h3>风声婆婆</h3>
+          <p>生命证人。她把第四色路径从隐藏信息变成真正活过、练过、值得保留的未来。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>主场景母图</h2>
+      <div class="grid three">
+        <figure>
+          <img src="current/scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="未来湾任务码头" />
+          <figcaption>S-01 未来湾任务码头：开场任务交班的主空间。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="紧急入港外景" />
+          <figcaption>S-02 紧急入港外景：时间档案城门槛感的第一层。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="概率长廊" />
+          <figcaption>S-04 概率长廊：三条公开路径与第四色路径前的主奇观场景。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="证据冻结区" />
+          <figcaption>S-06 证据冻结区：AI 边界与程序反噬的空间锚点。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="自由回响台" />
+          <figcaption>S-07 自由回响台：公开表达与承担后果的高潮空间。</figcaption>
+        </figure>
+        <figure>
+          <img src="current/scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="回航档案墙" />
+          <figcaption>S-09 回航档案墙：裂口档案正式立案的回收空间。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="p01">
+      <h2>P01 分镜资产</h2>
+      <p>`P01` 当前口径是 7-beat 开场，不是摘要介绍。下面所有入口都已经对齐到预览仓里现在真实存在的 current 资产。</p>
+      <div class="grid two">
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/clips/p01-s01-dock-intro-labeled-current.mp4"></video>
+          <h3>S01 到场与主位确认</h3>
+          <p>先确认“我已经在未来湾任务台前，而且本来就属于这里”。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/deliveries/part-01-current.mp4"></video>
+          <h3>S02 灰银信号点亮</h3>
+          <p>当前 `S02` 仍并在 `part-01-current` 现有装配里，没有单独拆出独立 current clip，但页面入口已经可正常播放。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/clips/p01-s03-achao-current.mp4"></video>
+          <h3>S03 阿潮接入</h3>
+          <p>阿潮把紧急感和世界趣味带进现场，也把“全队跟上、去接林澄”先讲清。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/clips/p01-s04-team-operating-current.mp4"></video>
+          <h3>S04 固定小队运转</h3>
+          <p>祁野、闻夏、回响已经在工作，我不再是误入者，而是在责任中心。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
+          <h3>S05 守望者正式交班</h3>
+          <p>任务被正式交给主位，不再是“有人讲解世界观”，而是正式授权。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls preload="metadata" src="current/clips/p01-s06-lin-cheng-current.mp4"></video>
+          <h3>S06 林澄争议切片</h3>
+          <p>林澄先以具体的人出现，再叠 `93%`、午夜锁定和争议责任，不再只剩概念简报。</p>
+        </div>
+        <div class="card asset-card">
+          <video controls playsinline preload="metadata" src="current/clips/p01-s07-route-ignite-current.mp4"></video>
+          <h3>S07 接受任务与启航</h3>
+          <p>点击接受之后才真正启航，把临时观察许可和时间压力一起带向时间档案城。</p>
+        </div>
+        <div class="card asset-card">
+          <img src="current/shots/p01-s06-lin-cheng-current.png" alt="P01 S06 首帧" />
+          <h3>P01 当前重点首帧</h3>
+          <p>S06 首帧继续保留在这里，方便直接核对“林澄本人是否已被真正看见”。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="documents">
+      <h2>完整剧本与分镜正文</h2>
+      <p>下面三块正文会直接从当前预览仓 `docs/` 本地镜像加载，并按 Markdown 正文格式渲染，不再跨仓抓取主仓 raw 或 CDN。</p>
+      <div class="doc-jump-grid">
+        <a class="doc-jump" href="#doc-master">
+          <strong>整集总脚本</strong>
+          <span>看整集体验结构、Part 1-Part 7 的主线、剧情与 production 对应表。</span>
+        </a>
+        <a class="doc-jump" href="#doc-script">
+          <strong>分场剧本</strong>
+          <span>看 Scene 01-Scene 11 的戏剧推进、分场功能和关键对白。</span>
+        </a>
+        <a class="doc-jump" href="#doc-storyboard">
+          <strong>分镜脚本</strong>
+          <span>看 production part、beat 合同总表、演员环境对白旁白音效与镜头职责。</span>
+        </a>
+      </div>
+
+      <div class="doc-shell" id="doc-master" data-doc-key="master">
+        <div class="doc-head">
+          <h3>整集总脚本</h3>
+          <p class="lead">说明整集如何被孩子体验到，负责锁 `Part 1-Part 7 + P12` 的总体验结构。</p>
+          <p><a href="docs/master-episode-script.md">直接打开当前镜像 Markdown</a></p>
+          <div class="doc-meta">
+            <span>整集体验</span>
+            <span>Part 结构</span>
+            <span>剧情主线</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="docs/master-episode-script.md"
+          >正在加载整集总脚本…</div>
+        </div>
+      </div>
+
+      <div class="doc-shell" id="doc-script" data-doc-key="script">
+        <div class="doc-head">
+          <h3>分场剧本</h3>
+          <p class="lead">负责 `Scene 01-Scene 11` 的戏剧推进和分场职责，对齐当前 production `P01-P12` 主线。</p>
+          <p><a href="docs/script.md">直接打开当前镜像 Markdown</a></p>
+          <div class="doc-meta">
+            <span>Scene 结构</span>
+            <span>关键对白</span>
+            <span>戏剧推进</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="docs/script.md"
+          >正在加载分场剧本…</div>
+        </div>
+      </div>
+
+      <div class="doc-shell" id="doc-storyboard" data-doc-key="storyboard">
+        <div class="doc-head">
+          <h3>分镜脚本</h3>
+          <p class="lead">负责 `Beat / 演员 / 环境 / 对白 / 旁白 / 环境音效 / Beat 职责`，并继续对齐 production part 与 shot 编号。</p>
+          <p><a href="docs/storyboard-script.md">直接打开当前镜像 Markdown</a></p>
+          <div class="doc-meta">
+            <span>Part / Beat</span>
+            <span>表格总览</span>
+            <span>分镜执行</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="docs/storyboard-script.md"
+          >正在加载分镜脚本…</div>
+        </div>
+      </div>
+    </section>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function wrapTables(container) {
+      container.querySelectorAll('table').forEach((table) => {
+        if (table.parentElement && table.parentElement.classList.contains('table-wrap')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrap';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      });
+    }
+
+    function buildDocToc(docShell, contentNode) {
+      const toc = docShell.querySelector('.doc-toc');
+      const docKey = docShell.getAttribute('data-doc-key') || 'doc';
+      const headings = Array.from(contentNode.querySelectorAll('h1, h2, h3'));
+      if (!headings.length) {
+        toc.innerHTML = '<p class="doc-toc-empty">当前文稿没有可提取的标题。</p>';
+        return;
+      }
+
+      const title = document.createElement('p');
+      title.className = 'doc-toc-title';
+      title.textContent = '本稿目录';
+
+      const list = document.createElement('div');
+      list.className = 'doc-toc-list';
+
+      headings.forEach((heading, index) => {
+        const id = docKey + '-heading-' + (index + 1);
+        heading.id = id;
+        const link = document.createElement('a');
+        link.href = '#' + id;
+        link.className = 'doc-toc-item level-' + heading.tagName.toLowerCase();
+        link.textContent = heading.textContent.trim();
+        list.appendChild(link);
+      });
+
+      toc.innerHTML = '';
+      toc.appendChild(title);
+      toc.appendChild(list);
+    }
+
+    function appendBackToTop(contentNode, docShellId) {
+      const link = document.createElement('a');
+      link.href = '#' + docShellId;
+      link.className = 'doc-toplink';
+      link.textContent = '回到本稿顶部';
+      contentNode.appendChild(link);
+    }
+
+    function getDocSources(node) {
+      return [node.getAttribute('data-doc-src'), node.getAttribute('data-doc-fallback')].filter(Boolean);
+    }
+
+    async function fetchDocText(urls) {
+      let lastError = null;
+      for (const source of urls) {
+        try {
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260403-local-docs-fix';
+          const resp = await fetch(bust, { cache: 'no-store' });
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          const text = await resp.text();
+          return { text, source };
+        } catch (error) {
+          lastError = new Error(source + ' -> ' + error.message);
+        }
+      }
+      throw lastError || new Error('没有可用正文源');
+    }
+
+    function renderMarkdown(node, text) {
+      if (window.marked && typeof window.marked.parse === 'function') {
+        node.innerHTML = window.marked.parse(text, {
+          gfm: true,
+          breaks: false,
+          headerIds: false,
+          mangle: false
+        });
+      } else {
+        node.innerHTML = '<pre>' + escapeHtml(text) + '</pre>';
+      }
+    }
+
+    async function loadDoc(node) {
+      const docShell = node.closest('.doc-shell');
+      const sources = getDocSources(node);
+      try {
+        const result = await fetchDocText(sources);
+        renderMarkdown(node, result.text);
+        node.classList.remove('loading');
+        wrapTables(node);
+        buildDocToc(docShell, node);
+        appendBackToTop(node, docShell.id);
+      } catch (error) {
+        const links = sources.map((source) => {
+          return '<a href="' + escapeHtml(source) + '" target="_blank" rel="noreferrer">' + escapeHtml(source) + '</a>';
+        }).join('<br>');
+        node.innerHTML = '<p>正文加载失败。</p><p>可尝试直接打开：</p><p>' + links + '</p><p>错误信息：' + escapeHtml(error.message) + '</p>';
+        node.classList.remove('loading');
+        node.classList.add('error');
+        const toc = docShell.querySelector('.doc-toc');
+        if (toc) toc.innerHTML = '<p class="doc-toc-empty">目录生成失败，请直接查看镜像文件。</p>';
+      }
+    }
+
+    function attachAssetFallbacks() {
+      document.querySelectorAll('img, video').forEach((node) => {
+        node.addEventListener('error', () => {
+          const src = node.currentSrc || node.getAttribute('src') || '';
+          const titleNode = node.closest('.asset-card, .card, figure')?.querySelector('h3');
+          const label = node.getAttribute('alt') || (titleNode ? titleNode.textContent.trim() : '资源');
+          const fallback = document.createElement('div');
+          fallback.className = 'asset-error';
+          fallback.innerHTML = '<p>' + escapeHtml(label) + ' 加载失败</p><a href="' + escapeHtml(src) + '" target="_blank" rel="noreferrer">直接打开这个资源</a>';
+          node.replaceWith(fallback);
+        }, { once: true });
+      });
+    }
+
+    attachAssetFallbacks();
+    document.querySelectorAll('[data-doc-src]').forEach(loadDoc);
+  </script>
 </body>
 </html>
