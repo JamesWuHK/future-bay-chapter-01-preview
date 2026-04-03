@@ -12,6 +12,7 @@
       --muted: #5e7386;
       --line: #d7e1ea;
       --accent: #2d7aa2;
+      --accent-deep: #1e698d;
       --soft: #ecf6fb;
       --warn-line: #efd1ad;
       --good-line: #c9e7d5;
@@ -44,6 +45,7 @@
     .section {
       margin-top: 18px;
       padding: 24px;
+      scroll-margin-top: 24px;
     }
     h1, h2, h3 {
       margin: 0 0 12px;
@@ -60,7 +62,7 @@
     }
     a:hover { text-decoration: underline; }
     .lead { color: var(--muted); font-size: 16px; }
-    .pill-row, .actions, .meta-row {
+    .pill-row, .actions, .meta-row, .doc-jump-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -157,17 +159,90 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .doc-jump-grid {
+      margin-top: 16px;
+      gap: 12px;
+    }
+    .doc-jump {
+      flex: 1 1 220px;
+      display: block;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid #cfe1ed;
+      background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+      color: #184761;
+      box-shadow: 0 8px 18px rgba(32, 66, 94, 0.05);
+    }
+    .doc-jump strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .doc-jump span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 500;
+    }
     .doc-shell {
       border: 1px solid var(--line);
       border-radius: 18px;
       overflow: hidden;
       background: linear-gradient(180deg, #ffffff 0%, #f9fcfe 100%);
-      margin-top: 16px;
+      margin-top: 18px;
+      scroll-margin-top: 24px;
     }
     .doc-head {
       padding: 16px 18px;
       background: #f4f9fc;
       border-bottom: 1px solid var(--line);
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .doc-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #d7e1ea;
+      color: #4d697d;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .doc-toc {
+      padding: 14px 18px 16px;
+      background: #fbfdff;
+      border-bottom: 1px solid var(--line);
+    }
+    .doc-toc-title {
+      margin: 0 0 10px;
+      color: #184761;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .doc-toc-list {
+      display: grid;
+      gap: 8px;
+    }
+    .doc-toc-item {
+      display: block;
+      line-height: 1.5;
+      font-size: 13px;
+      color: #32566f;
+      font-weight: 600;
+    }
+    .doc-toc-item.level-h2 { padding-left: 14px; }
+    .doc-toc-item.level-h3 { padding-left: 28px; font-weight: 500; }
+    .doc-toc-empty {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
     }
     .doc-body { padding: 0; }
     .markdown-body {
@@ -193,6 +268,7 @@
       margin: 22px 0 10px;
       line-height: 1.35;
       color: #163f57;
+      scroll-margin-top: 24px;
     }
     .markdown-body h1 { font-size: 28px; }
     .markdown-body h2 { font-size: 22px; }
@@ -267,10 +343,25 @@
     .markdown-body td:last-child { border-right: 0; }
     .markdown-body tr:last-child td { border-bottom: 0; }
     .markdown-body th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
       background: #eef6fb;
       color: #20455d;
       font-size: 12px;
       letter-spacing: 0.04em;
+    }
+    .doc-toplink {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid #cfe1ed;
+      background: #ffffff;
+      color: var(--accent-deep);
+      font-size: 12px;
+      font-weight: 700;
     }
     .meta-card {
       border: 1px solid var(--line);
@@ -298,6 +389,7 @@
     @media (max-width: 980px) {
       .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 20px, 1180px); }
+      .doc-jump { flex-basis: 100%; }
     }
   </style>
 </head>
@@ -305,11 +397,11 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页重新保持为 chapter-01 的单页主入口：顶部看最新 assembled current，中段看演员与 P01 分镜资产，下半页直接看整集总稿、分场剧本、分镜脚本正文。Markdown 现在会按真正文档格式渲染，表格也会正常显示。</p>
+      <p class="lead">这页继续往“真能用的单页总览”方向收。现在不仅 Markdown 会正常渲染，三份长文还带有页内跳转和本稿目录，方便直接定位到表格、part 对应关系和具体分段。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-03 页面已修正 Markdown 渲染</span>
-        <span class="pill">表格 / 标题 / 列表 / 代码块按正文格式显示</span>
-        <span class="pill">顶部仍固定显示最新 assembled current</span>
+        <span class="pill">2026-04-03 已加正文跳转与目录</span>
+        <span class="pill">Markdown 表格 / 标题 / 列表 / 代码块正常显示</span>
+        <span class="pill">每份文稿自动生成本稿目录</span>
         <span class="pill">P01 S01-S07 关键资产保留在页内</span>
       </div>
       <div class="actions">
@@ -319,18 +411,18 @@
         <a class="action" href="#documents">看完整剧本正文</a>
       </div>
       <div class="box good">
-        <p><span class="label">这次修正</span></p>
+        <p><span class="label">这次继续补强</span></p>
         <ul>
-          <li>把正文区从“纯文本显示”改成了“Markdown 渲染显示”。</li>
-          <li>分镜脚本里的 canonical 对应表、beat 合同总表、按 part 的复审表都会按真正表格展示。</li>
-          <li>这页继续只认最新 `chapter-01-master-current.mp4` 为顶部视频主入口。</li>
+          <li>三份正文前面加了快速跳转卡，不用整页滚动去找。</li>
+          <li>每份文稿都会自动生成自己的目录，长表格和长章节更容易定位。</li>
+          <li>表格现在有独立滚动容器，表头也更稳，阅读大表时不容易丢列名。</li>
         </ul>
       </div>
       <div class="box.warn">
         <p><span class="label">当前边界</span></p>
         <ul>
           <li>顶部视频入口依然属于 `PASS WITH NOTES`，不是最终定稿。</li>
-          <li>这次先优先修正文档可读性，让你在一页里能真正读剧本和分镜表，而不是看到原始 Markdown 符号。</li>
+          <li>这次主要继续提升“页面可读性和定位效率”，不改变 chapter-01 当前视频口径。</li>
         </ul>
       </div>
     </section>
@@ -499,33 +591,68 @@
 
     <section class="section" id="documents">
       <h2>完整剧本与分镜正文</h2>
-      <p>下面三块正文会直接在页面里加载，并按 Markdown 正文格式渲染。</p>
-      <div class="doc-shell">
+      <p>下面三块正文会直接在页面里加载，并按 Markdown 正文格式渲染。你可以先从这里跳去对应文稿，再用每份文稿自己的目录继续定位到具体段落。</p>
+      <div class="doc-jump-grid">
+        <a class="doc-jump" href="#doc-master">
+          <strong>整集总脚本</strong>
+          <span>看整集体验结构、Part 1-Part 7 的主线、剧情与 production 对应表。</span>
+        </a>
+        <a class="doc-jump" href="#doc-script">
+          <strong>分场剧本</strong>
+          <span>看 Scene 01-Scene 11 的戏剧推进、分场功能和关键对白。</span>
+        </a>
+        <a class="doc-jump" href="#doc-storyboard">
+          <strong>分镜脚本</strong>
+          <span>看 production part、beat 合同总表、演员环境对白旁白音效与镜头职责。</span>
+        </a>
+      </div>
+
+      <div class="doc-shell" id="doc-master" data-doc-key="master">
         <div class="doc-head">
           <h3>整集总脚本</h3>
           <p class="lead">说明整集如何被孩子体验到，负责锁 `Part 1-Part 7 + P12` 的总体验结构。</p>
           <p><a href="https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md">GitHub 源文件</a></p>
+          <div class="doc-meta">
+            <span>整集体验</span>
+            <span>Part 结构</span>
+            <span>剧情主线</span>
+          </div>
         </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
           <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md">正在加载整集总脚本…</div>
         </div>
       </div>
-      <div class="doc-shell">
+
+      <div class="doc-shell" id="doc-script" data-doc-key="script">
         <div class="doc-head">
           <h3>分场剧本</h3>
           <p class="lead">负责 `Scene 01-Scene 11` 的戏剧推进和分场职责，对齐当前 production `P01-P12` 主线。</p>
           <p><a href="https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/story/script.md">GitHub 源文件</a></p>
+          <div class="doc-meta">
+            <span>Scene 结构</span>
+            <span>关键对白</span>
+            <span>戏剧推进</span>
+          </div>
         </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
           <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/script.md">正在加载分场剧本…</div>
         </div>
       </div>
-      <div class="doc-shell">
+
+      <div class="doc-shell" id="doc-storyboard" data-doc-key="storyboard">
         <div class="doc-head">
           <h3>分镜脚本</h3>
           <p class="lead">负责 `Beat / 演员 / 环境 / 对白 / 旁白 / 环境音效 / Beat 职责`，并继续对齐 production part 与 shot 编号。</p>
           <p><a href="https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md">GitHub 源文件</a></p>
+          <div class="doc-meta">
+            <span>Part / Beat</span>
+            <span>表格总览</span>
+            <span>分镜执行</span>
+          </div>
         </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
           <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md">正在加载分镜脚本…</div>
         </div>
@@ -545,10 +672,50 @@
       });
     }
 
+    function buildDocToc(docShell, contentNode) {
+      const toc = docShell.querySelector('.doc-toc');
+      const docKey = docShell.getAttribute('data-doc-key') || 'doc';
+      const headings = Array.from(contentNode.querySelectorAll('h1, h2, h3'));
+      if (!headings.length) {
+        toc.innerHTML = '<p class="doc-toc-empty">当前文稿没有可提取的标题。</p>';
+        return;
+      }
+
+      const title = document.createElement('p');
+      title.className = 'doc-toc-title';
+      title.textContent = '本稿目录';
+
+      const list = document.createElement('div');
+      list.className = 'doc-toc-list';
+
+      headings.forEach((heading, index) => {
+        const id = docKey + '-heading-' + (index + 1);
+        heading.id = id;
+        const link = document.createElement('a');
+        link.href = '#' + id;
+        link.className = 'doc-toc-item level-' + heading.tagName.toLowerCase();
+        link.textContent = heading.textContent.trim();
+        list.appendChild(link);
+      });
+
+      toc.innerHTML = '';
+      toc.appendChild(title);
+      toc.appendChild(list);
+    }
+
+    function appendBackToTop(contentNode, docShellId) {
+      const link = document.createElement('a');
+      link.href = '#' + docShellId;
+      link.className = 'doc-toplink';
+      link.textContent = '回到本稿顶部';
+      contentNode.appendChild(link);
+    }
+
     async function loadDoc(node) {
       const src = node.getAttribute('data-doc-src');
+      const docShell = node.closest('.doc-shell');
       try {
-        const bust = src + (src.includes('?') ? '&' : '?') + 'v=20260403-markdown-render';
+        const bust = src + (src.includes('?') ? '&' : '?') + 'v=20260403-doc-toc';
         const resp = await fetch(bust, { cache: 'no-store' });
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const text = await resp.text();
@@ -561,10 +728,14 @@
         node.innerHTML = html;
         node.classList.remove('loading');
         wrapTables(node);
+        buildDocToc(docShell, node);
+        appendBackToTop(node, docShell.id);
       } catch (error) {
         node.textContent = '正文加载失败。\n请直接打开源文件：\n' + src + '\n\n错误信息：' + error.message;
         node.classList.remove('loading');
         node.classList.add('error');
+        const toc = docShell.querySelector('.doc-toc');
+        if (toc) toc.innerHTML = '<p class="doc-toc-empty">目录生成失败，请直接查看源文件。</p>';
       }
     }
 
