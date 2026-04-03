@@ -17,6 +17,8 @@
       --warn-line: #efd1ad;
       --good-line: #c9e7d5;
       --code-bg: #f3f7fa;
+      --error-bg: #fff7f3;
+      --error-ink: #8a3b2f;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -255,8 +257,8 @@
     }
     .markdown-body.loading { color: var(--muted); }
     .markdown-body.error {
-      color: #8a3b2f;
-      background: #fff7f3;
+      color: var(--error-ink);
+      background: var(--error-bg);
       white-space: pre-wrap;
     }
     .markdown-body > :first-child { margin-top: 0; }
@@ -308,12 +310,14 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       background: var(--code-bg);
+      white-space: pre-wrap;
+      word-break: break-word;
     }
     .markdown-body pre code {
       padding: 0;
       background: transparent;
       border-radius: 0;
-      white-space: pre;
+      white-space: pre-wrap;
     }
     .table-wrap {
       width: 100%;
@@ -386,6 +390,19 @@
     }
     .asset-card video,
     .asset-card img { margin-bottom: 12px; }
+    .asset-error {
+      border: 1px dashed #e4b59c;
+      border-radius: 12px;
+      padding: 14px;
+      background: var(--error-bg);
+      color: var(--error-ink);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .asset-error p {
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
     @media (max-width: 980px) {
       .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 20px, 1180px); }
@@ -397,12 +414,12 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续往“真能用的单页总览”方向收。现在不仅 Markdown 会正常渲染，三份长文还带有页内跳转和本稿目录，方便直接定位到表格、part 对应关系和具体分段。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。当前已把角色图、P01 资源和三份 Markdown 正文的加载路径全部对齐到真实存在的 current 资产，并补上失败兜底。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-03 已加正文跳转与目录</span>
-        <span class="pill">Markdown 表格 / 标题 / 列表 / 代码块正常显示</span>
+        <span class="pill">2026-04-03 资源路径已校正</span>
+        <span class="pill">图片 / 视频对齐 current 资产</span>
+        <span class="pill">Markdown 改为直连原始源并带 fallback</span>
         <span class="pill">每份文稿自动生成本稿目录</span>
-        <span class="pill">P01 S01-S07 关键资产保留在页内</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
@@ -411,18 +428,18 @@
         <a class="action" href="#documents">看完整剧本正文</a>
       </div>
       <div class="box good">
-        <p><span class="label">这次继续补强</span></p>
+        <p><span class="label">本轮已修正</span></p>
         <ul>
-          <li>三份正文前面加了快速跳转卡，不用整页滚动去找。</li>
-          <li>每份文稿都会自动生成自己的目录，长表格和长章节更容易定位。</li>
-          <li>表格现在有独立滚动容器，表头也更稳，阅读大表时不容易丢列名。</li>
+          <li>角色区旧文件名已全部对齐到预览仓当前真实存在的 `current/characters` 资产。</li>
+          <li>P01 区不再引用失效的 `shots/...` 与 `videos/...` 路径，统一改用 `current/clips`、`current/deliveries`、`current/shots`。</li>
+          <li>三份 Markdown 文稿默认从 GitHub 原始源抓取，抓取失败会自动回退到 jsDelivr，不再只压单一路径。</li>
         </ul>
       </div>
       <div class="box.warn">
         <p><span class="label">当前边界</span></p>
         <ul>
           <li>顶部视频入口依然属于 `PASS WITH NOTES`，不是最终定稿。</li>
-          <li>这次主要继续提升“页面可读性和定位效率”，不改变 chapter-01 当前视频口径。</li>
+          <li>P01 的 `S02` 当前仍并入 `part-01-current` 现有装配，没有单独拆出独立 current clip。</li>
         </ul>
       </div>
     </section>
@@ -451,7 +468,7 @@
           </div>
         </div>
         <figure>
-          <video controls playsinline src="current/deliveries/chapter-01-master-current.mp4"></video>
+          <video controls playsinline preload="metadata" src="current/deliveries/chapter-01-master-current.mp4"></video>
           <figcaption>顶部固定只锚当前最新 assembled current。后续继续修，也只更新这一条主入口。</figcaption>
         </figure>
       </div>
@@ -459,7 +476,7 @@
 
     <section class="section" id="cast">
       <h2>核心演员定妆与人设</h2>
-      <p>孩子要先看清：`我是谁`、`队友是谁`、`林澄是谁`、`谁在代表制度压力`、`谁在代表现实关系压力`。</p>
+      <p>孩子要先看清：`我是谁`、`队友是谁`、`林澄是谁`、`谁在代表档案城压力`、`谁在代表现实关系压力`。</p>
       <div class="grid four">
         <div class="card">
           <img class="portrait" src="current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位" />
@@ -474,16 +491,16 @@
           <p>任务交班者与文明视角引路人，只把责任交出来，不替孩子把答案说完。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="current/characters/c-02-lin-cheng-round3-qwen-image-plus.png" alt="林澄" />
+          <img class="portrait" src="current/characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄" />
           <p class="tiny" style="margin-top:12px;">C-02</p>
           <h3>林澄</h3>
           <p>12 岁。她不是“叛逆案例”，而是知道系统给的那条路很强，却仍感觉那不是自己的人生。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-plus.png" alt="序列员 07" />
+          <img class="portrait" src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
           <p class="tiny" style="margin-top:12px;">C-03</p>
           <h3>序列员 07</h3>
-          <p>制度逻辑代表，不是纸片反派。他真的会合法赢走时间，也真的在替整座城计算代价。</p>
+          <p>档案城逻辑代表，不是纸片反派。他真的会合法赢走时间，也真的在替整座城计算代价。</p>
         </div>
         <div class="card">
           <img class="portrait" src="current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
@@ -492,7 +509,7 @@
           <p>证据和系统拆解担当，负责把“想救人”压回“证据要站得住”这条底线上。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="current/characters/c-05-wen-xia-round3-qwen-image-plus.png" alt="闻夏" />
+          <img class="portrait" src="current/characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏" />
           <p class="tiny" style="margin-top:12px;">C-05</p>
           <h3>闻夏</h3>
           <p>公共表达与组织担当，负责把复杂冲突整理成全城能听懂的话。</p>
@@ -544,25 +561,25 @@
 
     <section class="section" id="p01">
       <h2>P01 分镜资产</h2>
-      <p>`P01` 当前口径是 7-beat 开场，不是摘要介绍。每个 beat 对应的关键首帧或 clip 如下。</p>
+      <p>`P01` 当前口径是 7-beat 开场，不是摘要介绍。下面所有入口都已经对齐到预览仓里现在真实存在的 current 资产。</p>
       <div class="grid two">
         <div class="card asset-card">
-          <img src="shots/shot-a01-future-bay-dock-pov-v1-qwen-image-2.0-pro.png" alt="P01 S01" />
+          <video controls preload="metadata" src="current/clips/p01-s01-dock-intro-labeled-current.mp4"></video>
           <h3>S01 到场与主位确认</h3>
           <p>先确认“我已经在未来湾任务台前，而且本来就属于这里”。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="videos/shot-a03-grey-silver-mission-signal-wan2.6-i2v-flash-v1-720p.mp4"></video>
+          <video controls preload="metadata" src="current/deliveries/part-01-current.mp4"></video>
           <h3>S02 灰银信号点亮</h3>
-          <p>灰银级请求直接压到眼前，任务不是抽象说明，而是现在就发生。</p>
+          <p>当前 `S02` 仍并在 `part-01-current` 现有装配里，没有单独拆出独立 current clip，但页面入口已经可正常播放。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="videos/shot-ch01-p01-s03-achao-arrival-wan2.6-i2v-flash-v1-720p.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s03-achao-current.mp4"></video>
           <h3>S03 阿潮接入</h3>
           <p>阿潮把紧急感和世界趣味带进现场，也把“全队跟上、去接林澄”先讲清。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="videos/shot-ch01-p01-s04-team-operating-wan2.6-i2v-flash-v1-720p.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s04-team-operating-current.mp4"></video>
           <h3>S04 固定小队运转</h3>
           <p>祁野、闻夏、回响已经在工作，我不再是误入者，而是在责任中心。</p>
         </div>
@@ -577,7 +594,7 @@
           <p>林澄先以具体的人出现，再叠 `93%`、午夜锁定和争议责任，不再只剩概念简报。</p>
         </div>
         <div class="card asset-card">
-          <video controls playsinline src="videos/shot-ch01-p01-s07-route-ignite-wan2.6-i2v-flash-v1-720p.mp4"></video>
+          <video controls playsinline preload="metadata" src="current/clips/p01-s07-route-ignite-current.mp4"></video>
           <h3>S07 接受任务与启航</h3>
           <p>点击接受之后才真正启航，把临时观察许可和时间压力一起带向时间档案城。</p>
         </div>
@@ -591,7 +608,7 @@
 
     <section class="section" id="documents">
       <h2>完整剧本与分镜正文</h2>
-      <p>下面三块正文会直接在页面里加载，并按 Markdown 正文格式渲染。你可以先从这里跳去对应文稿，再用每份文稿自己的目录继续定位到具体段落。</p>
+      <p>下面三块正文会直接在页面里加载，并按 Markdown 正文格式渲染。默认先走 GitHub 原始源，失败后再回退到 jsDelivr。</p>
       <div class="doc-jump-grid">
         <a class="doc-jump" href="#doc-master">
           <strong>整集总脚本</strong>
@@ -620,7 +637,11 @@
         </div>
         <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
-          <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md">正在加载整集总脚本…</div>
+          <div
+            class="markdown-body loading"
+            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md"
+            data-doc-fallback="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md"
+          >正在加载整集总脚本…</div>
         </div>
       </div>
 
@@ -637,7 +658,11 @@
         </div>
         <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
-          <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/script.md">正在加载分场剧本…</div>
+          <div
+            class="markdown-body loading"
+            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/script.md"
+            data-doc-fallback="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/script.md"
+          >正在加载分场剧本…</div>
         </div>
       </div>
 
@@ -654,7 +679,11 @@
         </div>
         <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
         <div class="doc-body">
-          <div class="markdown-body loading" data-doc-src="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md">正在加载分镜脚本…</div>
+          <div
+            class="markdown-body loading"
+            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
+            data-doc-fallback="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
+          >正在加载分镜脚本…</div>
         </div>
       </div>
     </section>
@@ -662,6 +691,15 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     function wrapTables(container) {
       container.querySelectorAll('table').forEach((table) => {
         if (table.parentElement && table.parentElement.classList.contains('table-wrap')) return;
@@ -711,27 +749,51 @@
       contentNode.appendChild(link);
     }
 
-    async function loadDoc(node) {
-      const src = node.getAttribute('data-doc-src');
-      const docShell = node.closest('.doc-shell');
-      try {
-        const bust = src + (src.includes('?') ? '&' : '?') + 'v=20260403-doc-toc';
-        const resp = await fetch(bust, { cache: 'no-store' });
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const text = await resp.text();
-        const html = window.marked.parse(text, {
+    function getDocSources(node) {
+      return [node.getAttribute('data-doc-src'), node.getAttribute('data-doc-fallback')].filter(Boolean);
+    }
+
+    async function fetchDocText(urls) {
+      let lastError = null;
+      for (const source of urls) {
+        try {
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260403-source-fix';
+          const resp = await fetch(bust, { cache: 'no-store' });
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          const text = await resp.text();
+          return { text, source };
+        } catch (error) {
+          lastError = new Error(source + ' -> ' + error.message);
+        }
+      }
+      throw lastError || new Error('没有可用正文源');
+    }
+
+    function renderMarkdown(node, text) {
+      if (window.marked && typeof window.marked.parse === 'function') {
+        node.innerHTML = window.marked.parse(text, {
           gfm: true,
           breaks: false,
           headerIds: false,
           mangle: false
         });
-        node.innerHTML = html;
+      } else {
+        node.innerHTML = '<pre>' + escapeHtml(text) + '</pre>';
+      }
+    }
+
+    async function loadDoc(node) {
+      const docShell = node.closest('.doc-shell');
+      const sources = getDocSources(node);
+      try {
+        const result = await fetchDocText(sources);
+        renderMarkdown(node, result.text);
         node.classList.remove('loading');
         wrapTables(node);
         buildDocToc(docShell, node);
         appendBackToTop(node, docShell.id);
       } catch (error) {
-        node.textContent = '正文加载失败。\n请直接打开源文件：\n' + src + '\n\n错误信息：' + error.message;
+        node.textContent = '正文加载失败。\n可尝试直接打开：\n' + sources.join('\n') + '\n\n错误信息：' + error.message;
         node.classList.remove('loading');
         node.classList.add('error');
         const toc = docShell.querySelector('.doc-toc');
@@ -739,6 +801,21 @@
       }
     }
 
+    function attachAssetFallbacks() {
+      document.querySelectorAll('img, video').forEach((node) => {
+        node.addEventListener('error', () => {
+          const src = node.currentSrc || node.getAttribute('src') || '';
+          const titleNode = node.closest('.asset-card, .card, figure')?.querySelector('h3');
+          const label = node.getAttribute('alt') || (titleNode ? titleNode.textContent.trim() : '资源');
+          const fallback = document.createElement('div');
+          fallback.className = 'asset-error';
+          fallback.innerHTML = '<p>' + escapeHtml(label) + ' 加载失败</p><a href="' + escapeHtml(src) + '" target="_blank" rel="noreferrer">直接打开这个资源</a>';
+          node.replaceWith(fallback);
+        }, { once: true });
+      });
+    }
+
+    attachAssetFallbacks();
     document.querySelectorAll('[data-doc-src]').forEach(loadDoc);
   </script>
 </body>
