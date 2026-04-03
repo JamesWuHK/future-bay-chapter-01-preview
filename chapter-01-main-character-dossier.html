@@ -59,35 +59,38 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这一页只保留你现在最需要看的东西：最新 assembled current、这轮已经修好的剧情连续性结论、还没修完的风险，以及几个关键入口。你只看 HTML，也能先知道 chapter-01 现在到底做到哪了。</p>
+      <p class="lead">这一页现在就是 chapter-01 的唯一在线总览入口。你只看这一个页面，也应该能马上知道三件事：`main` 上最新文稿有没有并入、当前 assembled current 到哪一步、这个 Pages 页是不是正在追主分支最新状态。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-03 已同步</span>
-        <span class="pill">主稿连续性口径：v1.12</span>
-        <span class="pill">入口只看这一页也能跟上</span>
+        <span class="pill">2026-04-03 21:50 主分支已同步</span>
+        <span class="pill">7 份关键文稿已并入 main</span>
+        <span class="pill">Pages 自动追更：已启用</span>
+        <span class="pill">视频 current：PASS WITH NOTES</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
+        <a class="action" href="#docsync">看主分支文稿同步</a>
         <a class="action" href="#fixed">看这轮修好什么</a>
         <a class="action" href="#risks">看当前还剩什么</a>
         <a class="action" href="#links">看关键入口</a>
       </div>
       <div class="box good">
-        <p><span class="label">这轮已经同步到 HTML 的结论</span></p>
+        <p><span class="label">这轮最新进展</span></p>
         <ul>
-          <li>前半段主稿已经重新收成一条孩子能顺着看懂的线：`进门校验 -> 大厅对峙 -> 等待区父女冲突 -> 概率长廊 -> 追风进暗层 -> 沉默练习室`。</li>
-          <li>`P02` 已改回纯门槛段，只负责“能看什么、不能改什么、时间还剩多少”。</li>
-          <li>`P06` 已收成清楚动作链：`认出异常 -> 对波形 -> 找门 -> reveal 第四路径`，不再像突然切到新页面。</li>
+          <li>`master-episode-script / script / storyboard-script / product-script / episode-onscreen-copy / voice-script / digital-mentor` 已安全并入 `main`。</li>
+          <li>前半段主稿继续保持当前收口：`进门校验 -> 大厅对峙 -> 等待区父女冲突 -> 概率长廊 -> 追风进暗层 -> 沉默练习室`。</li>
+          <li>发布链已改成从 chapter-01 的 `current` 入口同步，这个页面以后不再靠手工记忆去追版本。</li>
         </ul>
       </div>
       <div class="box.warn">
-        <p><span class="label">当前 still 是 assembled current，不是定稿</span></p>
+        <p><span class="label">现在最需要你知道的风险</span></p>
         <ul>
-          <li>视频装配层还没完全追上这轮剧本收口，所以 current 仍然是 `PASS WITH NOTES`。</li>
-          <li>真正还要继续修的是后半段：`P08 / P09 / P10 / P11`。</li>
-          <li>也就是说，这一页现在看到的“剧情判断”已经比成片更靠前一步。</li>
+          <li>文稿层已经比之前新一拍，但视频装配层还没有完全追上。</li>
+          <li>当前最需要继续压清的还是后半段：`P08 / P09 / P10 / P11`。</li>
+          <li>所以本页现在展示的是“最新主分支进展 + 当前视频装配状态”，两者不再混成一句模糊结论。</li>
         </ul>
       </div>
     </section>
+
     <section class="section" id="latest">
       <h2>最新组装版</h2>
       <div class="grid two">
@@ -95,7 +98,7 @@
           <div class="tiny">Current</div>
           <p><span class="label">文件</span> `chapter-01-master-current.mp4`</p>
           <p><span class="label">更新时间</span> 2026-04-03</p>
-          <p><span class="label">当前判断</span> 已装配可审，但未定稿。前半段剧情口径已按 `v1.12` 收口，后半段回响台链路、高潮呼吸和残余噪音还要继续修。</p>
+          <p><span class="label">当前判断</span> 已装配可审，但未定稿。文稿主链这轮已经继续向前收口，视频层现在仍然是 `PASS WITH NOTES`，重点问题集中在回响台链路、高潮呼吸和后半段表达清晰度。</p>
           <ul>
             <li><a href="current/deliveries/chapter-01-master-current.mp4">打开最新 assembled current</a></li>
             <li><a href="current/deliveries/chapter-01-story-spine-preview-current.mp4">打开完整故事粗剪预览</a></li>
@@ -103,10 +106,40 @@
         </div>
         <figure>
           <video controls playsinline src="current/deliveries/chapter-01-master-current.mp4"></video>
-          <figcaption>顶部固定只锚最新 current。以后继续修，也只更新这一条入口。</figcaption>
+          <figcaption>顶部固定只锚最新 current。后续继续修，也只更新这一条主入口。</figcaption>
         </figure>
       </div>
     </section>
+
+    <section class="section" id="docsync">
+      <h2>主分支文稿同步</h2>
+      <div class="grid two">
+        <div class="card">
+          <div class="tiny">已并入 main</div>
+          <ul>
+            <li>`story/master-episode-script.md`</li>
+            <li>`story/script.md`</li>
+            <li>`story/storyboard-script.md`</li>
+            <li>`product/product-script.md`</li>
+            <li>`product/episode-onscreen-copy.md`</li>
+            <li>`audio/voice-script.md`</li>
+            <li>`audio/digital-mentor.md`</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tiny">这轮意义</div>
+          <ul>
+            <li>不是只改了一句台词，而是把对白、分场、分镜、产品和配音口径重新压回同一条主线。</li>
+            <li>`script.md` 这次是按当前 `main` 结构手工安全合并，不是拿旧版本整份覆盖。</li>
+            <li>以后你只看这一页，也能先知道：文稿层是不是已经真的并进主分支了。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="script-list">
+        <div class="script-item"><strong>当前一句话判断：</strong> 文稿主链已经并进 `main`，页面口径也开始跟着主分支走，不再单靠 dated output 的旧结论。</div>
+      </div>
+    </section>
+
     <section class="section" id="fixed">
       <h2>这轮修好什么</h2>
       <div class="grid three">
@@ -119,6 +152,7 @@
         <div class="script-item"><strong>你现在在这页该怎么理解：</strong> 前半段“看不懂是因为跳”的旧判断，已经不是当前主问题了。</div>
       </div>
     </section>
+
     <section class="section" id="risks">
       <h2>当前还剩什么</h2>
       <div class="grid three">
@@ -126,14 +160,15 @@
         <div class="card"><div class="tiny">P09 - P10</div><p><span class="label">还要补</span> 证据冻结后“为什么只能去回响台”还要更直白。</p></div>
         <div class="card"><div class="tiny">P11</div><p><span class="label">还要补</span> “先落今晚后果，再落回航后果”这两拍要继续保住呼吸。</p></div>
       </div>
-      <div class="box warn">
+      <div class="box.warn">
         <p><span class="label">所以现在最准确的判断</span></p>
         <ul>
           <li>不是“整集还是一团乱”。</li>
-          <li>而是“前半段主稿已讲顺，后半段表达和装配还要继续压清”。</li>
+          <li>而是“前半段主稿已讲顺，主分支文稿已并入，后半段表达和装配还要继续压清”。</li>
         </ul>
       </div>
     </section>
+
     <section class="section" id="links">
       <h2>关键入口</h2>
       <div class="grid two">
@@ -141,8 +176,8 @@
         <div class="card"><div class="tiny">人物与资产</div><ul><li><a href="current/characters/c-02-lin-cheng-round3-qwen-image-plus.png">林澄当前主参考</a></li><li><a href="current/characters/c-03-sequence-officer-07-round3b-qwen-image-plus.png">序列员 07 当前主参考</a></li><li><a href="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png">概率长廊主场景</a></li></ul></div>
       </div>
       <div class="grid two" style="margin-top:16px;">
-        <div class="card"><div class="tiny">你只看这一页时最重要的一句</div><p><span class="label">当前结论</span> `P02 / P06` 这两处最容易让孩子掉线的地方，已经先收住了。</p></div>
-        <div class="card"><div class="tiny">下一轮真正要看</div><p><span class="label">继续修的重点</span> `P08 / P09 / P10 / P11` 能不能在 HTML 和 current 里一起变得更直白、更好懂。</p></div>
+        <div class="card"><div class="tiny">Source Of Truth</div><p><span class="label">当前发布源</span> chapter-01 的 `current` 入口，不再默认从旧的 dated output 人工挑版本。</p></div>
+        <div class="card"><div class="tiny">你只看这一页时最重要的一句</div><p><span class="label">当前结论</span> 文稿主链已经并入 `main`，页面也开始自动追主分支；视频层下一轮继续看 `P08 / P09 / P10 / P11`。</p></div>
       </div>
     </section>
   </div>
