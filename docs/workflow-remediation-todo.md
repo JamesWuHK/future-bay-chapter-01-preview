@@ -190,6 +190,18 @@
   - `shot-list` 也补上“这句必须一听就知道是对谁说”的执行要求
 - `IN PROGRESS`：这次修复已经回写 source of truth，但只要还有旧同步音轨没换掉，`T08` 仍继续保持 `IN PROGRESS`，不把文稿修正误报成成片链全部闭环。
 
+### 2026-04-05 / Round 20
+
+- `DONE WITH NOTES`：继续按 `T08 + continuity` 交叉复审时，抓到 `P07 / 沉默练习室` 还有一处 production 输入打架：
+  - `storyboard` 的 beat 表把 `S03` 写成了 `林澄极短反应`
+  - 但详细分镜又把它写成 `风声婆婆看向你`
+  - `shot-list` 实际 current 口径则一直是 `旧录音 / 声像承载体先进入`
+- `DONE WITH NOTES`：已把 `script / storyboard / voice` 收回同一口径：
+  - `P07/S03` 先是风声婆婆的 `旧录音 / 承载体` 开口，不是假装完整真人现身
+  - `script.md` 里的 `她说完，又眯起眼` 已改成 `旧录音停了一拍`，避免主稿继续暗示真人已在场
+  - `storyboard-script.md` 已把 `S03` 的演员、类型、画面职责改回和 `shot-list` 一致
+- `IN PROGRESS`：`T08` 继续保持未闭环。当前这轮修掉的是 source-of-truth 自己互相打架的问题，还不是重新烤进所有现有视频音轨。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
