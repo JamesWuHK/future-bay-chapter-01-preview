@@ -41,12 +41,12 @@
   },
   "current_delivery": {
     "current_focus_part": "P04",
-    "current_focus_reason": "当前 active lane 已把 P04 / S01-S02 的坏 current clip 修成真实资产；现在真正未闭环的只剩 P04 -> P05 的承压 bridge，仍不能误判为整集彻底无债。",
-    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v16-current.mp4",
-    "story_spine": "story spine v14",
+    "current_focus_reason": "当前 active lane 已把 P04 / S01-S02 的坏 current clip 修成真实资产，也把 P04 -> P05 的承压 bridge 收口到 official current；这一段现在属于 PASS WITH NOTES，而不是继续卡在 blocker。",
+    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v17-current.mp4",
+    "story_spine": "story spine v15",
     "controller_updated_at": "2026-04-04",
     "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；主仓和预览仓当前都以同一套状态源展示整改进度。",
-    "source_sync_debt": "文稿层 current 口径已经对齐；当前真正未闭环的只剩 P04 -> P05 的 same-space consequence bridge，以及 S03-S05 的 trim / 接法优化。",
+    "source_sync_debt": "当前 current 已收口到 assembly-level recovery path：P04 -> P05 bridge 已落地，P05 current 已切到 D02-first。剩余只是 notes：这条 bridge 仍是 recovery path，未来若拿到更强 native same-space clip 可替换。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
@@ -101,14 +101,14 @@
     {
       "gate_id": "W7",
       "gate_name": "视频导演与 audio contract",
-      "status": "IN PROGRESS",
-      "note": "active lane 已完成 P04 的 current clip 修复：S01-S05 基本可留，当前只剩 P04 -> P05 bridge 还没过门。"
+      "status": "DONE WITH NOTES",
+      "note": "P04 的单镜修复和 P04 -> P05 bridge recovery 都已落到 current；后续只保留 audio contract 与桥接替换观察。"
     },
     {
       "gate_id": "W8",
       "gate_name": "视频生成",
-      "status": "IN PROGRESS",
-      "note": "P04 的 current clip 坏链已修成真实资产；视频生成门当前不再卡在 S01/S02，而是等待 bridge 决策闭环。"
+      "status": "DONE WITH NOTES",
+      "note": "当前 official current 已吃到新的 part-05 D02-first recovery delivery，不再停留在“等 bridge 决策”的旧口径。"
     },
     {
       "gate_id": "W9",
@@ -120,13 +120,13 @@
       "gate_id": "W10",
       "gate_name": "剪辑装配",
       "status": "DONE WITH NOTES",
-      "note": "P04 自身中后段可读性在上升，但 P04 -> P05 仍有明显跳页感，装配门还没真正关掉。"
+      "note": "P04 -> P05 的跳页感已通过 assembly-level consequence bridge 明显收紧；这一门当前已过，但仍保留更强 native bridge 的替换窗口。"
     },
     {
       "gate_id": "W11",
       "gate_name": "交付更新与归档",
-      "status": "IN PROGRESS",
-      "note": "公开预览镜像、页面读取路线、version-log 顶部摘要和 shot-list current 合同已经对齐；当前仍需继续按 active lane 把 clip 级判断同步回 current。"
+      "status": "DONE WITH NOTES",
+      "note": "official master v17、story spine v15、part-05 current v3-d02first 与公开预览镜像应保持同一口径。"
     }
   ],
   "character_gate_status": [
@@ -222,11 +222,11 @@
     {
       "part_id": "P04",
       "part_name": "等待区与父亲",
-      "status": "IN PROGRESS",
-      "current_gate": "W10",
-      "judgement": "S01-S05 KEEP WITH NOTES / P04->P05 BRIDGE REQUIRED",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES / P04->P05 BRIDGE APPLIED",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
-      "note": "P04 的 current 单镜坏链已经补成真实资产；当前真正没过门的只剩 P04 -> P05 承压 bridge，S03-S05 继续保持 KEEP WITH NOTES。"
+      "note": "P04 的 current 单镜坏链已经补成真实资产，P04 -> P05 的承压 bridge 也已通过 assembly-level recovery 落到 current；后续只保留 trim 与 bridge 替换观察。"
     },
     {
       "part_id": "P05",
@@ -234,8 +234,8 @@
       "status": "DONE WITH NOTES",
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
-      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v2.mp4",
-      "note": "已形成 continuity bridge，当前不占 active lane。"
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v3-d02first.mp4",
+      "note": "current 已切到 D02-first recovery delivery；D01 保留为独立资产，但不再作为 current 开门 beat。"
     },
     {
       "part_id": "P06",
@@ -302,9 +302,9 @@
     }
   ],
   "open_risks": [
-    "P04 仍是 active lane，当前不能把整集口径误判为完全无债。",
+    "P04 当前仍作为收口观察位保留在 active lane，不能因为这次 bridge recovery 落地，就误判整章已经彻底无 notes。",
     "P04 / S01-S05 已经都有可用 current clip，但 S03-S05 仍需 trim 和更稳的接法，不能误报成完全无 notes。",
-    "P04 -> P05 仍有明显“切到新页面”的跳段感，必须补 same-space consequence bridge 或重组入口顺序。",
+    "P04 -> P05 的跳页感已经通过 assembly-level consequence bridge 收紧，但这条 bridge 仍属于 recovery path，未来若拿到更强 native same-space clip 仍可替换。",
     "回响仍未完成 canonical 可见定妆，凡是需要其清晰出镜的镜头都必须先过角色 gate。"
   ],
   "legacy_note": {

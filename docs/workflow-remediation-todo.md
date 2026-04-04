@@ -29,7 +29,7 @@
 | T03 | P0 | `W3` | 写清 `回响` 的出镜 gate 和限制 | `visual/character-lock-pack.md`、`content/actors/actor-casting-dossier.html` | `DONE WITH NOTES` | 回响要么只保留非清晰主体存在，要么补完可见锁定后再入视频主线 |
 | T04 | P0 | `W0-W7` | 更新 prompt 基线，让语言、对白、角色说话方式与最新主稿一致 | `visual/prompt-bible.md` | `DONE` | prompt bible 明确 10-12 岁语言约束、去 AI 腔规则、角色说话区分 |
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
-| T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `IN PROGRESS` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
+| T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
 
 ## 5. 当前回合执行记录
 
@@ -118,6 +118,13 @@
 - `IN PROGRESS`：`T06` 现在只剩一个真正 blocker：`P04 -> P05` 的 same-space consequence bridge 还没补上，现有 cut 仍有明显“切到新页面”的跳段感。
 - `NEXT`：下一步只做两件事：先补 `P04 -> P05` 的 bridge，再做 `S03-S05` 的 trim 和接法优化；不再回头重开已经可用的 `S01/S02`。
 
+### 2026-04-04 / Round 13
+
+- `DONE WITH NOTES`：`T06` 已把 `P04 -> P05` 的 same-space consequence bridge 通过 `chapter-01-p04-p05-consequence-bridge-v1.mp4` 落到 official current。
+- `DONE WITH NOTES`：`P05 current` 已同步切到 `part-05-probability-corridor-delivery-v3-d02first.mp4`，`D01` 继续保留为独立资产，但不再作为 current 开门 beat。
+- `DONE WITH NOTES`：`official master` 已升级到 `chapter-01-vertical-slice-master-v17-current.mp4`，`story spine` 已升级到 `v15`，预览页应与这套 current 口径保持一致。
+- `NEXT`：回到 chapter-level 质量复审，优先继续看 `P06` 的 `READABILITY REOPENED` 和整章 continuity notes；如果没有新 blocker，就保持当前 current 稳定，不再回退 `P04/P05`。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -128,7 +135,7 @@
 
 ## 7. 下一步顺序
 
-1. 先补 `P04 -> P05` 的 consequence bridge，解决“切到新页面”的跳段感
-2. 再做 `S03-S05` 的 trim 和接法优化，不轻易整镜重开
-3. 保留 `S01/S02` 当前已经修成的真实 same-space clip，不再回退成占位坏链
-4. 持续把新的 clip-level judgement 同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页
+1. 保持 `P04 -> P05` 当前这条 consequence bridge recovery 稳定在线，并继续观察它是否值得被更强 native same-space clip 替换
+2. 继续做 `S03-S05` 的 trim 和接法优化，但不回头重开已经可留的 `S01/S02`
+3. 回到 chapter-level 质量复审，优先继续看 `P06` 的 `READABILITY REOPENED` 与中段 continuity notes
+4. 持续把新的 current judgement 同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页

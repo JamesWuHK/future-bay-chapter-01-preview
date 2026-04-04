@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 / S01-S02 的坏 current clip 修成真实可播放资产，clip 级债务已收缩成 notes；现在 active lane 继续维持在 P04，只剩 P04 -> P05 的 same-space consequence bridge 还没过门。",
+  "scope_note": "当前视频 loop 已把 P04 / S01-S02 的坏 current clip 修成真实可播放资产，并把 P04 -> P05 的 same-space consequence bridge 通过 assembly-level recovery 落到 current。active lane 仍暂时挂在 P04 做收口观察，但这一段已经从 blocker 收成 PASS WITH NOTES。",
   "current_focus_part": "P04",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -84,8 +84,8 @@
     "transition_status": {
       "from": "P04",
       "to": "P05",
-      "status": "BRIDGE_REQUIRED",
-      "note": "当前 cut 仍有明显切页感，下一步优先补 same-space consequence bridge 或重组 P05 开头顺序。"
+      "status": "BRIDGE_APPLIED_WITH_NOTES",
+      "note": "当前 current 已插入 assembly-level consequence bridge，并把 P05 改成 D02-first recovery 入口；切页感已明显收紧，但这条 bridge 仍属于可继续被更强 native same-space clip 替换的 recovery path。"
     }
   },
   "gate_order": [
@@ -221,12 +221,12 @@
       ],
       "depends_on": "P03",
       "loop_status": "in_progress",
-      "current_gate": "W10",
-      "current_judgement": "S01-S05 KEEP WITH NOTES / P04->P05 BRIDGE REQUIRED",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES / P04->P05 BRIDGE APPLIED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
       "delivery_script": "scripts/production/render_chapter01_part4_delivery.sh",
       "reopen_policy": "只有当 P05 入口 continuity、父亲或林澄的同步短线、或等待区声场在正式审片中被判定直接阻塞后续主线时，才允许重开。",
-      "next_action": "P04 的 current 单镜坏链已经补成真实 clip。下一步只保留同一条 active debt：先补 P04 -> P05 的 consequence bridge，再做 S03-S05 的 trim 和接法优化，不重开已基本可留的单镜。"
+      "next_action": "P04 的 current 单镜坏链和 P04 -> P05 的承压 bridge 都已经收口到 official current。下一步不再重开已可留单镜，而是保留两条 notes：继续观察这条 assembly-level bridge 是否值得被更强 native same-space clip 替换，以及继续做 S03-S05 的 trim / 接法优化。"
     },
     {
       "part_id": "P05",
@@ -239,10 +239,10 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v2.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v3-d02first.mp4",
       "delivery_script": "scripts/production/render_chapter01_part5_delivery.sh",
       "reopen_policy": "当前只允许围绕 `D02` 的真实视频替换做定向重开；除非 `P04` 入口 continuity 被正式判定失配，否则不回退 `P05` 的整体结构与 `D01/D04` 已接受口径。",
-      "next_action": "当前 `P05 -> P06 -> P07` 的 continuity bridge 已作为 assembly-level recovery path 落地到 `story spine v10`。后续 `P05` 不再占 active lane；除非用户要求把这条 bridge 提升为正式 part-level 结构，不然它只保留为已验证的装配修复记录。"
+      "next_action": "当前 `P05 current` 已切到 `part-05-probability-corridor-delivery-v3-d02first.mp4`。后续 `P05` 不再占 active lane；`D01` 继续保留为独立资产，但不再作为 current part-05 的开门 beat。"
     },
     {
       "part_id": "P06",
