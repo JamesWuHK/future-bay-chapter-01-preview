@@ -254,6 +254,21 @@
   - 现在已改回 `S02 = 林澄结尾陈词`，并补出真正的 `S03` 结果公告段，避免后续再按错镜号生成
 - `IN PROGRESS`：`T08` 仍不改成 `DONE`。当前闭环的是 source-of-truth、UI 文案和执行链口径；已有 baked audio 的旧成片并不会因为文稿改了就自动全部换新。
 
+### 2026-04-05 / Round 25
+
+- `DONE WITH NOTES`：按用户刚指出的两个长期残留 bug，已把 `P01` 从 current clip 链往 chapter 级入口做了一次热修：
+  - `S04` 的旧 `别站队 / 先别下结论` baked line 已从 current 退下，改成和最新主稿一致的直白口径
+  - `S07` 不再误用工作台错片，也不再把 `S04` 的半句话漏进启航镜头
+- `DONE WITH NOTES`：`S07` 当前已改成真正的 `team-launch bridge` 读法：
+  - 前半拍先回到固定小队同场画面
+  - 后半拍再接航线点亮与出发
+  - 至少不再出现“只剩航线、看不出队伍已经一起出发”的 current 误读
+- `DONE WITH NOTES`：这次修复已经同步重装：
+  - `part-01-future-bay-task-dock-delivery-v31.mp4`
+  - `chapter-01-story-spine-preview-v17.mp4`
+  - `chapter-01-vertical-slice-master-v19-current.mp4`
+- `IN PROGRESS`：`T08` 仍继续保持未闭环。当前修掉的是 `P01` 两个 viewer-blocking bug 和对应装配链，不代表 chapter-01 所有旧同步音轨都已经全部重做完。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始

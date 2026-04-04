@@ -1,9 +1,9 @@
 {
   "chapter_id": "chapter-01-time-archive-city",
   "chapter_title": "不被预测的人生",
-  "updated_at": "2026-04-04",
+  "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。最新修复一边保留了 P06 / E01 的 trimmed-ingress 口径，一边把 P01 / P09 / P10 / P11 的人话化装配文案重渲进 current，并同步重装 story spine v16 与 vertical slice master v18-current。对外完整故事入口仍看 story spine v16，vertical slice master v18 只保留作 review master；但旧的同步音轨对白还没全部重做。",
+  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。这轮又顺手修掉了 `P01` 两个长期残留 bug：`S04` 的旧 baked line 已退下，`S07` 已改回“先见队伍、再进航线”的 team-launch bridge，并同步重装 story spine v17 与 vertical slice master v19-current。对外完整故事入口仍看 story spine v17，vertical slice master v19 只保留作 review master；但旧的同步音轨对白还没全部重做。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -20,34 +20,34 @@
     "outputs_current_hub": "outputs/current-chapter-01"
   },
   "sync_status": {
-    "asset_manifest": "SYNCED_2026-04-04",
-    "workflow_remediation_todo": "SYNCED_2026-04-04",
-    "preview_remediation_panel": "SYNCED_2026-04-04",
-    "version_log_top_summary": "SYNCED_2026-04-04",
-    "shot_list_p04_s03_contract": "SYNCED_2026-04-04",
-    "chapter_current_entry": "SYNCED_2026-04-04",
-    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-04"
+    "asset_manifest": "SYNCED_2026-04-05",
+    "workflow_remediation_todo": "SYNCED_2026-04-05",
+    "preview_remediation_panel": "SYNCED_2026-04-05",
+    "version_log_top_summary": "SYNCED_2026-04-05",
+    "shot_list_p04_s03_contract": "SYNCED_2026-04-05",
+    "chapter_current_entry": "SYNCED_2026-04-05",
+    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-05"
   },
   "delivery_entry_status": {
     "public_current_entry": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v16.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v17.mp4",
       "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
       "type": "full_story_current",
       "scope": "P01-P12 完整故事入口",
-      "runtime_sec": 205.334943,
+      "runtime_sec": 202.358934,
       "note": "资产总览页顶部应优先把这条当作当前完整故事入口。"
     },
     "review_master": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v18-current.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v19-current.mp4",
       "current_hub": "current/deliveries/chapter-01-master-current.mp4",
       "type": "vertical_slice_review_master",
       "scope": "chapter 级 review master",
-      "runtime_sec": 157.844943,
+      "runtime_sec": 154.916009,
       "note": "这条继续保留作 review master，不再冒充完整故事唯一入口。"
     },
     "dialogue_rollout": {
       "status": "DOCS_UPDATED_VIDEO_PARTIAL",
-      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `P01 / P09 / P10 / P11` 的 current delivery 重渲了一次，让装配层旧口号、系统腔和备注腔先退下去，并同步重装 `story spine v16 / master v18-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
+      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `P01` 的 `S04/S07` bug 修进 current，并保留了 `P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
     }
   },
   "active_repair_contract": {
@@ -191,10 +191,10 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v30.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v31.mp4",
       "delivery_script": "scripts/production/render_chapter01_part1_delivery.sh",
       "reopen_policy": "只有当开场 continuity、canonical 人物一致性或声音体系直接阻塞后续 parts，或用户明确要求修开场时，才允许重开。",
-      "next_action": "当前已把 `A01/A02` 从 still-motion linger 改写为显式 intro cards，并把 `P01 current` 升级到 `v17`。它们现在仍不是最终真实视频开场，但已不再属于“照片加滤镜冒充视频”同类问题。后续若继续升格，优先方向应是用 same-space 真 clip 替换 intro cards，而不是再回头给静帧加轻动。"
+      "next_action": "这轮已把 `S04` 的旧 baked line 和 `S07` 的错片/半句串镜问题修进 `part-01 current v31`，并同步重装 chapter 级入口。`P01` 现在回到 backlog 观察位；后续若继续升格，优先方向仍是用 same-space 真 clip 替换 `A01/A02` 的 intro cards，而不是再回头给静帧加轻动。"
     },
     {
       "part_id": "P02",
