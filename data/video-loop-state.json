@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 official current，并继续把 active lane 切到 P06。最新修复是 trim 掉 P06 / E01 开头那一拍更亮、更空的走廊 reset，让 P05 的风异常能直接推入暗层入口。",
+  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 切到 P06。最新修复是 trim 掉 P06 / E01 开头那一拍更亮、更空的走廊 reset，让 P05 的风异常能直接推入暗层入口。同时已经明确：对外完整故事入口应看 story spine v16，vertical slice master v18 只保留作 review master；最新人话化对白已进文稿链，但还没自动传导到所有 part delivery 音轨。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -24,7 +24,31 @@
     "workflow_remediation_todo": "SYNCED_2026-04-04",
     "preview_remediation_panel": "SYNCED_2026-04-04",
     "version_log_top_summary": "SYNCED_2026-04-04",
-    "shot_list_p04_s03_contract": "SYNCED_2026-04-04"
+    "shot_list_p04_s03_contract": "SYNCED_2026-04-04",
+    "chapter_current_entry": "SYNCED_2026-04-04",
+    "dialogue_rollout_status": "DOCS_SYNCED_VIDEO_PARTIAL"
+  },
+  "delivery_entry_status": {
+    "public_current_entry": {
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v16.mp4",
+      "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
+      "type": "full_story_current",
+      "scope": "P01-P12 完整故事入口",
+      "runtime_sec": 205.334943,
+      "note": "资产总览页顶部应优先把这条当作当前完整故事入口。"
+    },
+    "review_master": {
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v18-current.mp4",
+      "current_hub": "current/deliveries/chapter-01-master-current.mp4",
+      "type": "vertical_slice_review_master",
+      "scope": "chapter 级 review master",
+      "runtime_sec": 157.844943,
+      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口。"
+    },
+    "dialogue_rollout": {
+      "status": "DOCS_UPDATED_VIDEO_PARTIAL",
+      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链，但 part-level delivery 不会自动吃最新配音台本；`P01 / P09 / P10 / P11` 仍需继续复审传导。"
+    }
   },
   "active_repair_contract": {
     "part_id": "P06",

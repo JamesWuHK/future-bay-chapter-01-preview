@@ -11,7 +11,7 @@
 - 当前最强环节：`W0 语义冻结`、`W1 导演室调度`
 - 当前中段环节：`W2 分镜执行稿`、`W4 首帧生成`、`W5 图像质量门`、`W8 视频生成`、`W9 视频质量门`、`W10 剪辑装配`
 - 当前最弱环节：`W3 参考锁定`、`W7 视频导演与 audio contract`、`W11 交付更新与归档`
-- 当前最大的系统性问题：`上游文稿链已经较新，下游状态控制层和资产总览页口径没有完全同步，大文件里的旧命名和旧总述还在拖 current 后腿`
+- 当前最大的系统性问题：`上游文稿链已经比成片链更新了，但下游交付入口和对白传导状态还没有一眼说清，容易让页面把 review master 误当完整故事，也容易让人误判“台词已经全部进成片”`
 
 ## 3. 整改原则
 
@@ -31,7 +31,8 @@
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
 | T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
 | T07 | P0 | `W10-W11` | 收口 `P06 / E01` 的亮走廊 reset，并把 trimmed ingress 传导到 part、story spine、master、preview current | `production/video-loop-state.json`、`production/asset-manifest.json`、`production/current-part-repair-contracts.md`、`production/version-log.md`、预览页 current 镜像 | `DONE WITH NOTES` | `P06` 开头不再先亮一下再变暗，且 `part-06 current / story spine / master / preview` 都切到同一套 `trimmed-ingress` 口径 |
-| T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md` | `IN PROGRESS` | 角色说话能一耳朵分开，10 岁孩子能听懂，且不再冒出 `主位 / 样本 / 原件` 这类跳出故事的说法 |
+| T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词，并继续把这批改动传导到成片链 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md`、受影响的 `part delivery` 装配 | `IN PROGRESS` | 角色说话能一耳朵分开，10 岁孩子能听懂；文稿层和成片层都不再冒出 `主位 / 样本 / 原件` 这类跳出故事的说法 |
+| T09 | P0 | `W11` | 收口 chapter-01 的对外交付入口口径，明确哪条是完整故事 current，哪条只是 review master | `production/asset-manifest.json`、`production/video-loop-state.json`、`production/version-log.md`、资产总览 HTML 页面 | `DONE WITH NOTES` | 页面顶部和状态源都能明确告诉人：`story spine v16` 是完整故事入口，`vertical slice master v18` 只是 review master |
 
 ## 5. 当前回合执行记录
 
@@ -142,6 +143,16 @@
 - `IN PROGRESS`：`story / storyboard / voice` 三条文稿链正在继续对齐角色口气。当前先关掉最明显的 AI 腔和文件腔，再继续往下做逐场人物区分复审。
 - `NEXT`：把这轮对白修订同步到公开镜像，再继续按 `P05 -> P06 -> P07` 的 production review 看有没有新的 viewer-blocking 问题。
 
+### 2026-04-04 / Round 16
+
+- `DONE WITH NOTES`：新增 `T09`，把 chapter-01 的对外交付入口口径正式收口。当前 source of truth 和资产总览页已经明确区分：
+  - `story spine v16` = 当前完整故事入口
+  - `vertical slice master v18` = 当前 review master
+- `DONE WITH NOTES`：`asset-manifest.json`、`video-loop-state.json`、`version-log.md` 和主资产页已同步写明：不能再把 `vertical slice master` 冒充成完整故事唯一入口。
+- `IN PROGRESS`：`T08` 继续保留未闭环状态。当前能确认的是：最新人话化对白已经回写 `master / script / storyboard / voice` 文稿链，但现有 `part delivery` 不会自动吃这些更新，所以还不能宣称“台词都已经完全修进最终成片”。
+- `IN PROGRESS`：当前对白传导的主要观察位先盯 `P01 / P09 / P10 / P11`。这些段落最容易让文稿链与成片链重新长出两套口径。
+- `NEXT`：继续按 active lane 复审 `P05 -> P06 -> P07`，同时把 `T08` 从文稿层往成片层继续推进；修完一段，就同步写回 source of truth 和公开预览。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -154,5 +165,6 @@
 
 1. 继续观察 `P06` 这次 `trimmed-ingress` recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 优先复审 `P05 -> P06 -> P07` 的中段 continuity，确认暗层入口、第四路径 reveal 和旧训练痕迹还是同一条后果链
-3. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
-4. 只有在出现新的 viewer-blocking 问题时，才考虑回退到更上游的模型重开
+3. 继续把 `T08` 的最新对白整改从文稿层往成片层传导，重点盯 `P01 / P09 / P10 / P11`
+4. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
+5. 只有在出现新的 viewer-blocking 问题时，才考虑回退到更上游的模型重开
