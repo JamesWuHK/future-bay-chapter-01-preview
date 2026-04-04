@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- deploy-ping: 2026-04-03T16:18:00Z -->
+<!-- deploy-ping: 2026-04-04T03:10:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -415,11 +415,11 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。当前角色图、P01 资源仍对齐到预览仓真实存在的 current 资产；三份 Markdown 正文已改为优先直连主仓 `ai-future-civilization-course-k12` 的 source of truth，预览仓 `docs/` 只保留兜底。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。当前角色图、P01 资源仍对齐到预览仓真实存在的 current 资产；三份 Markdown 正文现在优先读取本仓 `docs/` 最新镜像，主仓 `ai-future-civilization-course-k12` 只作为回查兜底。这样即使主仓 raw 临时 404，这个页面也能继续显示最新文稿。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-03 文稿直连主仓</span>
-        <span class="pill">图片 / 视频对齐 current 资产</span>
-        <span class="pill">Markdown 优先读取 source of truth</span>
+        <span class="pill">2026-04-04 文稿链路修正</span>
+        <span class="pill">正文优先读取预览仓镜像</span>
+        <span class="pill">主仓只作回查兜底</span>
         <span class="pill">每份文稿自动生成本稿目录</span>
       </div>
       <div class="actions">
@@ -433,7 +433,7 @@
         <ul>
           <li>角色区旧文件名已全部对齐到预览仓当前真实存在的 `current/characters` 资产。</li>
           <li>P01 区不再引用失效的 `shots/...` 与 `videos/...` 路径，统一改用 `current/clips`、`current/deliveries`、`current/shots`。</li>
-          <li>三份 Markdown 正文已改为优先读取主仓正式文稿，后续主稿一更新，这个页面会先看到最新内容。</li>
+          <li>三份 Markdown 正文已改为优先读取预览仓 `docs/` 最新镜像，不再被主仓 raw 的 404 拖住。</li>
         </ul>
       </div>
       <div class="box.warn">
@@ -609,7 +609,7 @@
 
     <section class="section" id="documents">
       <h2>完整剧本与分镜正文</h2>
-      <p>下面三块正文会优先从主仓 `ai-future-civilization-course-k12` 的正式文稿加载；如果主仓临时不可达，再回退到预览仓 `docs/` 本地镜像。</p>
+      <p>下面三块正文现在优先从预览仓 `docs/` 最新镜像加载；如果需要回查，再退到主仓 `ai-future-civilization-course-k12` 的正式文稿。这样主仓 raw 临时不可达时，页面也不会继续显示旧稿或直接报错。</p>
       <div class="doc-jump-grid">
         <a class="doc-jump" href="#doc-master">
           <strong>整集总脚本</strong>
@@ -629,7 +629,7 @@
         <div class="doc-head">
           <h3>整集总脚本</h3>
           <p class="lead">说明整集如何被孩子体验到，负责锁 `Part 1-Part 7 + P12` 的总体验结构。</p>
-          <p><a href="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md">直接打开主仓当前 Markdown</a></p>
+          <p><a href="docs/master-episode-script.md">直接打开当前镜像 Markdown</a></p>
           <div class="doc-meta">
             <span>整集体验</span>
             <span>Part 结构</span>
@@ -640,8 +640,8 @@
         <div class="doc-body">
           <div
             class="markdown-body loading"
-            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md"
-            data-doc-fallback="docs/master-episode-script.md"
+            data-doc-src="docs/master-episode-script.md"
+            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md"
           >正在加载整集总脚本…</div>
         </div>
       </div>
@@ -650,7 +650,7 @@
         <div class="doc-head">
           <h3>分场剧本</h3>
           <p class="lead">负责 `Scene 01-Scene 11` 的戏剧推进和分场职责，对齐当前 production `P01-P12` 主线。</p>
-          <p><a href="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/script.md">直接打开主仓当前 Markdown</a></p>
+          <p><a href="docs/script.md">直接打开当前镜像 Markdown</a></p>
           <div class="doc-meta">
             <span>Scene 结构</span>
             <span>关键对白</span>
@@ -661,8 +661,8 @@
         <div class="doc-body">
           <div
             class="markdown-body loading"
-            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/script.md"
-            data-doc-fallback="docs/script.md"
+            data-doc-src="docs/script.md"
+            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/script.md"
           >正在加载分场剧本…</div>
         </div>
       </div>
@@ -671,7 +671,7 @@
         <div class="doc-head">
           <h3>分镜脚本</h3>
           <p class="lead">负责 `Beat / 演员 / 环境 / 对白 / 旁白 / 环境音效 / Beat 职责`，并继续对齐 production part 与 shot 编号。</p>
-          <p><a href="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md">直接打开主仓当前 Markdown</a></p>
+          <p><a href="docs/storyboard-script.md">直接打开当前镜像 Markdown</a></p>
           <div class="doc-meta">
             <span>Part / Beat</span>
             <span>表格总览</span>
@@ -682,8 +682,8 @@
         <div class="doc-body">
           <div
             class="markdown-body loading"
-            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
-            data-doc-fallback="docs/storyboard-script.md"
+            data-doc-src="docs/storyboard-script.md"
+            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
           >正在加载分镜脚本…</div>
         </div>
       </div>
@@ -697,7 +697,7 @@
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
+        .replace(/\"/g, '&quot;')
         .replace(/'/g, '&#39;');
     }
 
@@ -758,7 +758,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260403-main-source';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-preview-mirror';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           const text = await resp.text();
