@@ -22,6 +22,8 @@
     "master_script": "content/chapters/chapter-01-time-archive-city/story/master-episode-script.md",
     "scene_script": "content/chapters/chapter-01-time-archive-city/story/script.md",
     "storyboard_script": "content/chapters/chapter-01-time-archive-city/story/storyboard-script.md",
+    "product_script": "content/chapters/chapter-01-time-archive-city/product/product-script.md",
+    "onscreen_copy": "content/chapters/chapter-01-time-archive-city/product/episode-onscreen-copy.md",
     "shot_list": "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
     "video_loop_state": "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
     "current_part_repair_contracts": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
@@ -36,12 +38,14 @@
     "master_script": "DONE",
     "scene_script": "DONE",
     "storyboard_script": "DONE",
+    "product_script": "DONE WITH NOTES",
+    "onscreen_copy": "DONE WITH NOTES",
     "shot_list": "DONE WITH NOTES",
     "workflow_audit": "DONE WITH NOTES"
   },
   "current_delivery": {
     "current_focus_part": "P06",
-    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。这轮额外把 `P01` 两个 viewer-blocking bug 一起修进 current：`S04` 的旧 baked line 已退下，`S07` 也改回“先见队伍、再进航线”的 team-launch bridge，并同步重装 `story spine v17` 与 `vertical slice master v19-current`。`T08` 仍未闭环，因为旧的同步音轨对白还没全部重做。",
+    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。这轮除了保住 `P01` 的热修结果，还继续把 `script / storyboard / product / onscreen` 的文稿兑现边界和页面可见口径收回同一套 source of truth：哪些趣味层已进 current、哪些只是后补，以及 `主位 / 点头 / 扛下 / 不予开放` 这类旧词都不再挂在当前主入口上。`T08` 仍未闭环，因为旧的同步音轨对白还没全部重做。",
     "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v17.mp4",
     "public_current_entry_current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
     "public_current_entry_label": "完整故事 current / P01-P12",
@@ -56,10 +60,10 @@
     "story_spine": "chapter-01-story-spine-preview-v17.mp4",
     "story_spine_scope": "完整故事 current / P01-P12",
     "dialogue_rollout_status": "DOCS_UPDATED_VIDEO_PARTIAL",
-    "dialogue_rollout_note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；当前又把 `P01` 的 `S04/S07` 开场 bug 修进 current，并保留了前一轮 `P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍只能标成 `VIDEO_PARTIAL`。",
+    "dialogue_rollout_note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；当前又把 `product / onscreen` 和页面可见旧词一起收口，`P01` 的 `S04/S07` 热修也已继续留在 current，并保留了前一轮 `P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍只能标成 `VIDEO_PARTIAL`。",
     "controller_updated_at": "2026-04-05",
-    "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；主仓和预览仓当前都以同一套状态源展示整改进度。",
-    "source_sync_debt": "当前 current 已把 `P06 / E01` 的 bright reset 通过 trim recovery 收口到 official current，也把 `P01` 的 `S04/S07` 热修和 `P09 / P10 / P11` 的装配文案继续传导到 chapter 入口。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及最新对白文稿还没全部传导到已有同步音轨这条 W7-W11 债务。",
+    "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；这轮还补齐了 `product-script.md` 与 `episode-onscreen-copy.md` 两份公开镜像，主仓和预览仓当前都以同一套状态源展示整改进度。",
+    "source_sync_debt": "当前 current 已把 `P06 / E01` 的 bright reset 通过 trim recovery 收口到 official current，也把 `P01` 的 `S04/S07` 热修、`P09 / P10 / P11` 的装配文案和页面可见口径继续传导到 chapter 入口。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及最新对白文稿还没全部传导到已有同步音轨这条 W7-W11 债务。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
@@ -73,7 +77,7 @@
       "gate_id": "W0B",
       "gate_name": "连续性预检",
       "status": "DONE WITH NOTES",
-      "note": "文稿主链已较完整，但最新人话化修订仍需持续反向同步到下游 prompt、声音约束与已装配成片。"
+      "note": "文稿主链已较完整；这轮又把趣味层、产品稿、上屏文案和页面可见旧词一起收回同一口径。但最新人话化修订仍需持续反向同步到下游 prompt、声音约束与已装配成片。"
     },
     {
       "gate_id": "W1",
@@ -85,7 +89,7 @@
       "gate_id": "W2",
       "gate_name": "分镜执行稿与 shot contract",
       "status": "DONE WITH NOTES",
-      "note": "文稿层主链已完整，P04/S03 的 current 合同已回写 storyboard、repair contract 和 shot-list。"
+      "note": "文稿层主链已完整，P04/S03 的 current 合同已回写 storyboard、repair contract 和 shot-list；这轮还补清了趣味 beat 的 current / backlog 边界。"
     },
     {
       "gate_id": "W3",
@@ -139,13 +143,13 @@
       "gate_id": "W11",
       "gate_name": "交付更新与归档",
       "status": "DONE WITH NOTES",
-      "note": "对外完整故事入口当前应指向 `story spine v16`；`vertical slice master v18` 只保留作 review master。两条入口、part-06 current v6-trimmed-ingress 与公开预览镜像应保持同一口径。"
+      "note": "对外完整故事入口当前应指向 `story spine v17`；`vertical slice master v19-current` 只保留作 review master。两条入口、文稿镜像和公开预览页都应保持同一口径。"
     }
   ],
   "character_gate_status": [
     {
       "asset_id": "C-00",
-      "name": "玩家主位",
+      "name": "玩家视角",
       "status": "LOCKED",
       "usage": "可作为第一人称身份锚点与少量可视化主体。"
     },
@@ -165,7 +169,7 @@
       "asset_id": "C-03",
       "name": "序列员 07",
       "status": "LOCKED",
-      "usage": "制度对手位已锁。"
+      "usage": "档案城追问位已锁。"
     },
     {
       "asset_id": "C-04",
@@ -275,7 +279,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v1.mp4",
-      "note": "主要是制度信息位，不应误判成同类暗部失败。"
+      "note": "主要是档案城规则信息位，不应误判成同类暗部失败。"
     },
     {
       "part_id": "P09",
@@ -318,7 +322,8 @@
     "P06 当前已切到 trimmed-ingress 口径，但 `P05 -> P06 -> P07` 仍要继续观察是否还有更细的 trim / bridge 需求。",
     "P04 -> P05 的跳页感已经通过 assembly-level consequence bridge 收紧，但这条 bridge 仍属于 recovery path，未来若拿到更强 native same-space clip 仍可替换。",
     "回响仍未完成 canonical 可见定妆，凡是需要其清晰出镜的镜头都必须先过角色 gate。",
-    "最新人话化对白已经进了文稿链，但 `P01 / P09 / P10 / P11` 等已装配 part 不会自动吃最新 `voice-script.md`；这条传导债务必须继续复审，不能假装已经全部烤进最终成片。"
+    "最新人话化对白已经进了文稿链，但 `P01 / P09 / P10 / P11` 等已装配 part 不会自动吃最新 `voice-script.md`；这条传导债务必须继续复审，不能假装已经全部烤进最终成片。",
+    "趣味层已经在文稿和页面里写清了 `current / 后补` 边界，但 `P05 / D03` 这类后补插片仍未真正入 current，后续不能再被误报成“已经做完”。"
   ],
   "legacy_note": {
     "status": "SUPERSEDED",

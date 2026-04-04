@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- deploy-ping: 2026-04-04T09:35:00Z -->
+<!-- deploy-ping: 2026-04-05T15:05:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -440,12 +440,12 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和三份剧本文稿，它还会优先读取预览仓公开镜像里的 `data/asset-manifest.json`、`data/video-loop-state.json`、`docs/workflow-remediation-todo.md` 和 `docs/current-part-repair-contracts.md`，把 workflow 当前状态、active lane、完整故事入口、review master 和整改进度一起显示出来。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和 workflow 状态，它还会优先读取预览仓公开镜像里的 `data/asset-manifest.json`、`data/video-loop-state.json`、`docs/workflow-remediation-todo.md`、`docs/current-part-repair-contracts.md`、`docs/master-episode-script.md`、`docs/script.md`、`docs/storyboard-script.md`、`docs/product-script.md` 和 `docs/episode-onscreen-copy.md`，把 current 主线、文稿兑现边界和整改进度一起挂出来。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-04 public mirror sync</span>
+        <span class="pill">2026-04-05 public mirror sync</span>
         <span class="pill">workflow 状态优先读预览仓镜像</span>
         <span class="pill">整改 To-Do 优先读预览仓镜像</span>
-        <span class="pill">正文优先读取预览仓镜像</span>
+        <span class="pill">五份主文稿优先读取预览仓镜像</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
@@ -458,14 +458,12 @@
       <div class="box good">
         <p><span class="label">本轮已修正</span></p>
         <ul>
-          <li>重建了 chapter-01 的 `asset-manifest.json`，不再沿用那份失真的逐资产 `todo` 列表。</li>
-          <li>补出 `workflow-remediation-todo.md`，把这轮整改正式落进仓库，而不是只停留在对话里。</li>
-          <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
           <li>资产总览页现在优先读取预览仓的公开 current 镜像，并把整改 To-Do、当前 active repair contract、完整故事入口和 review master 一起挂出来。</li>
-          <li>`P04 -> P05` 的 consequence bridge 已经正式落到 current，`P04` 现在回到 backlog 观察位，不再继续冒充 active lane。</li>
-          <li>这轮已把 `P06 / E01` 开头那一拍更亮、更空的走廊 reset 通过 trim recovery 收掉，让 `P05` 的风异常能直接推进暗层入口。</li>
-          <li>`part-06 current` 已切到 `v6-trimmed-ingress`；当前完整故事入口是 `story spine v16`，`vertical slice master v18` 只保留作 review master，这次修复已经传导到 chapter 级入口。</li>
-          <li>这轮又把 `P01 / P09 / P10 / P11` 的 current delivery 重新渲了一次，先把旧的口号腔、系统腔和备注腔从装配层里清出去，并同步重装 `story spine v16 / master v18-current`。</li>
+          <li>`P01 / S04` 的旧 baked line 和 `P01 / S07` 的错片 / 半句串镜问题已经修进 current，并同步传导到 `story spine v17 / master v19-current`。</li>
+          <li>`script / storyboard / product / onscreen` 现在都明确写清哪些趣味层已进 current，哪些只是后补，不再把候选资产误报成“已上线”。</li>
+          <li>页面里剩下那批会让人出戏的旧词也继续收掉了，当前主入口已经统一成更直接的人话口径。</li>
+          <li>资产总览页已经扩展成五份主文稿镜像入口，不再只挂三份剧本文稿。</li>
+          <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
         </ul>
       </div>
       <div class="box.warn">
@@ -473,10 +471,9 @@
         <ul>
           <li>顶部视频入口仍属于 `PASS WITH NOTES`，不是最终定稿。</li>
           <li>当前 active lane 已经切到 `P06`，接下来要继续复审 `P05 -> P06 -> P07`，不能误判整章已经彻底无债。</li>
-          <li>`P06` 的 ingress reset 已经被 trim 掉，但这仍是 `assembly/editor-level recovery path`，如果后续发现更细的 continuity 问题，优先继续走 `trim / bridge / reorder`。</li>
           <li>`T08` 还没闭环。这轮主要传导的是 overlay / assembly 文案，已有同步音轨的旧对白还没有全部换新。</li>
           <li>`回响` 还没有 canonical 可见定妆，不能作为清晰主体进入视频主线。</li>
-          <li>`P04 -> P05` 的 bridge recovery 已经落地，但它仍是 `assembly-level recovery path`，以后如果拿到更强同空间原生桥，可以继续替换。</li>
+          <li>`P05 / D03` 这类荒诞微未来插片，目前仍是后补候选，不算 current 已完成。</li>
         </ul>
       </div>
     </section>
@@ -487,7 +484,7 @@
         <div>
           <div class="card">
             <div class="tiny">Full Story Current</div>
-            <p><span class="label">文件</span> <span id="latest-primary-file">chapter-01-story-spine-preview-current.mp4</span></p>
+            <p><span class="label">入口</span> <span id="latest-primary-file">chapter-01-story-spine-preview-current.mp4</span></p>
             <p><span class="label">定位</span> 当前完整故事入口，覆盖 `P01-P12`</p>
             <p id="latest-status-note"><span class="label">当前判断</span> 正在读取 current 状态镜像…</p>
             <div class="meta-row" style="margin-top:14px;">
@@ -501,19 +498,19 @@
               </div>
               <div class="meta-card">
                 <div class="meta-kicker">主入口</div>
-                <div class="meta-value"><a id="latest-primary-link" href="https://jameswuhk.github.io/future-bay-chapter-01-preview/current/deliveries/chapter-01-story-spine-preview-current.mp4">打开当前完整故事入口</a></div>
+                <div class="meta-value"><a id="latest-primary-link" href="current/deliveries/chapter-01-story-spine-preview-current.mp4">打开当前完整故事入口</a></div>
               </div>
             </div>
           </div>
           <div class="card" style="margin-top:16px;">
             <div class="tiny">Review Master</div>
-            <p><span class="label">文件</span> <span id="latest-secondary-file">chapter-01-master-current.mp4</span></p>
+            <p><span class="label">入口</span> <span id="latest-secondary-file">chapter-01-master-current.mp4</span></p>
             <p><span class="label">定位</span> chapter 级 review master / vertical slice assembly</p>
             <p><span class="label">用途</span> 保留给整章节奏、桥接和 continuity 复审，不再冒充完整故事唯一入口。</p>
             <div class="meta-row" style="margin-top:14px;">
               <div class="meta-card">
                 <div class="meta-kicker">入口</div>
-                <div class="meta-value"><a id="latest-secondary-link" href="https://jameswuhk.github.io/future-bay-chapter-01-preview/current/deliveries/chapter-01-master-current.mp4">打开 review master</a></div>
+                <div class="meta-value"><a id="latest-secondary-link" href="current/deliveries/chapter-01-master-current.mp4">打开 review master</a></div>
               </div>
               <div class="meta-card">
                 <div class="meta-kicker">对白传导</div>
@@ -523,7 +520,7 @@
           </div>
         </div>
         <figure>
-          <video id="latest-primary-video" controls playsinline preload="metadata" src="https://jameswuhk.github.io/future-bay-chapter-01-preview/current/deliveries/chapter-01-story-spine-preview-current.mp4"></video>
+          <video id="latest-primary-video" controls playsinline preload="metadata" src="current/deliveries/chapter-01-story-spine-preview-current.mp4"></video>
           <figcaption>顶部优先锚当前完整故事入口。review master 仍保留在左侧，方便继续做 chapter 级复审。</figcaption>
         </figure>
       </div>
@@ -619,49 +616,49 @@
       <p>孩子要先看清：`我是谁`、`队友是谁`、`林澄是谁`、`谁在代表档案城压力`、`谁在代表现实关系压力`。</p>
       <div class="grid four">
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家主位" />
+          <img class="portrait" src="current/characters/c-00-player-anchor-v1-qwen-image-2.0-pro.png" alt="玩家视角" />
           <p class="tiny" style="margin-top:12px;">C-00</p>
-          <h3>玩家主位</h3>
-          <p>未来湾固定小队的第一人称责任主位，不是旁观者，也不是空镜头占位。</p>
+          <h3>玩家视角</h3>
+          <p>未来湾固定小队的第一人称身份锚点，不是旁观者，也不是空镜头占位。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
+          <img class="portrait" src="current/characters/c-01-archive-watchkeeper-v1-qwen-image-2.0-pro.png" alt="档案守望者" />
           <p class="tiny" style="margin-top:12px;">C-01</p>
           <h3>档案守望者</h3>
           <p>任务交班者与文明视角引路人，只把责任交出来，不替孩子把答案说完。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄" />
+          <img class="portrait" src="current/characters/c-02-lin-cheng-34-view-v1-qwen-image-plus.png" alt="林澄" />
           <p class="tiny" style="margin-top:12px;">C-02</p>
           <h3>林澄</h3>
           <p>12 岁。她不是“叛逆案例”，而是知道系统给的那条路很强，却仍感觉那不是自己的人生。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
+          <img class="portrait" src="current/characters/c-03-sequence-officer-07-round3b-qwen-image-2.0-pro.png" alt="序列员 07" />
           <p class="tiny" style="margin-top:12px;">C-03</p>
           <h3>序列员 07</h3>
           <p>档案城逻辑代表，不是纸片反派。他真的会合法赢走时间，也真的在替整座城计算代价。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
+          <img class="portrait" src="current/characters/c-04-qi-ye-round3-qwen-image-plus.png" alt="祁野" />
           <p class="tiny" style="margin-top:12px;">C-04</p>
           <h3>祁野</h3>
           <p>证据和系统拆解担当，负责把“想救人”压回“证据要站得住”这条底线上。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏" />
+          <img class="portrait" src="current/characters/c-05-wen-xia-working-v1-qwen-image-plus.png" alt="闻夏" />
           <p class="tiny" style="margin-top:12px;">C-05</p>
           <h3>闻夏</h3>
           <p>公共表达与组织担当，负责把复杂冲突整理成全城能听懂的话。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
+          <img class="portrait" src="current/characters/c-06-lin-cheng-father-v1-qwen-image-2.0-pro.png" alt="林澄父亲" />
           <p class="tiny" style="margin-top:12px;">C-06</p>
           <h3>林澄父亲</h3>
           <p>现实关系压力面。他不是坏人，却代表最刺人的“为你好”。</p>
         </div>
         <div class="card">
-          <img class="portrait" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="风声婆婆" />
+          <img class="portrait" src="current/characters/c-07-wind-listener-keeper-v1-qwen-image-2.0-pro.png" alt="风声婆婆" />
           <p class="tiny" style="margin-top:12px;">C-07</p>
           <h3>风声婆婆</h3>
           <p>生命证人。她把第四色路径从隐藏信息变成真正活过、练过、值得保留的未来。</p>
@@ -673,27 +670,27 @@
       <h2>主场景母图</h2>
       <div class="grid three">
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="未来湾任务码头" />
+          <img src="current/scenes/s-01-future-bay-task-dock-v1-qwen-image-2.0-pro.png" alt="未来湾任务码头" />
           <figcaption>S-01 未来湾任务码头：开场任务交班的主空间。</figcaption>
         </figure>
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="紧急入港外景" />
+          <img src="current/scenes/s-02-emergency-entry-exterior-v1-qwen-image-plus.png" alt="紧急入港外景" />
           <figcaption>S-02 紧急入港外景：时间档案城门槛感的第一层。</figcaption>
         </figure>
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="概率长廊" />
+          <img src="current/scenes/s-04-probability-corridor-v1-qwen-image-plus.png" alt="概率长廊" />
           <figcaption>S-04 概率长廊：三条公开路径与第四色路径前的主奇观场景。</figcaption>
         </figure>
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="证据冻结区" />
+          <img src="current/scenes/s-06-evidence-freeze-zone-v1-qwen-image-2.0-pro.png" alt="证据冻结区" />
           <figcaption>S-06 证据冻结区：AI 边界与程序反噬的空间锚点。</figcaption>
         </figure>
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="自由回响台" />
+          <img src="current/scenes/s-07-free-echo-platform-v1-qwen-image-plus.png" alt="自由回响台" />
           <figcaption>S-07 自由回响台：公开表达与承担后果的高潮空间。</figcaption>
         </figure>
         <figure>
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="回航档案墙" />
+          <img src="current/scenes/s-09-return-archive-wall-v1-qwen-image-2.0-pro.png" alt="回航档案墙" />
           <figcaption>S-09 回航档案墙：裂口档案正式立案的回收空间。</figcaption>
         </figure>
       </div>
@@ -704,37 +701,37 @@
       <p>`P01` 当前口径是 7-beat 开场，不是摘要介绍。这个页面现在只展示仍在 current 单镜链上的可用资产；已经退回整段装配承接的 beat，不再单独挂出来。</p>
       <div class="grid two">
         <div class="card asset-card">
-          <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s01-dock-intro-labeled-current.mp4"></video>
-          <h3>S01 到场与主位确认</h3>
+          <video controls preload="metadata" src="current/clips/p01-s01-dock-intro-labeled-current.mp4"></video>
+          <h3>S01 到场与身份确认</h3>
           <p>先确认“我已经在未来湾任务台前，而且本来就属于这里”。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s03-achao-current.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s03-achao-current.mp4"></video>
           <h3>S03 阿潮接入</h3>
           <p>阿潮把紧急感和世界趣味带进现场，也把“全队跟上、去接林澄”先讲清。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s04-team-operating-current.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s04-team-operating-current.mp4"></video>
           <h3>S04 固定小队运转</h3>
           <p>祁野先盯 `93%` 判定，闻夏盯午夜锁定；固定小队已经在工作，我是在责任中心。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s05-watchkeeper-handoff-current.mp4"></video>
           <h3>S05 守望者正式交班</h3>
-          <p>任务被正式交给主位，不再是“有人讲解世界观”，而是正式授权。</p>
+          <p>任务被正式交给你，不再是“有人讲解世界观”，而是正式授权。</p>
         </div>
         <div class="card asset-card">
-          <video controls preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s06-lin-cheng-current.mp4"></video>
+          <video controls preload="metadata" src="current/clips/p01-s06-lin-cheng-current.mp4"></video>
           <h3>S06 林澄争议切片</h3>
           <p>林澄先以具体的人出现，再叠 `93%`、午夜锁定和争议责任，不再只剩概念简报。</p>
         </div>
         <div class="card asset-card">
-          <video controls playsinline preload="metadata" src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/clips/p01-s07-route-ignite-current.mp4"></video>
+          <video controls playsinline preload="metadata" src="current/clips/p01-s07-route-ignite-current.mp4"></video>
           <h3>S07 接受任务与启航</h3>
           <p>先看见固定小队已经一起出发，再被航线牵向时间档案城，把临时观察许可和时间压力一起带进下一段。</p>
         </div>
         <div class="card asset-card">
-          <img src="https://cdn.jsdelivr.net/gh/JamesWuHK/future-bay-chapter-01-preview@main/current/shots/p01-s06-lin-cheng-current.png" alt="P01 S06 首帧" />
+          <img src="current/shots/p01-s06-lin-cheng-current.png" alt="P01 S06 首帧" />
           <h3>P01 当前重点首帧</h3>
           <p>S06 首帧继续保留在这里，方便直接核对“林澄本人是否已被真正看见”。</p>
         </div>
@@ -742,8 +739,16 @@
     </section>
 
     <section class="section" id="documents">
-      <h2>完整剧本与分镜正文</h2>
-      <p>下面三块正文现在优先从预览仓 `docs/` 最新镜像加载；如果需要回查，再退到主仓正式文稿。这样主仓 raw 临时不可达时，页面也不会继续显示旧稿或直接报错。</p>
+      <h2>完整剧本与产品正文</h2>
+      <p>下面五块正文现在优先从预览仓 `docs/` 最新镜像加载；如果需要回查，再退到主仓正式文稿。这样主仓 raw 临时不可达时，页面也不会继续显示旧稿或直接报错。</p>
+      <div class="box warn">
+        <p><span class="label">文稿兑现边界</span></p>
+        <ul>
+          <li>`已进 current 主线`：阿潮短播报、大厅礼仪辅助器边角轻提示、暗层旧录音与风名标签基础层。</li>
+          <li>`文稿保留但不算 current 完成`：`P05 / D03` 荒诞微未来插片、更多飞行器轮换句、更多风名标签音频。</li>
+          <li>`当前不进主线承诺`：会打断剧情的大型收集层、把暗层做成整段小游戏的趣味包装。</li>
+        </ul>
+      </div>
       <div class="doc-jump-grid">
         <a class="doc-jump" href="#doc-master">
           <strong>整集总脚本</strong>
@@ -756,6 +761,14 @@
         <a class="doc-jump" href="#doc-storyboard">
           <strong>分镜脚本</strong>
           <span>看 production part、beat 合同总表、演员环境对白旁白音效与镜头职责。</span>
+        </a>
+        <a class="doc-jump" href="#doc-product">
+          <strong>产品脚本</strong>
+          <span>看互动锚点、产品状态、current / 后补边界和场景交互职责。</span>
+        </a>
+        <a class="doc-jump" href="#doc-onscreen">
+          <strong>上屏文案</strong>
+          <span>看按钮、状态条、关键台词和哪些文案已进 current。</span>
         </a>
       </div>
 
@@ -819,6 +832,48 @@
             data-doc-src="docs/storyboard-script.md"
             data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
           >正在加载分镜脚本…</div>
+        </div>
+      </div>
+
+      <div class="doc-shell" id="doc-product" data-doc-key="product">
+        <div class="doc-head">
+          <h3>产品脚本</h3>
+          <p class="lead">负责 `互动锚点 / 场景交互 / 状态变量 / current 与后补边界`，避免产品稿说的和 current 实现不是一回事。</p>
+          <p><a href="docs/product-script.md">直接打开当前镜像 Markdown</a></p>
+          <div class="doc-meta">
+            <span>互动锚点</span>
+            <span>产品状态</span>
+            <span>实现边界</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="docs/product-script.md"
+            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/product/product-script.md"
+          >正在加载产品脚本…</div>
+        </div>
+      </div>
+
+      <div class="doc-shell" id="doc-onscreen" data-doc-key="onscreen">
+        <div class="doc-head">
+          <h3>上屏文案</h3>
+          <p class="lead">负责 `按钮 / 状态条 / 系统提示 / 角色关键台词`，并明确哪些文案已经进 current，哪些仍是候选层。</p>
+          <p><a href="docs/episode-onscreen-copy.md">直接打开当前镜像 Markdown</a></p>
+          <div class="doc-meta">
+            <span>按钮文案</span>
+            <span>系统提示</span>
+            <span>current 边界</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="docs/episode-onscreen-copy.md"
+            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/product/episode-onscreen-copy.md"
+          >正在加载上屏文案…</div>
         </div>
       </div>
     </section>
@@ -902,7 +957,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-public-mirror';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-2';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           const text = await resp.text();
@@ -918,7 +973,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-public-mirror';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-2';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           return await resp.json();
@@ -960,7 +1015,7 @@
         node.classList.remove('loading');
         node.classList.add('error');
         const toc = docShell.querySelector('.doc-toc');
-        if (toc) toc.innerHTML = '<p class="doc-toc-empty">目录生成失败，请直接查看文稿源文件。</p>';
+        if (toc) toc.innerHTML = '<p class="doc-toc-empty">目录生成失败，请直接查看文稿原文。</p>';
       }
     }
 

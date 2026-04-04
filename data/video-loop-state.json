@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。这轮又顺手修掉了 `P01` 两个长期残留 bug：`S04` 的旧 baked line 已退下，`S07` 已改回“先见队伍、再进航线”的 team-launch bridge，并同步重装 story spine v17 与 vertical slice master v19-current。对外完整故事入口仍看 story spine v17，vertical slice master v19 只保留作 review master；但旧的同步音轨对白还没全部重做。",
+  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。这轮除了保住 `P01` 的热修结果，还继续补做了“文稿承诺 vs current 实现”复审：`script / storyboard / product / onscreen` 现在都明确写清哪些趣味层已进 current、哪些只是后补，页面可见的 `主位 / 点头 / 扛下 / 不予开放` 这批旧词也已继续收掉。对外完整故事入口仍看 story spine v17，vertical slice master v19 只保留作 review master；但旧的同步音轨对白还没全部重做。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -26,7 +26,10 @@
     "version_log_top_summary": "SYNCED_2026-04-05",
     "shot_list_p04_s03_contract": "SYNCED_2026-04-05",
     "chapter_current_entry": "SYNCED_2026-04-05",
-    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-05"
+    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-05",
+    "product_and_onscreen_docs": "SYNCED_2026-04-05",
+    "fun_layer_status_boundary": "SYNCED_2026-04-05",
+    "page_visible_wording_cleanup": "SYNCED_2026-04-05"
   },
   "delivery_entry_status": {
     "public_current_entry": {
@@ -47,7 +50,7 @@
     },
     "dialogue_rollout": {
       "status": "DOCS_UPDATED_VIDEO_PARTIAL",
-      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `P01` 的 `S04/S07` bug 修进 current，并保留了 `P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
+      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `product / onscreen`、趣味层 current / 后补边界和页面可见旧词一起收口，并保留了 `P01 / P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
     }
   },
   "active_repair_contract": {

@@ -33,6 +33,7 @@
 | T07 | P0 | `W10-W11` | 收口 `P06 / E01` 的亮走廊 reset，并把 trimmed ingress 传导到 part、story spine、master、preview current | `production/video-loop-state.json`、`production/asset-manifest.json`、`production/current-part-repair-contracts.md`、`production/version-log.md`、预览页 current 镜像 | `DONE WITH NOTES` | `P06` 开头不再先亮一下再变暗，且 `part-06 current / story spine / master / preview` 都切到同一套 `trimmed-ingress` 口径 |
 | T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词，并继续把这批改动传导到成片链 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md`、受影响的 `part delivery` 装配 | `IN PROGRESS` | 角色说话能一耳朵分开，10 岁孩子能听懂；文稿层和成片层都不再冒出 `主位 / 样本 / 原件` 这类跳出故事的说法 |
 | T09 | P0 | `W11` | 收口 chapter-01 的对外交付入口口径，明确哪条是完整故事 current，哪条只是 review master | `production/asset-manifest.json`、`production/video-loop-state.json`、`production/version-log.md`、资产总览 HTML 页面 | `DONE WITH NOTES` | 页面顶部和状态源都能明确告诉人：`story spine v16` 是完整故事入口，`vertical slice master v18` 只是 review master |
+| T10 | P1 | `W0-W11` | 收口“文稿承诺 vs current 实现”边界，把趣味层、产品稿、上屏文案和资产总览页统一到同一套 current / 后补口径 | `story/script.md`、`story/storyboard-script.md`、`product/product-script.md`、`product/episode-onscreen-copy.md`、`production/shot-list.md`、`production/asset-manifest.json`、`production/video-loop-state.json`、资产总览 HTML 页面 | `DONE WITH NOTES` | 页面和主文档都能一眼看出：哪些趣味层已经进 current，哪些仍是后补，不再把候选资产误写成“已上线” |
 
 ## 5. 当前回合执行记录
 
@@ -268,6 +269,30 @@
   - `chapter-01-story-spine-preview-v17.mp4`
   - `chapter-01-vertical-slice-master-v19-current.mp4`
 - `IN PROGRESS`：`T08` 仍继续保持未闭环。当前修掉的是 `P01` 两个 viewer-blocking bug 和对应装配链，不代表 chapter-01 所有旧同步音轨都已经全部重做完。
+
+### 2026-04-05 / Round 26
+
+- `DONE WITH NOTES`：新增并完成 `T10`。这轮不再只盯对白本身，而是继续核对“分镜脚本 / 趣味增强 / 产品稿 / 上屏文案 / 资产总览页”有没有把候选层误写成 current 已实现。
+- `DONE WITH NOTES`：已把 [script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/script.md)、[storyboard-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md)、[product-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/product/product-script.md)、[episode-onscreen-copy.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/product/episode-onscreen-copy.md) 一起收回同一套边界：
+  - 哪些趣味层已经进 current
+  - 哪些只保留在后补候选
+  - 哪些当前不进主线承诺
+- `DONE WITH NOTES`：`shot-list.md` 已去掉指向不存在的 `story/fun-assets.md` 假引用，改回现有主文档入口，避免执行链再被无效来源带偏。
+- `DONE WITH NOTES`：资产总览页已扩展成同时展示 `整集总脚本 / 分场剧本 / 分镜脚本 / 产品脚本 / 上屏文案` 五份当前镜像，并在页面上直接写明 current / 后补边界。
+- `IN PROGRESS`：`T08` 仍未闭环。这轮修的是文稿链与页面口径，不代表所有 baked audio 都已换完。
+
+### 2026-04-05 / Round 27
+
+- `DONE WITH NOTES`：继续按 `T08 + T10` 交叉复审时，又抓到一批还挂在页面可见层的旧词：
+  - `主位`
+  - `点头`
+  - `扛下`
+  - `不予开放`
+  - `原始性风险`
+- `DONE WITH NOTES`：这轮已把这批词从 [master-episode-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md)、[script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/script.md)、[product-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/product/product-script.md)、[episode-onscreen-copy.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/product/episode-onscreen-copy.md)、[shot-list.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/shot-list.md)、[asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json) 和资产总览页一起收掉，统一改成更直接、更像人会说的话。
+- `DONE WITH NOTES`：这轮还把资产总览页的“最新组装版”卡片标签从 `文件` 收回成 `入口`，并补齐 `product-script.md / episode-onscreen-copy.md` 的公开镜像，避免页面一边说“读最新主稿”，一边实际缺正文入口。
+- `DONE WITH NOTES`：`video-loop-state.json`、`asset-manifest.json` 与 [version-log.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/version-log.md) 已同步记下这轮“页面可见口径继续收口”的状态，不再只改页面不改状态源。
+- `IN PROGRESS`：`T08` 继续保持未闭环。当前修掉的是文稿链、页面层和公开镜像层的旧口径，不代表所有旧同步音轨都已经全部换新。
 
 ## 6. 进度标记规则
 
