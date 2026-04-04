@@ -1,0 +1,46 @@
+{
+  "chapter_id": "chapter-01-time-archive-city",
+  "chapter_title": "不被预测的人生",
+  "updated_at": "2026-04-04",
+  "controller_version": "chapter01-video-loop-v1",
+  "scope_note": "公开预览镜像。当前 active lane 继续维持在 P04，不把 chapter 误判成已经彻底无债。",
+  "current_focus_part": "P04",
+  "sync_status": {
+    "asset_manifest": "SYNCED_2026-04-04",
+    "workflow_remediation_todo": "SYNCED_2026-04-04",
+    "preview_remediation_panel": "SYNCED_2026-04-04",
+    "version_log_top_summary": "PENDING_ALIGNMENT",
+    "shot_list_p04_s03_contract": "PENDING_ALIGNMENT"
+  },
+  "active_repair_contract": {
+    "part_id": "P04",
+    "repair_goal": "把等待区与父亲这一段从‘当前能看但仍有 replacement debt’推进到真正可稳定接入 P05 的正式 current 口径，并把等待区、签字笔、安抚屏、父亲保护逻辑与林澄反问收成一条单线后果。",
+    "must_answer": [
+      "P04 开头是否已经清楚交代这是大厅外侧的等待区，而不是新地点硬切？",
+      "S01-S02 是否已经把等待区、签字笔和安抚屏放进同一个空间，并让温柔压力先落地？",
+      "S03 是否已经不只是等待区锚点，而是真的把父亲不是逼，是怕更难改的逻辑压进现场？",
+      "父亲与林澄的近景是否都维持 canonical 识别，不像两个版本的人？",
+      "P04 结尾是否自然把压力推向 P05 的概率长廊，而不是像页面跳转？"
+    ],
+    "shot_status": [
+      { "shot_id": "CH01-P04-S01", "status": "REVIEW_REQUIRED", "type": "entry_bridge", "note": "重点检查它是不是已经承担了大厅外侧等待区的空间交代。" },
+      { "shot_id": "CH01-P04-S02", "status": "REVIEW_REQUIRED", "type": "pressure_build", "note": "重点检查签字笔与安抚屏是否已把系统压力落进家庭空间。" },
+      { "shot_id": "CH01-P04-S03", "status": "REVIEW_REQUIRED", "type": "pressure_chain_anchor", "note": "不能只当等待区锚点；必须让父亲不是逼，是怕更难改的逻辑在同一条等待区压力链里落地。" },
+      { "shot_id": "CH01-P04-S04", "status": "IDENTITY_REVIEW", "type": "father_close", "note": "优先检查父亲近景的人物稳定与 speaking-ready 可信度。" },
+      { "shot_id": "CH01-P04-S05", "status": "IDENTITY_REVIEW", "type": "lin_close", "note": "优先检查林澄近景的人物稳定、情绪收束和去往 P05 的承压接力。" }
+    ],
+    "pass_condition": [
+      "等待区空间关系一眼能懂",
+      "签字笔和安抚屏已经把温柔压力落进家庭空间",
+      "观众能把等待区、签字笔、安抚屏、父亲逻辑和林澄反问看成同一条后果链",
+      "父亲与林澄近景都维持 canonical 识别",
+      "P04 -> P05 的压力传递自然成立，不再依赖假视频或说明性补丁来硬撑"
+    ],
+    "fail_condition": [
+      "观众会把 P04 看成突然切到一个新页面",
+      "签字笔、安抚屏和父亲短线互相不接，看不出它们为什么会一起压到林澄身上",
+      "父亲或林澄在关键近景里明显像换了一个人",
+      "必须靠额外说明字卡才能把 P04 接进 P05"
+    ]
+  }
+}
