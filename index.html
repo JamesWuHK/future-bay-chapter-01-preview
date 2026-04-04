@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- deploy-ping: 2026-04-04T04:05:00Z -->
+<!-- deploy-ping: 2026-04-04T06:10:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -440,16 +440,17 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和三份剧本文稿，它还会直接读取主仓最新的 `asset-manifest.json` 与 `video-loop-state.json`，把 workflow 当前状态、active lane 和整改进度一起显示出来。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和三份剧本文稿，它还会直接读取主仓最新的 `asset-manifest.json`、`video-loop-state.json`、`workflow-remediation-todo.md` 和 `current-part-repair-contracts.md`，把 workflow 当前状态、active lane 和整改进度一起显示出来。</p>
       <div class="pill-row">
         <span class="pill">2026-04-04 current 状态同步</span>
         <span class="pill">workflow 状态直接读主仓控制文件</span>
-        <span class="pill">part 状态直接读 manifest</span>
+        <span class="pill">整改 To-Do 直接读主仓</span>
         <span class="pill">正文优先读取预览仓镜像</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
         <a class="action" href="#workflow">看 workflow 当前状态</a>
+        <a class="action" href="#todo-progress">看整改 To-Do</a>
         <a class="action" href="#parts">看 P01-P12 当前状态</a>
         <a class="action" href="#cast">看演员与人设</a>
         <a class="action" href="#documents">看完整剧本正文</a>
@@ -460,7 +461,7 @@
           <li>重建了 chapter-01 的 `asset-manifest.json`，不再沿用那份失真的逐资产 `todo` 列表。</li>
           <li>补出 `workflow-remediation-todo.md`，把这轮整改正式落进仓库，而不是只停留在对话里。</li>
           <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
-          <li>资产总览页现在开始直接读取主仓的 workflow current 状态，不再只靠页面自己写死说明。</li>
+          <li>资产总览页现在直接读取主仓状态源，并把整改 To-Do 和 `P04` 修复合同一起挂出来。</li>
         </ul>
       </div>
       <div class="box.warn">
@@ -516,6 +517,63 @@
         <div class="card">
           <div class="tiny">Loading</div>
           <p>正在读取 active lane repair contract…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="todo-progress">
+      <h2>整改 To-Do 与当前进度</h2>
+      <p>这里直接读取主仓 [workflow-remediation-todo.md](https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md) 和 [current-part-repair-contracts.md](https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md)。以后整改先回写主仓，这里只负责把同一份 source of truth 展开给你看。</p>
+      <div class="doc-jump-grid">
+        <a class="doc-jump" href="#doc-remediation-todo">
+          <strong>整改主清单</strong>
+          <span>看 `T01-T06` 的状态、完成标准、回合记录和下一步顺序。</span>
+        </a>
+        <a class="doc-jump" href="#doc-active-repair">
+          <strong>P04 修复合同</strong>
+          <span>看 active lane 这一轮到底修什么、怎么判通过、什么情况算失败。</span>
+        </a>
+      </div>
+
+      <div class="doc-shell" id="doc-remediation-todo" data-doc-key="remediation-todo">
+        <div class="doc-head">
+          <h3>整改主清单</h3>
+          <p class="lead">唯一正式的整改待办和进度回写入口，不再另起第二套说明。</p>
+          <p><a href="https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md" target="_blank" rel="noreferrer">直接打开主仓 Markdown</a></p>
+          <div class="doc-meta">
+            <span>To-Do</span>
+            <span>完成状态</span>
+            <span>回合记录</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+            data-doc-fallback="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          >正在加载整改主清单…</div>
+        </div>
+      </div>
+
+      <div class="doc-shell" id="doc-active-repair" data-doc-key="active-repair">
+        <div class="doc-head">
+          <h3>P04 修复合同</h3>
+          <p class="lead">当前 active lane 的单一修复合同。它只回答：现在到底在修哪一段、怎么判通过、什么情况直接算失败。</p>
+          <p><a href="https://github.com/JamesWuHK/ai-future-civilization-course-k12/blob/main/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md" target="_blank" rel="noreferrer">直接打开主仓 Markdown</a></p>
+          <div class="doc-meta">
+            <span>Active Lane</span>
+            <span>P04</span>
+            <span>修复标准</span>
+          </div>
+        </div>
+        <div class="doc-toc"><p class="doc-toc-empty">正在生成本稿目录…</p></div>
+        <div class="doc-body">
+          <div
+            class="markdown-body loading"
+            data-doc-src="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
+            data-doc-fallback="https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
+          >正在加载 P04 修复合同…</div>
         </div>
       </div>
     </section>
@@ -824,7 +882,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-preview-mirror';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-remediation-panel';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           const text = await resp.text();
