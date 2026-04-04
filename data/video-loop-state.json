@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 切到 P06。最新修复是 trim 掉 P06 / E01 开头那一拍更亮、更空的走廊 reset，让 P05 的风异常能直接推入暗层入口。同时已经明确：对外完整故事入口应看 story spine v16，vertical slice master v18 只保留作 review master；最新人话化对白已进文稿链，但还没自动传导到所有 part delivery 音轨。",
+  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。最新修复一边保留了 P06 / E01 的 trimmed-ingress 口径，一边把 P01 / P09 / P10 / P11 的人话化装配文案重渲进 current，并同步重装 story spine v16 与 vertical slice master v18-current。对外完整故事入口仍看 story spine v16，vertical slice master v18 只保留作 review master；但旧的同步音轨对白还没全部重做。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -26,7 +26,7 @@
     "version_log_top_summary": "SYNCED_2026-04-04",
     "shot_list_p04_s03_contract": "SYNCED_2026-04-04",
     "chapter_current_entry": "SYNCED_2026-04-04",
-    "dialogue_rollout_status": "DOCS_SYNCED_VIDEO_PARTIAL"
+    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-04"
   },
   "delivery_entry_status": {
     "public_current_entry": {
@@ -47,7 +47,7 @@
     },
     "dialogue_rollout": {
       "status": "DOCS_UPDATED_VIDEO_PARTIAL",
-      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链，但 part-level delivery 不会自动吃最新配音台本；`P01 / P09 / P10 / P11` 仍需继续复审传导。"
+      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `P01 / P09 / P10 / P11` 的 current delivery 重渲了一次，让装配层旧口号、系统腔和备注腔先退下去，并同步重装 `story spine v16 / master v18-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
     }
   },
   "active_repair_contract": {

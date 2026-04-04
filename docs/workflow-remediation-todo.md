@@ -153,6 +153,30 @@
 - `IN PROGRESS`：当前对白传导的主要观察位先盯 `P01 / P09 / P10 / P11`。这些段落最容易让文稿链与成片链重新长出两套口径。
 - `NEXT`：继续按 active lane 复审 `P05 -> P06 -> P07`，同时把 `T08` 从文稿层往成片层继续推进；修完一段，就同步写回 source of truth 和公开预览。
 
+### 2026-04-04 / Round 17
+
+- `DONE WITH NOTES`：已按 `T08` 继续逐场复审 `P05 -> P06 -> P07`，重点收掉了几类还像“主题代言词”的句子：
+  - `林澄` 不再总用抽象判断句解释自己，而是更直接地说“我真正会的东西被挤成一小条”这类能看见、能感觉到的话。
+  - `回响` 继续收成“先说能做什么、再说代价”的口气，不绕、不装聪明。
+  - `风声婆婆` 去掉了 `资源模型喜欢的房间`、`发亮的风线`、`不爱排队` 这类不够像真人说话的句子，改成更像她会现场说出来的话。
+- `DONE WITH NOTES`：这轮已回写 [master-episode-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md)、[script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/script.md)、[storyboard-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md)、[voice-script.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/audio/voice-script.md)。
+- `IN PROGRESS`：`T08` 仍未闭环。当前只是把 `P05-P07` 的文稿链继续收得更像人话，成片链还没有因为这些文稿变化自动换掉旧台词音轨。
+- `NEXT`：继续把 `T08` 从 `P05-P07` 往受影响更大的 `P09 / P10 / P11` 成片传导位推进；同时保持 active lane 仍先盯 `P05 -> P06 -> P07` continuity，不让对白整改和中段 continuity 各跑一套。
+
+### 2026-04-04 / Round 18
+
+- `DONE WITH NOTES`：已把 `T08` 从文稿链继续推到 `P01 / P09 / P10 / P11` 的装配链。当前已重渲：
+  - `part-01-future-bay-task-dock-delivery-v30.mp4`
+  - `part-09-evidence-freeze-team-split-delivery-v2.mp4`
+  - `part-10-free-echo-platform-delivery-v4.mp4`
+  - `part-11-midnight-choice-return-delivery-v3.mp4`
+- `DONE WITH NOTES`：`story spine v16` 与 `vertical slice master v18-current` 已重新装配，chapter 级 current 入口现在也吃到了这轮 `P01 / P09 / P10 / P11` 的人话化 overlay 传导，不再只停在单条 part 上。
+- `DONE WITH NOTES`：已补抓 `P05 -> P06`、`P06 -> P07` 的 transition contact sheet 复审。当前判断：
+  - `P05 -> P06`：`PASS WITH NOTES`，`trimmed-ingress` 后已经能读成异常风声把人推入暗层入口。
+  - `P06 -> P07`：`PASS WITH NOTES`，仍带一点 stylized handoff，但 wave motif、空间形状和旧训练痕迹还能读成同一条追索继续，不判成 viewer-blocking 跳页。
+- `IN PROGRESS`：`T08` 依然不能改成 `DONE`。这轮主要传导的是 overlay / assembly 文案；已有同步音轨的旧对白还没有全部重做，尤其不能误报成“chapter-01 所有成片台词都已经彻底换新”。
+- `NEXT`：继续保持 active lane 在 `P06` continuity 观察位，同时把 `T08` 的后续精力转到“哪些剩余段落还是 baked audio 决定口径”，只做真实闭环，不做口头完成。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -164,7 +188,7 @@
 ## 7. 下一步顺序
 
 1. 继续观察 `P06` 这次 `trimmed-ingress` recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
-2. 优先复审 `P05 -> P06 -> P07` 的中段 continuity，确认暗层入口、第四路径 reveal 和旧训练痕迹还是同一条后果链
-3. 继续把 `T08` 的最新对白整改从文稿层往成片层传导，重点盯 `P01 / P09 / P10 / P11`
+2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
+3. `T08` 的下一步不再重复做已经传导过的 `P01 / P09 / P10 / P11` overlay，而是继续找“还被 baked audio 决定口径”的剩余段落
 4. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
 5. 只有在出现新的 viewer-blocking 问题时，才考虑回退到更上游的模型重开

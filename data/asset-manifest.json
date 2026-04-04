@@ -2,7 +2,7 @@
   "project": "AI未来通识课（K12）",
   "chapter_id": "chapter-01-time-archive-city",
   "chapter_title": "不被预测的人生",
-  "version": "v1.3",
+  "version": "v1.4",
   "updated_at": "2026-04-04",
   "manifest_scope": "当前 chapter-01 资产总览页与制作判断应优先参考这份 current 状态总表。它不再维护早期按资产逐条列出的失真 todo 清单，而是直接汇总当前可用主稿、角色 gate、part 级交付与待修风险。",
   "owners": {
@@ -41,7 +41,7 @@
   },
   "current_delivery": {
     "current_focus_part": "P06",
-    "current_focus_reason": "当前 active lane 已从 P04 收口观察位切到 P06。最新修复是 trim 掉 `P06 / E01` 开头那一拍更亮、更空的走廊 reset，让 `P05` 的风异常直接推进暗层入口。对外完整故事入口现在应看 `story spine v16`；`vertical slice master v18` 继续保留作 chapter 级 review master。",
+    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。最新 chapter 级 current 已继续保留 `P06 / E01` 的 trimmed-ingress 口径，同时把 `P01 / P09 / P10 / P11` 的人话化装配文案重渲进 current，并重装 `story spine v16` 与 `vertical slice master v18-current`。`T08` 仍未闭环，因为旧的同步音轨对白还没全部重做。",
     "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v16.mp4",
     "public_current_entry_current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
     "public_current_entry_label": "完整故事 current / P01-P12",
@@ -56,10 +56,10 @@
     "story_spine": "chapter-01-story-spine-preview-v16.mp4",
     "story_spine_scope": "完整故事 current / P01-P12",
     "dialogue_rollout_status": "DOCS_UPDATED_VIDEO_PARTIAL",
-    "dialogue_rollout_note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链，但 part-level delivery 不会自动吃最新配音台本；`P01 / P09 / P10 / P11` 的成片口径仍要继续复审传导。",
+    "dialogue_rollout_note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `P01 / P09 / P10 / P11` 的 current delivery 重渲了一次，让装配层的旧口号、系统腔和备注腔先退下去，并同步重装 `story spine v16 / master v18-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍只能标成 `VIDEO_PARTIAL`。",
     "controller_updated_at": "2026-04-04",
     "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；主仓和预览仓当前都以同一套状态源展示整改进度。",
-    "source_sync_debt": "当前 current 已把 `P06 / E01` 的 bright reset 通过 trim recovery 收口到 official current。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及最新对白文稿还没全部传导到已有 part delivery 音轨这条 W7-W11 债务。",
+    "source_sync_debt": "当前 current 已把 `P06 / E01` 的 bright reset 通过 trim recovery 收口到 official current，也把 `P01 / P09 / P10 / P11` 的装配文案传导到 current 入口。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及最新对白文稿还没全部传导到已有同步音轨这条 W7-W11 债务。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
