@@ -19,7 +19,11 @@
 - `part_id`：`P04`
 - `part_name`：`等待区与父亲`
 - `当前状态`：`IN PROGRESS`
-- `当前判断`：`FAKE-VIDEO REPLACEMENT REOPENED`
+- `当前判断`：`S01-S02 REDO REQUIRED / P04->P05 BRIDGE REQUIRED`
+- `对应总控`：
+  - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
+  - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
+  - [workflow-remediation-todo.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md)
 
 ## 3. P04 修复目标
 
@@ -34,7 +38,7 @@
 
 换句话说，`P04` 现在必须把下面这条线讲顺：
 
-`等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05`
+`等待区 -> 签字笔 -> 安抚屏 -> 父亲保护逻辑 -> 林澄反问 -> P05`
 
 少一环，都不算真的修到位。
 
@@ -50,11 +54,11 @@
 
 | Shot | 当前类型 | 当前判断 | 本轮职责 | 通过标准 | 失败信号 |
 | --- | --- | --- | --- | --- | --- |
-| `CH01-P04-S01` | `entry_bridge` | `REVIEW_REQUIRED` | 交代这里是大厅外侧等待区，而不是新页面 | 空间关系一眼能懂 | 观众会问“怎么突然换地方了” |
-| `CH01-P04-S02` | `pressure_build` | `REVIEW_REQUIRED` | 先把签字笔和安抚屏拉成同一条温柔压力线 | 道具、空间、情绪落在同一处 | 这镜只剩好看，没有把压力落地 |
-| `CH01-P04-S03` | `pressure_chain_anchor` | `REVIEW_REQUIRED` | 不能只稳等待区锚点，必须让父亲的保护逻辑在同一条压力链里落地 | 观众能把等待区、签字笔、安抚屏和父亲短线看成一条因果 | 父亲的话像飘在空里，和场域压力没接上 |
-| `CH01-P04-S04` | `father_close` | `IDENTITY_REVIEW` | 父亲近景立住“为你好”的压力，不变脸 | 像同一个父亲，且 speaking-ready | 一看就像换人，或压迫感只剩表演感 |
-| `CH01-P04-S05` | `lin_close` | `IDENTITY_REVIEW` | 林澄近景立住承压与不退，把反问送进下一拍 | 像同一个林澄，且能把压力送进 `P05` | 一看就像换脸，或情绪只剩空镜感 |
+| `CH01-P04-S01` | `entry_bridge` | `REDO_REQUIRED` | 交代这里是大厅外侧等待区，而不是新页面 | 空间关系一眼能懂，而且 current 源里真有可复用 clip | 当前 current 入口仍只是静帧式走廊 hold，repo 里的 current clip 还指向缺失源视频 |
+| `CH01-P04-S02` | `pressure_build` | `REDO_REQUIRED` | 先把签字笔和安抚屏拉成同一条温柔压力线 | 道具、空间、情绪落在同一处，而且不是只靠静帧和贴字卡撑住 | 当前 part contact 里仍主要是静态签字笔 close-up，系统压力还没自然压进家庭空间 |
+| `CH01-P04-S03` | `pressure_chain_anchor` | `KEEP_WITH_NOTES` | 不能只稳等待区锚点，必须让父亲的保护逻辑在同一条压力链里落地 | 观众能把等待区、签字笔、安抚屏和父亲短线看成一条因果 | 这条 2.04s 真 clip 已可用，但运动很轻，仍要防它被误看成“又一张静帧” |
+| `CH01-P04-S04` | `father_close` | `KEEP_WITH_NOTES` | 父亲近景立住“为你好”的压力，不变脸 | 像同一个父亲，且 speaking-ready | speaking-ready 已基本成立，但压迫感还偏正面对镜解释，后续只适合 trim，不宜夸成完全通过 |
+| `CH01-P04-S05` | `lin_close` | `KEEP_WITH_NOTES` | 林澄近景立住承压与不退，把反问送进下一拍 | 像同一个林澄，且能把压力送进 `P05` | 人物稳定基本成立，但当前 cut 到 `P05` 仍太硬，单靠这镜本身还扛不起过渡 |
 
 ## 6. 当前通过条件
 
@@ -86,3 +90,34 @@
 不要反过来。
 
 如果前两步没稳，先去硬修尾部桥接，最后只会把问题藏起来，不会真正消失。
+
+## 8.5 当前复审结论
+
+- `S01`：`REDO REQUIRED`
+  - 当前仓库里的 `p04-s01-waiting-zone-ingress-current.mp4` 只是指向缺失源视频的软链接文本，不是可直接复用的真实 current clip。
+  - 从 `part-04` contact 看，这一拍目前更像同一张等待区走廊图的 hold，空间方向有了，但还不算真正过门。
+- `S02`：`REDO REQUIRED`
+  - 当前仓库里的 `p04-s02-sign-pen-soothing-screen-current.mp4` 同样没有落成可复用真 clip。
+  - 成片里现在更像签字笔和安抚文案的静态特写，还没把“温柔压力”自然压进家庭空间。
+- `S03`：`KEEP WITH NOTES`
+  - 真实 2.04 秒 clip 已存在，父亲和林澄在同一等待区空间内，因果比旧口径清楚。
+  - 但运动量很轻，仍要防它看起来像轻微动过的双人站位图。
+- `S04`：`KEEP WITH NOTES`
+  - 父亲身份稳定、开口可信，当前不是主 blocker。
+  - 后续更适合做 trim 和接法优化，不适合整镜重开。
+- `S05`：`KEEP WITH NOTES`
+  - 林澄身份稳定、情绪可接，但它一个人还扛不起通往 `P05` 的过渡。
+- `P04 -> P05`：`BRIDGE REQUIRED`
+  - 当前 `P04` 尾部的人物承压和 `P05` 开头的风格化长廊之间，仍有明显“切到新页面”的感觉。
+  - 下一步应该优先补同空间 consequence bridge 或重组开头顺序，而不是先美化 `P05`。
+
+## 9. 和页面的关系
+
+当前预览页已经开始直接读取：
+
+- [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
+- [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
+
+因此这份修复合同当前先作为 production 主文档存在。
+
+后续如果需要把更细的 `P04` 修复账展示到资产总览页，应该优先从这份文档或它的结构化镜像读取，而不是在页面里手写第二套说明。

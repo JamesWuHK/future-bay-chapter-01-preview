@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 accepted current 里的最后一条同类“照片加滤镜冒充视频”主债务真正收口。accepted spine 仍是 P01-P06、P10-P12；`P07`、`P08`、`P09` 继续以独立 `accepted_with_notes` part-level 交付存在，chapter 级完整故事预览已升级到 `story spine v14`，official accepted master 已切到 `chapter-01-vertical-slice-master-v16-current.mp4`。本轮整改已新增 `workflow-remediation-todo.md` 与重建后的 `asset-manifest.json` 作为 current 状态总表；预览页也已直接展示整改主清单与 active repair contract；当前 active lane 继续维持在 `P04`，不把 chapter 误判成已经彻底无债。 本轮已把 version-log 顶部摘要与 shot-list 的 P04/S03 current 合同收口到同一口径。",
+  "scope_note": "当前视频 loop 已完成 P04 的第一轮 clip-level 复审：S03-S05 基本可留，但 S01/S02 仍是静帧债务，P04 -> P05 也还缺 same-space consequence bridge，因此 active lane 继续维持在 P04。",
   "current_focus_part": "P04",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -39,33 +39,33 @@
     "shot_status": [
       {
         "shot_id": "CH01-P04-S01",
-        "status": "REVIEW_REQUIRED",
+        "status": "REDO_REQUIRED",
         "type": "entry_bridge",
-        "note": "重点检查它是不是已经承担了大厅外侧等待区的空间交代。"
+        "note": "current clip 仍指向缺失源视频，当前更像静帧走廊 hold，需要真实 waiting-zone entry clip。"
       },
       {
         "shot_id": "CH01-P04-S02",
-        "status": "REVIEW_REQUIRED",
+        "status": "REDO_REQUIRED",
         "type": "pressure_build",
-        "note": "重点检查签字笔与安抚屏是否已把系统压力落进家庭空间。"
+        "note": "当前仍主要是静态签字笔 close-up 和文案压力，缺真实 same-space pressure clip。"
       },
       {
         "shot_id": "CH01-P04-S03",
-        "status": "REVIEW_REQUIRED",
+        "status": "KEEP_WITH_NOTES",
         "type": "pressure_chain_anchor",
-        "note": "不能只当等待区锚点；必须让父亲“不是逼，是怕更难改”的逻辑在同一条等待区压力链里落地。"
+        "note": "真实 2.04s clip 可继续保留，但运动很轻，要防它再次被看成轻动静帧。"
       },
       {
         "shot_id": "CH01-P04-S04",
-        "status": "IDENTITY_REVIEW",
+        "status": "KEEP_WITH_NOTES",
         "type": "father_close",
-        "note": "优先检查父亲近景的人物稳定与 speaking-ready 可信度。"
+        "note": "父亲身份稳定、speaking-ready 基本成立，后续优先 trim 和接法优化。"
       },
       {
         "shot_id": "CH01-P04-S05",
-        "status": "IDENTITY_REVIEW",
+        "status": "KEEP_WITH_NOTES",
         "type": "lin_close",
-        "note": "优先检查林澄近景的人物稳定、情绪收束和去往 P05 的承压接力。"
+        "note": "林澄身份稳定、情绪可接，但单靠这镜还扛不起通往 P05 的过渡。"
       }
     ],
     "pass_condition": [
@@ -80,7 +80,13 @@
       "签字笔、安抚屏和父亲短线互相不接，看不出它们为什么会一起压到林澄身上",
       "父亲或林澄在关键近景里明显像换了一个人",
       "必须靠额外说明字卡才能把 P04 接进 P05"
-    ]
+    ],
+    "transition_status": {
+      "from": "P04",
+      "to": "P05",
+      "status": "BRIDGE_REQUIRED",
+      "note": "当前 cut 仍有明显切页感，下一步优先补 same-space consequence bridge 或重组 P05 开头顺序。"
+    }
   },
   "gate_order": [
     {
@@ -216,11 +222,11 @@
       "depends_on": "P03",
       "loop_status": "in_progress",
       "current_gate": "W8",
-      "current_judgement": "FAKE-VIDEO REPLACEMENT REOPENED",
+      "current_judgement": "S01-S02 REDO REQUIRED / P04->P05 BRIDGE REQUIRED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
       "delivery_script": "scripts/production/render_chapter01_part4_delivery.sh",
       "reopen_policy": "只有当 P05 入口 continuity、父亲或林澄的同步短线、或等待区声场在正式审片中被判定直接阻塞后续主线时，才允许重开。",
-      "next_action": "文稿层 current 合同已同步到 shot-list 与 version-log 顶部摘要；下一步继续按 S01-S05 做 KEEP / TRIM / REDO，并重点复审 P04 -> P05 的压力传递，不再把时间花在旧命名收口上。"
+      "next_action": "第一轮 clip-level 复审已完成：保留 S03-S05，优先补 S01/S02 的真实 same-space clip，再解决 P04 -> P05 的 bridge，不把时间浪费在已基本可留的父亲和林澄近景重开上。"
     },
     {
       "part_id": "P05",

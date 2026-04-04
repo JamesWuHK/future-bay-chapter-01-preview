@@ -29,7 +29,7 @@
 | T03 | P0 | `W3` | 写清 `回响` 的出镜 gate 和限制 | `visual/character-lock-pack.md`、`content/actors/actor-casting-dossier.html` | `DONE WITH NOTES` | 回响要么只保留非清晰主体存在，要么补完可见锁定后再入视频主线 |
 | T04 | P0 | `W0-W7` | 更新 prompt 基线，让语言、对白、角色说话方式与最新主稿一致 | `visual/prompt-bible.md` | `DONE` | prompt bible 明确 10-12 岁语言约束、去 AI 腔规则、角色说话区分 |
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
-| T06 | P1 | `W7` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些是桥接、哪些仍欠替换写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问` 的单线后果已经写进修复合同，并反向同步到 storyboard / shot list |
+| T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `IN PROGRESS` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
 
 ## 5. 当前回合执行记录
 
@@ -104,6 +104,13 @@
 - `DONE WITH NOTES`：`asset-manifest.json`、`video-loop-state.json` 与公开预览镜像已同步去掉这两条旧同步债务。当前 source of truth 不再卡在旧命名和旧摘要。
 - `NEXT`：下一步回到真正的 production 质量复审：继续按 `P04` 修复合同逐镜做 `KEEP / TRIM / REDO`，再复核 `P04 -> P05` 的承压衔接。
 
+### 2026-04-04 / Round 11
+
+- `IN PROGRESS`：已完成 `P04` 的第一轮 clip-level 复审。真实结论比文稿层更严格：`S01`、`S02` 还不能算真 clip 过门，当前仓库里的 current clip 实际仍指向缺失源视频，成片里更像静帧 hold。
+- `DONE WITH NOTES`：`S03-S05` 已拿到可继续留在线上的判断，其中 `S03` 可作为压力链锚点保留，`S04/S05` 的人物稳定和 speaking-ready 也基本成立。
+- `IN PROGRESS`：`P04 -> P05` 仍没有真正过门。现有 cut 还带明显“切到新页面”的跳段感，下一步要补 same-space consequence bridge 或重组入口顺序。
+- `NEXT`：重新把 `T06` 维持为 active quality lane，优先解决 `S01/S02` 的真 clip 债务，再处理 `P04 -> P05` 的 bridge。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -114,7 +121,7 @@
 
 ## 7. 下一步顺序
 
-1. 按 `P04` 修复合同继续审 `S01-S05` 的 `KEEP / TRIM / REDO`
-2. 复核 `P04 -> P05` 的承压衔接，不靠说明性补丁硬撑
-3. 把新的 clip-level judgement 继续同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页
-4. 继续维持 `回响` 的 visual gate，不让未锁主体混进 current
+1. 先补 `S01/S02` 的真实 same-space clip，不再让等待区入口和签字笔压力位停留在静帧债务上
+2. 再处理 `P04 -> P05` 的 consequence bridge，解决“切到新页面”的跳段感
+3. 保留 `S03-S05` 的可用 clip，只做 trim 和接法优化，不轻易整镜重开
+4. 持续把新的 clip-level judgement 同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页
