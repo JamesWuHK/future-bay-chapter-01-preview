@@ -19,7 +19,7 @@
 - `part_id`：`P04`
 - `part_name`：`等待区与父亲`
 - `当前状态`：`IN PROGRESS`
-- `当前判断`：`S01-S02 REDO REQUIRED / P04->P05 BRIDGE REQUIRED`
+- `当前判断`：`S01-S05 KEEP WITH NOTES / P04->P05 BRIDGE REQUIRED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
@@ -54,8 +54,8 @@
 
 | Shot | 当前类型 | 当前判断 | 本轮职责 | 通过标准 | 失败信号 |
 | --- | --- | --- | --- | --- | --- |
-| `CH01-P04-S01` | `entry_bridge` | `REDO_REQUIRED` | 交代这里是大厅外侧等待区，而不是新页面 | 空间关系一眼能懂，而且 current 源里真有可复用 clip | 当前 current 入口仍只是静帧式走廊 hold，repo 里的 current clip 还指向缺失源视频 |
-| `CH01-P04-S02` | `pressure_build` | `REDO_REQUIRED` | 先把签字笔和安抚屏拉成同一条温柔压力线 | 道具、空间、情绪落在同一处，而且不是只靠静帧和贴字卡撑住 | 当前 part contact 里仍主要是静态签字笔 close-up，系统压力还没自然压进家庭空间 |
+| `CH01-P04-S01` | `entry_bridge` | `KEEP_WITH_NOTES` | 交代这里是大厅外侧等待区，而不是新页面 | 空间关系一眼能懂，而且 current 源里已经有真实可播放 clip | 如果这镜再次退回坏链、静帧假视频，或让人误会成新地点硬切，就直接算失败 |
+| `CH01-P04-S02` | `pressure_build` | `KEEP_WITH_NOTES` | 先把签字笔和安抚屏拉成同一条温柔压力线 | 道具、空间、情绪落在同一处，而且 current 源里已经有真实可播放 clip | 如果这镜再次退回占位坏链，或只剩一张静态道具图撑场，就直接算失败 |
 | `CH01-P04-S03` | `pressure_chain_anchor` | `KEEP_WITH_NOTES` | 不能只稳等待区锚点，必须让父亲的保护逻辑在同一条压力链里落地 | 观众能把等待区、签字笔、安抚屏和父亲短线看成一条因果 | 这条 2.04s 真 clip 已可用，但运动很轻，仍要防它被误看成“又一张静帧” |
 | `CH01-P04-S04` | `father_close` | `KEEP_WITH_NOTES` | 父亲近景立住“为你好”的压力，不变脸 | 像同一个父亲，且 speaking-ready | speaking-ready 已基本成立，但压迫感还偏正面对镜解释，后续只适合 trim，不宜夸成完全通过 |
 | `CH01-P04-S05` | `lin_close` | `KEEP_WITH_NOTES` | 林澄近景立住承压与不退，把反问送进下一拍 | 像同一个林澄，且能把压力送进 `P05` | 人物稳定基本成立，但当前 cut 到 `P05` 仍太硬，单靠这镜本身还扛不起过渡 |
@@ -93,12 +93,12 @@
 
 ## 8.5 当前复审结论
 
-- `S01`：`REDO REQUIRED`
-  - 当前仓库里的 `p04-s01-waiting-zone-ingress-current.mp4` 只是指向缺失源视频的软链接文本，不是可直接复用的真实 current clip。
-  - 从 `part-04` contact 看，这一拍目前更像同一张等待区走廊图的 hold，空间方向有了，但还不算真正过门。
-- `S02`：`REDO REQUIRED`
-  - 当前仓库里的 `p04-s02-sign-pen-soothing-screen-current.mp4` 同样没有落成可复用真 clip。
-  - 成片里现在更像签字笔和安抚文案的静态特写，还没把“温柔压力”自然压进家庭空间。
+- `S01`：`KEEP WITH NOTES`
+  - `p04-s01-waiting-zone-ingress-current.mp4` 已同步成真实 current clip，不再是坏掉的软链接占位。
+  - 这一拍已经能把观众带进大厅外侧等待区；后续若再升级，优先只做 same-space motion polish，不重开它的空间职责。
+- `S02`：`KEEP WITH NOTES`
+  - `p04-s02-sign-pen-soothing-screen-current.mp4` 已同步成真实 current clip，不再停留在缺失源视频状态。
+  - 这镜已经能承担“签字笔 + 安抚屏”的温柔压力插拍，但压迫感仍偏轻，后续只适合顺着同空间压力线微调，不适合整镜推倒重来。
 - `S03`：`KEEP WITH NOTES`
   - 真实 2.04 秒 clip 已存在，父亲和林澄在同一等待区空间内，因果比旧口径清楚。
   - 但运动量很轻，仍要防它看起来像轻微动过的双人站位图。

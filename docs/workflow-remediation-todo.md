@@ -111,6 +111,13 @@
 - `IN PROGRESS`：`P04 -> P05` 仍没有真正过门。现有 cut 还带明显“切到新页面”的跳段感，下一步要补 same-space consequence bridge 或重组入口顺序。
 - `NEXT`：重新把 `T06` 维持为 active quality lane，优先解决 `S01/S02` 的真 clip 债务，再处理 `P04 -> P05` 的 bridge。
 
+### 2026-04-04 / Round 12
+
+- `DONE WITH NOTES`：主仓 `P04 / S01-S02` 的 current clip 坏链已经就地修成真实二进制文件，不再是指向缺失源视频的软链接占位。
+- `DONE WITH NOTES`：这一轮顺手把 `P04` 的 current 口径重新收紧成单点债务：`S01-S05` 继续保留 `KEEP WITH NOTES`，不再把已经可播的 same-space clip 误写成 `REDO REQUIRED`。
+- `IN PROGRESS`：`T06` 现在只剩一个真正 blocker：`P04 -> P05` 的 same-space consequence bridge 还没补上，现有 cut 仍有明显“切到新页面”的跳段感。
+- `NEXT`：下一步只做两件事：先补 `P04 -> P05` 的 bridge，再做 `S03-S05` 的 trim 和接法优化；不再回头重开已经可用的 `S01/S02`。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -121,7 +128,7 @@
 
 ## 7. 下一步顺序
 
-1. 先补 `S01/S02` 的真实 same-space clip，不再让等待区入口和签字笔压力位停留在静帧债务上
-2. 再处理 `P04 -> P05` 的 consequence bridge，解决“切到新页面”的跳段感
-3. 保留 `S03-S05` 的可用 clip，只做 trim 和接法优化，不轻易整镜重开
+1. 先补 `P04 -> P05` 的 consequence bridge，解决“切到新页面”的跳段感
+2. 再做 `S03-S05` 的 trim 和接法优化，不轻易整镜重开
+3. 保留 `S01/S02` 当前已经修成的真实 same-space clip，不再回退成占位坏链
 4. 持续把新的 clip-level judgement 同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页

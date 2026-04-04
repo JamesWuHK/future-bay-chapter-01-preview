@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已完成 P04 的第一轮 clip-level 复审：S03-S05 基本可留，但 S01/S02 仍是静帧债务，P04 -> P05 也还缺 same-space consequence bridge，因此 active lane 继续维持在 P04。",
+  "scope_note": "当前视频 loop 已把 P04 / S01-S02 的坏 current clip 修成真实可播放资产，clip 级债务已收缩成 notes；现在 active lane 继续维持在 P04，只剩 P04 -> P05 的 same-space consequence bridge 还没过门。",
   "current_focus_part": "P04",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -39,15 +39,15 @@
     "shot_status": [
       {
         "shot_id": "CH01-P04-S01",
-        "status": "REDO_REQUIRED",
+        "status": "KEEP_WITH_NOTES",
         "type": "entry_bridge",
-        "note": "current clip 仍指向缺失源视频，当前更像静帧走廊 hold，需要真实 waiting-zone entry clip。"
+        "note": "current clip 已修成真实 waiting-zone entry clip，空间职责成立；后续只做 same-space motion polish。"
       },
       {
         "shot_id": "CH01-P04-S02",
-        "status": "REDO_REQUIRED",
+        "status": "KEEP_WITH_NOTES",
         "type": "pressure_build",
-        "note": "当前仍主要是静态签字笔 close-up 和文案压力，缺真实 same-space pressure clip。"
+        "note": "current clip 已修成真实同空间压力插拍，签字笔与安抚屏可继续保留在线；后续只做轻度压迫感微调。"
       },
       {
         "shot_id": "CH01-P04-S03",
@@ -221,12 +221,12 @@
       ],
       "depends_on": "P03",
       "loop_status": "in_progress",
-      "current_gate": "W8",
-      "current_judgement": "S01-S02 REDO REQUIRED / P04->P05 BRIDGE REQUIRED",
+      "current_gate": "W10",
+      "current_judgement": "S01-S05 KEEP WITH NOTES / P04->P05 BRIDGE REQUIRED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
       "delivery_script": "scripts/production/render_chapter01_part4_delivery.sh",
       "reopen_policy": "只有当 P05 入口 continuity、父亲或林澄的同步短线、或等待区声场在正式审片中被判定直接阻塞后续主线时，才允许重开。",
-      "next_action": "第一轮 clip-level 复审已完成：保留 S03-S05，优先补 S01/S02 的真实 same-space clip，再解决 P04 -> P05 的 bridge，不把时间浪费在已基本可留的父亲和林澄近景重开上。"
+      "next_action": "P04 的 current 单镜坏链已经补成真实 clip。下一步只保留同一条 active debt：先补 P04 -> P05 的 consequence bridge，再做 S03-S05 的 trim 和接法优化，不重开已基本可留的单镜。"
     },
     {
       "part_id": "P05",
