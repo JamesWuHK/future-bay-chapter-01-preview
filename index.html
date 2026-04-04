@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- deploy-ping: 2026-04-04T03:10:00Z -->
+<!-- deploy-ping: 2026-04-04T03:40:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -82,6 +82,19 @@
       border: 1px solid #c9deeb;
       font-size: 13px;
       font-weight: 700;
+    }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid #c9deeb;
+      background: #ffffff;
+      color: #175a79;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 8px;
+      margin-bottom: 8px;
     }
     .action {
       display: inline-flex;
@@ -415,15 +428,16 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。当前角色图、P01 资源仍对齐到预览仓真实存在的 current 资产；三份 Markdown 正文现在优先读取本仓 `docs/` 最新镜像，主仓 `ai-future-civilization-course-k12` 只作为回查兜底。这样即使主仓 raw 临时 404，这个页面也能继续显示最新文稿。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和三份剧本文稿，它还会直接读取主仓最新的 `asset-manifest.json` 与 `video-loop-state.json`，把 workflow 当前状态、active lane 和整改进度一起显示出来。</p>
       <div class="pill-row">
-        <span class="pill">2026-04-04 文稿链路修正</span>
+        <span class="pill">2026-04-04 current 状态同步</span>
+        <span class="pill">workflow 状态直接读主仓控制文件</span>
         <span class="pill">正文优先读取预览仓镜像</span>
         <span class="pill">主仓只作回查兜底</span>
-        <span class="pill">每份文稿自动生成本稿目录</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
+        <a class="action" href="#workflow">看 workflow 当前状态</a>
         <a class="action" href="#cast">看演员与人设</a>
         <a class="action" href="#p01">看 P01 分镜资产</a>
         <a class="action" href="#documents">看完整剧本正文</a>
@@ -431,16 +445,17 @@
       <div class="box good">
         <p><span class="label">本轮已修正</span></p>
         <ul>
-          <li>角色区旧文件名已全部对齐到预览仓当前真实存在的 `current/characters` 资产。</li>
-          <li>P01 区不再引用失效的 `shots/...` 与 `videos/...` 路径，统一改用 `current/clips`、`current/deliveries`、`current/shots`。</li>
-          <li>三份 Markdown 正文已改为优先读取预览仓 `docs/` 最新镜像，不再被主仓 raw 的 404 拖住。</li>
+          <li>重建了 chapter-01 的 `asset-manifest.json`，不再沿用那份失真的逐资产 `todo` 列表。</li>
+          <li>补出 `workflow-remediation-todo.md`，把这轮整改正式落进仓库，而不是只停留在对话里。</li>
+          <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
         </ul>
       </div>
       <div class="box.warn">
         <p><span class="label">当前边界</span></p>
         <ul>
-          <li>顶部视频入口依然属于 `PASS WITH NOTES`，不是最终定稿。</li>
-          <li>P01 的 `S02` 当前仍并入 `part-01-current` 现有装配，没有单独拆出独立 current clip。</li>
+          <li>顶部视频入口仍属于 `PASS WITH NOTES`，不是最终定稿。</li>
+          <li>`P04` 还是 active lane，当前不能把整集误判为已经彻底无债。</li>
+          <li>`回响` 还没有 canonical 可见定妆，不能作为清晰主体进入视频主线。</li>
         </ul>
       </div>
     </section>
@@ -452,15 +467,15 @@
           <div class="tiny">Current</div>
           <p><span class="label">文件</span> chapter-01-master-current.mp4</p>
           <p><span class="label">定位</span> chapter-01 当前唯一 assembled current 主入口</p>
-          <p><span class="label">当前判断</span> 已装配可审，但仍未定稿。开头 onboarding、后半段表达清晰度、部分音画修整还要继续跟进。</p>
+          <p id="latest-status-note"><span class="label">当前判断</span> 正在读取主仓 current 状态…</p>
           <div class="meta-row" style="margin-top:14px;">
             <div class="meta-card">
               <div class="meta-kicker">更新时间</div>
-              <div class="meta-value">2026-04-03</div>
+              <div class="meta-value" id="latest-status-updated">读取中…</div>
             </div>
             <div class="meta-card">
               <div class="meta-kicker">状态</div>
-              <div class="meta-value">PASS WITH NOTES</div>
+              <div class="meta-value" id="latest-status-judgement">读取中…</div>
             </div>
             <div class="meta-card">
               <div class="meta-kicker">主入口</div>
@@ -472,6 +487,23 @@
           <video controls playsinline preload="metadata" src="current/deliveries/chapter-01-master-current.mp4"></video>
           <figcaption>顶部固定只锚当前最新 assembled current。后续继续修，也只更新这一条主入口。</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <h2>Workflow 当前状态与整改</h2>
+      <p>这里直接读取主仓 current 控制文件，不再靠页面自己猜状态。你在这块看到的，应该和主仓现在的 `manifest / loop-state / remediation todo` 保持同一口径。</p>
+      <div class="grid two" id="workflow-status-grid">
+        <div class="card">
+          <div class="tiny">Loading</div>
+          <p>正在读取 chapter-01 current 状态总表…</p>
+        </div>
+      </div>
+      <div class="grid two" id="workflow-repair-grid" style="margin-top:16px;">
+        <div class="card">
+          <div class="tiny">Loading</div>
+          <p>正在读取 active lane repair contract…</p>
+        </div>
       </div>
     </section>
 
@@ -692,8 +724,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
+    const manifestSources = [
+      'https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json',
+      'https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json'
+    ];
+
+    const loopStateSources = [
+      'https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json',
+      'https://cdn.jsdelivr.net/gh/JamesWuHK/ai-future-civilization-course-k12@main/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json'
+    ];
+
     function escapeHtml(text) {
-      return text
+      return String(text)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -770,6 +812,21 @@
       throw lastError || new Error('没有可用正文源');
     }
 
+    async function fetchJson(urls) {
+      let lastError = null;
+      for (const source of urls) {
+        try {
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260404-status-sync';
+          const resp = await fetch(bust, { cache: 'no-store' });
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          return await resp.json();
+        } catch (error) {
+          lastError = new Error(source + ' -> ' + error.message);
+        }
+      }
+      throw lastError || new Error('没有可用 JSON 源');
+    }
+
     function renderMarkdown(node, text) {
       if (window.marked && typeof window.marked.parse === 'function') {
         node.innerHTML = window.marked.parse(text, {
@@ -819,8 +876,95 @@
       });
     }
 
+    function formatList(items) {
+      if (!items || !items.length) return '<p>暂无。</p>';
+      return '<ul>' + items.map((item) => '<li>' + escapeHtml(item) + '</li>').join('') + '</ul>';
+    }
+
+    function renderWorkflowStatus(manifest, loopState) {
+      const statusGrid = document.getElementById('workflow-status-grid');
+      const repairGrid = document.getElementById('workflow-repair-grid');
+      const currentDelivery = manifest.current_delivery || {};
+      const weakGates = (manifest.workflow_gate_status || []).filter((gate) => !String(gate.status || '').startsWith('DONE'));
+      const openRisks = manifest.open_risks || [];
+      const pendingCharacters = (manifest.character_gate_status || []).filter((item) => String(item.status || '').includes('PENDING'));
+      const activeRepair = loopState.active_repair_contract || null;
+
+      document.getElementById('latest-status-updated').textContent = manifest.updated_at || currentDelivery.controller_updated_at || '未标注';
+      document.getElementById('latest-status-judgement').textContent = 'PASS WITH NOTES / active lane = ' + escapeHtml(currentDelivery.current_focus_part || '未标注');
+      document.getElementById('latest-status-note').innerHTML = '<span class="label">当前判断</span> 当前 current 总表显示：official master 仍可审，但 active lane 还在 `'+ escapeHtml(currentDelivery.current_focus_part || 'P04') +'`，不能误判成已经彻底无债。';
+
+      statusGrid.innerHTML = [
+        '<div class="card">' +
+          '<div class="tiny">Current Delivery</div>' +
+          '<h3>当前主线</h3>' +
+          '<p><span class="label">active part</span> ' + escapeHtml(currentDelivery.current_focus_part || '未标注') + '</p>' +
+          '<p><span class="label">story spine</span> ' + escapeHtml(currentDelivery.story_spine || '未标注') + '</p>' +
+          '<p><span class="label">official master</span> ' + escapeHtml((currentDelivery.official_accepted_master || '').split('/').pop() || '未标注') + '</p>' +
+          '<p><span class="label">说明</span> ' + escapeHtml(currentDelivery.current_focus_reason || '未标注') + '</p>' +
+        '</div>',
+        '<div class="card">' +
+          '<div class="tiny">Weak Gates</div>' +
+          '<h3>当前没闭环的门</h3>' +
+          (weakGates.length ? weakGates.map((gate) => '<div class="status-chip">' + escapeHtml(gate.gate_id + ' ' + gate.status) + '</div>').join('') : '<p>当前没有未闭环 gate。</p>') +
+          '<div style="margin-top:12px;">' + formatList(weakGates.map((gate) => gate.gate_name + '：' + gate.note)) + '</div>' +
+        '</div>',
+        '<div class="card">' +
+          '<div class="tiny">Open Risks</div>' +
+          '<h3>当前主要风险</h3>' +
+          formatList(openRisks) +
+        '</div>',
+        '<div class="card">' +
+          '<div class="tiny">Character Gate</div>' +
+          '<h3>当前角色 gate</h3>' +
+          (pendingCharacters.length ? formatList(pendingCharacters.map((item) => item.name + '：' + item.usage)) : '<p>当前没有待报到角色。</p>') +
+        '</div>'
+      ].join('');
+
+      if (!activeRepair) {
+        repairGrid.innerHTML = '<div class="card"><div class="tiny">Active Repair</div><p>当前没有 active repair contract。</p></div>';
+        return;
+      }
+
+      repairGrid.innerHTML = [
+        '<div class="card">' +
+          '<div class="tiny">Active Repair Contract</div>' +
+          '<h3>' + escapeHtml(activeRepair.part_id || 'P04') + ' 修复目标</h3>' +
+          '<p>' + escapeHtml(activeRepair.repair_goal || '未标注') + '</p>' +
+          '<p class="label" style="margin-top:12px;">这一轮必须回答</p>' +
+          formatList(activeRepair.must_answer || []) +
+        '</div>',
+        '<div class="card">' +
+          '<div class="tiny">Shot Review</div>' +
+          '<h3>P04 镜头修复账</h3>' +
+          formatList((activeRepair.shot_status || []).map((shot) => shot.shot_id + ' / ' + shot.status + '：' + shot.note)) +
+          '<p class="label" style="margin-top:12px;">通过条件</p>' +
+          formatList(activeRepair.pass_condition || []) +
+          '<p class="label" style="margin-top:12px;">失败条件</p>' +
+          formatList(activeRepair.fail_condition || []) +
+        '</div>'
+      ].join('');
+    }
+
+    async function loadWorkflowStatus() {
+      const statusGrid = document.getElementById('workflow-status-grid');
+      const repairGrid = document.getElementById('workflow-repair-grid');
+      try {
+        const [manifest, loopState] = await Promise.all([
+          fetchJson(manifestSources),
+          fetchJson(loopStateSources)
+        ]);
+        renderWorkflowStatus(manifest, loopState);
+      } catch (error) {
+        const errorHtml = '<div class="card asset-error"><p>workflow 状态加载失败</p><div>' + escapeHtml(error.message) + '</div></div>';
+        statusGrid.innerHTML = errorHtml;
+        repairGrid.innerHTML = errorHtml;
+      }
+    }
+
     attachAssetFallbacks();
     document.querySelectorAll('[data-doc-src]').forEach(loadDoc);
+    loadWorkflowStatus();
   </script>
 </body>
 </html>
