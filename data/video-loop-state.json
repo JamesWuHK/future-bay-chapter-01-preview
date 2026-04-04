@@ -3,8 +3,8 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 / S01-S02 的坏 current clip 修成真实可播放资产，并把 P04 -> P05 的 same-space consequence bridge 通过 assembly-level recovery 落到 current。active lane 仍暂时挂在 P04 做收口观察，但这一段已经从 blocker 收成 PASS WITH NOTES。",
-  "current_focus_part": "P04",
+  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 official current，并继续把 active lane 切到 P06。最新修复是 trim 掉 P06 / E01 开头那一拍更亮、更空的走廊 reset，让 P05 的风异常能直接推入暗层入口。",
+  "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
     "chapter_agents": "content/chapters/chapter-01-time-archive-city/agents.md",
@@ -27,65 +27,57 @@
     "shot_list_p04_s03_contract": "SYNCED_2026-04-04"
   },
   "active_repair_contract": {
-    "part_id": "P04",
-    "repair_goal": "把等待区与父亲这一段从“当前能看但仍有 replacement debt”推进到真正可稳定接入 P05 的正式 current 口径，并把等待区、签字笔、安抚屏、父亲保护逻辑与林澄反问收成一条单线后果。",
+    "part_id": "P06",
+    "repair_goal": "把暗层入口从“刚进门先亮一下、像回到另一条空走廊”的 reset 感，收口成真正承接 P05 风异常的连续入口，并把 P06 -> P07 的中段追索继续维持成同一条后果链。",
     "must_answer": [
-      "P04 开头是否已经清楚交代这是大厅外侧的等待区，而不是新地点硬切？",
-      "S01-S02 是否已经把等待区、签字笔和安抚屏放进同一个空间，并让“温柔压力”先落地？",
-      "S03 是否已经不只是等待区锚点，而是真的把父亲“不是逼，是怕更难改”的逻辑压进现场？",
-      "父亲与林澄的近景是否都维持 canonical 识别，不像两个版本的人？",
-      "P04 结尾是否自然把压力推向 P05 的概率长廊，而不是像页面跳转？"
+      "P06 开头是否已经不再先闪回更亮、更空的走廊，而是直接承接 P05 的异常风声？",
+      "E01 第一秒是否就把观众带进更暗、更贴近暗层入口的空间状态？",
+      "E02-E04 是否仍然保持“对波形 -> 找门 -> 录风声”的单线读法，没有因为入口 trim 变得更跳？",
+      "P06 尾部到 P07 的旧训练痕迹是否还像后果推进，而不是新的页面切换？"
     ],
     "shot_status": [
       {
-        "shot_id": "CH01-P04-S01",
-        "status": "KEEP_WITH_NOTES",
-        "type": "entry_bridge",
-        "note": "current clip 已修成真实 waiting-zone entry clip，空间职责成立；后续只做 same-space motion polish。"
+        "shot_id": "CH01-P06-S01",
+        "status": "TRIM_APPLIED_WITH_NOTES",
+        "type": "dark_layer_ingress",
+        "note": "已切到 trimmed ingress 版 current clip，亮走廊 reset 已被裁掉；后续只观察是否还需要再收更细的头尾帧。"
       },
       {
-        "shot_id": "CH01-P04-S02",
+        "shot_id": "CH01-P06-S02",
         "status": "KEEP_WITH_NOTES",
-        "type": "pressure_build",
-        "note": "current clip 已修成真实同空间压力插拍，签字笔与安抚屏可继续保留在线；后续只做轻度压迫感微调。"
+        "type": "waveform_puzzle",
+        "note": "波形解读职责仍然成立，当前不重开；后续只看是否需要靠 trim 再压紧节奏。"
       },
       {
-        "shot_id": "CH01-P04-S03",
+        "shot_id": "CH01-P06-S03",
         "status": "KEEP_WITH_NOTES",
-        "type": "pressure_chain_anchor",
-        "note": "真实 2.04s clip 可继续保留，但运动很轻，要防它再次被看成轻动静帧。"
+        "type": "hidden_path_reveal",
+        "note": "第四路径 reveal 仍是中段核心锚点，当前不因为入口 trim 回退。"
       },
       {
-        "shot_id": "CH01-P04-S04",
+        "shot_id": "CH01-P06-S04",
         "status": "KEEP_WITH_NOTES",
-        "type": "father_close",
-        "note": "父亲身份稳定、speaking-ready 基本成立，后续优先 trim 和接法优化。"
-      },
-      {
-        "shot_id": "CH01-P04-S05",
-        "status": "KEEP_WITH_NOTES",
-        "type": "lin_close",
-        "note": "林澄身份稳定、情绪可接，但单靠这镜还扛不起通往 P05 的过渡。"
+        "type": "wind_listener_interface",
+        "note": "风声婆婆录音接口职责仍清楚，后续只继续观察它和 P07 的 handoff。"
       }
     ],
     "pass_condition": [
-      "等待区空间关系一眼能懂",
-      "签字笔和安抚屏已经把温柔压力落进家庭空间",
-      "观众能把等待区、签字笔、安抚屏、父亲逻辑和林澄反问看成同一条后果链",
-      "父亲与林澄近景都维持 canonical 识别",
-      "P04 -> P05 的压力传递自然成立，不再依赖假视频或说明性补丁来硬撑"
+      "P05 风异常之后，观众不会再先看到一条更亮的空走廊 reset",
+      "E01 第一秒就能把人带进暗层入口",
+      "E02-E04 仍保持可读的单线追索关系",
+      "P06 -> P07 的承接继续像后果推进，而不是断页"
     ],
     "fail_condition": [
-      "观众会把 P04 看成突然切到一个新页面",
-      "签字笔、安抚屏和父亲短线互相不接，看不出它们为什么会一起压到林澄身上",
-      "父亲或林澄在关键近景里明显像换了一个人",
-      "必须靠额外说明字卡才能把 P04 接进 P05"
+      "P06 开头仍然先闪出更亮、更空的走廊状态",
+      "trim 之后反而让 E01 头部跳得更厉害",
+      "E02-E04 因为入口被裁切而变得难懂",
+      "P06 -> P07 又重新看起来像换页面"
     ],
     "transition_status": {
-      "from": "P04",
-      "to": "P05",
-      "status": "BRIDGE_APPLIED_WITH_NOTES",
-      "note": "当前 current 已插入 assembly-level consequence bridge，并把 P05 改成 D02-first recovery 入口；切页感已明显收紧，但这条 bridge 仍属于可继续被更强 native same-space clip 替换的 recovery path。"
+      "from": "P05",
+      "to": "P06",
+      "status": "TRIMMED_INGRESS_APPLIED",
+      "note": "当前 current 已把 P06 / E01 切到 trimmed ingress 版，并同步重装 part-06 v6、story spine v16 和 master v18；这次修的是 assembly/editor-level reset，不是整段重开模型。"
     }
   },
   "gate_order": [
@@ -175,7 +167,7 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v17.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v30.mp4",
       "delivery_script": "scripts/production/render_chapter01_part1_delivery.sh",
       "reopen_policy": "只有当开场 continuity、canonical 人物一致性或声音体系直接阻塞后续 parts，或用户明确要求修开场时，才允许重开。",
       "next_action": "当前已把 `A01/A02` 从 still-motion linger 改写为显式 intro cards，并把 `P01 current` 升级到 `v17`。它们现在仍不是最终真实视频开场，但已不再属于“照片加滤镜冒充视频”同类问题。后续若继续升格，优先方向应是用 same-space 真 clip 替换 intro cards，而不是再回头给静帧加轻动。"
@@ -220,13 +212,13 @@
         "CH01-P04-S05"
       ],
       "depends_on": "P03",
-      "loop_status": "in_progress",
+      "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES / P04->P05 BRIDGE APPLIED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
       "delivery_script": "scripts/production/render_chapter01_part4_delivery.sh",
       "reopen_policy": "只有当 P05 入口 continuity、父亲或林澄的同步短线、或等待区声场在正式审片中被判定直接阻塞后续主线时，才允许重开。",
-      "next_action": "P04 的 current 单镜坏链和 P04 -> P05 的承压 bridge 都已经收口到 official current。下一步不再重开已可留单镜，而是保留两条 notes：继续观察这条 assembly-level bridge 是否值得被更强 native same-space clip 替换，以及继续做 S03-S05 的 trim / 接法优化。"
+      "next_action": "P04 的 current 单镜坏链和 P04 -> P05 的承压 bridge 都已经收口到 official current。它现在回到 backlog 观察位，不再占 active lane；后续只保留 bridge 替换和 S03-S05 trim notes。"
     },
     {
       "part_id": "P05",
@@ -253,12 +245,12 @@
       ],
       "depends_on": "P05",
       "loop_status": "in_progress",
-      "current_gate": "W10",
-      "current_judgement": "READABILITY REOPENED",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v5.mp4",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS APPLIED",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
       "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
-      "reopen_policy": "当前 `delivery v5` 已把 `E01-E04` 全部推进为真实 `qingyun / viduq3` 短 clip，并完成一轮根因级音轨收口；除非 `P05 -> P06 -> P07` 的 continuity、音轨体系或暗层可读性被正式判定直接阻塞下游，否则不再因“假视频替换”重开。",
-      "next_action": "当前已脱离 `假视频替换债务` 最高优先队列，且 `viewer-blocking audio issue` 已退出 official current。后续只保留定向 notes：继续审 `P05 -> P06 -> P07` 的入口连贯性，并在必要时微调暗层声场桥与装配 trim，不把 `P06` 继续当 active part。"
+      "reopen_policy": "当前 `delivery v6-trimmed-ingress` 已把 `P05 -> P06` 的亮走廊 reset 修掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
+      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：先审 `P05 -> P06 -> P07` 的后果链是否已经顺了；如果还有问题，优先继续走 trim / bridge / reorder，而不是整段重开模型。"
     },
     {
       "part_id": "P07",

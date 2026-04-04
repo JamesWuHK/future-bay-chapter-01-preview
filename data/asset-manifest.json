@@ -40,13 +40,13 @@
     "workflow_audit": "DONE WITH NOTES"
   },
   "current_delivery": {
-    "current_focus_part": "P04",
-    "current_focus_reason": "当前 active lane 已把 P04 / S01-S02 的坏 current clip 修成真实资产，也把 P04 -> P05 的承压 bridge 收口到 official current；这一段现在属于 PASS WITH NOTES，而不是继续卡在 blocker。",
-    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v17-current.mp4",
-    "story_spine": "story spine v15",
+    "current_focus_part": "P06",
+    "current_focus_reason": "当前 active lane 已从 P04 收口观察位切到 P06。最新修复是 trim 掉 `P06 / E01` 开头那一拍更亮、更空的走廊 reset，让 `P05` 的风异常直接推进暗层入口。",
+    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v18-current.mp4",
+    "story_spine": "story spine v16",
     "controller_updated_at": "2026-04-04",
     "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；主仓和预览仓当前都以同一套状态源展示整改进度。",
-    "source_sync_debt": "当前 current 已收口到 assembly-level recovery path：P04 -> P05 bridge 已落地，P05 current 已切到 D02-first。剩余只是 notes：这条 bridge 仍是 recovery path，未来若拿到更强 native same-space clip 可替换。",
+    "source_sync_debt": "当前 current 已把 `P06 / E01` 的 bright reset 通过 trim recovery 收口到 official current。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 观察，以及 `P04 -> P05` 这条 bridge 未来仍可被更强 native same-space clip 替换。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
@@ -102,13 +102,13 @@
       "gate_id": "W7",
       "gate_name": "视频导演与 audio contract",
       "status": "DONE WITH NOTES",
-      "note": "P04 的单镜修复和 P04 -> P05 bridge recovery 都已落到 current；后续只保留 audio contract 与桥接替换观察。"
+      "note": "P04 的 bridge recovery 和 P06 的 ingress trim recovery 都已落到 current；后续只保留 audio contract 与 continuity 观察。"
     },
     {
       "gate_id": "W8",
       "gate_name": "视频生成",
       "status": "DONE WITH NOTES",
-      "note": "当前 official current 已吃到新的 part-05 D02-first recovery delivery，不再停留在“等 bridge 决策”的旧口径。"
+      "note": "当前 official current 已吃到新的 part-05 D02-first recovery delivery 和 part-06 v6 trimmed-ingress delivery，不再停留在旧入口口径。"
     },
     {
       "gate_id": "W9",
@@ -120,13 +120,13 @@
       "gate_id": "W10",
       "gate_name": "剪辑装配",
       "status": "DONE WITH NOTES",
-      "note": "P04 -> P05 的跳页感已通过 assembly-level consequence bridge 明显收紧；这一门当前已过，但仍保留更强 native bridge 的替换窗口。"
+      "note": "P04 -> P05 的跳页感已通过 consequence bridge 收紧，P05 -> P06 的亮走廊 reset 也已通过 E01 trim recovery 收紧；这一门当前已过，但仍保留更强 native bridge 的替换窗口。"
     },
     {
       "gate_id": "W11",
       "gate_name": "交付更新与归档",
       "status": "DONE WITH NOTES",
-      "note": "official master v17、story spine v15、part-05 current v3-d02first 与公开预览镜像应保持同一口径。"
+      "note": "official master v18、story spine v16、part-06 current v6-trimmed-ingress 与公开预览镜像应保持同一口径。"
     }
   ],
   "character_gate_status": [
@@ -198,7 +198,7 @@
       "status": "DONE WITH NOTES",
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
-      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v17.mp4",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v30.mp4",
       "note": "当前页面只展示仍在 current 单镜链上的 P01 资产；已经淘汰或退回整段装配承接的旧单镜，不再单独挂在资产总览页。"
     },
     {
@@ -226,7 +226,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES / P04->P05 BRIDGE APPLIED",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
-      "note": "P04 的 current 单镜坏链已经补成真实资产，P04 -> P05 的承压 bridge 也已通过 assembly-level recovery 落到 current；后续只保留 trim 与 bridge 替换观察。"
+      "note": "P04 的 current 单镜坏链已经补成真实资产，P04 -> P05 的承压 bridge 也已通过 assembly-level recovery 落到 current；它现在回到 backlog 观察位，不再占 active lane。"
     },
     {
       "part_id": "P05",
@@ -241,10 +241,10 @@
       "part_id": "P06",
       "part_name": "暗层接口",
       "status": "DONE WITH NOTES",
-      "current_gate": "W10",
-      "judgement": "READABILITY REOPENED",
-      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v5.mp4",
-      "note": "已脱离假视频替换主债务，后续只保留定向可读性复审。"
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS APPLIED",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
+      "note": "已通过 trim recovery 修掉开头更亮、更空的走廊 reset，并同步重装到 story spine v16 与 master v18；后续只保留 continuity 观察，不整段重开。"
     },
     {
       "part_id": "P07",
@@ -302,8 +302,7 @@
     }
   ],
   "open_risks": [
-    "P04 当前仍作为收口观察位保留在 active lane，不能因为这次 bridge recovery 落地，就误判整章已经彻底无 notes。",
-    "P04 / S01-S05 已经都有可用 current clip，但 S03-S05 仍需 trim 和更稳的接法，不能误报成完全无 notes。",
+    "P06 当前已切到 trimmed-ingress 口径，但 `P05 -> P06 -> P07` 仍要继续观察是否还有更细的 trim / bridge 需求。",
     "P04 -> P05 的跳页感已经通过 assembly-level consequence bridge 收紧，但这条 bridge 仍属于 recovery path，未来若拿到更强 native same-space clip 仍可替换。",
     "回响仍未完成 canonical 可见定妆，凡是需要其清晰出镜的镜头都必须先过角色 gate。"
   ],

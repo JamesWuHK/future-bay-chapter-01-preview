@@ -30,6 +30,7 @@
 | T04 | P0 | `W0-W7` | 更新 prompt 基线，让语言、对白、角色说话方式与最新主稿一致 | `visual/prompt-bible.md` | `DONE` | prompt bible 明确 10-12 岁语言约束、去 AI 腔规则、角色说话区分 |
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
 | T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
+| T07 | P0 | `W10-W11` | 收口 `P06 / E01` 的亮走廊 reset，并把 trimmed ingress 传导到 part、story spine、master、preview current | `production/video-loop-state.json`、`production/asset-manifest.json`、`production/current-part-repair-contracts.md`、`production/version-log.md`、预览页 current 镜像 | `DONE WITH NOTES` | `P06` 开头不再先亮一下再变暗，且 `part-06 current / story spine / master / preview` 都切到同一套 `trimmed-ingress` 口径 |
 
 ## 5. 当前回合执行记录
 
@@ -125,6 +126,14 @@
 - `DONE WITH NOTES`：`official master` 已升级到 `chapter-01-vertical-slice-master-v17-current.mp4`，`story spine` 已升级到 `v15`，预览页应与这套 current 口径保持一致。
 - `NEXT`：回到 chapter-level 质量复审，优先继续看 `P06` 的 `READABILITY REOPENED` 和整章 continuity notes；如果没有新 blocker，就保持当前 current 稳定，不再回退 `P04/P05`。
 
+### 2026-04-04 / Round 14
+
+- `DONE WITH NOTES`：`T07` 已把 `P06 / E01` 开头那一拍更亮、更空的走廊 reset 通过 trim recovery 收掉，新的 `part-06 current` 已切到 `part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4`。
+- `DONE WITH NOTES`：`story spine current` 已升级到 `chapter-01-story-spine-preview-v16.mp4`，`master current` 已升级到 `chapter-01-vertical-slice-master-v18-current.mp4`，这次修复没有停在单条 clip，而是已经传导到 chapter 级入口。
+- `DONE WITH NOTES`：`video-loop-state.json`、`asset-manifest.json` 与 `current-part-repair-contracts.md` 已把 active lane 从 `P04` 切到 `P06`，不再拿已经收口的 `P04` 继续冒充当前正在修的主位。
+- `DONE WITH NOTES`：顺手把 `asset-manifest.json / video-loop-state.json` 的 part delivery 指针统一按 `current/deliveries` 真实 symlink 回填，修掉了像 `P01` 还停在旧 `v17`、但 current 其实已经是 `v30` 这种状态源滞后。
+- `IN PROGRESS`：下一步继续按同一条 production loop 复审 `P05 -> P06 -> P07`。如果还有问题，优先继续走 `trim / bridge / reorder`，不整段重开。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -135,7 +144,7 @@
 
 ## 7. 下一步顺序
 
-1. 保持 `P04 -> P05` 当前这条 consequence bridge recovery 稳定在线，并继续观察它是否值得被更强 native same-space clip 替换
-2. 继续做 `S03-S05` 的 trim 和接法优化，但不回头重开已经可留的 `S01/S02`
-3. 回到 chapter-level 质量复审，优先继续看 `P06` 的 `READABILITY REOPENED` 与中段 continuity notes
-4. 持续把新的 current judgement 同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页
+1. 继续观察 `P06` 这次 `trimmed-ingress` recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+2. 优先复审 `P05 -> P06 -> P07` 的中段 continuity，确认暗层入口、第四路径 reveal 和旧训练痕迹还是同一条后果链
+3. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
+4. 只有在出现新的 viewer-blocking 问题时，才考虑回退到更上游的模型重开

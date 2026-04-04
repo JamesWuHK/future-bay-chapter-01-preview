@@ -16,99 +16,88 @@
 
 ## 2. 当前 active lane
 
-- `part_id`：`P04`
-- `part_name`：`等待区与父亲`
+- `part_id`：`P06`
+- `part_name`：`暗层接口`
 - `当前状态`：`DONE WITH NOTES`
-- `当前判断`：`PASS WITH NOTES / P04->P05 BRIDGE APPLIED`
+- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS APPLIED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
   - [workflow-remediation-todo.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md)
 
-## 3. P04 修复目标
+## 3. P06 修复目标
 
-把 `P04` 从“当前能看但仍有 replacement debt”的状态，推进到真正可稳定接入 `P05` 的正式 current 口径。
+把 `P06` 从“暗层一开门先亮一下、像又跳去另一条空走廊”的状态，收口成真正承接 `P05` 风异常的连续入口。
 
 这段现在最重要的，不是多炫，而是下面 4 件事必须同时成立：
 
-1. 观众一眼能看懂这还是 `悬浮档案大厅外侧的等待区`，不是突然切去新地点。
-2. `签字笔` 和 `家属安抚屏` 要先把“温柔包装的压力”落进家庭空间，而不是只当漂亮道具飘过去。
-3. 父亲说的“为你好”必须在同一条等待区压力链里真正落地，不能只剩一句模糊好心话。
-4. 林澄的反问要自然接住这股压力，并把整段推向 `P05` 的概率长廊，而不是像页面跳转。
+1. `P05` 结尾的异常风声一出来，观众就会顺着它进暗层，而不是先被一条更亮的空走廊打断。
+2. `E01` 第一秒就要让人知道，我们已经走进更暗、更贴近暗层的入口状态了。
+3. `E02-E04` 还得继续讲顺：`对波形 -> 找门 -> 录风声`，不能因为 trim 了开头，后面反而变乱。
+4. `P06 -> P07` 还要像后果推进，而不是“暗层刚看明白，又切到一个新页面”。
 
-换句话说，`P04` 必须把下面这条线讲顺：
+换句话说，`P06` 必须把下面这条线讲顺：
 
-`等待区 -> 签字笔 -> 安抚屏 -> 父亲保护逻辑 -> 林澄反问 -> P05`
+`P05 风异常 -> 暗层入口 -> 波形解读 -> 第四路径显现 -> 风声记录 -> P07 旧训练痕迹`
 
 ## 4. 这一轮必须回答的问题
 
-1. `S01-S02` 是否已经把大厅外侧等待区、签字笔和安抚屏放进同一个空间里？
-2. `S03` 是否已经不只是“等待区锚点”，而是真的把父亲那句“不是逼，是怕更难改”压进现场？
-3. `S04` 父亲近景是否既像本人，又把“为你好”的现实压迫感说清楚了？
-4. `S05` 林澄近景是否把反问说得足够像人，而且还能把压力继续送进 `P05`？
-5. `P04 -> P05` 是否已经不用靠补说明字卡才能看懂？
+1. `E01` 开头是否已经不再先闪回更亮、更空的走廊？
+2. trim 之后，`E01` 是否更像直接被风声带进暗层，而不是更跳？
+3. `E02-E04` 的读法是否仍然清楚，没有因为入口被裁而断气？
+4. `P06 -> P07` 是否还像追索继续推进，而不是新的页面切换？
 
 ## 5. 镜头级修复账
 
 | Shot | 当前类型 | 当前判断 | 本轮职责 | 通过标准 | 失败信号 |
 | --- | --- | --- | --- | --- | --- |
-| `CH01-P04-S01` | `entry_bridge` | `KEEP_WITH_NOTES` | 交代这里是大厅外侧等待区，而不是新页面 | 空间关系一眼能懂，而且 current 源里已经有真实可播放 clip | 如果这镜再次退回坏链、静帧假视频，或让人误会成新地点硬切，就直接算失败 |
-| `CH01-P04-S02` | `pressure_build` | `KEEP_WITH_NOTES` | 先把签字笔和安抚屏拉成同一条温柔压力线 | 道具、空间、情绪落在同一处，而且 current 源里已经有真实可播放 clip | 如果这镜再次退回占位坏链，或只剩一张静态道具图撑场，就直接算失败 |
-| `CH01-P04-S03` | `pressure_chain_anchor` | `KEEP_WITH_NOTES` | 不能只稳等待区锚点，必须让父亲的保护逻辑在同一条压力链里落地 | 观众能把等待区、签字笔、安抚屏和父亲短线看成一条因果 | 这条 2.04s 真 clip 已可用，但运动很轻，仍要防它被误看成“又一张静帧” |
-| `CH01-P04-S04` | `father_close` | `KEEP_WITH_NOTES` | 父亲近景立住“为你好”的压力，不变脸 | 像同一个父亲，且 speaking-ready | speaking-ready 已基本成立，但压迫感还偏正面对镜解释，后续只适合 trim，不宜夸成完全通过 |
-| `CH01-P04-S05` | `lin_close` | `KEEP_WITH_NOTES` | 林澄近景立住承压与不退，把反问送进下一拍 | 像同一个林澄，且能把压力送进 `P05` | 人物稳定基本成立，但真正把它接顺的是后续 bridge recovery，不是单靠这镜自己 |
+| `CH01-P06-S01` | `dark_layer_ingress` | `TRIM_APPLIED_WITH_NOTES` | 去掉开头那一拍更亮、更空的走廊 reset，让 `P05` 的风异常直接把人推入暗层 | 第一秒就进入更暗的入口状态，而且 current 源里已经换成 trimmed clip | 如果开头仍先亮一下，或 trim 后更跳，就直接算失败 |
+| `CH01-P06-S02` | `waveform_puzzle` | `KEEP_WITH_NOTES` | 把“要先听懂风声”这层动作讲清 | 观众能看懂这是追线索，不是随手切一个特效面板 | 如果 trim 完入口后，这镜突然像另起一段，就要重新复审 |
+| `CH01-P06-S03` | `hidden_path_reveal` | `KEEP_WITH_NOTES` | 把第四路径显现这件事立住，继续承担中段核心 reveal | 观众能把它看成前一拍追索的结果 | 如果它看起来像突然公布新答案，就不算过门 |
+| `CH01-P06-S04` | `wind_listener_interface` | `KEEP_WITH_NOTES` | 把“记录风声”这件事落地，并把后果继续送向 `P07` | 观众能明白这是继续追索，不是结算结束 | 如果到这里又像切出一页新模块，就要回退复审 |
 
 ## 6. 当前通过条件
 
-只要下面 5 条同时成立，`P04` 才能从这轮修复里过门：
+只要下面 4 条同时成立，`P06` 才能从这轮修复里过门：
 
-1. 等待区空间关系一眼能懂。
-2. 签字笔和安抚屏已经把“温柔压力”落进家庭空间。
-3. 观众能把 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问` 看成同一条后果链。
-4. 父亲与林澄近景都维持 `canonical` 识别。
-5. `P04 -> P05` 的压力传递自然成立，不再依赖假视频或说明性补丁硬撑。
+1. `P05` 尾部异常风声之后，不再先看到一条更亮的空走廊 reset。
+2. `E01` 第一秒就能把人带进暗层入口。
+3. `E02-E04` 仍保持 `对波形 -> 找门 -> 录风声` 的单线追索关系。
+4. `P06 -> P07` 继续像后果推进，而不是断页。
 
 ## 7. 当前失败条件
 
 只要出现下面任一条，就不算通过：
 
-1. 观众会把 `P04` 看成突然切到一个新页面。
-2. 签字笔、安抚屏和父亲短线互相不接，看不出它们为什么会一起压到林澄身上。
-3. 父亲或林澄在关键近景里明显像换了一个人。
-4. 必须靠额外说明字卡，才能把 `P04` 接进 `P05`。
-5. 修完以后虽然更热闹了，但更看不懂因果。
+1. `P06` 开头仍然先亮一下，再慢慢变暗。
+2. trim 之后，镜头头部虽然更短了，但跳切感更重。
+3. `E02-E04` 因为入口被裁而变得更难懂。
+4. `P06 -> P07` 又重新看起来像换页面。
+5. 修完以后虽然更暗了，但故事线反而更难跟。
 
 ## 8. 当前 recovery path 与复审结论
 
-- `S01`：`KEEP WITH NOTES`
-  - `p04-s01-waiting-zone-ingress-current.mp4` 已同步成真实 current clip，不再是坏掉的软链接占位。
-  - 这一拍已经能把观众带进大厅外侧等待区；后续若再升级，优先只做 same-space motion polish，不重开它的空间职责。
-- `S02`：`KEEP WITH NOTES`
-  - `p04-s02-sign-pen-soothing-screen-current.mp4` 已同步成真实 current clip，不再停留在缺失源视频状态。
-  - 这镜已经能承担“签字笔 + 安抚屏”的温柔压力插拍，后续只适合同空间微调，不适合整镜推倒重来。
-- `S03`：`KEEP WITH NOTES`
-  - 真实 2.04 秒 clip 已存在，父亲和林澄在同一等待区空间内，因果比旧口径清楚。
-  - 但运动量很轻，仍要防它看起来像轻微动过的双人站位图。
-- `S04`：`KEEP WITH NOTES`
-  - 父亲身份稳定、开口可信，当前不是主 blocker。
-  - 后续更适合做 trim 和接法优化，不适合整镜重开。
-- `S05`：`KEEP WITH NOTES`
-  - 林澄身份稳定、情绪可接。现在这镜已经不再单独硬扛去 `P05` 的任务，而是和后续 bridge recovery 一起完成承压传递。
-- `P04 -> P05`：`BRIDGE APPLIED WITH NOTES`
-  - 当前 current 已插入 `chapter-01-p04-p05-consequence-bridge-v1.mp4`，把林澄近景尾部直接溶进 `D02` 的路径比较节点。
-  - `P05 current` 已同步切到 `part-05-probability-corridor-delivery-v3-d02first.mp4`，不再让更抽象的 `D01` 充当 current 开门 beat。
-  - `D01` 仍保留为独立资产，但不再出现在当前 official part-05 入口。
-  - 这条 bridge 已经显著收紧“切到新页面”的感觉，但它仍是 `assembly-level recovery path`；如果后续拿到更强的 native same-space clip，应优先替换它。
-- `P04 current`：`PASS WITH NOTES`
-  - 当前 `P04` 已从“bridge required”收口为“bridge applied with notes”。
-  - 这次通过的是 `current continuity`，不是宣称这一段以后永远不用再升级。
+- `E01`：`TRIM APPLIED WITH NOTES`
+  - `p06-s01-dark-layer-ingress-current.mp4` 已切到 trimmed ingress 版，不再先回到更亮、更空的走廊。
+  - 这次修的是 `assembly/editor-level trim recovery`，不是整段重开模型。
+- `E02`：`KEEP WITH NOTES`
+  - 波形解读职责仍成立，当前不因为入口 trim 回退。
+- `E03`：`KEEP WITH NOTES`
+  - 第四路径 reveal 仍是这段中间最重要的锚点，继续保留在线。
+- `E04`：`KEEP WITH NOTES`
+  - 风声婆婆录音接口仍承担“把追索继续推进出去”的职责，当前先观察它和 `P07` 的接法。
+- `P05 -> P06`：`TRIMMED INGRESS APPLIED`
+  - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v16.mp4`。
+  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v18-current.mp4`。
+  - 这次通过的是“把亮走廊 reset 修掉”，不是宣称 `P06` 以后永远不用再升级。
 
 ## 9. 后续观察顺序
 
-1. 先观察这条 `assembly-level bridge` 是否已经足够稳定承担 current 入口职责。
-2. 再继续做 `S03-S05` 的 trim、接法和轻度压迫感微调。
-3. 如果未来拿到更强的 native same-space bridge，再替换当前 recovery path。
-4. 不回头重开已经可留的 `S01/S02`。
+1. 先观察这次 `trimmed ingress` 是否已经足够稳定承担 current 入口职责。
+2. 再继续审 `P05 -> P06 -> P07` 的连续性，必要时只走 `trim / bridge / reorder`。
+3. 如果未来拿到更强 native same-space ingress，再替换当前 recovery path。
+4. 不回头重开已经可留的 `E02-E04`。
 
 ## 10. 和页面的关系
 
@@ -119,4 +108,4 @@
 
 因此这份修复合同当前先作为 production 主文档存在。
 
-后续如果需要把更细的 `P04` 修复账展示到资产总览页，应该优先从这份文档或它的结构化镜像读取，而不是在页面里手写第二套说明。
+后续如果需要把更细的 `P06` 修复账展示到资产总览页，应该优先从这份文档或它的结构化镜像读取，而不是在页面里手写第二套说明。
