@@ -3,31 +3,70 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-04",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "公开预览镜像。当前 active lane 继续维持在 P04，不把 chapter 误判成已经彻底无债。",
+  "scope_note": "当前视频 loop 已把 accepted current 里的最后一条同类“照片加滤镜冒充视频”主债务真正收口。accepted spine 仍是 P01-P06、P10-P12；`P07`、`P08`、`P09` 继续以独立 `accepted_with_notes` part-level 交付存在，chapter 级完整故事预览已升级到 `story spine v14`，official accepted master 已切到 `chapter-01-vertical-slice-master-v16-current.mp4`。本轮整改已新增 `workflow-remediation-todo.md` 与重建后的 `asset-manifest.json` 作为 current 状态总表；预览页也已直接展示整改主清单与 active repair contract；当前 active lane 继续维持在 `P04`，不把 chapter 误判成已经彻底无债。 本轮已把 version-log 顶部摘要与 shot-list 的 P04/S03 current 合同收口到同一口径。",
   "current_focus_part": "P04",
+  "workflow_refs": {
+    "project_agents": "agents.md",
+    "chapter_agents": "content/chapters/chapter-01-time-archive-city/agents.md",
+    "aigc_workflow": "docs/production/aigc-production-workflow.md",
+    "episode_workflow": "docs/production/episode-production-workflow.md",
+    "shot_list": "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+    "production_lock": "content/chapters/chapter-01-time-archive-city/production/production-lock-v1.md",
+    "version_log": "content/chapters/chapter-01-time-archive-city/production/version-log.md",
+    "asset_manifest": "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+    "workflow_remediation_todo": "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md",
+    "actor_dossier": "content/actors/actor-casting-dossier.html",
+    "chapter_current_hub": "content/chapters/chapter-01-time-archive-city/current/README.md",
+    "outputs_current_hub": "outputs/current-chapter-01"
+  },
   "sync_status": {
     "asset_manifest": "SYNCED_2026-04-04",
     "workflow_remediation_todo": "SYNCED_2026-04-04",
     "preview_remediation_panel": "SYNCED_2026-04-04",
-    "version_log_top_summary": "PENDING_ALIGNMENT",
-    "shot_list_p04_s03_contract": "PENDING_ALIGNMENT"
+    "version_log_top_summary": "SYNCED_2026-04-04",
+    "shot_list_p04_s03_contract": "SYNCED_2026-04-04"
   },
   "active_repair_contract": {
     "part_id": "P04",
-    "repair_goal": "把等待区与父亲这一段从‘当前能看但仍有 replacement debt’推进到真正可稳定接入 P05 的正式 current 口径，并把等待区、签字笔、安抚屏、父亲保护逻辑与林澄反问收成一条单线后果。",
+    "repair_goal": "把等待区与父亲这一段从“当前能看但仍有 replacement debt”推进到真正可稳定接入 P05 的正式 current 口径，并把等待区、签字笔、安抚屏、父亲保护逻辑与林澄反问收成一条单线后果。",
     "must_answer": [
       "P04 开头是否已经清楚交代这是大厅外侧的等待区，而不是新地点硬切？",
-      "S01-S02 是否已经把等待区、签字笔和安抚屏放进同一个空间，并让温柔压力先落地？",
-      "S03 是否已经不只是等待区锚点，而是真的把父亲不是逼，是怕更难改的逻辑压进现场？",
+      "S01-S02 是否已经把等待区、签字笔和安抚屏放进同一个空间，并让“温柔压力”先落地？",
+      "S03 是否已经不只是等待区锚点，而是真的把父亲“不是逼，是怕更难改”的逻辑压进现场？",
       "父亲与林澄的近景是否都维持 canonical 识别，不像两个版本的人？",
       "P04 结尾是否自然把压力推向 P05 的概率长廊，而不是像页面跳转？"
     ],
     "shot_status": [
-      { "shot_id": "CH01-P04-S01", "status": "REVIEW_REQUIRED", "type": "entry_bridge", "note": "重点检查它是不是已经承担了大厅外侧等待区的空间交代。" },
-      { "shot_id": "CH01-P04-S02", "status": "REVIEW_REQUIRED", "type": "pressure_build", "note": "重点检查签字笔与安抚屏是否已把系统压力落进家庭空间。" },
-      { "shot_id": "CH01-P04-S03", "status": "REVIEW_REQUIRED", "type": "pressure_chain_anchor", "note": "不能只当等待区锚点；必须让父亲不是逼，是怕更难改的逻辑在同一条等待区压力链里落地。" },
-      { "shot_id": "CH01-P04-S04", "status": "IDENTITY_REVIEW", "type": "father_close", "note": "优先检查父亲近景的人物稳定与 speaking-ready 可信度。" },
-      { "shot_id": "CH01-P04-S05", "status": "IDENTITY_REVIEW", "type": "lin_close", "note": "优先检查林澄近景的人物稳定、情绪收束和去往 P05 的承压接力。" }
+      {
+        "shot_id": "CH01-P04-S01",
+        "status": "REVIEW_REQUIRED",
+        "type": "entry_bridge",
+        "note": "重点检查它是不是已经承担了大厅外侧等待区的空间交代。"
+      },
+      {
+        "shot_id": "CH01-P04-S02",
+        "status": "REVIEW_REQUIRED",
+        "type": "pressure_build",
+        "note": "重点检查签字笔与安抚屏是否已把系统压力落进家庭空间。"
+      },
+      {
+        "shot_id": "CH01-P04-S03",
+        "status": "REVIEW_REQUIRED",
+        "type": "pressure_chain_anchor",
+        "note": "不能只当等待区锚点；必须让父亲“不是逼，是怕更难改”的逻辑在同一条等待区压力链里落地。"
+      },
+      {
+        "shot_id": "CH01-P04-S04",
+        "status": "IDENTITY_REVIEW",
+        "type": "father_close",
+        "note": "优先检查父亲近景的人物稳定与 speaking-ready 可信度。"
+      },
+      {
+        "shot_id": "CH01-P04-S05",
+        "status": "IDENTITY_REVIEW",
+        "type": "lin_close",
+        "note": "优先检查林澄近景的人物稳定、情绪收束和去往 P05 的承压接力。"
+      }
     ],
     "pass_condition": [
       "等待区空间关系一眼能懂",
@@ -42,5 +81,274 @@
       "父亲或林澄在关键近景里明显像换了一个人",
       "必须靠额外说明字卡才能把 P04 接进 P05"
     ]
-  }
+  },
+  "gate_order": [
+    {
+      "id": "W0",
+      "name": "语义冻结"
+    },
+    {
+      "id": "W0B",
+      "name": "连续性预检"
+    },
+    {
+      "id": "W1",
+      "name": "导演室调度"
+    },
+    {
+      "id": "W2",
+      "name": "分镜执行稿与 shot contract"
+    },
+    {
+      "id": "W3",
+      "name": "参考锁定"
+    },
+    {
+      "id": "W4",
+      "name": "首帧生成"
+    },
+    {
+      "id": "W5",
+      "name": "图像质量门"
+    },
+    {
+      "id": "W6",
+      "name": "纸片剪辑验证"
+    },
+    {
+      "id": "W7",
+      "name": "视频导演与 audio contract"
+    },
+    {
+      "id": "W8",
+      "name": "视频生成"
+    },
+    {
+      "id": "W9",
+      "name": "视频质量门"
+    },
+    {
+      "id": "W10",
+      "name": "剪辑装配"
+    },
+    {
+      "id": "W11",
+      "name": "交付更新与归档"
+    }
+  ],
+  "loop_rules": [
+    "一次只允许一个 active part 进入 W4-W10 生成态；其余 parts 只做文档、参考和请求模板准备。",
+    "同一 shot 在同一 gate 默认只允许 1 条主版本和 1 条救援版本；超过这个配额必须先回上一门。",
+    "可见人物开口默认优先音视频同步生成；做不到时先回退 shot contract，不允许默认后贴长台词。",
+    "accepted_with_notes 的 part 默认进入 backlog，不抢占当前 active part，除非它直接阻塞下游 continuity 或用户明确要求重开。",
+    "current hubs 只接收 accepted assets；probe、relay 和 failed gate 结果不准回写 current。"
+  ],
+  "part_order": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12"
+  ],
+  "parts": [
+    {
+      "part_id": "P01",
+      "part_name": "未来湾任务码头",
+      "scope_shots": [
+        "CH01-P01-S01",
+        "CH01-P01-S07"
+      ],
+      "depends_on": null,
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v17.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part1_delivery.sh",
+      "reopen_policy": "只有当开场 continuity、canonical 人物一致性或声音体系直接阻塞后续 parts，或用户明确要求修开场时，才允许重开。",
+      "next_action": "当前已把 `A01/A02` 从 still-motion linger 改写为显式 intro cards，并把 `P01 current` 升级到 `v17`。它们现在仍不是最终真实视频开场，但已不再属于“照片加滤镜冒充视频”同类问题。后续若继续升格，优先方向应是用 same-space 真 clip 替换 intro cards，而不是再回头给静帧加轻动。"
+    },
+    {
+      "part_id": "P02",
+      "part_name": "紧急入港校验",
+      "scope_shots": [
+        "CH01-P02-S01",
+        "CH01-P02-S04"
+      ],
+      "depends_on": "P01",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-02-emergency-entry-check-delivery-v2.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part2_delivery.sh",
+      "reopen_policy": "当前 `delivery v2` 已把 `B01/B04` 两个正式视频插槽接回主线；除非 `P02 -> P03` 的桥接 continuity 被正式判定失配，否则不再因入口假视频债务重开。",
+      "next_action": "当前已脱离最高优先 `假视频替换债务` 队列。后续只保留定向 notes：继续审 `B01` 的压迫感、`B04` 的城市门槛桥接力度，并在必要时再补更强分辨率或更稳推进版本，不再占 active lane。"
+    },
+    {
+      "part_id": "P03",
+      "part_name": "悬浮档案大厅",
+      "scope_shots": [
+        "CH01-P03-S01",
+        "CH01-P03-S05"
+      ],
+      "depends_on": "P02",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-03-archive-hall-pressure-delivery-v4.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part3_delivery.sh",
+      "reopen_policy": "只有当 P04 waiting-zone 入口必须依赖 P03 新近景桥接，或 C02/C04 的 canonical 关系必须补稳时，才允许重开。",
+      "next_action": "当前已把历史已验证的 `Qingyun / viduq3 / start-end2video` `P03/C02` probe 提升为 accepted current clip，并重装 `delivery v4`。后续 `P03` 不再占 active lane；如果继续升格，只允许围绕 `C04` 的 voice-sync 强化或 `C03/C05` 的 UI-first 节奏 polish 做定向升级，不重开已接受的 `C01/C02` 锚点。"
+    },
+    {
+      "part_id": "P04",
+      "part_name": "等待区与父亲",
+      "scope_shots": [
+        "CH01-P04-S01",
+        "CH01-P04-S05"
+      ],
+      "depends_on": "P03",
+      "loop_status": "in_progress",
+      "current_gate": "W8",
+      "current_judgement": "FAKE-VIDEO REPLACEMENT REOPENED",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part4_delivery.sh",
+      "reopen_policy": "只有当 P05 入口 continuity、父亲或林澄的同步短线、或等待区声场在正式审片中被判定直接阻塞后续主线时，才允许重开。",
+      "next_action": "文稿层 current 合同已同步到 shot-list 与 version-log 顶部摘要；下一步继续按 S01-S05 做 KEEP / TRIM / REDO，并重点复审 P04 -> P05 的压力传递，不再把时间花在旧命名收口上。"
+    },
+    {
+      "part_id": "P05",
+      "part_name": "概率长廊",
+      "scope_shots": [
+        "CH01-P05-S01",
+        "CH01-P05-S04"
+      ],
+      "depends_on": "P04",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v2.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part5_delivery.sh",
+      "reopen_policy": "当前只允许围绕 `D02` 的真实视频替换做定向重开；除非 `P04` 入口 continuity 被正式判定失配，否则不回退 `P05` 的整体结构与 `D01/D04` 已接受口径。",
+      "next_action": "当前 `P05 -> P06 -> P07` 的 continuity bridge 已作为 assembly-level recovery path 落地到 `story spine v10`。后续 `P05` 不再占 active lane；除非用户要求把这条 bridge 提升为正式 part-level 结构，不然它只保留为已验证的装配修复记录。"
+    },
+    {
+      "part_id": "P06",
+      "part_name": "暗层接口",
+      "scope_shots": [
+        "CH01-P06-S01",
+        "CH01-P06-S04"
+      ],
+      "depends_on": "P05",
+      "loop_status": "in_progress",
+      "current_gate": "W10",
+      "current_judgement": "READABILITY REOPENED",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v5.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
+      "reopen_policy": "当前 `delivery v5` 已把 `E01-E04` 全部推进为真实 `qingyun / viduq3` 短 clip，并完成一轮根因级音轨收口；除非 `P05 -> P06 -> P07` 的 continuity、音轨体系或暗层可读性被正式判定直接阻塞下游，否则不再因“假视频替换”重开。",
+      "next_action": "当前已脱离 `假视频替换债务` 最高优先队列，且 `viewer-blocking audio issue` 已退出 official current。后续只保留定向 notes：继续审 `P05 -> P06 -> P07` 的入口连贯性，并在必要时微调暗层声场桥与装配 trim，不把 `P06` 继续当 active part。"
+    },
+    {
+      "part_id": "P07",
+      "part_name": "沉默练习室",
+      "scope_shots": [
+        "CH01-P07-S01",
+        "CH01-P07-S04"
+      ],
+      "depends_on": "P06",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v2.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part7_delivery.sh",
+      "reopen_policy": "当前不是重开，而是第一次正式进入视频 loop。除非 `E05` 被判定为失败 clip，否则不回退到“P07 只存在于纸片桥”的状态。",
+      "next_action": "当前 `P07` 已落地 opening readability lift，并继续保留在完整故事预览里。`P08/P09` 的暗部复审现已关闭，因此除非用户明确要求继续提亮这一段，否则 `P07` 不再抢占 active lane。"
+    },
+    {
+      "part_id": "P08",
+      "part_name": "规则投影室",
+      "scope_shots": [
+        "CH01-P08-S01",
+        "CH01-P08-S04"
+      ],
+      "depends_on": "P07",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v1.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part8_delivery.sh",
+      "reopen_policy": "当前不是重开，而是第一次正式进入视频 loop。`E09` 已拿到真实入口 clip，但在 `E11` 以前，不把 P08 误判成已经完成的制度段。",
+      "next_action": "contact-strip 复审确认 `P08` 主要是制度信息位，而不是同类暗部失败；当前不做 assembly-level 提亮，也不重开结构。后续只保留定向升级窗口：如要继续升格，优先替换 `E10/E12` 的 UI-first carrier，而不是把它误归为“照片滤镜冒充视频”。"
+    },
+    {
+      "part_id": "P09",
+      "part_name": "证据失效与团队分裂",
+      "scope_shots": [
+        "CH01-P09-S01",
+        "CH01-P09-S05"
+      ],
+      "depends_on": "P08",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v2.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part9_delivery.sh",
+      "reopen_policy": "当前不是重开，而是第一次正式进入视频 loop。`E13` 已拿到真实入口 clip，但在 `E15 / E17` 以前，不把 P09 误判成已经完成的后果段。",
+      "next_action": "已完成 `part-09-evidence-freeze-team-split-delivery-v2.mp4`，并把 `E15` current 切到新的 `viduq3 / start-end2video / v3` 版本。当前已转入 `accepted_with_notes`；后续只保留定向升级位，优先把 `E14 / E16` 从 UI-first 继续替换成更强正式视频位，并继续观察 `E15` 是否还需要更进一步向 `E11` 收紧。"
+    },
+    {
+      "part_id": "P10",
+      "part_name": "自由回响台辩论",
+      "scope_shots": [
+        "CH01-P10-S01",
+        "CH01-P10-S04"
+      ],
+      "depends_on": "P09",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v4.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part10_delivery.sh",
+      "reopen_policy": "当前已形成可看片的 `story-first` part-level 交付；`F01/F03` 已升级为正式 clip，`F02/F04` 也已升级为真实同空间动态 carrier。后续只做定向升级：优先收 `F02/F04` 的节奏、UI-first 可读性与 `P10 -> P11` 承压衔接，不回退成整段辩论长视频探索。",
+      "next_action": "当前已完成 `F04` 尾部收短，并把 `part-10-free-echo-platform-delivery-v4.mp4` 回写到 current。`P10 -> P11` 的页面切换风险已通过 `P11` 侧的 consequence bridge 收紧；后续 `P10` 只保留定向 notes：继续复审 `F02/F04` 的 UI-first 可读性与 crowd-pressure 细节，不再占 active lane。"
+    },
+    {
+      "part_id": "P11",
+      "part_name": "午夜前选择与回航",
+      "scope_shots": [
+        "CH01-P11-S01",
+        "CH01-P11-S04"
+      ],
+      "depends_on": "P10",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v3.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part11_delivery.sh",
+      "reopen_policy": "当前只允许围绕 `G01` 的终局确认质感，或 `G03/G04` 的更高规格重跑做定向重开；`G02-G04` 已通过当前主线视频替换，不回退终局结构，也不重做已通过的林澄陈词镜头。",
+      "next_action": "当前已插入低成本 `F04 -> G01` consequence bridge，并把 `G01` 收短后重装为 `part-11-midnight-choice-return-delivery-v3.mp4`。`P11` 已不再把高潮第二拍拍成“新页面开始”；后续只保留 `G01` 仍是静态确认层、`G02-G04` 仍是 540p 规格、以及 `G02 identity-lock v2` 是否值得升格进主交付的定向复审。"
+    },
+    {
+      "part_id": "P12",
+      "part_name": "数字导师总结",
+      "scope_shots": [
+        "CH01-P12-S01",
+        "CH01-P12-S01"
+      ],
+      "depends_on": "P11",
+      "loop_status": "accepted_with_notes",
+      "current_gate": "W11",
+      "current_judgement": "PASS WITH NOTES",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-12-digital-mentor-delivery-v4.mp4",
+      "delivery_script": "scripts/production/render_chapter01_part12_delivery.sh",
+      "reopen_policy": "只有当 chapter-01 尾段声音体系、world-in 离场逻辑，或导师存在感直接阻塞后续整集交付时，才允许重开；重开优先补极弱导师界面，不默认改回可见正脸长讲话。",
+      "next_action": "当前已完成 `part-12-digital-mentor-delivery-v4.mp4`，并把 `G05` 从“真实 opening clip + voice-led hold”收成“真实 clean retry opening clip + 明确 world-in mentor question card”。`P12` 已不再属于同类假视频主债务，后续只保留温和 polish notes，不默认重开可见正脸长讲话路线。"
+    }
+  ]
 }

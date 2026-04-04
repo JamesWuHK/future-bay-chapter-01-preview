@@ -25,11 +25,11 @@
 | ID | 优先级 | 对应 workflow | 整改项 | 主文件 | 当前状态 | 完成标准 |
 | --- | --- | --- | --- | --- | --- | --- |
 | T01 | P0 | `W11` | 重建 current 口径，补 `asset-manifest.json` 的总表说明 | `production/asset-manifest.json` | `DONE WITH NOTES` | manifest 能独立回答每个 part 当前做到哪一步 |
-| T02 | P0 | `W8-W10` | 对齐 active lane 与 current master 口径 | `production/video-loop-state.json`、`production/version-log.md` | `IN PROGRESS` | `loop-state` 和 `version-log` 顶部 current 结论不打架 |
+| T02 | P0 | `W8-W10` | 对齐 active lane 与 current master 口径 | `production/video-loop-state.json`、`production/version-log.md` | `DONE WITH NOTES` | `loop-state` 和 `version-log` 顶部 current 结论不打架 |
 | T03 | P0 | `W3` | 写清 `回响` 的出镜 gate 和限制 | `visual/character-lock-pack.md`、`content/actors/actor-casting-dossier.html` | `DONE WITH NOTES` | 回响要么只保留非清晰主体存在，要么补完可见锁定后再入视频主线 |
 | T04 | P0 | `W0-W7` | 更新 prompt 基线，让语言、对白、角色说话方式与最新主稿一致 | `visual/prompt-bible.md` | `DONE` | prompt bible 明确 10-12 岁语言约束、去 AI 腔规则、角色说话区分 |
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
-| T06 | P1 | `W7` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `IN PROGRESS` | `P04` 哪些是真视频、哪些是桥接、哪些仍欠替换写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问` 的单线后果已经写进修复合同，并反向同步到 storyboard / shot list |
+| T06 | P1 | `W7` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些是桥接、哪些仍欠替换写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问` 的单线后果已经写进修复合同，并反向同步到 storyboard / shot list |
 
 ## 5. 当前回合执行记录
 
@@ -83,6 +83,27 @@
 - `IN PROGRESS`：`T06` 的问题也已经从“哪里不一致”收缩成单点：`shot-list.md` 里 `CH01-P04-S03 / C10` 仍挂着 `p04-s03-waiting-zone-choice-current.mp4` 这层旧名，还没有正式改成“父亲保护逻辑落地”口径
 - `NEXT`：下一步只做两件事，不再扩散：先关 `shot-list.md` 的 `P04/S03` 旧命名，再关 `version-log.md` 顶部 current 摘要
 
+### 2026-04-04 / Round 8
+
+- `DONE WITH NOTES`：公开预览仓已经同步补齐 4 份 current 镜像文件：`docs/workflow-remediation-todo.md`、`docs/current-part-repair-contracts.md`、`data/asset-manifest.json`、`data/video-loop-state.json`。这一步先把“公开页面读不到私有主仓 raw”这个结构问题收成可修的单点
+- `IN PROGRESS`：`T05` 现在还剩最后一层页面路由债务。预览页 `index.html` 虽然已经有正文镜像机制，但 workflow 状态和整改区还在直连私有主仓 raw / cdn 地址；下一步必须把这些读取入口改到预览仓本地镜像
+- `IN PROGRESS`：`T02` 与 `T06` 的主债务没有变，依然是 `version-log` 顶部摘要未对齐、`shot-list` 的 `P04/S03` 旧命名未收掉
+- `NEXT`：下一步顺序继续保持单线：先把预览页 workflow 读取切到公开镜像，再关 `shot-list.md` 的 `P04/S03` 旧命名，最后关 `version-log.md` 顶部 current 摘要
+
+### 2026-04-04 / Round 9
+
+- `DONE WITH NOTES`：预览页 [index.html](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md) 对 workflow 状态、整改清单和 `P04` 修复合同的读取路线已经切到预览仓公开镜像，不再优先依赖私有主仓 raw 地址。现在这页在公开访问时，至少能稳定读到 `data/asset-manifest.json`、`data/video-loop-state.json`、`docs/workflow-remediation-todo.md` 和 `docs/current-part-repair-contracts.md`
+- `DONE WITH NOTES`：`T05` 这条页面结构债务现在已经从“公开页经常读不到 source of truth”收缩成“只要镜像按节奏同步，页面就能稳定显示最新 current”。后续观察重点不再是路由，而是镜像同步是否及时
+- `IN PROGRESS`：当前剩下的核心质量债务只剩两条：`T06` 的 `shot-list.md / P04-S03 waiting-zone-choice` 旧命名，以及 `T02` 的 `version-log.md` 顶部 current 摘要
+- `NEXT`：下一步顺序再收窄一次：先关 `shot-list.md` 的 `P04/S03` 旧命名，再关 `version-log.md` 顶部 current 摘要，然后做一次整页 current 口径复核
+
+### 2026-04-04 / Round 10
+
+- `DONE WITH NOTES`：`shot-list.md` 已把 `CH01-P04-S03 / C10` 从旧的“先走向谁”选择口径，收口成“父亲保护逻辑在等待区压力链里落地”；`waiting-zone-choice` 不再作为 current 合同描述残留在主 shot list。
+- `DONE WITH NOTES`：`version-log.md` 顶部 current 摘要已补齐 `active lane = P04`、`official master = chapter-01-vertical-slice-master-v16-current.mp4`、`story spine = v14`，`T02` 从状态不一致收成已对齐。
+- `DONE WITH NOTES`：`asset-manifest.json`、`video-loop-state.json` 与公开预览镜像已同步去掉这两条旧同步债务。当前 source of truth 不再卡在旧命名和旧摘要。
+- `NEXT`：下一步回到真正的 production 质量复审：继续按 `P04` 修复合同逐镜做 `KEEP / TRIM / REDO`，再复核 `P04 -> P05` 的承压衔接。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -93,7 +114,7 @@
 
 ## 7. 下一步顺序
 
-1. 继续按新合同复审 `T06 / P04`
-2. 完成 `T02` 的 version log 对齐
-3. 再做一次 current 口径复核
-4. 最后把新结论继续同步到页面与主状态源
+1. 按 `P04` 修复合同继续审 `S01-S05` 的 `KEEP / TRIM / REDO`
+2. 复核 `P04 -> P05` 的承压衔接，不靠说明性补丁硬撑
+3. 把新的 clip-level judgement 继续同步到 `video-loop-state.json`、`asset-manifest.json` 和预览页
+4. 继续维持 `回响` 的 visual gate，不让未锁主体混进 current

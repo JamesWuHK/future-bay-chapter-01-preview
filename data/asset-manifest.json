@@ -5,7 +5,33 @@
   "version": "v1.2",
   "updated_at": "2026-04-04",
   "manifest_scope": "当前 chapter-01 资产总览页与制作判断应优先参考这份 current 状态总表。它不再维护早期按资产逐条列出的失真 todo 清单，而是直接汇总当前可用主稿、角色 gate、part 级交付与待修风险。",
-  "source_of_truth_note": "这是为预览页提供的公开镜像。正式 source of truth 仍在主仓 main。",
+  "owners": {
+    "content": "project-team",
+    "visual": "project-team",
+    "audio": "project-team",
+    "frontend": "project-team"
+  },
+  "global_rules": {
+    "experience_mode": "first_person_immersive",
+    "target_age": "10-12",
+    "aigc_first": true,
+    "allow_teacher_interrupt": false
+  },
+  "source_of_truth": {
+    "chapter_agents": "content/chapters/chapter-01-time-archive-city/agents.md",
+    "master_script": "content/chapters/chapter-01-time-archive-city/story/master-episode-script.md",
+    "scene_script": "content/chapters/chapter-01-time-archive-city/story/script.md",
+    "storyboard_script": "content/chapters/chapter-01-time-archive-city/story/storyboard-script.md",
+    "shot_list": "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+    "video_loop_state": "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+    "current_part_repair_contracts": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
+    "version_log": "content/chapters/chapter-01-time-archive-city/production/version-log.md",
+    "workflow_remediation_todo": "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md",
+    "character_lock_pack": "content/chapters/chapter-01-time-archive-city/visual/character-lock-pack.md",
+    "prompt_bible": "content/chapters/chapter-01-time-archive-city/visual/prompt-bible.md",
+    "actor_dossier": "content/actors/actor-casting-dossier.html",
+    "preview_page": "https://jameswuhk.github.io/future-bay-chapter-01-preview/"
+  },
   "story_chain_status": {
     "master_script": "DONE",
     "scene_script": "DONE",
@@ -19,43 +45,270 @@
     "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v16-current.mp4",
     "story_spine": "story spine v14",
     "controller_updated_at": "2026-04-04",
-    "preview_sync": "预览仓已同步 current 状态镜像；页面应优先读公开镜像，不再依赖私有主仓 raw 地址。",
-    "source_sync_debt": "storyboard-script.md 已同步到当前 P04 修复合同，但 shot-list.md 的 CH01-P04-S03 仍保留 waiting-zone-choice 旧命名；version-log.md 顶部 current 摘要也还没补到 P04 active lane / master v16 / story spine v14 这一套口径。"
+    "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；主仓和预览仓当前都以同一套状态源展示整改进度。",
+    "source_sync_debt": "文稿层 current 口径已对齐到 storyboard-script.md、shot-list.md、version-log.md、asset-manifest.json 和 video-loop-state.json。当前剩余工作不再是改旧命名，而是继续按 P04 修复合同做 clip 级 KEEP / TRIM / REDO 与 P04 -> P05 continuity 复审。",
+    "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
-    { "gate_id": "W0", "gate_name": "语义冻结", "status": "DONE", "note": "主稿、分场、分镜、shot list 已形成稳定对应链。" },
-    { "gate_id": "W0B", "gate_name": "连续性预检", "status": "DONE WITH NOTES", "note": "文稿主链已较完整，但最新人话化修订仍需持续反向同步到下游 prompt 与声音约束。" },
-    { "gate_id": "W1", "gate_name": "导演室调度", "status": "DONE", "note": "storyboard 与 shot list 已承担清晰的戏剧职责与 beat 拆分。" },
-    { "gate_id": "W2", "gate_name": "分镜执行稿与 shot contract", "status": "DONE WITH NOTES", "note": "文稿层主链已完整，但 P04/S03 的 current 合同虽然已经回写 storyboard 与 repair contract，shot-list 里的 waiting-zone-choice 旧命名仍待同步收口。" },
-    { "gate_id": "W3", "gate_name": "参考锁定", "status": "IN PROGRESS", "note": "主角团大体已锁，但回响仍是 PENDING_VISUAL。" },
-    { "gate_id": "W4", "gate_name": "首帧生成", "status": "DONE WITH NOTES", "note": "已具备 part 级推进基础，但 current 首帧映射还需要继续收口。" },
-    { "gate_id": "W5", "gate_name": "图像质量门", "status": "DONE WITH NOTES", "note": "规则明确，结果记录仍需继续统一。" },
-    { "gate_id": "W6", "gate_name": "纸片剪辑验证", "status": "DONE WITH NOTES", "note": "vertical slice 思路已建立，但 paper cut 结论还需要更稳定回写到 shot-level 状态。" },
-    { "gate_id": "W7", "gate_name": "视频导演与 audio contract", "status": "IN PROGRESS", "note": "active lane 仍需围绕 P04 继续把画面职责与声音合同写死。" },
-    { "gate_id": "W8", "gate_name": "视频生成", "status": "DONE WITH NOTES", "note": "已有 current master，但 active lane 仍有 part-level replacement debt。" },
-    { "gate_id": "W9", "gate_name": "视频质量门", "status": "DONE WITH NOTES", "note": "QC 意识已建立，但 part 级结论仍要和 current 交付继续绑定。" },
-    { "gate_id": "W10", "gate_name": "剪辑装配", "status": "DONE WITH NOTES", "note": "已有可观看 master，但尚不能宣称完全无替换债务。" },
-    { "gate_id": "W11", "gate_name": "交付更新与归档", "status": "IN PROGRESS", "note": "manifest、loop-state、预览页 part 状态与整改正文已绑到 current 源；version-log 顶部 current 摘要与 P04/S03 的 shot-list 旧命名仍待最终对齐。" }
+    {
+      "gate_id": "W0",
+      "gate_name": "语义冻结",
+      "status": "DONE",
+      "note": "主稿、分场、分镜、shot list 已形成稳定对应链。"
+    },
+    {
+      "gate_id": "W0B",
+      "gate_name": "连续性预检",
+      "status": "DONE WITH NOTES",
+      "note": "文稿主链已较完整，但最新人话化修订仍需持续反向同步到下游 prompt 与声音约束。"
+    },
+    {
+      "gate_id": "W1",
+      "gate_name": "导演室调度",
+      "status": "DONE",
+      "note": "storyboard 与 shot list 已承担清晰的戏剧职责与 beat 拆分。"
+    },
+    {
+      "gate_id": "W2",
+      "gate_name": "分镜执行稿与 shot contract",
+      "status": "DONE WITH NOTES",
+      "note": "文稿层主链已完整，P04/S03 的 current 合同已回写 storyboard、repair contract 和 shot-list。"
+    },
+    {
+      "gate_id": "W3",
+      "gate_name": "参考锁定",
+      "status": "IN PROGRESS",
+      "note": "主角团大体已锁，但回响仍是 PENDING_VISUAL。"
+    },
+    {
+      "gate_id": "W4",
+      "gate_name": "首帧生成",
+      "status": "DONE WITH NOTES",
+      "note": "已具备 part 级推进基础，但 current 首帧映射还需要继续收口。"
+    },
+    {
+      "gate_id": "W5",
+      "gate_name": "图像质量门",
+      "status": "DONE WITH NOTES",
+      "note": "规则明确，结果记录仍需继续统一。"
+    },
+    {
+      "gate_id": "W6",
+      "gate_name": "纸片剪辑验证",
+      "status": "DONE WITH NOTES",
+      "note": "vertical slice 思路已建立，但 paper cut 结论还需要更稳定回写到 shot-level 状态。"
+    },
+    {
+      "gate_id": "W7",
+      "gate_name": "视频导演与 audio contract",
+      "status": "IN PROGRESS",
+      "note": "active lane 仍需围绕 P04 继续把画面职责与声音合同写死。"
+    },
+    {
+      "gate_id": "W8",
+      "gate_name": "视频生成",
+      "status": "DONE WITH NOTES",
+      "note": "已有 current master，但 active lane 仍有 part-level replacement debt。"
+    },
+    {
+      "gate_id": "W9",
+      "gate_name": "视频质量门",
+      "status": "DONE WITH NOTES",
+      "note": "QC 意识已建立，但 part 级结论仍要和 current 交付继续绑定。"
+    },
+    {
+      "gate_id": "W10",
+      "gate_name": "剪辑装配",
+      "status": "DONE WITH NOTES",
+      "note": "已有可观看 master，但尚不能宣称完全无替换债务。"
+    },
+    {
+      "gate_id": "W11",
+      "gate_name": "交付更新与归档",
+      "status": "IN PROGRESS",
+      "note": "公开预览镜像、页面读取路线、version-log 顶部摘要和 shot-list current 合同已经对齐；当前仍需继续按 active lane 把 clip 级判断同步回 current。"
+    }
+  ],
+  "character_gate_status": [
+    {
+      "asset_id": "C-00",
+      "name": "玩家主位",
+      "status": "LOCKED",
+      "usage": "可作为第一人称身份锚点与少量可视化主体。"
+    },
+    {
+      "asset_id": "C-01",
+      "name": "档案守望者",
+      "status": "LOCKED",
+      "usage": "可进入正式视频主线。"
+    },
+    {
+      "asset_id": "C-02",
+      "name": "林澄",
+      "status": "LOCKED",
+      "usage": "儿童近景、情绪反应和 speaking shot 默认从 canonical actor photo 出发。"
+    },
+    {
+      "asset_id": "C-03",
+      "name": "序列员 07",
+      "status": "LOCKED",
+      "usage": "制度对手位已锁。"
+    },
+    {
+      "asset_id": "C-04",
+      "name": "祁野",
+      "status": "LOCKED",
+      "usage": "固定团队理性拆解位已锁。"
+    },
+    {
+      "asset_id": "C-05",
+      "name": "闻夏",
+      "status": "LOCKED",
+      "usage": "固定团队协同与公共表达位已锁。"
+    },
+    {
+      "asset_id": "C-06",
+      "name": "林澄父亲",
+      "status": "LOCKED",
+      "usage": "现实关系压力角色已锁。"
+    },
+    {
+      "asset_id": "C-07",
+      "name": "风声婆婆",
+      "status": "SUPPORT",
+      "usage": "已完成可复用定妆，但尚未进入当前主交付视频主线。"
+    },
+    {
+      "asset_id": "R-02",
+      "name": "阿潮",
+      "status": "SUPPORT",
+      "usage": "可见转场伙伴已锁。"
+    },
+    {
+      "asset_id": "R-03",
+      "name": "回响",
+      "status": "PENDING_VISUAL",
+      "usage": "当前只允许以声音、UI、系统层、远距不可辨识轮廓或光迹存在，不能作为清晰可辨主体进入视频主线。"
+    }
   ],
   "part_statuses": [
-    { "part_id": "P01", "part_name": "未来湾任务码头", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v17.mp4", "note": "当前页面只展示仍在 current 单镜链上的 P01 资产；已经淘汰或退回整段装配承接的旧单镜，不再单独挂在资产总览页。" },
-    { "part_id": "P02", "part_name": "紧急入港校验", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-02-emergency-entry-check-delivery-v2.mp4", "note": "已脱离假视频替换最高优先队列。" },
-    { "part_id": "P03", "part_name": "悬浮档案大厅", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-03-archive-hall-pressure-delivery-v4.mp4", "note": "已把历史真 clip 提升为 accepted current。" },
-    { "part_id": "P04", "part_name": "等待区与父亲", "status": "IN PROGRESS", "current_gate": "W8", "judgement": "FAKE-VIDEO REPLACEMENT REOPENED", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4", "note": "当前 active lane。后续只做定向修复，不回到 4 镜压缩版本。" },
-    { "part_id": "P05", "part_name": "概率长廊", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v2.mp4", "note": "已形成 continuity bridge，当前不占 active lane。" },
-    { "part_id": "P06", "part_name": "暗层接口", "status": "DONE WITH NOTES", "current_gate": "W10", "judgement": "READABILITY REOPENED", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v5.mp4", "note": "已脱离假视频替换主债务，后续只保留定向可读性复审。" },
-    { "part_id": "P07", "part_name": "沉默练习室", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v2.mp4", "note": "已进入完整故事预览，当前不再抢占 active lane。" },
-    { "part_id": "P08", "part_name": "规则投影室", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v1.mp4", "note": "主要是制度信息位，不应误判成同类暗部失败。" },
-    { "part_id": "P09", "part_name": "证据失效与团队分裂", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v2.mp4", "note": "已转入 accepted_with_notes，后续只保留定向升级位。" },
-    { "part_id": "P10", "part_name": "自由回响台辩论", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v4.mp4", "note": "P10 -> P11 页面切换风险已通过后续 consequence bridge 收紧。" },
-    { "part_id": "P11", "part_name": "午夜前选择与回航", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v3.mp4", "note": "当前只保留终局确认质感和规格升级的定向复审。" },
-    { "part_id": "P12", "part_name": "数字导师总结", "status": "DONE WITH NOTES", "current_gate": "W11", "judgement": "PASS WITH NOTES", "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-12-digital-mentor-delivery-v4.mp4", "note": "已不再属于同类假视频主债务。" }
+    {
+      "part_id": "P01",
+      "part_name": "未来湾任务码头",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-01-future-bay-task-dock-delivery-v17.mp4",
+      "note": "当前页面只展示仍在 current 单镜链上的 P01 资产；已经淘汰或退回整段装配承接的旧单镜，不再单独挂在资产总览页。"
+    },
+    {
+      "part_id": "P02",
+      "part_name": "紧急入港校验",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-02-emergency-entry-check-delivery-v2.mp4",
+      "note": "已脱离假视频替换最高优先队列。"
+    },
+    {
+      "part_id": "P03",
+      "part_name": "悬浮档案大厅",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-03-archive-hall-pressure-delivery-v4.mp4",
+      "note": "已把历史真 clip 提升为 accepted current。"
+    },
+    {
+      "part_id": "P04",
+      "part_name": "等待区与父亲",
+      "status": "IN PROGRESS",
+      "current_gate": "W8",
+      "judgement": "FAKE-VIDEO REPLACEMENT REOPENED",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-04-waiting-zone-and-father-delivery-v1.mp4",
+      "note": "当前 active lane。后续只做定向修复，不回到 4 镜压缩版本。"
+    },
+    {
+      "part_id": "P05",
+      "part_name": "概率长廊",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v2.mp4",
+      "note": "已形成 continuity bridge，当前不占 active lane。"
+    },
+    {
+      "part_id": "P06",
+      "part_name": "暗层接口",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W10",
+      "judgement": "READABILITY REOPENED",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v5.mp4",
+      "note": "已脱离假视频替换主债务，后续只保留定向可读性复审。"
+    },
+    {
+      "part_id": "P07",
+      "part_name": "沉默练习室",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v2.mp4",
+      "note": "已进入完整故事预览，当前不再抢占 active lane。"
+    },
+    {
+      "part_id": "P08",
+      "part_name": "规则投影室",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v1.mp4",
+      "note": "主要是制度信息位，不应误判成同类暗部失败。"
+    },
+    {
+      "part_id": "P09",
+      "part_name": "证据失效与团队分裂",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v2.mp4",
+      "note": "已转入 accepted_with_notes，后续只保留定向升级位。"
+    },
+    {
+      "part_id": "P10",
+      "part_name": "自由回响台辩论",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v4.mp4",
+      "note": "P10 -> P11 页面切换风险已通过后续 consequence bridge 收紧。"
+    },
+    {
+      "part_id": "P11",
+      "part_name": "午夜前选择与回航",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v3.mp4",
+      "note": "当前只保留终局确认质感和规格升级的定向复审。"
+    },
+    {
+      "part_id": "P12",
+      "part_name": "数字导师总结",
+      "status": "DONE WITH NOTES",
+      "current_gate": "W11",
+      "judgement": "PASS WITH NOTES",
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-12-digital-mentor-delivery-v4.mp4",
+      "note": "已不再属于同类假视频主债务。"
+    }
   ],
   "open_risks": [
     "P04 仍是 active lane，当前不能把整集口径误判为完全无债。",
     "回响仍未完成 canonical 可见定妆，凡是需要其清晰出镜的镜头都必须先过角色 gate。",
-    "shot-list.md 里的 CH01-P04-S03 仍保留 waiting-zone-choice 旧命名，会把 current 修复合同拉回旧口径。",
-    "version-log.md 顶部 current 口径仍需继续与 video-loop-state 完全对齐。",
-    "资产总览页已开始直读 current 状态源与整改正文；后续仍要坚持先回写主仓，再让页面自动跟上，避免重新长出第二套手写状态。"
-  ]
+    "P04 的下一步已经回到 clip 级 KEEP / TRIM / REDO，尤其要继续审 S01-S05 的空间连续性、人物一致性和对白落点。",
+    "P04 -> P05 的承压衔接还要继续按 repair contract 复审，不能因为文稿已对齐就提前宣布无债。"
+  ],
+  "legacy_note": {
+    "status": "SUPERSEDED",
+    "message": "旧版按资产逐条列出的 todo manifest 已停止维护，因为它已经不能反映 chapter-01 的真实 current 状态。以后如果需要追历史细粒度资产，请回看 prototype-assets-checklist.md、shot-list.md 和 version-log.md；当前是否可用，以本文件和 video-loop-state.json 为准。"
+  }
 }
