@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- deploy-ping: 2026-04-04T03:40:00Z -->
+<!-- deploy-ping: 2026-04-04T04:05:00Z -->
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -174,6 +174,18 @@
       margin-top: 8px;
       font-size: 13px;
       color: var(--muted);
+    }
+    .part-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .part-card .part-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      flex-wrap: wrap;
     }
     .doc-jump-grid {
       margin-top: 16px;
@@ -432,14 +444,14 @@
       <div class="pill-row">
         <span class="pill">2026-04-04 current 状态同步</span>
         <span class="pill">workflow 状态直接读主仓控制文件</span>
+        <span class="pill">part 状态直接读 manifest</span>
         <span class="pill">正文优先读取预览仓镜像</span>
-        <span class="pill">主仓只作回查兜底</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
         <a class="action" href="#workflow">看 workflow 当前状态</a>
+        <a class="action" href="#parts">看 P01-P12 当前状态</a>
         <a class="action" href="#cast">看演员与人设</a>
-        <a class="action" href="#p01">看 P01 分镜资产</a>
         <a class="action" href="#documents">看完整剧本正文</a>
       </div>
       <div class="box good">
@@ -448,6 +460,7 @@
           <li>重建了 chapter-01 的 `asset-manifest.json`，不再沿用那份失真的逐资产 `todo` 列表。</li>
           <li>补出 `workflow-remediation-todo.md`，把这轮整改正式落进仓库，而不是只停留在对话里。</li>
           <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
+          <li>资产总览页现在开始直接读取主仓的 workflow current 状态，不再只靠页面自己写死说明。</li>
         </ul>
       </div>
       <div class="box.warn">
@@ -503,6 +516,17 @@
         <div class="card">
           <div class="tiny">Loading</div>
           <p>正在读取 active lane repair contract…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="parts">
+      <h2>P01-P12 当前状态</h2>
+      <p>这一块也直接读取主仓 `asset-manifest.json` 的 `part_statuses`。以后哪个 part 变了，优先改 manifest，再由页面自动跟上。</p>
+      <div class="grid three" id="part-status-grid">
+        <div class="card">
+          <div class="tiny">Loading</div>
+          <p>正在读取 part current 状态…</p>
         </div>
       </div>
     </section>
@@ -884,14 +908,16 @@
     function renderWorkflowStatus(manifest, loopState) {
       const statusGrid = document.getElementById('workflow-status-grid');
       const repairGrid = document.getElementById('workflow-repair-grid');
+      const partGrid = document.getElementById('part-status-grid');
       const currentDelivery = manifest.current_delivery || {};
       const weakGates = (manifest.workflow_gate_status || []).filter((gate) => !String(gate.status || '').startsWith('DONE'));
       const openRisks = manifest.open_risks || [];
       const pendingCharacters = (manifest.character_gate_status || []).filter((item) => String(item.status || '').includes('PENDING'));
       const activeRepair = loopState.active_repair_contract || null;
+      const parts = manifest.part_statuses || [];
 
       document.getElementById('latest-status-updated').textContent = manifest.updated_at || currentDelivery.controller_updated_at || '未标注';
-      document.getElementById('latest-status-judgement').textContent = 'PASS WITH NOTES / active lane = ' + escapeHtml(currentDelivery.current_focus_part || '未标注');
+      document.getElementById('latest-status-judgement').textContent = 'PASS WITH NOTES / active lane = ' + (currentDelivery.current_focus_part || '未标注');
       document.getElementById('latest-status-note').innerHTML = '<span class="label">当前判断</span> 当前 current 总表显示：official master 仍可审，但 active lane 还在 `'+ escapeHtml(currentDelivery.current_focus_part || 'P04') +'`，不能误判成已经彻底无债。';
 
       statusGrid.innerHTML = [
@@ -923,32 +949,42 @@
 
       if (!activeRepair) {
         repairGrid.innerHTML = '<div class="card"><div class="tiny">Active Repair</div><p>当前没有 active repair contract。</p></div>';
-        return;
+      } else {
+        repairGrid.innerHTML = [
+          '<div class="card">' +
+            '<div class="tiny">Active Repair Contract</div>' +
+            '<h3>' + escapeHtml(activeRepair.part_id || 'P04') + ' 修复目标</h3>' +
+            '<p>' + escapeHtml(activeRepair.repair_goal || '未标注') + '</p>' +
+            '<p class="label" style="margin-top:12px;">这一轮必须回答</p>' +
+            formatList(activeRepair.must_answer || []) +
+          '</div>',
+          '<div class="card">' +
+            '<div class="tiny">Shot Review</div>' +
+            '<h3>P04 镜头修复账</h3>' +
+            formatList((activeRepair.shot_status || []).map((shot) => shot.shot_id + ' / ' + shot.status + '：' + shot.note)) +
+            '<p class="label" style="margin-top:12px;">通过条件</p>' +
+            formatList(activeRepair.pass_condition || []) +
+            '<p class="label" style="margin-top:12px;">失败条件</p>' +
+            formatList(activeRepair.fail_condition || []) +
+          '</div>'
+        ].join('');
       }
 
-      repairGrid.innerHTML = [
-        '<div class="card">' +
-          '<div class="tiny">Active Repair Contract</div>' +
-          '<h3>' + escapeHtml(activeRepair.part_id || 'P04') + ' 修复目标</h3>' +
-          '<p>' + escapeHtml(activeRepair.repair_goal || '未标注') + '</p>' +
-          '<p class="label" style="margin-top:12px;">这一轮必须回答</p>' +
-          formatList(activeRepair.must_answer || []) +
-        '</div>',
-        '<div class="card">' +
-          '<div class="tiny">Shot Review</div>' +
-          '<h3>P04 镜头修复账</h3>' +
-          formatList((activeRepair.shot_status || []).map((shot) => shot.shot_id + ' / ' + shot.status + '：' + shot.note)) +
-          '<p class="label" style="margin-top:12px;">通过条件</p>' +
-          formatList(activeRepair.pass_condition || []) +
-          '<p class="label" style="margin-top:12px;">失败条件</p>' +
-          formatList(activeRepair.fail_condition || []) +
-        '</div>'
-      ].join('');
+      partGrid.innerHTML = parts.length ? parts.map((part) => {
+        return '<div class="card part-card">' +
+          '<div class="tiny">' + escapeHtml(part.current_gate || '未标注 gate') + '</div>' +
+          '<div class="part-head"><h3>' + escapeHtml(part.part_id + ' ' + part.part_name) + '</h3><span class="status-chip">' + escapeHtml(part.status) + '</span></div>' +
+          '<p><span class="label">judgement</span> ' + escapeHtml(part.judgement || '未标注') + '</p>' +
+          '<p><span class="label">delivery</span> ' + escapeHtml((part.delivery || '').split('/').pop() || '未标注') + '</p>' +
+          '<p><span class="label">说明</span> ' + escapeHtml(part.note || '未标注') + '</p>' +
+        '</div>';
+      }).join('') : '<div class="card"><p>当前没有可显示的 part 状态。</p></div>';
     }
 
     async function loadWorkflowStatus() {
       const statusGrid = document.getElementById('workflow-status-grid');
       const repairGrid = document.getElementById('workflow-repair-grid');
+      const partGrid = document.getElementById('part-status-grid');
       try {
         const [manifest, loopState] = await Promise.all([
           fetchJson(manifestSources),
@@ -959,6 +995,7 @@
         const errorHtml = '<div class="card asset-error"><p>workflow 状态加载失败</p><div>' + escapeHtml(error.message) + '</div></div>';
         statusGrid.innerHTML = errorHtml;
         repairGrid.innerHTML = errorHtml;
+        partGrid.innerHTML = errorHtml;
       }
     }
 
