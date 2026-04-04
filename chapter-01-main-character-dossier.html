@@ -440,12 +440,13 @@
   <div class="wrap">
     <section class="hero">
       <h1>Chapter 01 资产总览</h1>
-      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和 workflow 状态，它还会优先读取预览仓公开镜像里的 `data/asset-manifest.json`、`data/video-loop-state.json`、`docs/workflow-remediation-todo.md`、`docs/current-part-repair-contracts.md`、`docs/master-episode-script.md`、`docs/script.md`、`docs/storyboard-script.md`、`docs/product-script.md` 和 `docs/episode-onscreen-copy.md`，把 current 主线、文稿兑现边界和整改进度一起挂出来。</p>
+      <p class="lead">这页继续作为 chapter-01 当前唯一单页总览。现在除了角色图、P01 资源和 workflow 状态，它还会优先读取预览仓公开镜像里的 `data/asset-manifest.json`、`data/video-loop-state.json`、`docs/workflow-remediation-todo.md`、`docs/current-part-repair-contracts.md`、`docs/master-episode-script.md`、`docs/script.md`、`docs/storyboard-script.md`、`docs/product-script.md` 和 `docs/episode-onscreen-copy.md`，把 current 主线、文稿兑现边界和整改进度一起挂出来。这里默认按更严的验收看：没进 `part -> story spine -> master` 的修正，不算总装完成。</p>
       <div class="pill-row">
         <span class="pill">2026-04-05 public mirror sync</span>
         <span class="pill">workflow 状态优先读预览仓镜像</span>
         <span class="pill">整改 To-Do 优先读预览仓镜像</span>
         <span class="pill">五份主文稿优先读取预览仓镜像</span>
+        <span class="pill">没进总装的不算完成</span>
       </div>
       <div class="actions">
         <a class="action primary" href="#latest">看最新组装版</a>
@@ -456,14 +457,21 @@
         <a class="action" href="#documents">看完整剧本正文</a>
       </div>
       <div class="box good">
-        <p><span class="label">本轮已修正</span></p>
+        <p><span class="label">最近已进总装</span></p>
         <ul>
           <li>资产总览页现在优先读取预览仓的公开 current 镜像，并把整改 To-Do、当前 active repair contract、完整故事入口和 review master 一起挂出来。</li>
-          <li>`P01 / S04` 的旧 baked line 和 `P01 / S07` 的错片 / 半句串镜问题已经修进 current，并同步传导到 `story spine v17 / master v19-current`。</li>
-          <li>`script / storyboard / product / onscreen` 现在都明确写清哪些趣味层已进 current，哪些只是后补，不再把候选资产误报成“已上线”。</li>
-          <li>页面里剩下那批会让人出戏的旧词也继续收掉了，当前主入口已经统一成更直接的人话口径。</li>
+          <li>`P01 / S04` 的旧 baked line 和 `P01 / S07` 的错片 / 半句串镜问题已经修进 current，并继续留在当前完整故事入口和 review master 里。</li>
+          <li>`P11` 结果层那一拍还偏文件腔的可见 overlay，已经真修进 `part-11 v4`，并继续传到 `story spine v18 / master v20-current`。</li>
           <li>资产总览页已经扩展成五份主文稿镜像入口，不再只挂三份剧本文稿。</li>
           <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <p><span class="label">仅文稿 / 页面已收口</span></p>
+        <ul>
+          <li>`script / storyboard / product / onscreen` 现在都明确写清哪些趣味层已进 current，哪些只是后补，不再把候选资产误报成“已上线”。</li>
+          <li>页面里那批会让人出戏的旧词已经继续收掉，公开镜像也补齐了 `product-script.md / episode-onscreen-copy.md` 正文入口。</li>
+          <li>但这些修正如果还没进受影响的 `part delivery -> story spine -> master`，这里不会把它们写成“总装已完成”。</li>
         </ul>
       </div>
       <div class="box.warn">
@@ -471,6 +479,7 @@
         <ul>
           <li>顶部视频入口仍属于 `PASS WITH NOTES`，不是最终定稿。</li>
           <li>当前 active lane 已经切到 `P06`，接下来要继续复审 `P05 -> P06 -> P07`，不能误判整章已经彻底无债。</li>
+          <li>`v1.19 / v1.20` 那轮主要是文稿、页面和公开镜像收口；因为当时没有新的 `part delivery / story spine / master`，现在统一只算 `docs-only / not counted`。</li>
           <li>`T08` 还没闭环。这轮主要传导的是 overlay / assembly 文案，已有同步音轨的旧对白还没有全部换新。</li>
           <li>`回响` 还没有 canonical 可见定妆，不能作为清晰主体进入视频主线。</li>
           <li>`P05 / D03` 这类荒诞微未来插片，目前仍是后补候选，不算 current 已完成。</li>

@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 已把 P04 -> P05 的承压 bridge 收口到 current，并继续把 active lane 保持在 P06。这轮除了保住 `P01` 的热修结果，还继续补做了“文稿承诺 vs current 实现”复审：`script / storyboard / product / onscreen` 现在都明确写清哪些趣味层已进 current、哪些只是后补，页面可见的 `主位 / 点头 / 扛下 / 不予开放` 这批旧词也已继续收掉。对外完整故事入口仍看 story spine v17，vertical slice master v19 只保留作 review master；但旧的同步音轨对白还没全部重做。",
+  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮先把“没进 part / story spine / master 不算完成”写回状态源，再挑出一个最明确还能直接进总装的 viewer-visible 问题来闭环：`P11` 结果层可见 overlay 已改成更直接的人话，并真实传到 `part-11 v4 / story spine v18 / master v20-current`。而 `v1.19-v1.20` 那轮主要是文稿、页面和公开镜像收口，没有新的 part delivery，所以现在统一只记 `docs-only / not counted`；旧的同步音轨对白也还没全部重做。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -26,31 +26,31 @@
     "version_log_top_summary": "SYNCED_2026-04-05",
     "shot_list_p04_s03_contract": "SYNCED_2026-04-05",
     "chapter_current_entry": "SYNCED_2026-04-05",
-    "dialogue_rollout_status": "DOCS_SYNCED_DELIVERY_PARTIAL_2026-04-05",
+    "dialogue_rollout_status": "VIDEO_PARTIAL_WITH_DOCS_ONLY_DEBT_2026-04-05",
     "product_and_onscreen_docs": "SYNCED_2026-04-05",
     "fun_layer_status_boundary": "SYNCED_2026-04-05",
     "page_visible_wording_cleanup": "SYNCED_2026-04-05"
   },
   "delivery_entry_status": {
     "public_current_entry": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v17.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v18.mp4",
       "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
       "type": "full_story_current",
       "scope": "P01-P12 完整故事入口",
       "runtime_sec": 202.358934,
-      "note": "资产总览页顶部应优先把这条当作当前完整故事入口。"
+      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；这轮它已经吃到 `P11 v4` 的结果层口径修正。"
     },
     "review_master": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v19-current.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v20-current.mp4",
       "current_hub": "current/deliveries/chapter-01-master-current.mp4",
       "type": "vertical_slice_review_master",
       "scope": "chapter 级 review master",
       "runtime_sec": 154.916009,
-      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口。"
+      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口；这轮也已吃到 `P11 v4`。"
     },
     "dialogue_rollout": {
-      "status": "DOCS_UPDATED_VIDEO_PARTIAL",
-      "note": "人话化对白已经回写 `master/script/storyboard/voice` 文稿链；这轮又把 `product / onscreen`、趣味层 current / 后补边界和页面可见旧词一起收口，并保留了 `P01 / P09 / P10 / P11` 的装配人话化结果，现已同步重装 `story spine v17 / master v19-current`。但已有同步音轨的旧对白还没全部重做，所以当前仍是 `VIDEO_PARTIAL`。"
+      "status": "VIDEO_PARTIAL_WITH_DOCS_ONLY_DEBT",
+      "note": "当前真正进了装配链的人话化结果，包括 `P01` 的热修、前一轮 `P09 / P10 / P11` 的装配文案，以及这轮新推进进总装的 `P11` 结果层 overlay，现已同步重装到 `story spine v18 / master v20-current`。但 `v1.19-v1.20` 收掉的那批文稿、页面和镜像口径，当时没有新的 `part delivery / story spine / master`，所以现在只能记成 `docs-only / not counted`；已有同步音轨的旧对白也还没全部重做。"
     }
   },
   "active_repair_contract": {
@@ -354,10 +354,10 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v3.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v4.mp4",
       "delivery_script": "scripts/production/render_chapter01_part11_delivery.sh",
       "reopen_policy": "当前只允许围绕 `G01` 的终局确认质感，或 `G03/G04` 的更高规格重跑做定向重开；`G02-G04` 已通过当前主线视频替换，不回退终局结构，也不重做已通过的林澄陈词镜头。",
-      "next_action": "当前已插入低成本 `F04 -> G01` consequence bridge，并把 `G01` 收短后重装为 `part-11-midnight-choice-return-delivery-v3.mp4`。`P11` 已不再把高潮第二拍拍成“新页面开始”；后续只保留 `G01` 仍是静态确认层、`G02-G04` 仍是 540p 规格、以及 `G02 identity-lock v2` 是否值得升格进主交付的定向复审。"
+      "next_action": "这轮继续把 `P11` 的结果层可见口径收回更直接的人话，并重装为 `part-11-midnight-choice-return-delivery-v4.mp4`。该修正已经继续传到 `story spine v18 / master v20-current`；后续 `P11` 只保留 `G01` 的确认层质感、`G03/G04` 的更高规格升级，以及 `G02 identity-lock v2` 是否值得升格进主交付的定向复审。"
     },
     {
       "part_id": "P12",
