@@ -31,6 +31,7 @@
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
 | T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
 | T07 | P0 | `W10-W11` | 收口 `P06 / E01` 的亮走廊 reset，并把 trimmed ingress 传导到 part、story spine、master、preview current | `production/video-loop-state.json`、`production/asset-manifest.json`、`production/current-part-repair-contracts.md`、`production/version-log.md`、预览页 current 镜像 | `DONE WITH NOTES` | `P06` 开头不再先亮一下再变暗，且 `part-06 current / story spine / master / preview` 都切到同一套 `trimmed-ingress` 口径 |
+| T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md` | `IN PROGRESS` | 角色说话能一耳朵分开，10 岁孩子能听懂，且不再冒出 `主位 / 样本 / 原件` 这类跳出故事的说法 |
 
 ## 5. 当前回合执行记录
 
@@ -133,6 +134,13 @@
 - `DONE WITH NOTES`：`video-loop-state.json`、`asset-manifest.json` 与 `current-part-repair-contracts.md` 已把 active lane 从 `P04` 切到 `P06`，不再拿已经收口的 `P04` 继续冒充当前正在修的主位。
 - `DONE WITH NOTES`：顺手把 `asset-manifest.json / video-loop-state.json` 的 part delivery 指针统一按 `current/deliveries` 真实 symlink 回填，修掉了像 `P01` 还停在旧 `v17`、但 current 其实已经是 `v30` 这种状态源滞后。
 - `IN PROGRESS`：下一步继续按同一条 production loop 复审 `P05 -> P06 -> P07`。如果还有问题，优先继续走 `trim / bridge / reorder`，不整段重开。
+
+### 2026-04-04 / Round 15
+
+- `IN PROGRESS`：新增 `T08`，把这轮“一个正常大人都听不顺”的对白问题正式落进主整改清单，不再只靠对话口头提醒。
+- `DONE WITH NOTES`：已先收掉最容易跳戏的一批词：`新主位`、`底层母样本`、`原样事实`、`只把我当个例子放在那儿` 等，改成更口语、更像人在现场会说的话。
+- `IN PROGRESS`：`story / storyboard / voice` 三条文稿链正在继续对齐角色口气。当前先关掉最明显的 AI 腔和文件腔，再继续往下做逐场人物区分复审。
+- `NEXT`：把这轮对白修订同步到公开镜像，再继续按 `P05 -> P06 -> P07` 的 production review 看有没有新的 viewer-blocking 问题。
 
 ## 6. 进度标记规则
 
