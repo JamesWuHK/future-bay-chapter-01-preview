@@ -3,11 +3,11 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮没有改 active lane，而是顺着 `P07 -> P08` 和 `P09 -> P10` 的 contact-sheet 复审，确认真正值得落地的是 `P08` 开头那段空白规则厅建立略久，于是把 `part-08 current` 收成 `v2 headtrim`，并继续重渲到 `story spine v29`。`P10 / F01` 目前仍在 `3-4s` 的 shot contract 范围内，所以这轮先不动；review master 继续维持 `v27-current`，因为它本来就不含 `P08`。",
+  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮没有改 active lane，而是顺着 `T11` 的 viewer-visible 审计先关掉一处真正会把人拉出戏的新问题：`P11 / G02` close-up 两侧还露着英文漂浮文档。当前已用 world-in 浮卡遮罩把它收进 `part-11 v5`，并继续重渲到 `story spine v30 / master v28-current`；`P10 / F01` 仍先不动，因为它还在 `3-4s` 的 shot contract 范围内。",
   "current_focus_part": "P06",
   "current_gate": "W10-W11",
-  "current_judgement": "PASS WITH NOTES / P06_E03_E04_VOICE_CLARITY_LANDED + E01_TRIMMED_INGRESS + P05_TAIL_TRIM_REFINED + P07_WARM_INGRESS + P08_HEAD_TRIM_LANDED + P09_P10_AUDIO_CLOSED + P09_E13_LOCALIZED_UI",
-  "next_action": "继续按 active lane 观察 `P05 -> P06 -> P07` continuity；这轮已经把 `P08 / E09` 的空白建立位通过 `v2 headtrim` 收短，并继续传到 `story spine v29`。`P10 / F01` 这轮复审后先保持不动；`review master` 仍不变，因为它不含 `P08`。下一步回到 continuity 主线和新的 viewer-visible 质量审计。",
+  "current_judgement": "PASS WITH NOTES / P06_E03_E04_VOICE_CLARITY_LANDED + E01_TRIMMED_INGRESS + P05_TAIL_TRIM_REFINED + P07_WARM_INGRESS + P08_HEAD_TRIM_LANDED + P09_P10_AUDIO_CLOSED + P09_E13_LOCALIZED_UI + P11_G02_WORLDIN_MASK",
+  "next_action": "继续按 active lane 观察 `P05 -> P06 -> P07` continuity；这轮已经把 `P11 / G02` 两侧会露出来的英文漂浮文档通过 world-in 浮卡遮罩收进 `part-11 v5`，并继续传到 `story spine v30 / master v28-current`。`P10 / F01` 这轮复审后仍先保持不动；下一步回到 continuity 主线和剩余 viewer-visible 质量审计。",
   "workflow_refs": {
     "project_agents": "agents.md",
     "chapter_agents": "content/chapters/chapter-01-time-archive-city/agents.md",
@@ -37,24 +37,24 @@
   },
   "delivery_entry_status": {
     "public_current_entry": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v29.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v30.mp4",
       "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
       "type": "full_story_current",
       "scope": "P01-P12 完整故事入口",
       "runtime_sec": 198.093946,
-      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新落地的 `P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 英文伪 UI 遮罩修补、`P10 v5` 的可见文案和 `P11 v4` 的结果层收口。"
+      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案，以及这轮新落地的 `P11 v5` `G02` world-in 浮卡遮罩修复。"
     },
     "review_master": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v27-current.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v28-current.mp4",
       "current_hub": "current/deliveries/chapter-01-master-current.mp4",
       "type": "vertical_slice_review_master",
       "scope": "chapter 级 review master",
       "runtime_sec": 154.018005,
-      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口；它当前仍只承担 vertical-slice subset 复审，并继续保留 `P05 v5 tailtrim2`、`P06 v8 voiceclarity`、`P10 v5` 和 `P11 v4` 这些已在 subset 里的修补。像 `P07 / P09` 这类不在 subset 里的修补，仍应以完整故事入口为准。"
+      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口；它当前仍只承担 vertical-slice subset 复审，并继续保留 `P05 v5 tailtrim2`、`P06 v8 voiceclarity`、`P10 v5` 和这轮新推进进总装的 `P11 v5` `G02` world-in 遮罩修补。像 `P07 / P09` 这类不在 subset 里的修补，仍应以完整故事入口为准。"
     },
     "dialogue_rollout": {
       "status": "VIDEO_SYNCED_WITH_NOTES",
-      "note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新落地的 `P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、`P10 v5` 的可见文案、`P11 v4` 的结果层 overlay，以及前一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v29`。`review master` 仍是 `v27-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。"
+      "note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、`P10 v5` 的可见文案、这轮新落地的 `P11 v5` `G02` world-in 浮卡遮罩，以及前一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v30`。`review master` 现在是 `v28-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。"
     }
   },
   "active_repair_contract": {
@@ -109,7 +109,7 @@
       "from": "P05",
       "to": "P06",
       "status": "P05_TAIL_TRIM_AND_P06_INGRESS_TRIM_APPLIED",
-      "note": "当前 current 已把 `P05` 切到 `v5 tailtrim2`，也把 `P06` 收到 `v8 voiceclarity` 版，并继续保留在现行 `story spine v29 / master v27-current` 口径里；这次修的是 editor / assembly-level continuity + dialogue clarity hotfix，不是整段重开模型。"
+      "note": "当前 current 已把 `P05` 切到 `v5 tailtrim2`，也把 `P06` 收到 `v8 voiceclarity` 版，并继续保留在现行 `story spine v30 / master v28-current` 口径里；这次修的是 editor / assembly-level continuity + dialogue clarity hotfix，不是整段重开模型。"
     }
   },
   "gate_order": [
@@ -282,7 +282,7 @@
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4",
       "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
       "reopen_policy": "当前 `P05 v5 tailtrim2 + P06 delivery v8-voiceclarity` 已把这条边界最明显的旧 reset 和 `E03/E04` 的静音断点一起收掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
-      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：这轮已经把 `E03` 的系统确认、`E04` 的婆婆旧录音和轻字幕锚点一起推进进 `part-06 v8 / story spine v29 / master v27-current`，并把 `P07` 的入口从过裁的 `v3` 改成保留短暖房间 ingress 的 `v4 warm-ingress`。接下来先继续按 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v4 warm ingress` 的组合维持 `PASS WITH NOTES` 观察，不追加新的 trim / bridge；只有出现新 blocker 才重开。"
+      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：这轮已经把 `E03` 的系统确认、`E04` 的婆婆旧录音和轻字幕锚点一起推进进 `part-06 v8 / story spine v30 / master v28-current`，并把 `P07` 的入口从过裁的 `v3` 改成保留短暖房间 ingress 的 `v4 warm-ingress`。接下来先继续按 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v4 warm ingress` 的组合维持 `PASS WITH NOTES` 观察，不追加新的 trim / bridge；只有出现新 blocker 才重开。"
     },
     {
       "part_id": "P07",
@@ -298,7 +298,7 @@
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v4-warm-ingress.mp4",
       "delivery_script": "scripts/production/render_chapter01_part7_delivery.sh",
       "reopen_policy": "当前不是重开，而是第一次正式进入视频 loop。除非 `E05` 被判定为失败 clip，否则不回退到“P07 只存在于纸片桥”的状态。",
-      "next_action": "这轮已把 `P07` 从过裁的 `v3 headtrim` 收成 `part-07-silent-practice-room-delivery-v4-warm-ingress.mp4`，重新保留一小段沉默练习室的暖房间入口，再落到旧档案桌面，并继续保留在现行 `story spine v29`。`review master` 仍不变，因为它本来就不含 `P07`。当前继续保持 `accepted_with_notes`；后续只继续观察这刀 warm ingress 是否已经足够，不急着重开模型。"
+      "next_action": "这轮已把 `P07` 从过裁的 `v3 headtrim` 收成 `part-07-silent-practice-room-delivery-v4-warm-ingress.mp4`，重新保留一小段沉默练习室的暖房间入口，再落到旧档案桌面，并继续保留在现行 `story spine v30`。`review master` 仍不变，因为它本来就不含 `P07`。当前继续保持 `accepted_with_notes`；后续只继续观察这刀 warm ingress 是否已经足够，不急着重开模型。"
     },
     {
       "part_id": "P08",
@@ -330,7 +330,7 @@
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v4-localized-ui.mp4",
       "delivery_script": "scripts/production/render_chapter01_part9_delivery.sh",
       "reopen_policy": "当前不是重开，而是第一次正式进入视频 loop。`E13` 已拿到真实入口 clip，但在 `E15 / E17` 以前，不把 P09 误判成已经完成的后果段。",
-      "next_action": "上一轮抓到 `P09 / E13` 里露出来的英文伪 UI，于是直接做 localized overlay recovery，把 current 收成 `part-09-evidence-freeze-team-split-delivery-v4-localized-ui.mp4`；这轮它继续随新的完整故事入口保留在 `story spine v29`。`review master` 仍不变，因为它本来就不含 `P09`。本地 rough STT 已复核旧 baked-audio 债务从 current 清掉；后续除 `E14 / E16` 的视频升级外，`P09` 暂时回到 backlog 观察位。"
+      "next_action": "上一轮抓到 `P09 / E13` 里露出来的英文伪 UI，于是直接做 localized overlay recovery，把 current 收成 `part-09-evidence-freeze-team-split-delivery-v4-localized-ui.mp4`；这轮它继续随新的完整故事入口保留在 `story spine v30`。`review master` 仍不变，因为它本来就不含 `P09`。本地 rough STT 已复核旧 baked-audio 债务从 current 清掉；后续除 `E14 / E16` 的视频升级外，`P09` 暂时回到 backlog 观察位。"
     },
     {
       "part_id": "P10",
@@ -346,7 +346,7 @@
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v5.mp4",
       "delivery_script": "scripts/production/render_chapter01_part10_delivery.sh",
       "reopen_policy": "当前已形成可看片的 `story-first` part-level 交付；`F01/F03` 已升级为正式 clip，`F02/F04` 也已升级为真实同空间动态 carrier。后续只做定向升级：优先收 `F02/F04` 的节奏、UI-first 可读性与 `P10 -> P11` 承压衔接，不回退成整段辩论长视频探索。",
-      "next_action": "前一轮已把 `P10` 里最明显的 viewer-visible 文件 / UI 腔收口到 `part-10-free-echo-platform-delivery-v5.mp4`；这轮它继续保留在现行 `story spine v29 / master v27-current` 里。`P10 -> P11` 的页面切换风险仍维持 `PASS WITH NOTES`。本地 rough STT 已复核旧 baked-audio 债务从 current 清掉；后续 `P10` 只保留同空间节奏和规格升级的定向复审，不再占 active lane。"
+      "next_action": "前一轮已把 `P10` 里最明显的 viewer-visible 文件 / UI 腔收口到 `part-10-free-echo-platform-delivery-v5.mp4`；这轮它继续保留在现行 `story spine v30 / master v28-current` 里。`P10 -> P11` 的页面切换风险仍维持 `PASS WITH NOTES`。本地 rough STT 已复核旧 baked-audio 债务从 current 清掉；后续 `P10` 只保留同空间节奏和规格升级的定向复审，不再占 active lane。"
     },
     {
       "part_id": "P11",
@@ -359,10 +359,10 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v4.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v5.mp4",
       "delivery_script": "scripts/production/render_chapter01_part11_delivery.sh",
       "reopen_policy": "当前只允许围绕 `G01` 的终局确认质感，或 `G03/G04` 的更高规格重跑做定向重开；`G02-G04` 已通过当前主线视频替换，不回退终局结构，也不重做已通过的林澄陈词镜头。",
-      "next_action": "前一轮推进进总装的 `P11` 结果层可见口径，当前仍继续留在现行 `story spine v29 / master v27-current` 里。本地 rough STT 当前也显示 `P11` 音轨大体还能保留；后续 `P11` 只保留 `G01` 的确认层质感、`G03/G04` 的更高规格升级，以及 `G02 identity-lock v2` 是否值得升格进主交付的定向复审。"
+      "next_action": "这轮已把 `P11 / G02` close-up 两侧会露出来的英文漂浮文档，用 world-in 浮卡遮罩真实推进进 `part-11 v5 / story spine v30 / master v28-current`。本地 rough STT 当前也显示 `P11` 音轨大体还能保留；后续 `P11` 只保留 `G01` 的确认层质感、`G03/G04` 的更高规格升级，以及 `G02 identity-lock v2` 是否还值得升格进主交付的定向复审。"
     },
     {
       "part_id": "P12",

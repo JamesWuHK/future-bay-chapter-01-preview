@@ -660,6 +660,26 @@
   - 这轮没有新增需要立刻进入 trim / bridge / reorder 的 page-cut blocker
 - `IN PROGRESS`：`T11` 继续保持未闭环。当前这轮新增的是“已复审、无新 blocker”的 source-of-truth 记录，不算新的 `part / story spine / master` 推进；下一步继续按同一套规则往下审剩余 `PASS WITH NOTES` 风险和 speaking 质感升级位。
 
+### 2026-04-05 / Round 49
+
+- `DONE WITH NOTES`：顺着 `T11` 的 viewer-visible 审计继续往下追时，这轮抓到一处真会把观众拉出戏、而且值得直接进总装的问题：
+  - `P11 / G02` close-up 两侧还露着英文漂浮文档
+  - 这不是文稿层问题，也不是可以口头忽略的“小瑕疵”
+  - 它会直接破坏结尾 close-up 的世界内沉浸
+- `DONE WITH NOTES`：这轮采用的是 lowest-cost assembly recovery，不重开角色表演本身：
+  - 在 [render_chapter01_part11_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part11_delivery.sh) 里补出 `G02` 的 world-in 浮卡遮罩
+  - 保留原有 `G02` 表演和音轨
+  - 只把 close-up 两侧会漏出来的英文漂浮文档压回故事内图层
+- `DONE WITH NOTES`：这次修复已经真实推进进总装链：
+  - [part-11-midnight-choice-return-delivery-v5.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v5.mp4)
+  - [chapter-01-story-spine-preview-v30.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v30.mp4)
+  - [chapter-01-vertical-slice-master-v28-current.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v28-current.mp4)
+- `DONE WITH NOTES`：source-of-truth 和资产总览页当前都要按新口径读取：
+  - `P11 current = v5`
+  - `完整故事入口 = story spine v30`
+  - `review master = v28-current`
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是又关掉了一处真实进了 `part -> story spine -> master` 的 viewer-visible bug；active lane 还是回到 `P05 -> P06 -> P07` 主线继续观察。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -674,4 +694,4 @@
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
-5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v29`
+5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v30`
