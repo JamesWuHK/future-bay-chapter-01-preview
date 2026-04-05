@@ -209,7 +209,7 @@
 
 - `DONE WITH NOTES`：继续复审 `P07 -> P08` 时，又抓到一处会误导执行的口径漂移：
   - `shot-list / storyboard` 把 `P08` 设计成 `UI-first + 07 一句短线压实立场`
-  - 但 `script.md` 里 07 还在说更长、更抽象的制度话
+  - 但 `script.md` 里 07 还在说更长、更抽象的硬规则腔
   - `audio/voice-script.md` 甚至额外长出 `我也曾经有一条没被公开的路` 这类别处没承接的新设定
 - `DONE WITH NOTES`：已把 `P08` 收回和 current 执行链一致的版本：
   - 07 在 `P08` 先只说短而硬的一层：`一个孩子的愿望 / 一整座城的分配`
@@ -418,6 +418,7 @@
   - `P06` 当前没抓到可辨识对白。
   - `P07 / P11` 当前音轨大体还算顺，先不重开。
   - `P09 / P10` 仍能听到旧 baked-audio 口径，已经成为 `T08` 眼下最明确的声音债务。
+
 - `DONE WITH NOTES / DOCS ONLY`：顺着这条检查，又抓到 `P10 / S03` 的所有正式重生模板还残留旧句 `如果高概率已经证明答案，你凭什么让城市承担低概率代价？`。这轮已把它统一改回和 current 一致的短线：`这条路不是没有。可现在不能先放到大家前面。`
 - `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮只完成了“找准旧音轨债务 + 清掉上游再生源头”，还没有新增 `part delivery / story spine / master`，所以必须继续记成 `DOCS ONLY / NOT COUNTED`。
 
@@ -602,6 +603,48 @@
   - 资产总览页与公开镜像
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是一个真实进了总装链的 `P07` continuity 修复；active lane 还是回到 `P05 -> P06 -> P07` 主线继续观察，不误报成“全章收完”。
 
+### 2026-04-05 / Round 46
+
+- `DONE WITH NOTES / DOCS ONLY`：继续按 `T11` 审当前工作链时，先把一个差点被误判成 source-of-truth 缺失的问题查清了：
+  - `P08` 的 `delivery script / metadata / current clips / current shots` 在主仓 `HEAD` 里其实都在
+  - 问题出在当前临时 `sparse worktree` 没把这批文件 hydrate 出来
+  - 所以这不是“仓库没资产”，而是“本地工作树漏检文件”
+- `DONE WITH NOTES / DOCS ONLY`：已把 [render_chapter01_part8_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part8_delivery.sh) 补成可安全旁路验证的版本：
+  - 新增 `TMP_DIR_OVERRIDE`
+  - 新增 `FINAL_VIDEO_OVERRIDE`
+  - 新增 `FINAL_META_OVERRIDE`
+  - 后续再做 `P08` 可复现性验证时，不会再误写正式 `part-08 current`
+- `DONE WITH NOTES / DOCS ONLY`：已完成一次 `P08` 重放验证结论收口：
+  - 当前 accepted delivery 仍能从 `E09 + E10 + E11 + E12` 这条链重装
+  - 抽样关键帧校验一致，说明视觉装配链可重放
+  - 整文件 MD5 不同，当前判断主要来自脚本里的合成底噪床每次会重新生成，因此这一步只算 `structurally reproducible`，不算 `byte-identical`
+  - 这轮不新增 `part / story spine / master`
+  - 因此只能记为 `process-valid reproducibility check`，不算总装推进
+- `IN PROGRESS`：`T11` 继续保持未闭环。当前先关掉的是“本地工作树漏检 -> 误判仓库缺资产”这类流程噪音；下一步仍先回到 active lane 的 `P05 -> P06 -> P07` continuity 观察，再补看 `P07 -> P08 / P09 -> P10` 的 viewer-visible handoff，不把 process fix 冒充成内容修复。
+
+### 2026-04-05 / Round 47
+
+- `DONE WITH NOTES`：继续按 `T11` 的 viewer-visible continuity 复审往下看时，这轮终于抓到一处值得真进总装、而且能用剪辑解决的问题：
+  - `P07 -> P08` 的问题不在“规则投影室不该存在”
+  - 而在 `P08 / E09` 的空白规则厅建立略久，容易把 `P07` 的暖房间余波读成“切了一个新模块”
+- `DONE WITH NOTES`：这轮先做了两个 editor-level 试片：
+  - `0.6s` 头切几乎没改善
+  - `1.0s` 头切能明显把空白建立收短，同时还保留足够的规则厅建立位
+- `DONE WITH NOTES`：因此这轮正式采用 `1.0s` 的 `TRIM_HEAD` recovery，而不是重开模型：
+  - 新增 [part-08-rule-projection-room-delivery-v2-headtrim.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v2-headtrim.mp4)
+  - 对应 metadata：
+    [part-08-rule-projection-room-delivery-v2-headtrim.metadata.json](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/metadata/videos/part-08-rule-projection-room-delivery-v2-headtrim.metadata.json)
+  - [render_chapter01_part8_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part8_delivery.sh) 也已切到 current recovery 口径
+- `DONE WITH NOTES`：这次修复已经真实推进进完整故事入口：
+  - `part-08 current` 已切到 `v2 headtrim`
+  - 完整故事入口已升级到 [chapter-01-story-spine-preview-v29.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v29.mp4)
+  - `review master` 继续不变，因为它本来就不含 `P08`
+- `DONE WITH NOTES`：同一轮也顺手把 `P09 -> P10` 再复审了一遍：
+  - 当前更像必要的公共空间建立，而不是同类“空白建立过长”
+  - `P10 / F01` 仍在 `3-4s` 的 shot contract 范围内
+  - 所以这轮不为了“想再顺一点”去硬动 `P10`
+- `IN PROGRESS`：`T11` 继续保持未闭环。当前只是又关掉了一处真实进了 `part -> story spine -> preview current` 的 continuity bug；active lane 仍回到 `P05 -> P06 -> P07` 主线继续观察。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -616,4 +659,4 @@
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
-5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v28`
+5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v29`
