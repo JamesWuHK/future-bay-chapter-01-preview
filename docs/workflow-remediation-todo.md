@@ -530,6 +530,30 @@
   - 在没有更强证据前，先不把 `P01` 误判成 reopened blocker
 - `IN PROGRESS`：`T11` 继续保持未闭环。当前这轮的结论是“`P01 / P09 / P10 / P11` 暂时没有新增 reopen blocker”，不是“这些段落以后都不用再看”。
 
+### 2026-04-05 / Round 43
+
+- `DONE WITH NOTES`：按 `T11` 继续查 viewer-visible 问题时，又抓到一个必须就地修的真 bug：
+  - `P09 / E13` 的源 clip 里还露着英文伪 UI
+  - 第一眼会先看到 `Evidence Permission Panel...` 这类旧字样
+  - 这已经和当前中文 world-in 口径直接打架
+- `DONE WITH NOTES`：这轮没有误把它推回模型重开，而是直接做 assembly-level localized overlay recovery：
+  - 更新 [render_chapter01_part9_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part9_delivery.sh)
+  - 重渲 [part-09-evidence-freeze-team-split-delivery-v4-localized-ui.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v4-localized-ui.mp4)
+  - `E13` 现在会先被中文世界内卡片接住，不再让英文伪 UI 抢第一眼
+- `DONE WITH NOTES`：这次修复已经继续传导到完整故事入口，不只停在 part：
+  - `part-09 current`
+  - [chapter-01-story-spine-preview-v27.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v27.mp4)
+  - 公开预览 current 镜像也已同步切到新的 full-story current
+- `DONE WITH NOTES`：这轮没有动 `review master`，并且要明确写死原因：
+  - [chapter-01-vertical-slice-master-v27-current.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v27-current.mp4) 本来就不含 `P09`
+  - 所以这次 `P09` 是否收顺，应该以 `story spine v27` 为准，不再误报成“master 也已更新”
+- `DONE WITH NOTES`：source-of-truth 和页面口径已同步回写：
+  - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
+  - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
+  - [version-log.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/version-log.md)
+  - 资产总览页与公开镜像
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是一个真实 viewer-visible 的 `P09` 画面 bug；active lane 仍回到 `P05 -> P06 -> P07` continuity 主线继续观察。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
