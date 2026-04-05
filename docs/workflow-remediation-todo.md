@@ -410,6 +410,17 @@
 - `DONE WITH NOTES / DOCS ONLY`：这轮没有新增 assembly 变更，只是把“当前没有新的 viewer-blocking 问题、先不再追加 trim / bridge”这条判断写回 source of truth，避免下一轮接手又从旧 blocker 重新猜起。
 - `IN PROGRESS`：`T08` 仍未闭环。当前开始补探可复用的自动转写检查路，但本机没有现成 Whisper；Gemini 探针也还没拿到稳定返回，所以暂时还不能把“哪些旧音轨仍卡着口径”自动批量捞出来。
 
+### 2026-04-05 / Round 36
+
+- `DONE WITH NOTES / DOCS ONLY`：已在仓库外用 `/tmp/ch01-audio-qc-venv + faster-whisper` 打通本地 rough audio audit 路，不再只靠主观听感猜“哪条旧同步音轨还没跟上当前文稿”。
+- `DONE WITH NOTES / DOCS ONLY`：这轮粗转写先收出一条更可执行的结论：
+  - `P05` 当前只听到一记很短的“等等，这风声”，先记可疑但不单独判 blocker。
+  - `P06` 当前没抓到可辨识对白。
+  - `P07 / P11` 当前音轨大体还算顺，先不重开。
+  - `P09 / P10` 仍能听到旧 baked-audio 口径，已经成为 `T08` 眼下最明确的声音债务。
+- `DONE WITH NOTES / DOCS ONLY`：顺着这条检查，又抓到 `P10 / S03` 的所有正式重生模板还残留旧句 `如果高概率已经证明答案，你凭什么让城市承担低概率代价？`。这轮已把它统一改回和 current 一致的短线：`这条路不是没有。可现在不能先放到大家前面。`
+- `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮只完成了“找准旧音轨债务 + 清掉上游再生源头”，还没有新增 `part delivery / story spine / master`，所以必须继续记成 `DOCS ONLY / NOT COUNTED`。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -422,6 +433,6 @@
 
 1. 继续观察 `P05 v4 tail trim + P06 v6 trimmed-ingress` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
-3. `T08` 的下一步继续找“还被 baked audio 决定口径”的剩余段落；没有进对应 `part delivery` 之前，不再把文稿修正报成成片完成
-4. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导
+3. `T08` 的下一步改为沿这条已经打通的本地 rough STT 路，继续找“还被 baked audio 决定口径”的剩余段落；当前优先盯 `P09 / P10`
+4. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导，优先把 `P09 / P10` 这两处声音债务变成真正的 part-level 闭环
 5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
