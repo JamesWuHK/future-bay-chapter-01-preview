@@ -402,6 +402,14 @@
   - `master` 这轮不变，因为它本来就不含 `P07`
 - `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮闭环的是 `P06 -> P07` 一处真实 continuity trim，不代表剩余旧同步音轨对白都已经换新。
 
+### 2026-04-05 / Round 35
+
+- `DONE WITH NOTES`：继续按 active lane 补抓 `P05 tail -> P06 head` 和 `P06 tail -> P07 head` 的 contact-sheet 复审。当前判断：
+  - `P05 -> P06`：仍带一点从人物反应切到第一人称暗层入口的 stylized handoff，但旧版那种“先亮一下、再像新页面重开”的问题已经没有重新出现。
+  - `P06 -> P07`：`P07 v3 head trim` 继续成立，桌面波形和旧档案桌面的接法目前仍能读成同一条追索后果。
+- `DONE WITH NOTES / DOCS ONLY`：这轮没有新增 assembly 变更，只是把“当前没有新的 viewer-blocking 问题、先不再追加 trim / bridge”这条判断写回 source of truth，避免下一轮接手又从旧 blocker 重新猜起。
+- `IN PROGRESS`：`T08` 仍未闭环。当前开始补探可复用的自动转写检查路，但本机没有现成 Whisper；Gemini 探针也还没拿到稳定返回，所以暂时还不能把“哪些旧音轨仍卡着口径”自动批量捞出来。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
