@@ -3,7 +3,7 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮继续按“没进 part / story spine / master 不算完成”的硬标准推进，把 `P10` 自由回响台里还偏文件 / UI 腔、又和主稿不完全同一套话的可见文案继续收口成更直接的人话，并真实传到 `part-10 v5 / story spine v19 / master v21-current`。而 `v1.19-v1.20` 那轮主要是文稿、页面和公开镜像收口，没有新的 part delivery，所以现在统一只记 `docs-only / not counted`；旧的同步音轨对白也还没全部重做。",
+  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮继续按“没进 part / story spine / master 不算完成”的硬标准推进，没有重开模型，而是对 `P05 current` 做了一次 editor-level tail trim：让结尾停在异常风把林澄往下一层拽走的听风位，不再停在旧的正面定住 pose。这个修补已经真实传到 `part-05 v4 / story spine v20 / master v22-current`。`P06 -> P07` 目前继续记 `PASS WITH NOTES`；旧的同步音轨对白也还没全部重做。",
   "current_focus_part": "P06",
   "workflow_refs": {
     "project_agents": "agents.md",
@@ -33,30 +33,31 @@
   },
   "delivery_entry_status": {
     "public_current_entry": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v19.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v20.mp4",
       "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
       "type": "full_story_current",
       "scope": "P01-P12 完整故事入口",
-      "runtime_sec": 202.358934,
-      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；这轮它已经吃到 `P10 v5` 的可见文案收口，并继续保留了前一轮 `P11 v4` 的结果层口径修正。"
+      "runtime_sec": 201.692268,
+      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；这轮它已经吃到 `P05 v4` 的 tail-trim continuity 修补，并继续保留 `P10 v5` 和 `P11 v4` 的可见层收口。"
     },
     "review_master": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v21-current.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v22-current.mp4",
       "current_hub": "current/deliveries/chapter-01-master-current.mp4",
       "type": "vertical_slice_review_master",
       "scope": "chapter 级 review master",
-      "runtime_sec": 154.916009,
-      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口；这轮也已吃到 `P10 v5`，并继续保留 `P11 v4` 的结果层收口。"
+      "runtime_sec": 154.25,
+      "note": "这条继续保留作 review master，不再冒充完整故事唯一入口；这轮也已吃到 `P05 v4` 的 tail trim，并继续保留 `P10 v5` 和 `P11 v4` 的可见层收口。"
     },
     "dialogue_rollout": {
       "status": "VIDEO_PARTIAL_WITH_DOCS_ONLY_DEBT",
-      "note": "当前真正进了装配链的人话化结果，包括 `P01` 的热修、`P09` 的装配文案、前一轮 `P11` 的结果层 overlay，以及这轮新推进进总装的 `P10 v5` 可见文案收口，现已同步重装到 `story spine v19 / master v21-current`。但 `v1.19-v1.20` 收掉的那批文稿、页面和镜像口径，当时没有新的 `part delivery / story spine / master`，所以现在只能记成 `docs-only / not counted`；已有同步音轨的旧对白也还没全部重做。"
+      "note": "当前真正进了装配链的人话化结果，包括 `P01` 的热修、`P09` 的装配文案、`P10 v5` 的可见文案和 `P11 v4` 的结果层 overlay；而这轮新增的总装进展，是 `P05 current` 的 editor-level tail trim 已同步重装到 `story spine v20 / master v22-current`。但已有同步音轨的旧对白也还没全部重做，`T08` 仍未闭环。"
     }
   },
   "active_repair_contract": {
     "part_id": "P06",
-    "repair_goal": "把暗层入口从“刚进门先亮一下、像回到另一条空走廊”的 reset 感，收口成真正承接 P05 风异常的连续入口，并把 P06 -> P07 的中段追索继续维持成同一条后果链。",
+    "repair_goal": "把中段承接继续收口成同一条后果链：`P05` 结尾不再停在旧的正面定住 pose，而是停在异常风把林澄往下一层带走的听风位；`P06` 入口继续保持暗层入口状态，并让 `P06 -> P07` 维持为同一条追索后果。",
     "must_answer": [
+      "P05 结尾是否已经不再停在旧的正面定住 pose，而是更像被异常风带进下一层？",
       "P06 开头是否已经不再先闪回更亮、更空的走廊，而是直接承接 P05 的异常风声？",
       "E01 第一秒是否就把观众带进更暗、更贴近暗层入口的空间状态？",
       "E02-E04 是否仍然保持“对波形 -> 找门 -> 录风声”的单线读法，没有因为入口 trim 变得更跳？",
@@ -103,8 +104,8 @@
     "transition_status": {
       "from": "P05",
       "to": "P06",
-      "status": "TRIMMED_INGRESS_APPLIED",
-      "note": "当前 current 已把 P06 / E01 切到 trimmed ingress 版，并同步重装 part-06 v6、story spine v16 和 master v18；这次修的是 assembly/editor-level reset，不是整段重开模型。"
+      "status": "P05_TAIL_TRIM_AND_P06_INGRESS_TRIM_APPLIED",
+      "note": "当前 current 已把 `P05` 切到 `v4 tail trim`，也把 `P06 / E01` 保持在 `trimmed ingress` 版，并已同步重装到 `story spine v20 / master v22-current`；这次修的是 editor / assembly-level continuity，不是整段重开模型。"
     }
   },
   "gate_order": [
@@ -258,10 +259,10 @@
       "loop_status": "accepted_with_notes",
       "current_gate": "W11",
       "current_judgement": "PASS WITH NOTES",
-      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v3-d02first.mp4",
+      "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4",
       "delivery_script": "scripts/production/render_chapter01_part5_delivery.sh",
       "reopen_policy": "当前只允许围绕 `D02` 的真实视频替换做定向重开；除非 `P04` 入口 continuity 被正式判定失配，否则不回退 `P05` 的整体结构与 `D01/D04` 已接受口径。",
-      "next_action": "当前 `P05 current` 已切到 `part-05-probability-corridor-delivery-v3-d02first.mp4`。后续 `P05` 不再占 active lane；`D01` 继续保留为独立资产，但不再作为 current part-05 的开门 beat。"
+      "next_action": "当前 `P05 current` 已切到 `part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4`。后续 `P05` 不再占 active lane；这次尾切已经把旧的正面定住 pose 收掉，后面只保留 continuity 观察，不回退整段重开。"
     },
     {
       "part_id": "P06",
@@ -273,11 +274,11 @@
       "depends_on": "P05",
       "loop_status": "in_progress",
       "current_gate": "W11",
-      "current_judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS APPLIED",
+      "current_judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM LANDED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
       "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
-      "reopen_policy": "当前 `delivery v6-trimmed-ingress` 已把 `P05 -> P06` 的亮走廊 reset 修掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
-      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：先审 `P05 -> P06 -> P07` 的后果链是否已经顺了；如果还有问题，优先继续走 trim / bridge / reorder，而不是整段重开模型。"
+      "reopen_policy": "当前 `P05 v4 tail trim + P06 delivery v6-trimmed-ingress` 已把这条边界最明显的旧 reset 收掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
+      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：当前先按 `P05 v4 tail trim + P06 v6 trimmed-ingress` 的组合继续审 `P05 -> P06 -> P07` 是否还需要更细的 trim / bridge；没出现新 blocker 就不重开模型。"
     },
     {
       "part_id": "P07",

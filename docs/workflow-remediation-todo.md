@@ -325,6 +325,23 @@
 - `DONE WITH NOTES`：这轮已同步回写状态源和资产总览页，明确它是 `assembly-valid` 进展，不再停在“页面看起来更新了”的层面。
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是把 `P10` 这处明确的 viewer-visible 问题也推进进了总装；接下来还要继续按主线回到 `P05 -> P06 -> P07` continuity 观察，并继续审其余还停在 `docs-only` 的对白传导债务。
 
+### 2026-04-05 / Round 30
+
+- `DONE WITH NOTES`：继续按主质检流程回到 `P05 -> P06 -> P07` 时，确认当前最该修的不是再开模型，而是把 `P05` 尾部那拍旧的正面定住 pose 收掉。
+- `DONE WITH NOTES`：这轮采用的是 `editor-level trim`，不是整段重开：
+  - `P05 current` 改成 `D02-first + D04 tail trim`
+  - 不再让 `P05` 停在“林澄站住给你看”的旧姿态
+  - 让 cut 更像被异常风往下一层拽走，再去接 `P06`
+- `DONE WITH NOTES`：这次修复已经真实推进进总装链：
+  - `part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4`
+  - `chapter-01-story-spine-preview-v20.mp4`
+  - `chapter-01-vertical-slice-master-v22-current.mp4`
+- `DONE WITH NOTES`：当前判断继续保持保守：
+  - `P05 -> P06` 现在已经不再停在旧的正面定住 pose，上下文读起来更像后果推进
+  - `P06 -> P07` 继续维持 `PASS WITH NOTES`
+  - 中段 still stylized，但现在不再把它误报成必须马上重开模型的新 blocker
+- `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮修掉的是一处真实进总装的 continuity 问题，不代表所有旧同步音轨对白都已经全部换新。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -335,7 +352,7 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P06` 这次 `trimmed-ingress` recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v4 tail trim + P06 v6 trimmed-ingress` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T08` 的下一步继续找“还被 baked audio 决定口径”的剩余段落；没有进对应 `part delivery` 之前，不再把文稿修正报成成片完成
 4. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导
