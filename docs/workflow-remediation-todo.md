@@ -388,6 +388,20 @@
   - `先把第四路径留下来继续看`
 - `DONE WITH NOTES / DOCS ONLY`：这轮仍只算 page-visible docs 清理，不算总装推进；但它会直接改善资产总览页里展开正文时的阅读体验，不再一边说“已经去文件腔”，一边还把旧词挂给人看。
 
+### 2026-04-05 / Round 34
+
+- `DONE WITH NOTES`：继续按 active lane 复审 `P06 -> P07` 时，没有直接重开模型，而是先做了低成本 editor 测试：
+  - `1 秒` 头切几乎没改善
+  - 但 `3.2 秒` 头切后，`P06` 末尾的桌面波形可以更直接接到 `P07` 的旧档案桌面
+- `DONE WITH NOTES`：这轮把这刀 trim 真正推进进了完整故事 current：
+  - `part-07-silent-practice-room-delivery-v3-headtrim.mp4`
+  - `chapter-01-story-spine-preview-v22.mp4`
+- `DONE WITH NOTES`：这次明确只影响完整故事入口，不误报 review subset：
+  - `story spine current` 已升级到 `v22`
+  - `review master` 继续保持 `v23-current`
+  - `master` 这轮不变，因为它本来就不含 `P07`
+- `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮闭环的是 `P06 -> P07` 一处真实 continuity trim，不代表剩余旧同步音轨对白都已经换新。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
