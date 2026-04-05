@@ -513,6 +513,23 @@
   - 资产总览页与公开镜像应继续保持这套 `v26 / v27-current` 口径
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是把 `P05 -> P06` 的 continuity 再收紧一刀；下一步还要继续按同一条主质检流程观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 这条链有没有新的 trim / bridge 需求。
 
+### 2026-04-05 / Round 42
+
+- `DONE WITH NOTES / DOCS ONLY`：这轮没有再盲目开修，而是先按 `T11` 的真实闭环标准做了一次针对性抽检：
+  - 重新看了 `P05 v5 -> P06 v8` 和 `P06 v8 -> P07 v3` 的 transition strip
+  - 当前没有抓到新的 viewer-blocking 跳页
+  - 所以 active lane 继续保持 `PASS WITH NOTES`，不因为“总得再改点什么”就硬做无效 trim
+- `DONE WITH NOTES / DOCS ONLY`：顺着用户前面点名的“文稿链往成片链传导”继续做 rough STT 抽检：
+  - `P09` 当前仍能抓到：`后来补上的东西，不能当最早那份证据`
+  - `P10` 当前仍能抓到：`这条路不是没有。可现在不能先放到大家前面`
+  - `P11` 当前仍保留“我不想还没看见，就先被删掉”这层核心意思
+  - 这三段目前没有重新掉回旧 baked-audio 口径
+- `DONE WITH NOTES / DOCS ONLY`：`P01` 这轮单独做了更窄的复核，因为全段 rough STT 曾误抓到 `见习建造者`：
+  - 在更短的 `S05` 片段里，没有再次抓到这个旧词
+  - 当前更像是粗转写把 `灰银任务` 听岔成了别的词
+  - 在没有更强证据前，先不把 `P01` 误判成 reopened blocker
+- `IN PROGRESS`：`T11` 继续保持未闭环。当前这轮的结论是“`P01 / P09 / P10 / P11` 暂时没有新增 reopen blocker”，不是“这些段落以后都不用再看”。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
