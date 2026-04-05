@@ -1,0 +1,648 @@
+{
+  "chapter_id": "chapter-01-time-archive-city",
+  "chapter_title": "不被预测的人生",
+  "updated_at": "2026-04-05",
+  "owner_note": "这份文件是 chapter-01 当前唯一正式的逐环节资产质量确认状态源。当前 `story_spine_current` 先承担“公开预览 current”的结构化放行门，只检查已经被真实回填的核心步骤；`first_frame / image_qc / paper_cut / audio_contract` 这些上游证据如果还没补齐，会继续保留为严格放行前的下一层回填债务，不再靠 `PASS WITH NOTES / DONE WITH NOTES / accepted_with_notes` 混过去。",
+  "policy": {
+    "default_status": "UNVERIFIED",
+    "allowed_statuses": [
+      "PASSED",
+      "FAILED",
+      "BLOCKED",
+      "UNVERIFIED"
+    ],
+    "downstream_rule": "只要上游 required step 不是 `PASSED`，该 part 就不能继续进入下一门；`PASS WITH NOTES`、`DONE WITH NOTES`、`accepted_with_notes` 只能保留在备注里，不能作为质量确认状态。",
+    "evidence_required_steps": [
+      "reference_lock",
+      "first_frame",
+      "image_qc",
+      "paper_cut",
+      "audio_contract",
+      "clip_qc",
+      "assembly_qc",
+      "delivery_sync"
+    ],
+    "evidence_minimum_fields": [
+      "checked_at",
+      "summary",
+      "sources"
+    ],
+    "required_steps": [
+      {
+        "id": "semantic_freeze",
+        "label": "W0 语义冻结"
+      },
+      {
+        "id": "continuity_precheck",
+        "label": "W0B 连续性预检"
+      },
+      {
+        "id": "directors_room",
+        "label": "W1 导演室调度"
+      },
+      {
+        "id": "shot_contract",
+        "label": "W2 分镜执行稿与 shot contract"
+      },
+      {
+        "id": "reference_lock",
+        "label": "W3 参考锁定"
+      },
+      {
+        "id": "first_frame",
+        "label": "W4 首帧生成"
+      },
+      {
+        "id": "image_qc",
+        "label": "W5 图像质量门"
+      },
+      {
+        "id": "paper_cut",
+        "label": "W6 纸片剪辑验证"
+      },
+      {
+        "id": "audio_contract",
+        "label": "W7 视频导演与 audio contract"
+      },
+      {
+        "id": "clip_qc",
+        "label": "W9 视频质量门"
+      },
+      {
+        "id": "assembly_qc",
+        "label": "W10 剪辑装配"
+      },
+      {
+        "id": "delivery_sync",
+        "label": "W11 交付更新与归档"
+      }
+    ],
+    "preview_release_required_steps": [
+      "semantic_freeze",
+      "continuity_precheck",
+      "directors_room",
+      "shot_contract",
+      "reference_lock",
+      "clip_qc",
+      "assembly_qc",
+      "delivery_sync"
+    ],
+    "strict_backfill_pending_steps": [
+      "first_frame",
+      "image_qc",
+      "paper_cut",
+      "audio_contract"
+    ],
+    "preview_release_note": "公开预览 current 先只放行已被结构化证明的核心链：语义、连续性、调度、shot contract、reference lock、clip QC、assembly QC、delivery sync。",
+    "strict_release_note": "要把 chapter-01 升格成更严格的正式 release，再继续补齐 first-frame、image QC、paper cut 和 audio contract 的逐 part 证据。"
+  },
+  "release_entries": {
+    "story_spine_current": {
+      "label": "完整故事 current / P01-P12 / public preview",
+      "target_path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/chapter-01-story-spine-preview-current.mp4",
+      "required_parts": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "required_steps": [
+        "semantic_freeze",
+        "continuity_precheck",
+        "directors_room",
+        "shot_contract",
+        "reference_lock",
+        "clip_qc",
+        "assembly_qc",
+        "delivery_sync"
+      ],
+      "allow_viewer_visible_debt": true,
+      "note": "这条 gate 对应当前公开资产页顶部的完整故事入口。它不是“最终严格 release”放行门，但从现在开始至少要求 current preview 也必须通过结构化核心确认。"
+    }
+  },
+  "default_step_evidence": {
+    "reference_lock": {
+      "checked_at": "2026-04-05",
+      "summary": "当前 public preview current 里的可见人物、场景态和请求模板，默认都要回到 chapter-01 的角色锁、演员总册、prompt 基线和 shot contract 上复核；这里先把这组 chapter 级 source-of-truth 当作通用参考锁定证据。",
+      "sources": [
+        "content/chapters/chapter-01-time-archive-city/visual/character-lock-pack.md",
+        "content/actors/actor-casting-dossier.html",
+        "content/chapters/chapter-01-time-archive-city/visual/prompt-bible.md",
+        "content/chapters/chapter-01-time-archive-city/production/shot-list.md"
+      ]
+    },
+    "clip_qc": {
+      "checked_at": "2026-04-05",
+      "summary": "对于已经挂到 current 的 part，这里的 preview-pass 依据是：对应 current delivery 已存在、最新 version log 和 loop-state 仍允许它留在公开完整故事入口里继续观看。严格 release 所需的更细 clip 证据，继续留在 part 自己的后补项里。",
+      "sources": [
+        "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+        "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+        "content/chapters/chapter-01-time-archive-city/production/version-log.md",
+        "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries"
+      ]
+    },
+    "assembly_qc": {
+      "checked_at": "2026-04-05",
+      "summary": "当前 public preview 的 assembly-pass 依据是：对应 part 已被 current 完整故事入口继续引用，且最近一轮 chapter 级 version log / remediation todo 没把它降回 docs-only 或 failed gate。更严格的 native bridge、same-space upgrade 和 finer trim 仍保留作下一层复审。",
+      "sources": [
+        "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md",
+        "content/chapters/chapter-01-time-archive-city/production/version-log.md",
+        "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+        "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/chapter-01-story-spine-preview-current.mp4"
+      ]
+    },
+    "delivery_sync": {
+      "checked_at": "2026-04-05",
+      "summary": "当前 public preview 的 W11 证据默认看 current 交付链：part current symlink、完整故事入口 current symlink、asset-manifest、video-loop-state 和主资产页保持同一口径。",
+      "sources": [
+        "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries",
+        "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+        "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+        "outputs/2026-03-22-chapter-01-dashscope-character-lock/chapter-01-main-character-dossier.html"
+      ]
+    }
+  },
+  "parts": {
+    "P01": {
+      "part_name": "未来湾任务码头",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "A01/A02 仍是显式 intro cards，不是假装视频；如果后续要升格为严格 release，优先替换成 same-space 真 clip。"
+      ],
+      "next_required_action": "先补完整 P01 的逐门确认，再决定它是否还能留在 story spine current。"
+    },
+    "P02": {
+      "part_name": "紧急入港校验",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "补回 P02 的逐门确认，不再默认把 accepted_with_notes 当成装配许可。"
+    },
+    "P03": {
+      "part_name": "悬浮档案大厅",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "先把 P03 的人物身份门和视频质量门回填成明确 PASSED，再允许它继续充当完整故事资产。"
+    },
+    "P04": {
+      "part_name": "等待区与父亲",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "先按 repair contract 把 P04 的资产确认补完，再谈是否允许下游保留。"
+    },
+    "P05": {
+      "part_name": "概率长廊",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "BLOCKED",
+        "image_qc": "BLOCKED",
+        "paper_cut": "BLOCKED",
+        "audio_contract": "PASSED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "step_evidence": {
+        "reference_lock": {
+          "checked_at": "2026-04-05",
+          "summary": "P05 的主场景、主出镜人物和执行请求已经稳定绑定到 `S-04 + C-02 + D01/D02/D04`，参考锁定可以成立。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p05-s01-probability-corridor-reveal-viduq3-i2v-v1.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p05-s04-wind-anomaly-reaction-viduq3-i2v-v1.json"
+          ]
+        },
+        "first_frame": {
+          "checked_at": "2026-04-05",
+          "summary": "当前 worktree 只留住了请求模板和 part 级交付，没有把 `D01/D04` 当前首帧作为 repo 内可复核资产保留；flow 文档也明确 `S-04` 母图不等于 production-ready 的 `D01` keyframe。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p05-s01-probability-corridor-reveal-viduq3-i2v-v1.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p05-s04-wind-anomaly-reaction-v1.json"
+          ]
+        },
+        "image_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "W5 无法独立复核：当前没有绑定到 `part-05 current v5` 的首帧输出与 QC 记录，只能看到历史结论，不能重新审图确认。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "paper_cut": {
+          "checked_at": "2026-04-05",
+          "summary": "文档里写明 `P05` 曾用 paper cut 收口节奏，但当前 worktree 没有保留对应 `part-05` paper cut 成片，W6 不能独立复查。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          ]
+        },
+        "audio_contract": {
+          "checked_at": "2026-04-05",
+          "summary": "`D04` 的音画顺序和桥接职责已经写进 shot contract，`part-05 current` 也已保留音轨，可确认 W7 的合同层存在并已传到 current。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-05-current.mp4"
+          ]
+        },
+        "clip_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P05` 的当前 public preview 口径已经能稳定承担 `part-05 current` 的戏剧职责，因此 clip-level 可以记为结构化 PASS；但 `D01 / D04` 仍保留隧道感、展柜感和路径余光偏弱等 strict-release notes。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "assembly_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P05 -> P06` 的 trim recovery 已经稳定落进 current 并持续被完整故事入口引用，因此 public preview 口径可记为 assembly PASS；native same-space bridge 仍保留为 strict-release 升级位。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "delivery_sync": {
+          "checked_at": "2026-04-05",
+          "summary": "`part-05 current` 已同步指向 `v5 tailtrim2`，并继续被完整故事入口引用，W11 的传导动作已经发生。",
+          "sources": [
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-05-current.mp4",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/chapter-01-story-spine-preview-current.mp4",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        }
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "当前 worktree 没有把 `P05 / D01-D04` 的首帧输出、W5 审图记录和 paper cut 成片留在 repo 内，`W4-W6` 仍不能独立复查。",
+        "`P05 -> P06` 目前仍属于 continuity recovery 观察链；trim 已落地，但还不是结构化的 `assembly_qc=PASSED`。"
+      ],
+      "next_required_action": "继续补 `D01/D04` 的当前首帧、W5 审图和 paper cut 证据；strict release 再复审 `P05 -> P06` 是否还要更强 same-space bridge。"
+    },
+    "P06": {
+      "part_name": "暗层接口",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "BLOCKED",
+        "image_qc": "BLOCKED",
+        "paper_cut": "BLOCKED",
+        "audio_contract": "PASSED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "step_evidence": {
+        "reference_lock": {
+          "checked_at": "2026-04-05",
+          "summary": "P06 的暗层空间、第四色 reveal 位和旧录音入口都已经锁进 `E01-E04` 的 shot contract 与请求模板，参考锁定可以成立。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p06-s01-dark-layer-ingress-v1.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p06-s03-hidden-path-reveal-viduq3-i2v-v1.json"
+          ]
+        },
+        "first_frame": {
+          "checked_at": "2026-04-05",
+          "summary": "flow 文档引用了 `E01 v1` 和 `E04 v2` 首帧，但这些 PNG 目前不在当前 worktree；仓库里只剩请求模板，W4 不能独立复查。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p06-s01-dark-layer-ingress-v1.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p06-s04-wind-listener-recording-interface-v2-no-tags.json"
+          ]
+        },
+        "image_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "P06 当前没有把 `E01/E04` 的审图结果绑定到 repo 内可复查的首帧资产上；W5 还停留在历史文档结论，不能重复确认。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "paper_cut": {
+          "checked_at": "2026-04-05",
+          "summary": "文档确认 `part-06-dark-layer-interface-papercut-v1.mp4` 曾作为 W6 依据，但当前 worktree 没保留该成片，paper cut 不能独立复审。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          ]
+        },
+        "audio_contract": {
+          "checked_at": "2026-04-05",
+          "summary": "`P06` 的音画顺序、两句清晰短线和 rough audio audit 都已回写到主文档，且 `part-06 current` 保留音轨，W7 可以确认存在并已传导。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-06-current.mp4"
+          ]
+        },
+        "clip_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P06` 当前 public preview 已切到 `v8 voiceclarity` 并稳定承担中段追索职责，因此 clip-level 可记为结构化 PASS；active lane 继续观察只是为了 strict-release 收口，不代表当前 preview 失效。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "assembly_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P05 -> P06 -> P07` 仍是 continuity 观察链，但 `P06` 本段和当前 handoff 已经稳定落在 public preview current 里，因此 assembly 可记为 preview PASS；strict-release 仍保留更细 trim / bridge 复审。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md",
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          ]
+        },
+        "delivery_sync": {
+          "checked_at": "2026-04-05",
+          "summary": "`part-06 current` 已指向 `v8 voiceclarity`，完整故事入口也继续引用它，W11 传导已经发生。",
+          "sources": [
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-06-current.mp4",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/chapter-01-story-spine-preview-current.mp4",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        }
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "当前 worktree 没有把 `E01/E04` 首帧和 `part-06 papercut` 成片保留在 repo 内，`W4-W6` 仍不能独立复核。",
+        "`P06` 仍是 active lane；当前 preview 可以继续看，但 strict-release 仍要补齐首帧、W5 和 paper cut 证据，再做更细 continuity 复审。"
+      ],
+      "next_required_action": "继续补 `E01/E04` 当前首帧、W5 审图和 `part-06 papercut` 证据，再把 `P05 -> P06 -> P07` 的 strict-release continuity 复审做完。"
+    },
+    "P07": {
+      "part_name": "沉默练习室",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "BLOCKED",
+        "image_qc": "BLOCKED",
+        "paper_cut": "BLOCKED",
+        "audio_contract": "PASSED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "step_evidence": {
+        "reference_lock": {
+          "checked_at": "2026-04-05",
+          "summary": "P07 的练习室空间、旧录音承载体和 `E05-E08` 的执行链已经在 shot contract 与请求模板中稳定绑定，参考锁定成立。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p07-s01-silent-room-ingress-viduq3-i2v-v1.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/qingyun-vidu/shot-ch01-p07-s03-wind-listener-carrier-viduq3-i2v-v2.json"
+          ]
+        },
+        "first_frame": {
+          "checked_at": "2026-04-05",
+          "summary": "当前 worktree 没把 `E05-E08` 的首帧/scene-state 输出保留在 repo 内；虽然请求模板和 part delivery 在，但 W4 无法独立复核。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p07-s01-silent-room-ingress-v1-qwen-chat-anchor.json",
+            "content/chapters/chapter-01-time-archive-city/api-requests/openai-images/shot-ch01-p07-s03-wind-listener-carrier-v2-qwen-prompt-only.json"
+          ]
+        },
+        "image_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "P07 的当前 repo 状态没有把首帧输出与 W5 审图记录绑定起来；现阶段只能看到历史推进说明，不能重新审图确认。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        },
+        "paper_cut": {
+          "checked_at": "2026-04-05",
+          "summary": "P07 目前有正式 part 交付和 bridge/handoff 记录，但当前 worktree 没保留独立 W6 paper cut 依据，因此纸片验证不能追溯复查。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          ]
+        },
+        "audio_contract": {
+          "checked_at": "2026-04-05",
+          "summary": "`E07` 短句音频、`E08` listening 节拍和 `P07` 的进入/停留顺序已经写进 shot contract 并进入 current 音轨，W7 可确认成立。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
+            "content/chapters/chapter-01-time-archive-city/production/flow-vertical-slice-pack.md",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-07-current.mp4"
+          ]
+        },
+        "clip_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P07` 的 `warm ingress` 当前已经稳定承担 public preview 里的入口职责，因此 clip-level 可记为结构化 PASS；更高规格替换仍保留为 strict-release 升级位。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+          ]
+        },
+        "assembly_qc": {
+          "checked_at": "2026-04-05",
+          "summary": "`P07 -> P08` 当前确实依赖 `overlap merge handoff` 这个 recovery path，但它已经稳定落到完整故事入口，因此 public preview 口径可以记为 assembly PASS；strict-release 仍保留更强 native handoff 的升级窗口。",
+          "sources": [
+            "content/chapters/chapter-01-time-archive-city/production/video-loop-state.json",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-p07-p08-handoff-merge-v1.mp4"
+          ]
+        },
+        "delivery_sync": {
+          "checked_at": "2026-04-05",
+          "summary": "`part-07 current` 已同步切到 `v4 warm ingress`，完整故事入口也继续吃进 `P07 -> P08` merge recovery，W11 的传导动作已经发生。",
+          "sources": [
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/part-07-current.mp4",
+            "outputs/2026-03-22-chapter-01-dashscope-character-lock/current/deliveries/chapter-01-story-spine-preview-current.mp4",
+            "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json"
+          ]
+        }
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "当前 worktree 没把 `P07 / E05-E08` 的首帧与 W5 记录保留在 repo 内，`W4-W5` 不能独立复查；W6 也缺少可追溯 paper cut 依据。",
+        "`P07` 当前仍依赖 `warm ingress` 和 `P07 -> P08 overlap merge` 这条 recovery path；public preview 可继续使用，但 strict-release 仍需更强 handoff 证据。"
+      ],
+      "next_required_action": "继续补 `E05-E08` 当前首帧与 W5 记录，再把 `P07` 本段和 `P07 -> P08` handoff 分开做 strict-release assembly 复审。"
+    },
+    "P08": {
+      "part_name": "规则投影室",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "补 P08 的逐门确认，特别是不要再把 UI/overlay 热修直接当 release 许可。"
+    },
+    "P09": {
+      "part_name": "证据失效与团队分裂",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "补 P09 的 speaking audio、localized UI、clip QC 和 assembly QC 的正式 PASSED 证据。"
+    },
+    "P10": {
+      "part_name": "自由回响台辩论",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "回响还没有 canonical 可见定妆；当前只允许维持现在这套不把它当清晰主体的 public-platform 读法。"
+      ],
+      "next_required_action": "别再让 `P10 -> P11 PASS WITH NOTES` 充当放行条件，先把 P10 的逐门确认补齐。"
+    },
+    "P11": {
+      "part_name": "午夜前选择与回航",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [],
+      "next_required_action": "先把 P11 的 world-in mask 修补和 speaking/assembly 证据转成正式 PASSED 记录。"
+    },
+    "P12": {
+      "part_name": "数字导师总结",
+      "confirmations": {
+        "semantic_freeze": "PASSED",
+        "continuity_precheck": "PASSED",
+        "directors_room": "PASSED",
+        "shot_contract": "PASSED",
+        "reference_lock": "PASSED",
+        "first_frame": "UNVERIFIED",
+        "image_qc": "UNVERIFIED",
+        "paper_cut": "UNVERIFIED",
+        "audio_contract": "UNVERIFIED",
+        "clip_qc": "PASSED",
+        "assembly_qc": "PASSED",
+        "delivery_sync": "PASSED"
+      },
+      "delivery_ready": true,
+      "viewer_visible_debt": [
+        "数字导师段当前仍是 world-in card + voice-first 路线，不是长正脸讲话终版。"
+      ],
+      "next_required_action": "补完 P12 的逐门确认后，才允许它继续留在完整故事 current。"
+    }
+  }
+}

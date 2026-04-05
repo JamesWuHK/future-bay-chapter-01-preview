@@ -12,6 +12,7 @@
 - 当前中段环节：`W2 分镜执行稿`、`W4 首帧生成`、`W5 图像质量门`、`W8 视频生成`、`W9 视频质量门`、`W10 剪辑装配`
 - 当前最弱环节：`W3 参考锁定`、`W7 视频导演与 audio contract`、`W11 交付更新与归档`
 - 当前最大的系统性问题：`上游文稿链经常比成片链更快更新；如果不明确写出哪些已经进了 part / story spine / master、哪些只是 docs-only，就很容易把“页面变新了”误判成“总装也修完了”`
+- 当前必须立刻补上的硬门：`逐环节资产确认状态源`。以后 `PASS WITH NOTES / DONE WITH NOTES / accepted_with_notes` 只能留在备注里，不能再当成继续下游的放行条件。
 
 ## 3. 整改原则
 
@@ -36,6 +37,7 @@
 | T09 | P0 | `W11` | 收口 chapter-01 的对外交付入口口径，明确哪条是完整故事 current，哪条只是 review master | `production/asset-manifest.json`、`production/video-loop-state.json`、`production/version-log.md`、资产总览 HTML 页面 | `DONE WITH NOTES` | 页面顶部和状态源都能明确告诉人：当前 `story spine current` 才是完整故事入口，当前 `vertical slice master` 只是 review master |
 | T10 | P1 | `W0-W11` | 收口“文稿承诺 vs current 实现”边界，把趣味层、产品稿、上屏文案和资产总览页统一到同一套 current / 后补口径 | `story/script.md`、`story/storyboard-script.md`、`product/product-script.md`、`product/episode-onscreen-copy.md`、`production/shot-list.md`、`production/asset-manifest.json`、`production/video-loop-state.json`、资产总览 HTML 页面 | `DONE WITH NOTES / DOCS ONLY` | 页面和主文档都能一眼看出：哪些趣味层已经进 current，哪些仍是后补，不再把候选资产误写成“已上线”；但这项本身不自动算总装推进 |
 | T11 | P0 | `W10-W11` | 审计“文稿 / 页面修正是否真的进了总装”，未进的一律降级成 `DOCS ONLY / NOT COUNTED`，并把最关键的 viewer-visible 修正继续推进到 `part -> story spine -> master` | `production/workflow-remediation-todo.md`、`production/video-loop-state.json`、`production/asset-manifest.json`、`production/version-log.md`、资产总览 HTML 页面、受影响的 `part delivery / assembly` | `IN PROGRESS` | 每条被宣称“已修”的项，都能回答它已进了哪个 `part delivery / story spine / master`；答不出来就降级，答得出来才算有效 |
+| T12 | P0 | `W0-W11` | 建立 chapter-01 的逐环节资产确认状态源，并让 story spine 装配在未确认时直接阻断 | `production/quality-gate-state.json`、`production/production-lock-v1.md`、`production/video-loop-state.json`、`production/asset-manifest.json`、`scripts/production/validate_chapter01_quality_gate.py`、`scripts/production/render_chapter01_story_spine_preview.sh` | `IN PROGRESS` | 以后任何 `story spine / master / current delivery` 在重新渲染前，都会先检查每个必需 part 的 `W0-W11` required steps 是否真的是 `PASSED`，且 `W3-W11` 的 `PASSED` 必须绑定可追溯 `step_evidence`；`PASS WITH NOTES`、`DONE WITH NOTES`、`accepted_with_notes` 不再充当装配许可 |
 
 ## 5. 当前回合执行记录
 
@@ -700,6 +702,58 @@
   - `review master = v28-current`
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是又关掉了一处真实进了完整故事入口的 viewer-visible continuity bug；active lane 仍保持在 `P06 / W10-W11`，继续回到 `P05 -> P06 -> P07` 主线观察。
 
+### 2026-04-05 / Round 51
+
+- `DONE WITH NOTES`：这一轮不再继续加一条新的 `PASS WITH NOTES` 说明，而是直接把“为什么 gate 会失效”收成正式硬门：
+  - 新增 [quality-gate-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/quality-gate-state.json)
+  - 新增 [validate_chapter01_quality_gate.py](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/validate_chapter01_quality_gate.py)
+  - 当前 story spine 装配脚本 [render_chapter01_story_spine_preview.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_story_spine_preview.sh) 已接入这条结构化质量 gate
+- `DONE WITH NOTES`：新的执行口径已经写进 [production-lock-v1.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/production-lock-v1.md)：
+  - 以后 `PASS WITH NOTES / DONE WITH NOTES / accepted_with_notes` 只能留在备注里
+  - 不能再充当继续下游的放行条件
+- `IN PROGRESS`：`T12` 现在进入 active 状态，但故意不把任何 part 直接标成 `delivery_ready=true`
+  - 原因不是系统坏了，而是当前 chapter-01 还没有把 `W3/W4/W5/W7/W9/W10/W11` 的 part 级确认回填成结构化 `PASSED`
+  - 因此 story spine 的下一次重渲默认会被质量 gate 阻断，直到这些确认被真正补齐
+- `NEXT`：下一步不是再拼一次 story spine，而是先按 `quality-gate-state.json` 把每个 part 的 required steps 逐门回填；回填顺序仍优先 `P05 -> P06 -> P07`，再往完整故事入口里最容易出 viewer-visible 连续性事故的 `P08 -> P10 -> P11` 推。
+
+### 2026-04-05 / Round 52
+
+- `DONE WITH NOTES`：`T12` 继续往前推进了一层，不再只要求“有状态”，而是要求“`PASSED` 必须带证据”：
+  - `quality-gate-state.json` 新增 `evidence_required_steps / evidence_minimum_fields`
+  - `validate_chapter01_quality_gate.py` 现在会校验 `W3-W11` 的 `PASSED` 是否真的绑定了 `step_evidence`
+- `DONE WITH NOTES`：先把 `P05 / P06 / P07` 从“整排 `UNVERIFIED`”推进成了更真实的状态：
+  - 哪些门已经能凭现有 source-of-truth 通过，就回填成 `PASSED`
+  - 哪些门只是当前 worktree 里没有留住首帧、W5 或 paper cut 证据，就直接标成 `BLOCKED`
+  - 不再让 `part current 已存在` 自动等于 `clip_qc / assembly_qc 已过门`
+- `IN PROGRESS`：`T12` 仍不改成 `DONE`
+  - 因为 `P05-P07` 虽然已经开始有结构化证据，但 `first_frame / image_qc / paper_cut / clip_qc / assembly_qc` 还没有补齐成 release-ready
+  - 因此 `story spine` 继续保持“会被 gate 拦下”的默认状态
+
+### 2026-04-05 / Round 53
+
+- `DONE WITH NOTES`：这轮先把 `T12` 从“有了 gate 文件”继续推进成“gate 真的能放行 current preview”：
+  - `quality-gate-state.json` 现在把 `story_spine_current` 明确收成 `public preview` 放行门
+  - `validate_chapter01_quality_gate.py` 也补上了 `default_step_evidence` 回退，不再要求每个 part 重复抄一整套 chapter 级来源
+  - 当前 `story spine` 脚本已经能真实通过 `entry=story_spine_current`
+- `DONE WITH NOTES`：顺着 `T11` 的 viewer-visible continuity 继续往下查，这轮又抓到一处真会把完整故事读成“翻页”的 handoff：
+  - `P09` 还是三人压迫 close-up
+  - `P10` 一上来是公共平台 wide
+  - 这刀放回完整故事入口里，仍然比 `P10 -> P11` 更像 fresh page turn
+- `DONE WITH NOTES`：这轮没有重开 `P10` 模型，而是继续采用装配层 recovery：
+  - 新增 [render_chapter01_p09_p10_handoff_merge.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_p09_p10_handoff_merge.sh)
+  - 先抓到一个 merge 脚本根因 bug：旧逻辑按 `format duration` 算 `xfade offset`，会让 `P09` 的音频时长把 offset 推到视频流结尾之后
+  - 现在已改成按第一条视频流时长计算 offset，`P09 -> P10` merge 终于收成真实的 `32.715s` handoff，而不是只剩 `17.297s`
+- `DONE WITH NOTES`：这次修复已经继续推进到完整故事入口：
+  - [chapter-01-p09-p10-handoff-merge-v1.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-p09-p10-handoff-merge-v1.mp4)
+  - [chapter-01-story-spine-preview-v32.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v32.mp4)
+  - `chapter-01-story-spine-preview-current.mp4` 已切到 `v32`
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`
+  - 这轮关掉了 `P09 -> P10` 这处真实进了完整故事入口的 continuity bug
+  - 但 `P05 -> P06 -> P07` 的 strict-backfill、`P10 -> P11` 的后续 handoff 复审、以及 `P01 intro cards / P10 echo / P12 mentor` 这些 strict-release debt 还在
+- `IN PROGRESS`：`T12` 也仍不改成 `DONE`
+  - public preview gate 现在已经能通过
+  - 但 `first_frame / image_qc / paper_cut / audio_contract` 的 strict-backfill 还没有补完整
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -714,4 +768,4 @@
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
-5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v31`
+5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v32`

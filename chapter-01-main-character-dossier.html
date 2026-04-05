@@ -461,16 +461,18 @@
         <p><span class="label">最近已进总装</span></p>
         <ul>
           <li>资产总览页现在优先读取预览仓的公开 current 镜像，并把整改 To-Do、当前 active repair contract、完整故事入口和 review master 一起挂出来。</li>
+          <li>`quality-gate-state` 这轮已经不再是“整排 delivery_ready=false”的空拦截，而是能真实通过 `story_spine current / public preview` 的结构化 gate；strict-backfill 继续留在下一层。</li>
           <li>`P01 / S04` 的旧 baked line 和 `P01 / S07` 的错片 / 半句串镜问题已经修进 current，并继续留在当前完整故事入口和 review master 里。</li>
-          <li>`P05 current` 已经继续收成 `v5 tailtrim2`，并继续保留在现行 `story spine v31 / master v28-current` 里；这轮又把尾部那半拍“重新站稳”的泄气感收掉了。</li>
-          <li>`P06 / E03-E04` 原本只停在文稿里的系统确认和婆婆旧录音短线，这两拍现在已经继续收成更清楚的 `part-06 v8 voiceclarity`，并继续传到 `story spine v31 / master v28-current`。</li>
-          <li>`P07` 的开头这轮又继续修了一刀：原先的 `v3 head trim` 裁得太狠，现在已经改成保留短暖房间入口的 `part-07 v4 warm ingress`，并继续保留在当前完整故事入口 `story spine v31`。</li>
+          <li>`P05 current` 已经继续收成 `v5 tailtrim2`，并继续保留在现行 `story spine v32 / master v28-current` 里；这轮没有回退重开，而是继续把中段泄气感压在装配层里。</li>
+          <li>`P06 / E03-E04` 原本只停在文稿里的系统确认和婆婆旧录音短线，这两拍现在已经继续收成更清楚的 `part-06 v8 voiceclarity`，并继续传到 `story spine v32 / master v28-current`。</li>
+          <li>`P07` 的开头这轮继续保留 `part-07 v4 warm ingress`，并和 `P07 -> P08` 的 merge 一起继续挂在当前完整故事入口 `story spine v32` 上。</li>
           <li>`P07 -> P08` 这轮又继续收了一刀：不重开 `P08` 模型，只在完整故事装配层加了 `overlap merge handoff`，让暖桌面先轻溶到规则厅，不再更像硬翻新页面。</li>
-          <li>`P08 / E09` 的空白规则厅建立位这轮也真收短了：`part-08 current` 已切到 `v2 headtrim`，并继续保留在当前完整故事入口 `story spine v31`；review master 仍不变，因为它本来就不含 `P08`。</li>
-          <li>`P09 / E13` 里还会抢第一眼的英文伪 UI，已经真修进 `part-09 v4 localized-ui`，并继续保留在当前完整故事入口 `story spine v31` 里；这次验收以完整故事入口为准，因为 review master 本来就不含 `P09`。</li>
+          <li>`P08 / E09` 的空白规则厅建立位这轮也真收短了：`part-08 current` 已切到 `v2 headtrim`，并继续保留在当前完整故事入口 `story spine v32`；review master 仍不变，因为它本来就不含 `P08`。</li>
+          <li>`P09 / E13` 里还会抢第一眼的英文伪 UI，已经真修进 `part-09 v4 localized-ui`，并继续保留在当前完整故事入口 `story spine v32` 里；这次验收以完整故事入口为准，因为 review master 本来就不含 `P09`。</li>
           <li>`P09 / S03` 和 `P10 / S03` 的旧 baked-audio speaking clip，这轮已经真修进 `source clip -> part -> story spine -> master`，不再只是模板和页面先改了。</li>
-          <li>`P10` 自由回响台里还偏文件 / UI 腔的可见文案，已经真修进 `part-10 v5`，并继续保留在现行 `story spine v31 / master v28-current` 里。</li>
-          <li>`P11 / G02` close-up 两侧会露出来的英文漂浮文档，这轮已经用 world-in 浮卡遮罩真修进 `part-11 v5 / story spine v31 / master v28-current`，不再让结尾近景像跳出故事去看英文表单。</li>
+          <li>`P09 -> P10` 这轮又继续收了一刀：不重开 `P10` 模型，而是在完整故事装配层补了 `overlap merge handoff`，让三人压迫 close-up 先溶到公共平台，不再更像直接翻页。</li>
+          <li>`P10` 自由回响台里还偏文件 / UI 腔的可见文案，已经真修进 `part-10 v5`，并继续保留在现行 `story spine v32 / master v28-current` 里。</li>
+          <li>`P11 / G02` close-up 两侧会露出来的英文漂浮文档，这轮已经用 world-in 浮卡遮罩真修进 `part-11 v5 / story spine v32 / master v28-current`，不再让结尾近景像跳出故事去看英文表单。</li>
           <li>`P06 / E03-E04` 的 source-of-truth 残留旧句这轮也一起清掉了，`storyboard / shot-list / voice` 不再一边写新句、一边留旧句。</li>
           <li>资产总览页已经扩展成五份主文稿镜像入口，不再只挂三份剧本文稿。</li>
           <li>`回响` 的出镜 gate、10-12 岁语言底线和去 AI 腔约束都已经回写到主文件。</li>
@@ -488,12 +490,13 @@
       <div class="box.warn">
         <p><span class="label">当前边界</span></p>
         <ul>
-          <li>顶部视频入口仍属于 `PASS WITH NOTES`，不是最终定稿。</li>
+          <li>顶部视频入口现在已经通过当前 `public preview quality gate`，但它仍属于 `PASS WITH NOTES`，不是最终 strict release。</li>
           <li>当前 active lane 仍在 `P06`，接下来要继续观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v4 warm ingress` 这条链，再看 `P06 -> P07` 是否还需要更细的 trim / bridge。</li>
           <li>`v1.19 / v1.20` 那轮主要是文稿、页面和公开镜像收口；因为当时没有新的 `part delivery / story spine / master`，现在统一只算 `docs-only / not counted`。</li>
           <li>`T08` 这轮已经把 `P09 / P10` 最明确的旧 baked-audio 真修进 current，不再把这两处记成 `docs-only`；但 chapter-01 仍整体 `PASS WITH NOTES`，不是最终定稿。</li>
-          <li>当前 active lane 还是 `P06`。接下来要继续回到 `P05 -> P06 -> P07` continuity 主线做复审，而不是误把这轮 `P06` 清晰度热修和前一轮 speaking debt 闭环当成“全章已经收完”。</li>
+          <li>当前 active lane 还是 `P06`。接下来要继续回到 `P05 -> P06 -> P07` continuity 主线做复审，而不是误把这轮 `quality gate` 放行和 `P09 -> P10` merge 闭环当成“全章已经收完”。</li>
           <li>`回响` 还没有 canonical 可见定妆，不能作为清晰主体进入视频主线。</li>
+          <li>`P01 intro cards`、`P10 回响可见定妆`、`P12 mentor` 这些仍是 strict-release debt；现在只是没有再被误报成“已经没问题”。</li>
           <li>`P05 / D03` 这类荒诞微未来插片，目前仍是后补候选，不算 current 已完成。</li>
         </ul>
       </div>

@@ -6,17 +6,18 @@
 - 章节：`chapter-01-time-archive-city`
 - 标题：`不被预测的人生`
 - 负责人：`Codex / 项目团队`
-- 当前阶段：`连续剧化样板 + P05-P07 continuity 观察 + P07-P08 handoff merge recovery + W11 总装有效性审计`
-- 当前稳定版本：`v1.35`
+- 当前阶段：`连续剧化样板 + P05-P07 continuity 观察 + quality-gate preview pass + P09-P10 handoff merge recovery + W11 总装有效性审计`
+- 当前稳定版本：`v1.36`
 - 当前 active lane：`P06`
-- 当前完整故事入口：`chapter-01-story-spine-preview-v31.mp4`
+- 当前完整故事入口：`chapter-01-story-spine-preview-v32.mp4`
 - 当前 review master：`chapter-01-vertical-slice-master-v28-current.mp4`
-- 当前判断：`当前 active lane 仍是 P06 continuity 观察位。P05 -> P06 -> P07 继续维持 PASS WITH NOTES；这轮真正新增的总装闭环，是把 `P07 -> P08` 在完整故事入口里还像“新页面”的硬切，收成 `P07 + P08 overlap merge`，并继续推进到 `story spine v31`。review master 仍保持 `v28-current`，因为它本来就不含 `P08`。`
+- 当前判断：`当前 active lane 仍是 P06 continuity 观察位。P05 -> P06 -> P07 继续维持 PASS WITH NOTES；这轮先把 `quality-gate-state.json` 收成可执行的 public-preview gate，再把 `P09 -> P10` 在完整故事入口里还像“翻页”的硬切，收成 `P09 + P10 overlap merge`，并继续推进到 `story spine v32`。review master 仍保持 `v28-current`，因为它本来就不含 `P08 / P09`。`
 
 ## 2. 阶段版本总览
 
 | 日期 | 版本 | 阶段 | 核心变化 | 是否冻结 |
 | --- | --- | --- | --- | --- |
+| 2026-04-05 | v1.36 | W11 / quality-gate preview pass + P09-P10 handoff merge 传导 | 把 `quality-gate-state` 从“默认整排拦死”收成可执行的 public-preview gate，再把 `P09 -> P10` 在完整故事入口里还像翻页的硬切，收成 `P09 + P10 overlap merge handoff`，并继续推进到 `story spine v32`；`review master` 不变，因为它不含 `P08 / P09` | 否 |
 | 2026-04-05 | v1.35 | W11 / P07-P08 handoff merge recovery 传导 | 复审确认 `P07 -> P08` 在完整故事入口里仍像“开了新页面”，于是保持 `part-07 current / part-08 current` 不变，只在 assembly 层新增 `P07 + P08 overlap merge handoff`，把完整故事入口收成 `story spine v31`；`review master` 不变，因为它不含 `P08` | 否 |
 | 2026-04-05 | v1.34 | W11 / P11 G02 english-leak recovery 传导 | 抓到 `P11 / G02` close-up 两侧会露出来的英文漂浮文档，于是直接做 assembly-level world-in 浮卡遮罩 recovery，把 `part-11 current` 收成 `v5`，并继续重渲 `story spine v30 / master v28-current` | 否 |
 | 2026-04-05 | v1.33 | W11 / P08 head-trim recovery 传导 | contact-sheet 复审确认 `P07 -> P08` 的真正问题是 `P08 / E09` 空白建立略久，于是把 `part-08 current` 收成 `v2 headtrim`，并继续重渲 `story spine v29`；`review master` 不变，因为它不含 `P08` | 否 |
@@ -152,6 +153,47 @@
 | 2026-04-03 | v1.06 | P01 S05 截断根因修复并重发整章 current | 复核确认 `P01 / S05` 的源 clip 实长为 `5.01s`，旧装配脚本却只保留 `3.4s`，所以守望者交班会像“说到灰银任务就没了”。本轮把 `P01` 重装到 `v26`，再低磁盘修复 `story spine v34-full / chapter master v30-current`，同步补回 metadata 与总览页版本说明，确保顶部整章入口、`P01 current` 和 `master current` 都吃到这次真实修复 | 否 |
 
 ## 3. 详细版本记录
+
+## Version `v1.36`
+
+- 日期：`2026-04-05`
+- 阶段：`W11 / quality-gate preview pass + P09-P10 handoff merge 传导`
+- 目标：先把 `quality-gate-state` 从“任何重渲都会被整排 delivery_ready=false 拦死”收成可执行的 public-preview gate，再把 `P09 -> P10` 在完整故事入口里还像“翻到新页面”的硬切收成 assembly-level overlap merge
+
+### 主要产出
+
+- [quality-gate-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/quality-gate-state.json)
+- [validate_chapter01_quality_gate.py](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/validate_chapter01_quality_gate.py)
+- [render_chapter01_p09_p10_handoff_merge.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_p09_p10_handoff_merge.sh)
+- [render_chapter01_story_spine_preview.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_story_spine_preview.sh)
+- [chapter-01-p09-p10-handoff-merge-v1.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-p09-p10-handoff-merge-v1.mp4)
+- [chapter-01-p09-p10-handoff-merge-v1.metadata.json](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/metadata/videos/chapter-01-p09-p10-handoff-merge-v1.metadata.json)
+- [chapter-01-story-spine-preview-v32.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v32.mp4)
+- [chapter-01-story-spine-preview-v32.metadata.json](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/metadata/videos/chapter-01-story-spine-preview-v32.metadata.json)
+
+### 核心变化
+
+- 这轮先没有直接继续拼新总装，而是先把 `T12` 的第一版硬门修正成可执行口径：
+  - `story_spine_current` 现在先承担 `public preview` 的结构化放行门
+  - 它要求 `semantic / continuity / directors-room / shot contract / reference lock / clip QC / assembly QC / delivery sync` 这些核心步骤必须是真正 `PASSED`
+  - `first_frame / image_qc / paper_cut / audio_contract` 这些 strict-backfill 证据如果还没补齐，就继续保留成下一层债务，不再假装已经全过
+- 这轮也顺手修掉了一个实际会让 merge 失真的脚本 bug：
+  - 旧 merge 脚本按 `format duration` 算 `xfade offset`
+  - 但 `P09` 的 `audio duration` 长于 `video stream duration`
+  - 结果淡化点会落到视频流结尾之后，第二段实际上接不进来
+  - 现在已统一改成按第一条视频流时长计算 offset
+- 在 gate 可执行、merge 逻辑也修正之后，这轮真正推进进完整故事入口的是：
+  - `P07 -> P08 overlap merge handoff`
+  - `P09 -> P10 overlap merge handoff`
+  - `story spine current = v32`
+
+### 当前结论
+
+- 这轮真正闭环的，不只是又多了一条 merge clip，而是：
+  - `quality-gate preview current` 现在已经能真实通过
+  - `P09 -> P10` 的 viewer-visible hard cut 已经继续推进到完整故事入口
+  - `chapter-01-story-spine-preview-current.mp4` 已切到 `v32`
+- `T11` 仍不改成 `DONE`。当前只是又关掉了一处真实进了完整故事入口的 continuity bug，并把 gate 规则从空壳收成可执行；`P05 -> P06 -> P07` 的 strict-backfill 和 `P10 -> P11` 的后续复审仍继续。
 
 ## Version `v1.35`
 

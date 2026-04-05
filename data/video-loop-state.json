@@ -3,11 +3,11 @@
   "chapter_title": "不被预测的人生",
   "updated_at": "2026-04-05",
   "controller_version": "chapter01-video-loop-v1",
-  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮回到 `P05 -> P06 -> P07` 观察链往下审时，抓到 `P07 -> P08` 在完整故事入口里还会从暖色旧桌面硬切到白色规则厅，观感更像“开了新页面”。当前已用 assembly-level overlap merge，把这刀收进 `story spine v31`；`review master` 仍不变，因为它本来就不含 `P08`。",
+  "scope_note": "当前视频 loop 仍把 active lane 保持在 `P06 continuity`。这轮先把 `quality-gate-state.json` 收成可执行的 public-preview gate，再继续复审完整故事入口，确认 `P09 -> P10` 也还像“翻到新页面”。当前已把 `P07 -> P08` 和 `P09 -> P10` 都收成 assembly-level overlap merge，并推进到 `story spine v32`；`review master` 仍不变，因为它本来就不含 `P08 / P09`。",
   "current_focus_part": "P06",
   "current_gate": "W10-W11",
-  "current_judgement": "PASS WITH NOTES / P06_E03_E04_VOICE_CLARITY_LANDED + E01_TRIMMED_INGRESS + P05_TAIL_TRIM_REFINED + P07_WARM_INGRESS + P07_P08_HANDOFF_MERGED + P08_HEAD_TRIM_LANDED + P09_P10_AUDIO_CLOSED + P09_E13_LOCALIZED_UI + P11_G02_WORLDIN_MASK",
-  "next_action": "继续按 active lane 观察 `P05 -> P06 -> P07` continuity；这轮已经把 `P07 -> P08` 在完整故事入口里还像“新页面”的硬切，用 assembly-level overlap merge 收进 `story spine v31`。`review master` 仍先不动，因为它本来就不含 `P08`；下一步回到 continuity 主线和剩余 viewer-visible 质量审计。",
+  "current_judgement": "PASS WITH NOTES / QUALITY_GATE_PREVIEW_PASSED + P06_E03_E04_VOICE_CLARITY_LANDED + E01_TRIMMED_INGRESS + P05_TAIL_TRIM_REFINED + P07_WARM_INGRESS + P07_P08_HANDOFF_MERGED + P08_HEAD_TRIM_LANDED + P09_P10_AUDIO_CLOSED + P09_E13_LOCALIZED_UI + P09_P10_HANDOFF_MERGED + P11_G02_WORLDIN_MASK",
+  "next_action": "继续按 active lane 观察 `P05 -> P06 -> P07` continuity；当前 public preview 的 `quality gate` 已经可以通过，并允许 `story spine current` 继续重渲。下一步不再卡在“整排 delivery_ready=false”，而是转成：继续补 `W4-W7` 的 strict-backfill 证据，同时复审 `P10 -> P11` 和 `P01 intro cards / P12 mentor` 这类还没升格成 strict release 的 debt。`review master` 仍先不动，因为它本来就不含 `P08 / P09`。",
   "workflow_refs": {
     "project_agents": "agents.md",
     "chapter_agents": "content/chapters/chapter-01-time-archive-city/agents.md",
@@ -15,6 +15,7 @@
     "episode_workflow": "docs/production/episode-production-workflow.md",
     "shot_list": "content/chapters/chapter-01-time-archive-city/production/shot-list.md",
     "production_lock": "content/chapters/chapter-01-time-archive-city/production/production-lock-v1.md",
+    "quality_gate_state": "content/chapters/chapter-01-time-archive-city/production/quality-gate-state.json",
     "version_log": "content/chapters/chapter-01-time-archive-city/production/version-log.md",
     "asset_manifest": "content/chapters/chapter-01-time-archive-city/production/asset-manifest.json",
     "workflow_remediation_todo": "content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md",
@@ -24,6 +25,7 @@
   },
   "sync_status": {
     "asset_manifest": "SYNCED_2026-04-05",
+    "quality_gate_state": "SYNCED_2026-04-05 / PREVIEW_GATE_PASSED + STRICT_BACKFILL_OPEN",
     "workflow_remediation_todo": "SYNCED_2026-04-05",
     "preview_remediation_panel": "SYNCED_2026-04-05",
     "version_log_top_summary": "SYNCED_2026-04-05",
@@ -37,12 +39,12 @@
   },
   "delivery_entry_status": {
     "public_current_entry": {
-      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v31.mp4",
+      "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v32.mp4",
       "current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
       "type": "full_story_current",
       "scope": "P01-P12 完整故事入口",
-      "runtime_sec": 197.753923,
-      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新加的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案，以及前一轮 `P11 v5` `G02` world-in 浮卡遮罩修复。"
+      "runtime_sec": 197.427937,
+      "note": "资产总览页顶部应优先把这条当作当前完整故事入口；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、这轮新加的 `P09 -> P10` overlap merge handoff、`P10 v5` 的可见文案，以及 `P11 v5` `G02` world-in 浮卡遮罩修复。"
     },
     "review_master": {
       "path": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v28-current.mp4",
@@ -54,7 +56,7 @@
     },
     "dialogue_rollout": {
       "status": "VIDEO_SYNCED_WITH_NOTES",
-      "note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新落地的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、`P10 v5` 的可见文案、前一轮 `P11 v5` `G02` world-in 浮卡遮罩，以及更早一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v31`。`review master` 现在是 `v28-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。"
+      "note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、这轮新落地的 `P09 -> P10` overlap merge handoff、`P10 v5` 的可见文案、`P11 v5` `G02` world-in 浮卡遮罩，以及更早一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v32`。`review master` 现在是 `v28-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。"
     }
   },
   "active_repair_contract": {
