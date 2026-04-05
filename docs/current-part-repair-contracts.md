@@ -19,7 +19,7 @@
 - `part_id`：`P06`
 - `part_name`：`暗层接口`
 - `当前状态`：`DONE WITH NOTES`
-- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM + P07 HEAD TRIM LANDED`
+- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + E03_E04_VOICE_CLOSED + P05 TAIL TRIM + P07 HEAD TRIM LANDED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
@@ -34,7 +34,7 @@
 1. `P05` 结尾不再停在旧的正面定住 pose，观众会更像顺着异常风继续往下走。
 2. `P05` 结尾的异常风声一出来，观众就会顺着它进暗层，而不是先被一条更亮的空走廊打断。
 3. `E01` 第一秒就要让人知道，我们已经走进更暗、更贴近暗层的入口状态了。
-4. `E02-E04` 还得继续讲顺：`对波形 -> 找门 -> 录风声`，不能因为 trim 了开头，后面反而变乱。
+4. `E02-E04` 还得继续讲顺：`对波形 -> 找门 -> 录风声`，不能因为 trim 了开头，或因为这一轮补了声音，后面反而变乱。
 5. `P06 -> P07` 还要像后果推进，而不是“暗层刚看明白，又切到一个新页面”。
 
 换句话说，`P06` 必须把下面这条线讲顺：
@@ -87,15 +87,15 @@
 - `E02`：`KEEP WITH NOTES`
   - 波形解读职责仍成立，当前不因为入口 trim 回退。
 - `E03`：`KEEP WITH NOTES`
-  - 第四路径 reveal 仍是这段中间最重要的锚点，继续保留在线。
+  - 第四路径 reveal 仍是这段中间最重要的锚点；这轮已补进系统确认和轻字幕锚点，不再只是静音氛围位。
 - `E04`：`KEEP WITH NOTES`
-  - 风声婆婆录音接口仍承担“把追索继续推进出去”的职责，当前先观察它和 `P07` 的接法。
-- `P05 -> P06`：`P05 TAIL TRIM + TRIMMED INGRESS APPLIED`
+  - 风声婆婆录音接口仍承担“把追索继续推进出去”的职责；这轮已补进旧录音短线和轻字幕锚点，当前先观察它和 `P07` 的接法。
+- `P05 -> P06`：`P05 TAIL TRIM + VOICECLOSURE APPLIED`
   - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4`。
-  - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4`。
-  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v22.mp4`。
-  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v23-current.mp4`。
-  - 这次通过的是“把旧的正面定住 pose 和亮走廊 reset 一起收掉”；后续又继续用 `P07 v3 head trim` 把 `P06` 的桌面波形更直接接进 `P07` 的旧档案桌面。
+  - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v7-voiceclosure.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v24.mp4`。
+  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v25-current.mp4`。
+  - 这次通过的是“把旧的正面定住 pose、亮走廊 reset，以及 `E03/E04` 的静音断点一起收掉”；后续又继续用 `P07 v3 head trim` 把 `P06` 的桌面波形更直接接进 `P07` 的旧档案桌面。
   - 这不是宣称这段以后永远不用再升级，只是当前 same-space handoff 又往前收了一刀。
 - `Round 35 / contact-sheet 复审`
   - 继续抽看 `P05 tail -> P06 head` 和 `P06 tail -> P07 head` 后，当前判断不变：
@@ -105,7 +105,7 @@
 
 ## 9. 后续观察顺序
 
-1. 先观察这次 `P05 v4 tail trim + P06 trimmed ingress + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
+1. 先观察这次 `P05 v4 tail trim + P06 v7 voiceclosure + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
 2. 再继续审 `P05 -> P06 -> P07` 的连续性，必要时只走 `trim / bridge / reorder`。
 3. 如果未来拿到更强 native same-space ingress，再替换当前 recovery path。
 4. 不回头重开已经可留的 `E02-E04`。

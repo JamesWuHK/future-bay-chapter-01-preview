@@ -450,6 +450,27 @@
   - `P07/S04` 再补第二句短线，并把后半段继续留给风名标签、短风声和林澄反应
 - `IN PROGRESS`：这次没有新增 `part / story spine / master` 重装，所以不能把它误报成新的总装推进；它的价值在于关掉了一组会误导后续生产、也会让页面和成片口径重新长歪的 source-of-truth 漂移。
 
+### 2026-04-05 / Round 39
+
+- `DONE WITH NOTES`：继续按 `T11` 回到 `P06` 时，确认这里不该再只做 docs-only 降级，而是要把真正卡住的断点补进成片链：
+  - `P06 / E03` 文稿里一直承诺有系统确认
+  - `P06 / E04` 文稿里一直承诺有婆婆旧录音短线
+  - 但旧 current part 还是 atmosphere-only，形成了“文稿有声、成片无声”的真实断点
+- `DONE WITH NOTES`：这轮已把这个断点真实补进总装，而不是只改说明文字：
+  - 重写 [render_chapter01_part6_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part6_delivery.sh)
+  - 重渲 [part-06-dark-layer-interface-delivery-v7-voiceclosure.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v7-voiceclosure.mp4)
+  - 继续重装 [chapter-01-story-spine-preview-v24.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v24.mp4)
+  - 再继续重装 [chapter-01-vertical-slice-master-v25-current.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v25-current.mp4)
+- `DONE WITH NOTES`：这次补的不只是离屏声音，还额外加了轻量 viewer-visible 锚点：
+  - `E03` 现在会把 `隐藏路径已恢复 / 风暴听译者` 轻轻挂出来
+  - `E04` 现在会把 `风声婆婆旧录音：别只听最大声的那条。` 轻轻挂出来
+  - 这样就算孩子没一下子全听清，也不会错过关键意思
+- `DONE WITH NOTES`：仓库外 rough STT 这轮给出的结论也一起回写清楚了：
+  - 它能确认 `P06` 现在已经不是纯静音氛围位，而是有新的人声层
+  - 但它对本地 macOS 中文 TTS 的逐字识别不稳定，所以这轮不把机器逐字稿当唯一验收
+  - 当前这类短线，先以真实装配链闭环和可见锚点同步为准
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 `P06 / E03-E04` 的真实音画断点，不代表 `P05 -> P06 -> P07` 的 continuity 长观察已经结束。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -460,8 +481,8 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P05 v4 tail trim + P06 v6 trimmed-ingress + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v4 tail trim + P06 v7 voiceclosure + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
-3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P09 / P10` 这组已从清单里出队
-4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检，但当前不再把 `P09 / P10` 记成开放债务
+3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
+4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
 5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
