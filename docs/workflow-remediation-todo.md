@@ -471,6 +471,26 @@
   - 当前这类短线，先以真实装配链闭环和可见锚点同步为准
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 `P06 / E03-E04` 的真实音画断点，不代表 `P05 -> P06 -> P07` 的 continuity 长观察已经结束。
 
+### 2026-04-05 / Round 40
+
+- `DONE WITH NOTES`：继续按 `T11` 往下收时，没有把这轮停在“`P06` 已经有声了”这一层，而是继续把它收成更清楚、更像孩子一遍能听懂的 current 版本：
+  - `E03` 当前短线收成：`第四条路回来了。这条路叫风暴听译者。`
+  - `E04` 当前短线收成：`别只听最大声那条。`
+- `DONE WITH NOTES`：这轮真实重装的不只是 source clip，而是整条 current 链：
+  - 重渲 [part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4)
+  - 继续重装 [chapter-01-story-spine-preview-v25.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v25.mp4)
+  - 再继续重装 [chapter-01-vertical-slice-master-v26-current.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v26-current.mp4)
+- `DONE WITH NOTES`：顺着这条热修，又抓到一组 source-of-truth 自己打架的残留，并一起清掉了：
+  - `storyboard-script.md` 的 `P06/S04` 详细段落还留着旧句 `别只听最大声的那条`
+  - `shot-list.md` 的 `P06/E03-E04` 执行表和详细说明里，还并存着旧句和新句
+  - 这轮已把 `storyboard / shot-list / voice` 三条链统一成 current 口径，避免后续再把旧句生回来
+- `DONE WITH NOTES`：仓库外 rough STT 这轮抽检结果，比上一版更能抓住 `P06` 的关键句骨架：
+  - `P06`：`第四條路回來了,這條路叫風暴停`
+  - `P06`：`別之聽最大聲納條`
+  - `P07`：`你聽不見,不一定是因為他不存在 / 也可能是因為你前面太吵了`
+  - 它逐字仍不完美，但已经足够说明 `P06` 这两句 current 更容易被机器和人一起接住
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 `P06` 的清晰度热修和 source-of-truth 同步，不代表 `P05 -> P06 -> P07` 的 continuity 长观察已经结束。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -481,7 +501,7 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P05 v4 tail trim + P06 v7 voiceclosure + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v4 tail trim + P06 v8 voiceclarity + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
