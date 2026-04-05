@@ -93,7 +93,7 @@
 - `P05 -> P06`：`P05 TAIL TRIM REFINED + VOICECLARITY APPLIED`
   - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v5-d02first-tailtrim2.mp4`。
   - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4`。
-  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v26.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v27.mp4`。
   - `master current` 已同步切到 `chapter-01-vertical-slice-master-v27-current.mp4`。
   - 这次通过的是“把旧的正面定住 pose、亮走廊 reset，以及 `E03/E04` 的静音断点一起收掉”，并继续把两句短线收成更清楚的人话；本地 rough STT 也已经能更稳定抓到 `第四条路回来了` 和 `别只听最大声那条` 的骨架。
   - 这轮又继续把 `P05` 尾部多留的半拍“重新站稳”泄气感收掉，让 cut 更停在被异常风带偏、还没回稳的点。
