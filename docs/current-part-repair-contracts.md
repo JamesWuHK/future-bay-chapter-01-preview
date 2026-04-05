@@ -19,7 +19,7 @@
 - `part_id`：`P06`
 - `part_name`：`暗层接口`
 - `当前状态`：`DONE WITH NOTES`
-- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM LANDED`
+- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM + P07 HEAD TRIM LANDED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
@@ -100,7 +100,7 @@
 
 ## 9. 后续观察顺序
 
-1. 先观察这次 `P05 v4 tail trim + P06 trimmed ingress` 是否已经足够稳定承担 current 入口职责。
+1. 先观察这次 `P05 v4 tail trim + P06 trimmed ingress + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
 2. 再继续审 `P05 -> P06 -> P07` 的连续性，必要时只走 `trim / bridge / reorder`。
 3. 如果未来拿到更强 native same-space ingress，再替换当前 recovery path。
 4. 不回头重开已经可留的 `E02-E04`。

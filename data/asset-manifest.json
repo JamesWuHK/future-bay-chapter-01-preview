@@ -259,7 +259,7 @@
       "part_name": "暗层接口",
       "status": "DONE WITH NOTES",
       "current_gate": "W11",
-      "judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM LANDED",
+      "judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM + P07 HEAD TRIM LANDED",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
       "note": "已通过 `P05 v4 tail trim + E01 trim recovery` 收掉这条边界最明显的旧 reset，并继续保留在现行 `story spine v22 / master v23-current` 口径里；后续只保留 continuity 观察，不整段重开。"
     },

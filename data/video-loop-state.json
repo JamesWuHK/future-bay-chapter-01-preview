@@ -274,7 +274,7 @@
       "depends_on": "P05",
       "loop_status": "in_progress",
       "current_gate": "W11",
-      "current_judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM LANDED",
+      "current_judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM + P07 HEAD TRIM LANDED",
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
       "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
       "reopen_policy": "当前 `P05 v4 tail trim + P06 delivery v6-trimmed-ingress` 已把这条边界最明显的旧 reset 收掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
