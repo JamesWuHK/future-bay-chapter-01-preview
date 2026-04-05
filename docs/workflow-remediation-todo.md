@@ -308,6 +308,23 @@
 - `DONE WITH NOTES`：`v1.19 / v1.20` 现在统一改口为 `docs-only truth sync`，不再拿它们冒充“总装又往前推了一轮”。
 - `IN PROGRESS`：`T11` 还没闭环。当前只先把 `P11` 一处明确的可见问题推进进总装；其余还停在文稿、页面或公开镜像层的改动，还要继续逐项审、逐项传。
 
+### 2026-04-05 / Round 29
+
+- `DONE WITH NOTES`：继续按 `T11` 往下追时，又抓到 `P10 / 自由回响台` 还留着一层真正会被观众看到的可见问题：
+  - `S02` 的整理区标题和提示还带着明显的文件 / UI 腔
+  - `S03` 还在说过重的 `高概率 / 低概率` 抽象句，和主稿也没有完全对齐
+  - `S04` 的公开陈词虽然方向对了，但措辞还能再收得更直、更像人在现场说话
+- `DONE WITH NOTES`：这轮不是只改脚本，而是把修复真推到了总装链里：
+  - 重渲 `part-10-free-echo-platform-delivery-v5.mp4`
+  - 继续重装 `chapter-01-story-spine-preview-v19.mp4`
+  - 再继续重装 `chapter-01-vertical-slice-master-v21-current.mp4`
+- `DONE WITH NOTES`：`P10` 现在的 current 口径已经收成更直接的人话：
+  - `回响台 / 先把想说的话摆明白`
+  - `这条路不是没有。可现在不能先放到大家前面。`
+  - `这座城可以先给建议，但不能替还没看清的孩子先把路关掉。`
+- `DONE WITH NOTES`：这轮已同步回写状态源和资产总览页，明确它是 `assembly-valid` 进展，不再停在“页面看起来更新了”的层面。
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是把 `P10` 这处明确的 viewer-visible 问题也推进进了总装；接下来还要继续按主线回到 `P05 -> P06 -> P07` continuity 观察，并继续审其余还停在 `docs-only` 的对白传导债务。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
