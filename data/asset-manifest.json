@@ -2,7 +2,7 @@
   "project": "AI未来通识课（K12）",
   "chapter_id": "chapter-01-time-archive-city",
   "chapter_title": "不被预测的人生",
-  "version": "v1.34",
+  "version": "v1.35",
   "updated_at": "2026-04-05",
   "manifest_scope": "当前 chapter-01 资产总览页与制作判断应优先参考这份 current 状态总表。它不再维护早期按资产逐条列出的失真 todo 清单，而是直接汇总当前可用主稿、角色 gate、part 级交付与待修风险。",
   "owners": {
@@ -45,25 +45,25 @@
   },
   "current_delivery": {
     "current_focus_part": "P06",
-    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。这轮没有改 active lane，而是顺着 `T11` 的 viewer-visible 审计，先关掉 `P11 / G02` close-up 两侧会露出来的英文漂浮文档；当前已用 world-in 浮卡遮罩把它收进 `part-11 v5`，并继续重渲到 `story spine v30 / master v28-current`。`P10 / F01` 仍先不动，因为它还在 `3-4s` 的 shot contract 范围内。",
-    "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v30.mp4",
+    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。这轮回到 `P05 -> P06 -> P07` 观察链往下审时，抓到 `P07 -> P08` 在完整故事入口里还会从暖色旧桌面硬切到白色规则厅，观感更像“开了新页面”。当前已用 assembly-level overlap merge，把这刀收进 `story spine v31`；`review master` 仍不变，因为它本来就不含 `P08`。",
+    "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v31.mp4",
     "public_current_entry_current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
     "public_current_entry_label": "完整故事 current / P01-P12",
-    "public_current_entry_runtime_sec": 198.093946,
-    "public_current_entry_note": "这条才是当前能从 P01 一直看到 P12 的完整故事入口，资产总览页顶部应优先锚到这里；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案，以及这轮新落地的 `P11 v5` `G02` world-in 浮卡遮罩修复。",
+    "public_current_entry_runtime_sec": 197.753923,
+    "public_current_entry_note": "这条才是当前能从 P01 一直看到 P12 的完整故事入口，资产总览页顶部应优先锚到这里；当前它已经同时保留 `P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新加的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案，以及前一轮 `P11 v5` `G02` world-in 浮卡遮罩修复。",
     "official_review_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v28-current.mp4",
     "official_review_master_current_hub": "current/deliveries/chapter-01-master-current.mp4",
     "official_review_master_label": "review master / vertical slice assembly",
     "official_review_master_runtime_sec": 154.018005,
     "official_review_master_note": "这条只保留作 chapter 级 vertical-slice review master，不再冒充完整故事唯一入口；它当前仍只承担 vertical-slice subset 复审，并继续保留 `P05 v5 tailtrim2`、`P06 v8 voiceclarity`、`P10 v5` 和这轮新推进进总装的 `P11 v5` `G02` world-in 遮罩修补。像 `P07 / P09` 这类不在 subset 里的修补，仍应以完整故事入口为准。",
     "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v28-current.mp4",
-    "story_spine": "chapter-01-story-spine-preview-v30.mp4",
+    "story_spine": "chapter-01-story-spine-preview-v31.mp4",
     "story_spine_scope": "完整故事 current / P01-P12",
     "dialogue_rollout_status": "VIDEO_SYNCED_WITH_NOTES",
-    "dialogue_rollout_note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、`P10 v5` 的可见文案、这轮新落地的 `P11 v5` `G02` world-in 浮卡遮罩，以及前一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v30`。`review master` 现在是 `v28-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。",
+    "dialogue_rollout_note": "当前真正进了装配链的人话化和 world-in 文案结果，已不只停在 overlay / 文稿层：`P01` 的热修、`P05 v5 tailtrim2` 的 continuity 精修、`P06 v8 voiceclarity` 的 `E03/E04` 清晰度热修、`P07 v4 warm ingress`、这轮新落地的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui` 的 `E13` 中文遮罩收口、`P10 v5` 的可见文案、前一轮 `P11 v5` `G02` world-in 浮卡遮罩，以及更早一轮 `P09 / P10` speaking audio 的真闭环，都已经继续传到 `story spine v31`。`review master` 现在是 `v28-current`，但它不含 `P07 / P08 / P09`，所以这些 full-story-only 修补仍应以完整故事入口为准。仓库外 rough STT 对本地中文 TTS 逐字仍不完美，但这轮判断仍以真实装配链和可见锚点同步为准。",
     "controller_updated_at": "2026-04-05",
     "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；但以后如果只是补文稿和页面镜像，没有新的 `part delivery / story spine / master`，也只会被标成 `docs-only`，不会再被说成总装推进。",
-    "source_sync_debt": "当前完整故事入口已把 `P05 current` 的 refined tail-trim continuity 修补、`P06 / E01` 的 bright reset trim recovery、`P06 v8 voiceclarity` 的两句清晰短线、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P01` 的 `S04/S07` 热修、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案、这轮新落地的 `P11 v5` `G02` world-in 浮卡遮罩，以及 `P09 / P10` 的 speaking audio 闭环一起留在主链上。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 长观察、`P07 -> P08 / P09 -> P10` 的 handoff 复审窗口，以及 `P10 / P11` 更高规格 speaking / same-space 质感升级这类非 blocker polish。",
+    "source_sync_debt": "当前完整故事入口已把 `P05 current` 的 refined tail-trim continuity 修补、`P06 / E01` 的 bright reset trim recovery、`P06 v8 voiceclarity` 的两句清晰短线、`P07 v4 warm ingress`、这轮新落地的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P01` 的 `S04/S07` 热修、`P09 v4 localized-ui` 的 `E13` 中文遮罩修补、`P10 v5` 的可见文案、前一轮 `P11 v5` `G02` world-in 浮卡遮罩，以及 `P09 / P10` 的 speaking audio 闭环一起留在主链上。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 长观察、`P09 -> P10 / P10 -> P11` 的 handoff 复审窗口，以及 `P10 / P11` 更高规格 speaking / same-space 质感升级这类非 blocker polish。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
@@ -143,7 +143,7 @@
       "gate_id": "W11",
       "gate_name": "交付更新与归档",
       "status": "DONE WITH NOTES",
-      "note": "对外完整故事入口当前应指向 `story spine v30`；`vertical slice master v28-current` 只保留作 review master。两条入口、`P05 v5 tailtrim2`、`P06 v8 voiceclarity`、`P07 v4 warm ingress`、`P08 v2 headtrim`、`P09 v4 localized-ui`、`P10 v5`、仍保留在链上的 `P11 v5` 与公开预览镜像都应保持同一口径；没进这条链的修订不再算完成。"
+      "note": "对外完整故事入口当前应指向 `story spine v31`；`vertical slice master v28-current` 只保留作 review master。两条入口、`P05 v5 tailtrim2`、`P06 v8 voiceclarity`、`P07 v4 warm ingress`、这轮新落地的 `P07 -> P08` overlap merge handoff、`P08 v2 headtrim`、`P09 v4 localized-ui`、`P10 v5`、仍保留在链上的 `P11 v5` 与公开预览镜像都应保持同一口径；没进这条链的修订不再算完成。"
     }
   ],
   "character_gate_status": [
@@ -270,7 +270,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v4-warm-ingress.mp4",
-      "note": "这轮确认 `v3 head trim` 把沉默练习室的短入口裁过了，于是改成保留暖房间 ingress 的 `delivery v4 warm ingress`，再继续保留在现行 `story spine v30`。`review master` 不变，因为它本来就不含 `P07`。当前继续维持 `accepted_with_notes`，后续只观察这刀 warm ingress 是否已经足够。"
+      "note": "这轮确认 `v3 head trim` 把沉默练习室的短入口裁过了，于是改成保留暖房间 ingress 的 `delivery v4 warm ingress`，并在完整故事入口里继续通过 `P07 -> P08` overlap merge handoff 把暖桌面溶到规则厅。`review master` 不变，因为它本来就不含 `P07`。当前继续维持 `accepted_with_notes`，后续只观察这套 handoff 是否已经足够。"
     },
     {
       "part_id": "P08",
@@ -279,7 +279,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-08-rule-projection-room-delivery-v2-headtrim.mp4",
-      "note": "contact-sheet 复审确认主要问题不在结构，而在 `E09` 空白规则厅建立略久；这轮已通过 `1.0s` editor-level head trim recovery 收成 `v2 headtrim`，让 `P07` 的暖房间余波更顺地落到规则厅的压迫感里。`review master` 不变，因为它本来就不含 `P08`。"
+      "note": "contact-sheet 复审确认主要问题不只在 `E09` 空白建立略久，也在 `P07 -> P08` 还会被读成新页面切换；当前 `P08` part 仍保持 `v2 headtrim`，但完整故事入口已额外通过 `P07 -> P08` overlap merge handoff，把暖桌面溶到规则厅。`review master` 不变，因为它本来就不含 `P08`。"
     },
     {
       "part_id": "P09",
@@ -297,7 +297,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v5.mp4",
-      "note": "前一轮已把 `P10` 最明显的 viewer-visible 文件 / UI 腔真正收口到 `delivery v5`；这轮它继续保留在现行 `story spine v30 / master v28-current` 里。`P10 -> P11` 页面切换风险继续维持 `PASS WITH NOTES`。本地 rough STT 已复核旧 baked-audio 口径从 current 清掉；上游 30 份重生模板也已统一改回 current 短线，避免后续重跑时回弹旧句。"
+      "note": "前一轮已把 `P10` 最明显的 viewer-visible 文件 / UI 腔真正收口到 `delivery v5`；这轮它继续保留在现行 `story spine v31 / master v28-current` 里。`P10 -> P11` 页面切换风险继续维持 `PASS WITH NOTES`。本地 rough STT 已复核旧 baked-audio 口径从 current 清掉；上游 30 份重生模板也已统一改回 current 短线，避免后续重跑时回弹旧句。"
     },
     {
       "part_id": "P11",
@@ -306,7 +306,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v5.mp4",
-      "note": "这轮已把 `P11 / G02` close-up 两侧会露出来的英文漂浮文档，用 world-in 浮卡遮罩真实推进进 `part-11 v5 / story spine v30 / master v28-current`。本地 rough STT 当前也显示 `P11` 音轨大体还能保留；后续只保留终局确认质感和规格升级的定向复审。"
+      "note": "前一轮已把 `P11 / G02` close-up 两侧会露出来的英文漂浮文档，用 world-in 浮卡遮罩真实推进进 `part-11 v5 / story spine v30 / master v28-current`；这轮它继续保留在更新后的 `story spine v31` 里。本地 rough STT 当前也显示 `P11` 音轨大体还能保留；后续只保留终局确认质感和规格升级的定向复审。"
     },
     {
       "part_id": "P12",

@@ -680,6 +680,26 @@
   - `review master = v28-current`
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是又关掉了一处真实进了 `part -> story spine -> master` 的 viewer-visible bug；active lane 还是回到 `P05 -> P06 -> P07` 主线继续观察。
 
+### 2026-04-05 / Round 50
+
+- `DONE WITH NOTES`：回到 active lane 继续做 `P05 -> P06 -> P07` 的 continuity 复审时，这轮又抓到一处真正会影响完整故事读法的 handoff 问题：
+  - `P07 -> P08` 当前仍会从暖色旧桌面硬切到白色规则厅
+  - 单看 `part-08 v2 headtrim`，空白建立位确实比旧版短了
+  - 但放回 `story spine` 后，这刀仍更像“开了新页面”，而不是旧训练痕迹把人顺着带进下一层压力空间
+- `DONE WITH NOTES`：这轮先不重开 `P08` 模型，也不把 `P07` 尾巴重复塞回 part 级 current，而是采用更低成本、更符合装配层职责的 recovery：
+  - 新增 [render_chapter01_p07_p08_handoff_merge.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_p07_p08_handoff_merge.sh)
+  - 用 `P07 current + P08 current` 做 `0.35s` assembly-level overlap merge
+  - 让暖桌面先轻溶到规则厅，再进入 `P08` 的正式内容
+- `DONE WITH NOTES`：这次修复当前先真实推进到完整故事入口：
+  - [chapter-01-p07-p08-handoff-merge-v1.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-p07-p08-handoff-merge-v1.mp4)
+  - [chapter-01-story-spine-preview-v31.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v31.mp4)
+  - `review master` 继续保持 `v28-current` 不变，因为它本来就不含 `P08`
+- `DONE WITH NOTES`：source-of-truth 和资产总览页当前都应按新口径读取：
+  - `完整故事入口 = story spine v31`
+  - `P07 -> P08` 当前已经不是“暖桌面硬切白厅”，而是 `overlap merge handoff`
+  - `review master = v28-current`
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是又关掉了一处真实进了完整故事入口的 viewer-visible continuity bug；active lane 仍保持在 `P06 / W10-W11`，继续回到 `P05 -> P06 -> P07` 主线观察。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -694,4 +714,4 @@
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
-5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v30`
+5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v31`
