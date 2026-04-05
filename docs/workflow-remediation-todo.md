@@ -32,7 +32,7 @@
 | T05 | P1 | `W11` | 让资产总览页只吃 current 可信状态源 | 资产总览 HTML 页面 | `DONE WITH NOTES` | 页面不再自己拼状态，而是忠实展示 current |
 | T06 | P1 | `W7-W10` | 单独拉清 `P04` 的修复账，并把等待区压力链写死到 current 合同里 | `production/video-loop-state.json`、`production/current-part-repair-contracts.md`、`story/storyboard-script.md`、`production/shot-list.md` | `DONE WITH NOTES` | `P04` 哪些是真视频、哪些仍是静帧债务、哪些可以 `KEEP / TRIM / REDO` 写清楚，而且 `等待区 -> 签字笔 -> 安抚屏 -> 父亲逻辑 -> 林澄反问 -> P05` 的后果链已经过 clip-level 复审 |
 | T07 | P0 | `W10-W11` | 收口 `P06 / E01` 的亮走廊 reset，并把 trimmed ingress 传导到 part、story spine、master、preview current | `production/video-loop-state.json`、`production/asset-manifest.json`、`production/current-part-repair-contracts.md`、`production/version-log.md`、预览页 current 镜像 | `DONE WITH NOTES` | `P06` 开头不再先亮一下再变暗，且 `part-06 current / story spine / master / preview` 都切到同一套 `trimmed-ingress` 口径 |
-| T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词，并继续把这批改动传导到成片链 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md`、受影响的 `part delivery` 装配 | `IN PROGRESS` | 角色说话能一耳朵分开，10 岁孩子能听懂；受影响改动至少要进对应 `part delivery`，并继续传到当前完整故事入口与 review master；否则只算文稿修正 |
+| T08 | P0 | `W0-W2` | 继续做 chapter-01 真人说话口径整改，清掉孩子听不懂的 AI 腔、文件腔和跳出故事的生硬规则词，并继续把这批改动传导到成片链 | `story/master-episode-script.md`、`story/script.md`、`story/storyboard-script.md`、`audio/voice-script.md`、受影响的 `part delivery` 装配 | `DONE WITH NOTES` | 角色说话能一耳朵分开，10 岁孩子能听懂；受影响改动至少要进对应 `part delivery`，并继续传到当前完整故事入口与 review master；否则只算文稿修正 |
 | T09 | P0 | `W11` | 收口 chapter-01 的对外交付入口口径，明确哪条是完整故事 current，哪条只是 review master | `production/asset-manifest.json`、`production/video-loop-state.json`、`production/version-log.md`、资产总览 HTML 页面 | `DONE WITH NOTES` | 页面顶部和状态源都能明确告诉人：当前 `story spine current` 才是完整故事入口，当前 `vertical slice master` 只是 review master |
 | T10 | P1 | `W0-W11` | 收口“文稿承诺 vs current 实现”边界，把趣味层、产品稿、上屏文案和资产总览页统一到同一套 current / 后补口径 | `story/script.md`、`story/storyboard-script.md`、`product/product-script.md`、`product/episode-onscreen-copy.md`、`production/shot-list.md`、`production/asset-manifest.json`、`production/video-loop-state.json`、资产总览 HTML 页面 | `DONE WITH NOTES / DOCS ONLY` | 页面和主文档都能一眼看出：哪些趣味层已经进 current，哪些仍是后补，不再把候选资产误写成“已上线”；但这项本身不自动算总装推进 |
 | T11 | P0 | `W10-W11` | 审计“文稿 / 页面修正是否真的进了总装”，未进的一律降级成 `DOCS ONLY / NOT COUNTED`，并把最关键的 viewer-visible 修正继续推进到 `part -> story spine -> master` | `production/workflow-remediation-todo.md`、`production/video-loop-state.json`、`production/asset-manifest.json`、`production/version-log.md`、资产总览 HTML 页面、受影响的 `part delivery / assembly` | `IN PROGRESS` | 每条被宣称“已修”的项，都能回答它已进了哪个 `part delivery / story spine / master`；答不出来就降级，答得出来才算有效 |
@@ -421,6 +421,23 @@
 - `DONE WITH NOTES / DOCS ONLY`：顺着这条检查，又抓到 `P10 / S03` 的所有正式重生模板还残留旧句 `如果高概率已经证明答案，你凭什么让城市承担低概率代价？`。这轮已把它统一改回和 current 一致的短线：`这条路不是没有。可现在不能先放到大家前面。`
 - `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮只完成了“找准旧音轨债务 + 清掉上游再生源头”，还没有新增 `part delivery / story spine / master`，所以必须继续记成 `DOCS ONLY / NOT COUNTED`。
 
+### 2026-04-05 / Round 37
+
+- `DONE WITH NOTES`：已把 `P09 / S03` 和 `P10 / S03` 的 speaking clip 真正重生进 current 短线，不再只停在模板清理：
+  - `shot-ch01-p09-s03-evidence-freeze-intervention-viduq3-s2v-v3.mp4`
+  - `shot-ch01-p10-s03-opponent-projection-viduq3-i2v-v1.mp4`
+- `DONE WITH NOTES`：已用仓库外 `/tmp/ch01-audio-qc-venv + faster-whisper` 复核 source clip 与 part-level current：
+  - `P09 / S03` 现在能读到：`后来补上的东西 / 不能当最早那份证据`
+  - `P10 / S03` 现在能读到 current 短线骨架：`这条路不是没有 / 可现在不能先放到大家前面`
+- `DONE WITH NOTES`：已把这轮真实音轨修复继续传到总装链，而不是停在 source clip：
+  - 重渲 `part-09-evidence-freeze-team-split-delivery-v3-overlaycleanup.mp4`
+  - 重渲 `part-10-free-echo-platform-delivery-v5.mp4`
+  - 重装 `chapter-01-story-spine-preview-v23.mp4`
+  - 重装 `chapter-01-vertical-slice-master-v24-current.mp4`
+  - `chapter-01-story-spine-preview-current.mp4` 与 `chapter-01-master-current.mp4` 已同步切到新版本
+- `DONE WITH NOTES`：`T08` 这轮终于不再只是 `DOCS ONLY`。之前最明确的 `P09 / P10 baked-audio` 债务，已经真修进 `source clip -> part -> story spine -> master`。
+- `IN PROGRESS`：`T11` 继续保持未闭环。当前只是把最明确的一组“页面和文稿先变了、成片却还没跟上”的债务关掉；后续仍要继续按同一套规则审 active lane 和新发现的问题，不能因为这一轮成了就把整章误报成“全部完成”。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -431,8 +448,8 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P05 v4 tail trim + P06 v6 trimmed-ingress` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v4 tail trim + P06 v6 trimmed-ingress + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
-3. `T08` 的下一步改为沿这条已经打通的本地 rough STT 路，继续找“还被 baked audio 决定口径”的剩余段落；当前优先盯 `P09 / P10`
-4. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导，优先把 `P09 / P10` 这两处声音债务变成真正的 part-level 闭环
+3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P09 / P10` 这组已从清单里出队
+4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检，但当前不再把 `P09 / P10` 记成开放债务
 5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
