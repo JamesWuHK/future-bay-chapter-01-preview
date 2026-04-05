@@ -575,6 +575,33 @@
   - 所以这轮先不误开新的 `trim / reorder`，active lane 继续维持 `PASS WITH NOTES`
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 active lane 上一个流程复现缺口，不是新的 `part -> story spine -> master` 画面推进；下一步继续回到 `P05 -> P06 -> P07` 的 viewer-visible continuity 复审。
 
+### 2026-04-05 / Round 45
+
+- `DONE WITH NOTES`：继续按 active lane 复审 `P06 -> P07` 的 viewer-visible continuity 时，确认上一轮刚补齐复现链的 `P07 v3 head trim` 其实裁过了：
+  - 开场几乎立刻就落到旧档案桌面
+  - `S01` 原本该有的沉默练习室暖房间入口被吃掉太多
+  - 这会让 `P06 -> P07` 更像“又切到另一张桌面信息页”，而不是顺着第四路径走进旧练习室
+- `DONE WITH NOTES`：这轮没有误开模型重生，而是继续走更省、更准的 assembly-level trim recovery：
+  - 更新 [render_chapter01_part7_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part7_delivery.sh)
+  - 把头切从 `3.2s` 改成 `2.4s`
+  - 正式重渲 [part-07-silent-practice-room-delivery-v4-warm-ingress.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-07-silent-practice-room-delivery-v4-warm-ingress.mp4)
+  - 让 `P07` 先保留一小段暖房间入口，再落到旧档案桌面
+- `DONE WITH NOTES`：这次修复已经真实推进进当前完整故事入口，不是只停在单条 part：
+  - `part-07 current` 已切到 `v4 warm-ingress`
+  - 完整故事入口已升级到 [chapter-01-story-spine-preview-v28.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v28.mp4)
+  - 公开预览 current 镜像也应同步切到新的 full-story current
+- `DONE WITH NOTES`：这轮要明确写死一个边界，避免再误报：
+  - `review master` 继续保持 [chapter-01-vertical-slice-master-v27-current.mp4](/Users/wujames/Desktop/AI未来通识课（K12）/outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v27-current.mp4)
+  - 原因不是漏同步，而是它本来就不含 `P07`
+  - 所以这轮闭环的是 `part -> story spine -> preview current`，不是 `master` 更新
+- `DONE WITH NOTES`：source-of-truth 和页面口径已同步回写：
+  - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
+  - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
+  - [current-part-repair-contracts.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md)
+  - [version-log.md](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/version-log.md)
+  - 资产总览页与公开镜像
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是一个真实进了总装链的 `P07` continuity 修复；active lane 还是回到 `P05 -> P06 -> P07` 主线继续观察，不误报成“全章收完”。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -585,8 +612,8 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v4 warm ingress` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
-5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages
+5. 把新的 current judgement 持续同步到 `video-loop-state.json`、`asset-manifest.json`、预览页镜像与 GitHub Pages；当前完整故事入口口径应保持 `story spine v28`

@@ -19,7 +19,7 @@
 - `part_id`：`P06`
 - `part_name`：`暗层接口`
 - `当前状态`：`DONE WITH NOTES`
-- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + E03_E04_VOICE_CLARITY_LANDED + P05 TAIL TRIM REFINED + P07 HEAD TRIM LANDED`
+- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + E03_E04_VOICE_CLARITY_LANDED + P05 TAIL TRIM REFINED + P07 WARM INGRESS LANDED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
@@ -93,21 +93,21 @@
 - `P05 -> P06`：`P05 TAIL TRIM REFINED + VOICECLARITY APPLIED`
   - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v5-d02first-tailtrim2.mp4`。
   - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4`。
-  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v27.mp4`。
-  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v27-current.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v28.mp4`。
+  - `master current` 仍保持 `chapter-01-vertical-slice-master-v27-current.mp4`，因为它本来就不含 `P07`。
   - 这次通过的是“把旧的正面定住 pose、亮走廊 reset，以及 `E03/E04` 的静音断点一起收掉”，并继续把两句短线收成更清楚的人话；本地 rough STT 也已经能更稳定抓到 `第四条路回来了` 和 `别只听最大声那条` 的骨架。
   - 这轮又继续把 `P05` 尾部多留的半拍“重新站稳”泄气感收掉，让 cut 更停在被异常风带偏、还没回稳的点。
-  - 后续又继续用 `P07 v3 head trim` 把 `P06` 的桌面波形更直接接进 `P07` 的旧档案桌面。
-  - 这不是宣称这段以后永远不用再升级，只是当前 same-space handoff 又往前收了一刀。
-- `Round 35 / contact-sheet 复审`
+  - 这轮继续做 `P06 -> P07` 的 contact-sheet 复审后，确认 `P07 v3 head trim` 把沉默练习室的短入口裁过了；于是改成保留暖房间 ingress 的 `P07 v4 warm ingress`，先让观众知道我们进的是练习室，再落到旧档案桌面。
+  - 这不是宣称这段以后永远不用再升级，只是当前 same-space handoff 又往更像“后果推进”的方向收了一刀。
+- `Round 45 / contact-sheet 复审`
   - 继续抽看 `P05 tail -> P06 head` 和 `P06 tail -> P07 head` 后，当前判断不变：
   - `P05 -> P06` 仍带一点从人物反应切到第一人称暗层入口的风格化跳接，但已经不再像旧版那样先亮一下再重开页面。
-  - `P06 -> P07` 当前这刀 `head trim` 继续成立，桌面波形和旧档案桌面还能读成同一条追索后果。
-  - 这轮不再追加新的 `trim / bridge`，先继续按 `PASS WITH NOTES` 观察，不把 still-stylized handoff 误判成新 blocker。
+  - `P06 -> P07` 这轮改成 `v4 warm ingress` 后更成立：观众会先看到一小段暖房间入口，再落到旧档案桌面，不再像一上来就直接跳到同类桌面信息。
+  - 这轮先不再追加新的 `trim / bridge`，继续按 `PASS WITH NOTES` 观察，不把 still-stylized handoff 误判成新 blocker。
 
 ## 9. 后续观察顺序
 
-1. 先观察这次 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
+1. 先观察这次 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v4 warm ingress` 是否已经足够稳定承担 current 入口职责。
 2. 再继续审 `P05 -> P06 -> P07` 的连续性，必要时只走 `trim / bridge / reorder`。
 3. 如果未来拿到更强 native same-space ingress，再替换当前 recovery path。
 4. 不回头重开已经可留的 `E02-E04`。
