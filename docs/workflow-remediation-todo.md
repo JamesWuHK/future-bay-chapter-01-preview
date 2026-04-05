@@ -360,6 +360,19 @@
   - 所以这次 `P09` 是否真的修顺，应该以 `story spine v21` 为准，不再误报成“也已经进了 review subset”
 - `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮闭环的是 `P09` 一处真实 viewer-visible 的装配文案问题；其余还被旧同步音轨卡住的对白位，仍要继续按 `part -> full-story current` 的顺序往下传。
 
+### 2026-04-05 / Round 32
+
+- `DONE WITH NOTES / DOCS ONLY`：继续按 `T08` 往下扫时，又抓到一组你已经明确不要的口气残留还挂在主文稿和上屏文案里：
+  - `点头`
+  - `先排先后`
+  - `第四路径今晚会先挂出去`
+- `DONE WITH NOTES / DOCS ONLY`：已把这组句子从 `master-episode-script.md`、`audio/voice-script.md`、`episode-onscreen-copy.md` 一起收回更口语的版本：
+  - `你要是肯让我补……`
+  - `档案城可以先顾大多数，但不能把少数孩子的路直接藏起来。`
+  - `第四路径今晚会先亮出来。`
+  - `再来叫我服气。`
+- `DONE WITH NOTES / DOCS ONLY`：这轮只算 source-of-truth 和页面正文清理，不算总装推进；以后如果这几句真的进了新的 part / full-story current，再另记成 assembly-valid 进展。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
