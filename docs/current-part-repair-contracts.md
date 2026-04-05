@@ -19,7 +19,7 @@
 - `part_id`：`P06`
 - `part_name`：`暗层接口`
 - `当前状态`：`DONE WITH NOTES`
-- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + E03_E04_VOICE_CLARITY_LANDED + P05 TAIL TRIM + P07 HEAD TRIM LANDED`
+- `当前判断`：`PASS WITH NOTES / E01 TRIMMED INGRESS + E03_E04_VOICE_CLARITY_LANDED + P05 TAIL TRIM REFINED + P07 HEAD TRIM LANDED`
 - `对应总控`：
   - [video-loop-state.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/video-loop-state.json)
   - [asset-manifest.json](/Users/wujames/Desktop/AI未来通识课（K12）/content/chapters/chapter-01-time-archive-city/production/asset-manifest.json)
@@ -90,12 +90,13 @@
   - 第四路径 reveal 仍是这段中间最重要的锚点；这轮已把系统短线收成“第四条路回来了。这条路叫风暴听译者。”，并配好轻字幕锚点，不再只是静音氛围位。
 - `E04`：`KEEP WITH NOTES`
   - 风声婆婆录音接口仍承担“把追索继续推进出去”的职责；这轮已把旧录音短线收成“别只听最大声那条。”，并配上轻字幕锚点，当前先观察它和 `P07` 的接法。
-- `P05 -> P06`：`P05 TAIL TRIM + VOICECLARITY APPLIED`
-  - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4`。
+- `P05 -> P06`：`P05 TAIL TRIM REFINED + VOICECLARITY APPLIED`
+  - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v5-d02first-tailtrim2.mp4`。
   - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v8-voiceclarity.mp4`。
-  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v25.mp4`。
-  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v26-current.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v26.mp4`。
+  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v27-current.mp4`。
   - 这次通过的是“把旧的正面定住 pose、亮走廊 reset，以及 `E03/E04` 的静音断点一起收掉”，并继续把两句短线收成更清楚的人话；本地 rough STT 也已经能更稳定抓到 `第四条路回来了` 和 `别只听最大声那条` 的骨架。
+  - 这轮又继续把 `P05` 尾部多留的半拍“重新站稳”泄气感收掉，让 cut 更停在被异常风带偏、还没回稳的点。
   - 后续又继续用 `P07 v3 head trim` 把 `P06` 的桌面波形更直接接进 `P07` 的旧档案桌面。
   - 这不是宣称这段以后永远不用再升级，只是当前 same-space handoff 又往前收了一刀。
 - `Round 35 / contact-sheet 复审`
@@ -106,7 +107,7 @@
 
 ## 9. 后续观察顺序
 
-1. 先观察这次 `P05 v4 tail trim + P06 v8 voiceclarity + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
+1. 先观察这次 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 是否已经足够稳定承担 current 入口职责。
 2. 再继续审 `P05 -> P06 -> P07` 的连续性，必要时只走 `trim / bridge / reorder`。
 3. 如果未来拿到更强 native same-space ingress，再替换当前 recovery path。
 4. 不回头重开已经可留的 `E02-E04`。

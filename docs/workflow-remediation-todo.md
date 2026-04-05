@@ -491,6 +491,28 @@
   - 它逐字仍不完美，但已经足够说明 `P06` 这两句 current 更容易被机器和人一起接住
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 `P06` 的清晰度热修和 source-of-truth 同步，不代表 `P05 -> P06 -> P07` 的 continuity 长观察已经结束。
 
+### 2026-04-05 / Round 41
+
+- `DONE WITH NOTES`：继续按 active lane 复审 `P05 -> P06` 的 contact-sheet 后，又抓到一个真正还会掉气的 viewer-visible 问题：
+  - `P05` 尾部虽然已经不再停在旧的正面定住 pose
+  - 但还多留了半拍“人又重新站稳”的感觉
+  - 这会让 `P05 -> P06` 比应该有的样子更像先收住一下，再切新页面
+- `DONE WITH NOTES`：这轮仍然没有重开模型，而是继续走更省、更准的 `editor-level trim`：
+  - `part-05 current` 继续收成 `part-05-probability-corridor-delivery-v5-d02first-tailtrim2.mp4`
+  - `D04` 时长从 `2.400000s` 收到 `2.166667s`
+  - 音频尾 fade 也一起前收，避免那半拍重新站稳又被听感托长
+- `DONE WITH NOTES`：这次修复已经继续推进进总装链，不是只停在局部 clip：
+  - `chapter-01-story-spine-preview-v26.mp4`
+  - `chapter-01-vertical-slice-master-v27-current.mp4`
+  - `part-05-current / chapter-01-story-spine-preview-current / chapter-01-master-current` 已同步切到新版本
+- `DONE WITH NOTES`：这轮 source-of-truth 也一起落账，不再让页面口径慢半拍：
+  - `video-loop-state.json`
+  - `asset-manifest.json`
+  - `current-part-repair-contracts.md`
+  - `version-log.md`
+  - 资产总览页与公开镜像应继续保持这套 `v26 / v27-current` 口径
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。当前只是把 `P05 -> P06` 的 continuity 再收紧一刀；下一步还要继续按同一条主质检流程观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 这条链有没有新的 trim / bridge 需求。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
@@ -501,7 +523,7 @@
 
 ## 7. 下一步顺序
 
-1. 继续观察 `P05 v4 tail trim + P06 v8 voiceclarity + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
+1. 继续观察 `P05 v5 tailtrim2 + P06 v8 voiceclarity + P07 v3 head trim` 这组 continuity recovery 是否已经足够稳，必要时只做更细的 `trim / bridge / reorder`
 2. 保持复审 `P05 -> P06 -> P07` 的中段 continuity，但当前先按 `PASS WITH NOTES` 口径继续推进，不把 stylized handoff 误判成新 blocker
 3. `T11` 的下一步继续盘点还有哪些 viewer-visible 修正仍停在 `docs / page / mirror` 层，按 `part -> story spine -> master` 的顺序逐项传导；`P06`、`P09 / P10` 这几组已从“静音 / 旧音轨”开放债务里出队
 4. 继续使用这条已打通的本地 rough STT 路，做后续 speaking shot 的低成本抽检；但像本地中文 TTS 这种短线，不再把机器逐字稿当唯一验收
