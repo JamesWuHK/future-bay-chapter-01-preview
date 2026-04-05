@@ -97,6 +97,11 @@
   - `master current` 已同步切到 `chapter-01-vertical-slice-master-v23-current.mp4`。
   - 这次通过的是“把旧的正面定住 pose 和亮走廊 reset 一起收掉”；后续又继续用 `P07 v3 head trim` 把 `P06` 的桌面波形更直接接进 `P07` 的旧档案桌面。
   - 这不是宣称这段以后永远不用再升级，只是当前 same-space handoff 又往前收了一刀。
+- `Round 35 / contact-sheet 复审`
+  - 继续抽看 `P05 tail -> P06 head` 和 `P06 tail -> P07 head` 后，当前判断不变：
+  - `P05 -> P06` 仍带一点从人物反应切到第一人称暗层入口的风格化跳接，但已经不再像旧版那样先亮一下再重开页面。
+  - `P06 -> P07` 当前这刀 `head trim` 继续成立，桌面波形和旧档案桌面还能读成同一条追索后果。
+  - 这轮不再追加新的 `trim / bridge`，先继续按 `PASS WITH NOTES` 观察，不把 still-stylized handoff 误判成新 blocker。
 
 ## 9. 后续观察顺序
 

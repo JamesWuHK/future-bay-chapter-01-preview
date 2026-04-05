@@ -278,7 +278,7 @@
       "accepted_delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
       "delivery_script": "scripts/production/render_chapter01_part6_delivery.sh",
       "reopen_policy": "当前 `P05 v4 tail trim + P06 delivery v6-trimmed-ingress` 已把这条边界最明显的旧 reset 收掉，并同步传导到 official current。除非 `P05 -> P06 -> P07` 的 continuity 或暗层可读性再次出现新的 viewer-blocking 问题，否则不回退到整段重开。",
-      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：当前先按 `P05 v4 tail trim + P06 v6 trimmed-ingress` 的组合继续审 `P05 -> P06 -> P07` 是否还需要更细的 trim / bridge；没出现新 blocker 就不重开模型。"
+      "next_action": "继续把 `P06` 作为当前 quality lane 做收口观察：这轮补抓 `P05 tail -> P06 head` 和 `P06 tail -> P07 head` 的 contact-sheet 复审后，当前没有发现新的 viewer-blocking 问题。先继续按 `P05 v4 tail trim + P06 v6 trimmed-ingress + P07 v3 head trim` 的组合维持 `PASS WITH NOTES` 观察，不追加新的 trim / bridge；只有出现新 blocker 才重开。"
     },
     {
       "part_id": "P07",
