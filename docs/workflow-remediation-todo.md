@@ -554,6 +554,27 @@
   - 资产总览页与公开镜像
 - `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是一个真实 viewer-visible 的 `P09` 画面 bug；active lane 仍回到 `P05 -> P06 -> P07` continuity 主线继续观察。
 
+### 2026-04-05 / Round 44
+
+- `DONE WITH NOTES / DOCS ONLY`：继续按 active lane 复查 `P05 -> P06 -> P07` 的生产复现链时，又抓到一个流程质量缺口：
+  - `video-loop-state.json` 里把 `P07` 的 accepted delivery 指到 `scripts/production/render_chapter01_part7_delivery.sh`
+  - 但仓库里这个脚本其实不存在
+  - 也就是说这段 current 虽然能看，但复现链是断的
+- `DONE WITH NOTES / DOCS ONLY`：这轮先不误报成新的总装推进，而是把复现链补齐：
+  - 新增 [render_chapter01_part7_delivery.sh](/Users/wujames/Desktop/AI未来通识课（K12）/scripts/production/render_chapter01_part7_delivery.sh)
+  - 逻辑明确写死：从 `part-07-silent-practice-room-delivery-v2.mp4` 做 `3.2s` 头切，输出 `part-07-silent-practice-room-delivery-v3-headtrim.mp4`
+  - 这一步修的是 workflow reproducibility，不是新模型生成
+- `DONE WITH NOTES / DOCS ONLY`：已经做过临时复现验证，不是只写脚本不验：
+  - 临时复现输出时长 `9.989002s`
+  - 与当前正式 `part-07 v3 headtrim` 一致
+  - 临时复现版和正式版做逐帧 PSNR 对比，平均值约 `47.24dB`，说明当前脚本已经足够贴近现有 accepted delivery
+- `DONE WITH NOTES / DOCS ONLY`：顺手把 `P07 v3` 的正式 metadata 也补齐了 `script` 字段，避免以后再出现“状态源写着有脚本、metadata 却追不到脚本”的断链。
+- `DONE WITH NOTES / DOCS ONLY`：这轮又补做了一次 active lane 的低成本节奏复查：
+  - `P06` 尾部和 `P07` 头部都能测到较长安静段
+  - 但继续做帧相似度抽查后，暂时还不足以证明它们是在重复停同一股桌面信息
+  - 所以这轮先不误开新的 `trim / reorder`，active lane 继续维持 `PASS WITH NOTES`
+- `IN PROGRESS`：`T11` 仍不改成 `DONE`。这轮闭环的是 active lane 上一个流程复现缺口，不是新的 `part -> story spine -> master` 画面推进；下一步继续回到 `P05 -> P06 -> P07` 的 viewer-visible continuity 复审。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
