@@ -645,6 +645,21 @@
   - 所以这轮不为了“想再顺一点”去硬动 `P10`
 - `IN PROGRESS`：`T11` 继续保持未闭环。当前只是又关掉了一处真实进了 `part -> story spine -> preview current` 的 continuity bug；active lane 仍回到 `P05 -> P06 -> P07` 主线继续观察。
 
+### 2026-04-05 / Round 48
+
+- `DONE WITH NOTES / DOCS ONLY`：已按 active lane 再回看一轮 `P05 -> P06 -> P07` 的 current continuity，并补做更密的 tail/head board：
+  - `P05 -> P06` 当前已经能读成“异常风把人往下一层带走”，没有回弹成旧的 `settled pose -> bright reset` 断页。
+  - `P06` 开头第一秒仍稳定停在更暗的入口走廊，不再先闪回更亮、更空的旧 corridor reset。
+  - `P06 -> P07` 当前仍是 `PASS WITH NOTES`，但这轮没有再抓到新的 viewer-blocking page cut；`v4 warm ingress` 现在更像顺着旧训练痕迹追进去，而不是又开了一个新模块。
+- `DONE WITH NOTES / DOCS ONLY`：已复用仓库外 `/tmp/ch01-audio-qc-venv + faster-whisper` 对当前 `part-06 / part-07` 做低成本抽检：
+  - `P06` 当前仍能稳定抓到关键骨架：`第四条路回来了 / 别只听最大声那条`
+  - `P07` 当前仍能抓到风声婆婆的两句短线：`你听不见，不一定是因为它不存在 / 也可能是因为你前面太吵了`
+  - 机器逐字仍有轻微噪音，但这轮没看到“又回弹成旧对白口径”的证据
+- `DONE WITH NOTES / DOCS ONLY`：顺手补看了 `P10 -> P11` 的 current 头尾板：
+  - `P11` 开头仍先保留自由回响台的公共空间余波，再切到结果确认近景
+  - 这轮没有新增需要立刻进入 trim / bridge / reorder 的 page-cut blocker
+- `IN PROGRESS`：`T11` 继续保持未闭环。当前这轮新增的是“已复审、无新 blocker”的 source-of-truth 记录，不算新的 `part / story spine / master` 推进；下一步继续按同一套规则往下审剩余 `PASS WITH NOTES` 风险和 speaking 质感升级位。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
