@@ -438,6 +438,18 @@
 - `DONE WITH NOTES`：`T08` 这轮终于不再只是 `DOCS ONLY`。之前最明确的 `P09 / P10 baked-audio` 债务，已经真修进 `source clip -> part -> story spine -> master`。
 - `IN PROGRESS`：`T11` 继续保持未闭环。当前只是把最明确的一组“页面和文稿先变了、成片却还没跟上”的债务关掉；后续仍要继续按同一套规则审 active lane 和新发现的问题，不能因为这一轮成了就把整章误报成“全部完成”。
 
+### 2026-04-05 / Round 38
+
+- `DONE WITH NOTES / DOCS ONLY`：继续按 `T11` 复核 `P05 -> P06 -> P07` 时，用 current 粗转写抽到了 `P07` 的真实口径：当前成片里，风声婆婆先落一句 `你听不见，不一定是因为它不存在`，后面还会补一句 `也可能是你前面太吵了`。
+- `DONE WITH NOTES / DOCS ONLY`：顺着这条抽检，反查出 source-of-truth 仍有一组 `P07` 自己打架的残留：
+  - `storyboard-script.md` 的详细段落还把 `S03` 写成双句旧版
+  - `shot-list.md` 的 `E07` 细节也还留着双句合并写法
+  - `audio/voice-script.md` 的 `Scene 07` 还停在更长的旧独白，没有明确写清 current 正片先只保哪两句
+- `DONE WITH NOTES / DOCS ONLY`：这轮已把 `script / storyboard / voice / shot-list` 收回同一套 current 口径：
+  - `P07/S03` 先只落第一句短线
+  - `P07/S04` 再补第二句短线，并把后半段继续留给风名标签、短风声和林澄反应
+- `IN PROGRESS`：这次没有新增 `part / story spine / master` 重装，所以不能把它误报成新的总装推进；它的价值在于关掉了一组会误导后续生产、也会让页面和成片口径重新长歪的 source-of-truth 漂移。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
