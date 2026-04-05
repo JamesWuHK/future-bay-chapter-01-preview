@@ -342,6 +342,24 @@
   - 中段 still stylized，但现在不再把它误报成必须马上重开模型的新 blocker
 - `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮修掉的是一处真实进总装的 continuity 问题，不代表所有旧同步音轨对白都已经全部换新。
 
+### 2026-04-05 / Round 31
+
+- `DONE WITH NOTES`：继续按 `T11` 审“哪些页面可见修正还没真的进总装”时，抓到 `P09` 的冻结提示虽然文稿链已经改顺，但 `part current` 里那层字还像回执单，不够像人会当场说出来的话。
+- `DONE WITH NOTES`：这轮没有重开整段，而是直接把 `P09` current 收成更清楚的人话版：
+  - `part-09-evidence-freeze-team-split-delivery-v3-overlaycleanup.mp4`
+  - `回响台提醒：这些先别当最早那份`
+  - `后来补上的这些，今晚先不能拿去当前排法。`
+  - `你们还能继续去回响台开口。`
+  - `可你们手里现在能用的证据，已经比刚才少了。`
+- `DONE WITH NOTES`：这次真正进总装的是：
+  - `part-09-evidence-freeze-team-split-delivery-v3-overlaycleanup.mp4`
+  - `chapter-01-story-spine-preview-v21.mp4`
+- `DONE WITH NOTES`：`review master` 当前已刷新到 `chapter-01-vertical-slice-master-v23-current.mp4`，但这里明确写清边界：
+  - 它本身仍是 vertical-slice subset
+  - 它不含 `P09`
+  - 所以这次 `P09` 是否真的修顺，应该以 `story spine v21` 为准，不再误报成“也已经进了 review subset”
+- `IN PROGRESS`：`T08 / T11` 仍未闭环。这轮闭环的是 `P09` 一处真实 viewer-visible 的装配文案问题；其余还被旧同步音轨卡住的对白位，仍要继续按 `part -> full-story current` 的顺序往下传。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始

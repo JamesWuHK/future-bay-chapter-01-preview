@@ -45,25 +45,25 @@
   },
   "current_delivery": {
     "current_focus_part": "P06",
-    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。这轮继续按“没进 part / story spine / master 不算完成”的硬标准推进，没有重开模型，而是把 `P05 current` 做成一刀 editor-level tail trim：让结尾停在异常风把林澄往下一层拽走的听风位，不再停在旧的正面定住 pose。这个修补已经真实传到 `part-05 v4 / story spine v20 / master v22-current`。`P06 -> P07` 目前继续记 `PASS WITH NOTES`；`T08` 仍未闭环，因为旧的同步音轨对白还没全部重做。",
-    "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v20.mp4",
+    "current_focus_reason": "当前 active lane 仍是 `P06` continuity 观察位。前一轮已经把 `P05 current` 收成 `v4 tail trim`，让结尾停在异常风把林澄往下一层拽走的听风位，不再停在旧的正面定住 pose；这轮继续按“没进总装不算完成”的硬标准，把 `P09` 那层还像回执单的冻结提示收成更直接的人话，并真实推进到 `part-09 v3 / story spine v21`。`review master` 当前已刷新到 `v23-current`，但它本身仍只是 vertical-slice subset，不拿来代替完整故事入口。`P06 -> P07` 目前继续记 `PASS WITH NOTES`；`T08` 仍未闭环，因为旧的同步音轨对白还没全部重做。",
+    "public_current_entry": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-story-spine-preview-v21.mp4",
     "public_current_entry_current_hub": "current/deliveries/chapter-01-story-spine-preview-current.mp4",
     "public_current_entry_label": "完整故事 current / P01-P12",
     "public_current_entry_runtime_sec": 201.692268,
-    "public_current_entry_note": "这条才是当前能从 P01 一直看到 P12 的完整故事入口，资产总览页顶部应优先锚到这里；这轮它已经吃到 `P05 v4` 的 tail-trim continuity 修补，并继续保留 `P10 v5` 和 `P11 v4` 的可见层收口。",
-    "official_review_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v22-current.mp4",
+    "public_current_entry_note": "这条才是当前能从 P01 一直看到 P12 的完整故事入口，资产总览页顶部应优先锚到这里；当前它已经同时保留 `P05 v4` 的 tail-trim continuity 修补、`P09 v3` 的冻结提示收口、`P10 v5` 的可见文案和 `P11 v4` 的结果层收口。",
+    "official_review_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v23-current.mp4",
     "official_review_master_current_hub": "current/deliveries/chapter-01-master-current.mp4",
     "official_review_master_label": "review master / vertical slice assembly",
     "official_review_master_runtime_sec": 154.25,
-    "official_review_master_note": "这条只保留作 chapter 级 vertical-slice review master，不再冒充完整故事唯一入口；这轮也已经吃到 `P05 v4` 的 tail trim，并继续保留 `P10 v5` 和 `P11 v4` 的可见层收口。",
-    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v22-current.mp4",
-    "story_spine": "chapter-01-story-spine-preview-v20.mp4",
+    "official_review_master_note": "这条只保留作 chapter 级 vertical-slice review master，不再冒充完整故事唯一入口；它当前仍只承担 vertical-slice subset 复审，并继续保留 `P05 v4`、`P10 v5` 和 `P11 v4` 这些已在 subset 里的修补。`P09` 是否收顺，仍应以完整故事入口为准。",
+    "official_accepted_master": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/chapter-01-vertical-slice-master-v23-current.mp4",
+    "story_spine": "chapter-01-story-spine-preview-v21.mp4",
     "story_spine_scope": "完整故事 current / P01-P12",
     "dialogue_rollout_status": "VIDEO_PARTIAL_WITH_DOCS_ONLY_DEBT",
-    "dialogue_rollout_note": "当前真正进了装配链的人话化结果，包括 `P01` 的热修、`P09` 的装配文案、`P10 v5` 的可见文案和 `P11 v4` 的结果层 overlay；而这轮新增的总装进展，是 `P05 current` 的 editor-level tail trim 已同步重装到 `story spine v20 / master v22-current`。但已有同步音轨的旧对白也还没全部重做，`T08` 仍未闭环。",
+    "dialogue_rollout_note": "当前真正进了装配链的人话化结果，包括 `P01` 的热修、`P09 v3` 的冻结提示收口、`P10 v5` 的可见文案和 `P11 v4` 的结果层 overlay。当前完整故事入口已升级到 `story spine v21`；`review master v23-current` 继续只承担 subset 复审。但已有同步音轨的旧对白也还没全部重做，`T08` 仍未闭环。",
     "controller_updated_at": "2026-04-05",
     "preview_sync": "future-bay-chapter-01-preview 已同步写入公开镜像，页面也已优先读取这些公开 current 镜像；但以后如果只是补文稿和页面镜像，没有新的 `part delivery / story spine / master`，也只会被标成 `docs-only`，不会再被说成总装推进。",
-    "source_sync_debt": "当前 current 已把 `P05 current` 的 tail-trim continuity 修补和 `P06 / E01` 的 bright reset trim recovery 一起收口到 official current，也保留了 `P01` 的 `S04/S07` 热修、`P09` 的装配文案、`P10 v5` 的可见文案和 `P11 v4` 的结果层 overlay。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 长观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及仍停在文稿 / 页面 / 镜像层、还没进入总装的对白修订债务。",
+    "source_sync_debt": "当前完整故事入口已把 `P05 current` 的 tail-trim continuity 修补、`P06 / E01` 的 bright reset trim recovery、`P01` 的 `S04/S07` 热修、`P09 v3` 的冻结提示收口、`P10 v5` 的可见文案和 `P11 v4` 的结果层 overlay 一起留在主链上。剩余 notes 主要转到 `P05 -> P06 -> P07` 的 continuity 长观察、`P04 -> P05` 这条 bridge 的原生替换窗口，以及仍停在文稿 / 页面 / 镜像层、还没进入总装的对白修订债务。",
     "active_repair_doc": "content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
   },
   "workflow_gate_status": [
@@ -143,7 +143,7 @@
       "gate_id": "W11",
       "gate_name": "交付更新与归档",
       "status": "DONE WITH NOTES",
-      "note": "对外完整故事入口当前应指向 `story spine v20`；`vertical slice master v22-current` 只保留作 review master。两条入口、`P05 v4`、`P10 v5`、仍保留在链上的 `P11 v4` 与公开预览镜像都应保持同一口径；没进这条链的修订不再算完成。"
+      "note": "对外完整故事入口当前应指向 `story spine v21`；`vertical slice master v23-current` 只保留作 review master。两条入口、`P05 v4`、`P09 v3`、`P10 v5`、仍保留在链上的 `P11 v4` 与公开预览镜像都应保持同一口径；没进这条链的修订不再算完成。"
     }
   ],
   "character_gate_status": [
@@ -261,7 +261,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES / E01 TRIMMED INGRESS + P05 TAIL TRIM LANDED",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4",
-      "note": "已通过 `P05 v4 tail trim + E01 trim recovery` 收掉这条边界最明显的旧 reset，并同步重装到 `story spine v20 / master v22-current`；后续只保留 continuity 观察，不整段重开。"
+      "note": "已通过 `P05 v4 tail trim + E01 trim recovery` 收掉这条边界最明显的旧 reset，并继续保留在现行 `story spine v21 / master v23-current` 口径里；后续只保留 continuity 观察，不整段重开。"
     },
     {
       "part_id": "P07",
@@ -287,8 +287,8 @@
       "status": "DONE WITH NOTES",
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
-      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v2.mp4",
-      "note": "已转入 accepted_with_notes，后续只保留定向升级位。"
+      "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-09-evidence-freeze-team-split-delivery-v3-overlaycleanup.mp4",
+      "note": "这轮已把冻结提示收成更直接、更像人会说的话的 `delivery v3`，并真实传到 `story spine v21`。当前继续维持 `accepted_with_notes`，后续只保留定向升级位。"
     },
     {
       "part_id": "P10",
@@ -297,7 +297,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-10-free-echo-platform-delivery-v5.mp4",
-      "note": "这轮已把 `P10` 最明显的 viewer-visible 文件 / UI 腔真正收口到 `delivery v5`，并继续传到 `story spine v19 / master v21-current`；`P10 -> P11` 页面切换风险继续维持 `PASS WITH NOTES`。"
+      "note": "前一轮已把 `P10` 最明显的 viewer-visible 文件 / UI 腔真正收口到 `delivery v5`；当前这份修补仍继续保留在现行 `story spine v21 / master v23-current` 里。`P10 -> P11` 页面切换风险继续维持 `PASS WITH NOTES`。"
     },
     {
       "part_id": "P11",
@@ -306,7 +306,7 @@
       "current_gate": "W11",
       "judgement": "PASS WITH NOTES",
       "delivery": "outputs/2026-03-22-chapter-01-dashscope-character-lock/videos/part-11-midnight-choice-return-delivery-v4.mp4",
-      "note": "前一轮已把结果层可见 overlay 的文件腔继续收掉；当前这份修正仍继续保留在现行 `story spine v19 / master v21-current` 里。后续只保留终局确认质感和规格升级的定向复审。"
+      "note": "前一轮已把结果层可见 overlay 的文件腔继续收掉；当前这份修正仍继续保留在现行 `story spine v21 / master v23-current` 里。后续只保留终局确认质感和规格升级的定向复审。"
     },
     {
       "part_id": "P12",

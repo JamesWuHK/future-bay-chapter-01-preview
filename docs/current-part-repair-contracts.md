@@ -93,8 +93,8 @@
 - `P05 -> P06`：`P05 TAIL TRIM + TRIMMED INGRESS APPLIED`
   - 当前 `part-05 current` 已同步切到 `part-05-probability-corridor-delivery-v4-d02first-tailtrim.mp4`。
   - 当前 `part-06 current` 已同步切到 `part-06-dark-layer-interface-delivery-v6-trimmed-ingress.mp4`。
-  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v20.mp4`。
-  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v22-current.mp4`。
+  - `story spine current` 已同步切到 `chapter-01-story-spine-preview-v21.mp4`。
+  - `master current` 已同步切到 `chapter-01-vertical-slice-master-v23-current.mp4`。
   - 这次通过的是“把旧的正面定住 pose 和亮走廊 reset 一起收掉”，不是宣称这段以后永远不用再升级。
 
 ## 9. 后续观察顺序
