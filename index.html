@@ -592,7 +592,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/workflow-remediation-todo.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/workflow-remediation-todo.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/workflow-remediation-todo.md"
           >正在加载整改主清单…</div>
         </div>
       </div>
@@ -613,7 +613,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/current-part-repair-contracts.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/production/current-part-repair-contracts.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/current-part-repair-contracts.md"
           >正在加载当前 active lane 修复合同…</div>
         </div>
       </div>
@@ -807,7 +807,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/master-episode-script.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/master-episode-script.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/master-episode-script.md"
           >正在加载整集总脚本…</div>
         </div>
       </div>
@@ -828,7 +828,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/script.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/script.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/script.md"
           >正在加载分场剧本…</div>
         </div>
       </div>
@@ -849,7 +849,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/storyboard-script.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/story/storyboard-script.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/storyboard-script.md"
           >正在加载分镜脚本…</div>
         </div>
       </div>
@@ -870,7 +870,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/product-script.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/product/product-script.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/product-script.md"
           >正在加载产品脚本…</div>
         </div>
       </div>
@@ -891,7 +891,7 @@
           <div
             class="markdown-body loading"
             data-doc-src="docs/episode-onscreen-copy.md"
-            data-doc-fallback="https://raw.githubusercontent.com/JamesWuHK/ai-future-civilization-course-k12/main/content/chapters/chapter-01-time-archive-city/product/episode-onscreen-copy.md"
+            data-doc-fallback="https://jameswuhk.github.io/future-bay-chapter-01-preview/docs/episode-onscreen-copy.md"
           >正在加载上屏文案…</div>
         </div>
       </div>
@@ -902,12 +902,12 @@
   <script>
     const manifestSources = [
       'data/asset-manifest.json',
-      'https://raw.githubusercontent.com/JamesWuHK/future-bay-chapter-01-preview/main/data/asset-manifest.json'
+      'https://jameswuhk.github.io/future-bay-chapter-01-preview/data/asset-manifest.json'
     ];
 
     const loopStateSources = [
       'data/video-loop-state.json',
-      'https://raw.githubusercontent.com/JamesWuHK/future-bay-chapter-01-preview/main/data/video-loop-state.json'
+      'https://jameswuhk.github.io/future-bay-chapter-01-preview/data/video-loop-state.json'
     ];
 
     function escapeHtml(text) {
@@ -976,7 +976,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-2';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-3';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           const text = await resp.text();
@@ -992,7 +992,7 @@
       let lastError = null;
       for (const source of urls) {
         try {
-          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-2';
+          const bust = source + (source.includes('?') ? '&' : '?') + 'v=20260405-doc-audit-3';
           const resp = await fetch(bust, { cache: 'no-store' });
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
           return await resp.json();
