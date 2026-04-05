@@ -373,6 +373,21 @@
   - `再来叫我服气。`
 - `DONE WITH NOTES / DOCS ONLY`：这轮只算 source-of-truth 和页面正文清理，不算总装推进；以后如果这几句真的进了新的 part / full-story current，再另记成 assembly-valid 进展。
 
+### 2026-04-05 / Round 33
+
+- `DONE WITH NOTES / DOCS ONLY`：继续扫资产总览页会直接读到的正文镜像时，又抓到一整层还偏“项目术语”的词还挂在 `storyboard / product / onscreen / voice` 里：
+  - `最优路径`
+  - `失败率预测模型`
+  - `公开申请`
+  - `观察期申请`
+- `DONE WITH NOTES / DOCS ONLY`：已把这层说法收回更像时间档案城里的人会说的话：
+  - `为什么总有一条路被先推到前面`
+  - `这座城怎么分力气`
+  - `哪种走法更容易摔跟头`
+  - `请把第四路径亮给更多人看`
+  - `先把第四路径留下来继续看`
+- `DONE WITH NOTES / DOCS ONLY`：这轮仍只算 page-visible docs 清理，不算总装推进；但它会直接改善资产总览页里展开正文时的阅读体验，不再一边说“已经去文件腔”，一边还把旧词挂给人看。
+
 ## 6. 进度标记规则
 
 - `TODO`：还没开始
